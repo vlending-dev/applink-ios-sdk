@@ -1,0 +1,6 @@
+framework module AppLink {
+  umbrella header "AppLink.h"
+  export *
+
+  module * { export * }
+}
