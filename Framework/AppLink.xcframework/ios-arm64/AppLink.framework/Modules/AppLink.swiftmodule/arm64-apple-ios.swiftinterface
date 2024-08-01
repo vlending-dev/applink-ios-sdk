@@ -1,0 +1,40 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.10 (swiftlang-5.10.0.13 clang-1500.3.9.4)
+// swift-module-flags: -target arm64-apple-ios13.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-bare-slash-regex -module-name AppLink
+@_exported import AppLink
+import Foundation
+import Swift
+import UIKit
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+public enum LinkErrorrType : Swift.Int {
+  case unauthorized
+  case missingParameter
+  case tooManyRequest
+  case invalidParameter
+  case badRequest
+  case serverError
+  case invalidURL
+  case unknown
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@objc @_hasMissingDesignatedInitializers public class LinkError : Foundation.NSError {
+  @objc deinit
+}
+public let AppLink: AppLink.AppLinkSession
+public enum AppLinkInfo {
+  public static let version: Swift.String
+}
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers open class AppLinkSession : ObjectiveC.NSObject {
+  public static let shared: AppLink.AppLinkSession
+  open func isAppLink(_ url: Foundation.URL) -> Swift.Bool
+  @objc deinit
+}
+extension AppLink.LinkErrorrType : Swift.Equatable {}
+extension AppLink.LinkErrorrType : Swift.Hashable {}
+extension AppLink.LinkErrorrType : Swift.RawRepresentable {}
