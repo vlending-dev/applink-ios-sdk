@@ -962,413 +962,413 @@
   },
   "ConstValues": [
     {
-      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/AppLinkNetwork.swift",
+      "filePath": "\/Users\/Linus\/Documents\/Project\/Vlending AppLink\/applink-ios\/Sources\/Core\/AppLinkNetwork.swift",
       "kind": "StringLiteral",
       "offset": 249,
       "length": 9,
       "value": "\"OPTIONS\""
     },
     {
-      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/AppLinkNetwork.swift",
+      "filePath": "\/Users\/Linus\/Documents\/Project\/Vlending AppLink\/applink-ios\/Sources\/Core\/AppLinkNetwork.swift",
       "kind": "StringLiteral",
       "offset": 278,
       "length": 5,
       "value": "\"GET\""
     },
     {
-      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/AppLinkNetwork.swift",
+      "filePath": "\/Users\/Linus\/Documents\/Project\/Vlending AppLink\/applink-ios\/Sources\/Core\/AppLinkNetwork.swift",
       "kind": "StringLiteral",
       "offset": 303,
       "length": 6,
       "value": "\"HEAD\""
     },
     {
-      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/AppLinkNetwork.swift",
+      "filePath": "\/Users\/Linus\/Documents\/Project\/Vlending AppLink\/applink-ios\/Sources\/Core\/AppLinkNetwork.swift",
       "kind": "StringLiteral",
       "offset": 329,
       "length": 6,
       "value": "\"POST\""
     },
     {
-      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/AppLinkNetwork.swift",
+      "filePath": "\/Users\/Linus\/Documents\/Project\/Vlending AppLink\/applink-ios\/Sources\/Core\/AppLinkNetwork.swift",
       "kind": "StringLiteral",
       "offset": 355,
       "length": 5,
       "value": "\"PUT\""
     },
     {
-      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/AppLinkNetwork.swift",
+      "filePath": "\/Users\/Linus\/Documents\/Project\/Vlending AppLink\/applink-ios\/Sources\/Core\/AppLinkNetwork.swift",
       "kind": "StringLiteral",
       "offset": 380,
       "length": 7,
       "value": "\"PATCH\""
     },
     {
-      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/AppLinkNetwork.swift",
+      "filePath": "\/Users\/Linus\/Documents\/Project\/Vlending AppLink\/applink-ios\/Sources\/Core\/AppLinkNetwork.swift",
       "kind": "StringLiteral",
       "offset": 407,
       "length": 8,
       "value": "\"DELETE\""
     },
     {
-      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/AppLinkNetwork.swift",
+      "filePath": "\/Users\/Linus\/Documents\/Project\/Vlending AppLink\/applink-ios\/Sources\/Core\/AppLinkNetwork.swift",
       "kind": "StringLiteral",
       "offset": 435,
       "length": 7,
       "value": "\"TRACE\""
     },
     {
-      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/AppLinkNetwork.swift",
+      "filePath": "\/Users\/Linus\/Documents\/Project\/Vlending AppLink\/applink-ios\/Sources\/Core\/AppLinkNetwork.swift",
       "kind": "StringLiteral",
       "offset": 462,
       "length": 9,
       "value": "\"CONNECT\""
     },
     {
-      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/AppLinkNetwork.swift",
+      "filePath": "\/Users\/Linus\/Documents\/Project\/Vlending AppLink\/applink-ios\/Sources\/Core\/AppLinkNetwork.swift",
       "kind": "StringLiteral",
       "offset": 249,
       "length": 9,
       "value": "\"OPTIONS\""
     },
     {
-      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/AppLinkNetwork.swift",
+      "filePath": "\/Users\/Linus\/Documents\/Project\/Vlending AppLink\/applink-ios\/Sources\/Core\/AppLinkNetwork.swift",
       "kind": "StringLiteral",
       "offset": 278,
       "length": 5,
       "value": "\"GET\""
     },
     {
-      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/AppLinkNetwork.swift",
+      "filePath": "\/Users\/Linus\/Documents\/Project\/Vlending AppLink\/applink-ios\/Sources\/Core\/AppLinkNetwork.swift",
       "kind": "StringLiteral",
       "offset": 303,
       "length": 6,
       "value": "\"HEAD\""
     },
     {
-      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/AppLinkNetwork.swift",
+      "filePath": "\/Users\/Linus\/Documents\/Project\/Vlending AppLink\/applink-ios\/Sources\/Core\/AppLinkNetwork.swift",
       "kind": "StringLiteral",
       "offset": 329,
       "length": 6,
       "value": "\"POST\""
     },
     {
-      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/AppLinkNetwork.swift",
+      "filePath": "\/Users\/Linus\/Documents\/Project\/Vlending AppLink\/applink-ios\/Sources\/Core\/AppLinkNetwork.swift",
       "kind": "StringLiteral",
       "offset": 355,
       "length": 5,
       "value": "\"PUT\""
     },
     {
-      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/AppLinkNetwork.swift",
+      "filePath": "\/Users\/Linus\/Documents\/Project\/Vlending AppLink\/applink-ios\/Sources\/Core\/AppLinkNetwork.swift",
       "kind": "StringLiteral",
       "offset": 380,
       "length": 7,
       "value": "\"PATCH\""
     },
     {
-      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/AppLinkNetwork.swift",
+      "filePath": "\/Users\/Linus\/Documents\/Project\/Vlending AppLink\/applink-ios\/Sources\/Core\/AppLinkNetwork.swift",
       "kind": "StringLiteral",
       "offset": 407,
       "length": 8,
       "value": "\"DELETE\""
     },
     {
-      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/AppLinkNetwork.swift",
+      "filePath": "\/Users\/Linus\/Documents\/Project\/Vlending AppLink\/applink-ios\/Sources\/Core\/AppLinkNetwork.swift",
       "kind": "StringLiteral",
       "offset": 435,
       "length": 7,
       "value": "\"TRACE\""
     },
     {
-      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/AppLinkNetwork.swift",
+      "filePath": "\/Users\/Linus\/Documents\/Project\/Vlending AppLink\/applink-ios\/Sources\/Core\/AppLinkNetwork.swift",
       "kind": "StringLiteral",
       "offset": 462,
       "length": 9,
       "value": "\"CONNECT\""
     },
     {
-      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/AppLinkNetwork.swift",
+      "filePath": "\/Users\/Linus\/Documents\/Project\/Vlending AppLink\/applink-ios\/Sources\/Core\/AppLinkNetwork.swift",
       "kind": "Dictionary",
       "offset": 1820,
       "length": 3,
       "value": "[]"
     },
     {
-      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/AppLinkNetwork.swift",
+      "filePath": "\/Users\/Linus\/Documents\/Project\/Vlending AppLink\/applink-ios\/Sources\/Core\/AppLinkNetwork.swift",
       "kind": "StringLiteral",
       "offset": 3485,
       "length": 27,
       "value": "\"co.vlending.queue.network\""
     },
     {
-      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/AppLinkNetwork.swift",
+      "filePath": "\/Users\/Linus\/Documents\/Project\/Vlending AppLink\/applink-ios\/Sources\/Core\/AppLinkNetwork.swift",
       "kind": "StringLiteral",
       "offset": 3689,
       "length": 14,
       "value": "\"applink.info\""
     },
     {
-      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/AppLinkNetwork.swift",
+      "filePath": "\/Users\/Linus\/Documents\/Project\/Vlending AppLink\/applink-ios\/Sources\/Core\/AppLinkNetwork.swift",
       "kind": "BooleanLiteral",
       "offset": 5881,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkError.swift",
+      "filePath": "\/Users\/Linus\/Documents\/Project\/Vlending AppLink\/applink-ios\/Sources\/Core\/LinkError.swift",
       "kind": "IntegerLiteral",
       "offset": 217,
       "length": 2,
       "value": "-1"
     },
     {
-      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkError.swift",
+      "filePath": "\/Users\/Linus\/Documents\/Project\/Vlending AppLink\/applink-ios\/Sources\/Core\/LinkError.swift",
       "kind": "IntegerLiteral",
       "offset": 248,
       "length": 2,
       "value": "-2"
     },
     {
-      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkError.swift",
+      "filePath": "\/Users\/Linus\/Documents\/Project\/Vlending AppLink\/applink-ios\/Sources\/Core\/LinkError.swift",
       "kind": "IntegerLiteral",
       "offset": 277,
       "length": 2,
       "value": "-3"
     },
     {
-      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkError.swift",
+      "filePath": "\/Users\/Linus\/Documents\/Project\/Vlending AppLink\/applink-ios\/Sources\/Core\/LinkError.swift",
       "kind": "IntegerLiteral",
       "offset": 308,
       "length": 2,
       "value": "-4"
     },
     {
-      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkError.swift",
+      "filePath": "\/Users\/Linus\/Documents\/Project\/Vlending AppLink\/applink-ios\/Sources\/Core\/LinkError.swift",
       "kind": "IntegerLiteral",
       "offset": 333,
       "length": 2,
       "value": "-5"
     },
     {
-      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkError.swift",
+      "filePath": "\/Users\/Linus\/Documents\/Project\/Vlending AppLink\/applink-ios\/Sources\/Core\/LinkError.swift",
       "kind": "IntegerLiteral",
       "offset": 359,
       "length": 2,
       "value": "-6"
     },
     {
-      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkError.swift",
+      "filePath": "\/Users\/Linus\/Documents\/Project\/Vlending AppLink\/applink-ios\/Sources\/Core\/LinkError.swift",
       "kind": "IntegerLiteral",
       "offset": 384,
       "length": 3,
       "value": "-11"
     },
     {
-      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkError.swift",
+      "filePath": "\/Users\/Linus\/Documents\/Project\/Vlending AppLink\/applink-ios\/Sources\/Core\/LinkError.swift",
       "kind": "IntegerLiteral",
       "offset": 407,
       "length": 4,
       "value": "-999"
     },
     {
-      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkError.swift",
+      "filePath": "\/Users\/Linus\/Documents\/Project\/Vlending AppLink\/applink-ios\/Sources\/Core\/LinkError.swift",
       "kind": "IntegerLiteral",
       "offset": 217,
       "length": 1,
       "value": "-1"
     },
     {
-      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkError.swift",
+      "filePath": "\/Users\/Linus\/Documents\/Project\/Vlending AppLink\/applink-ios\/Sources\/Core\/LinkError.swift",
       "kind": "IntegerLiteral",
       "offset": 248,
       "length": 1,
       "value": "-2"
     },
     {
-      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkError.swift",
+      "filePath": "\/Users\/Linus\/Documents\/Project\/Vlending AppLink\/applink-ios\/Sources\/Core\/LinkError.swift",
       "kind": "IntegerLiteral",
       "offset": 277,
       "length": 1,
       "value": "-3"
     },
     {
-      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkError.swift",
+      "filePath": "\/Users\/Linus\/Documents\/Project\/Vlending AppLink\/applink-ios\/Sources\/Core\/LinkError.swift",
       "kind": "IntegerLiteral",
       "offset": 308,
       "length": 1,
       "value": "-4"
     },
     {
-      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkError.swift",
+      "filePath": "\/Users\/Linus\/Documents\/Project\/Vlending AppLink\/applink-ios\/Sources\/Core\/LinkError.swift",
       "kind": "IntegerLiteral",
       "offset": 333,
       "length": 1,
       "value": "-5"
     },
     {
-      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkError.swift",
+      "filePath": "\/Users\/Linus\/Documents\/Project\/Vlending AppLink\/applink-ios\/Sources\/Core\/LinkError.swift",
       "kind": "IntegerLiteral",
       "offset": 359,
       "length": 1,
       "value": "-6"
     },
     {
-      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkError.swift",
+      "filePath": "\/Users\/Linus\/Documents\/Project\/Vlending AppLink\/applink-ios\/Sources\/Core\/LinkError.swift",
       "kind": "IntegerLiteral",
       "offset": 384,
       "length": 1,
       "value": "-11"
     },
     {
-      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkError.swift",
+      "filePath": "\/Users\/Linus\/Documents\/Project\/Vlending AppLink\/applink-ios\/Sources\/Core\/LinkError.swift",
       "kind": "IntegerLiteral",
       "offset": 407,
       "length": 1,
       "value": "-999"
     },
     {
-      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkError.swift",
+      "filePath": "\/Users\/Linus\/Documents\/Project\/Vlending AppLink\/applink-ios\/Sources\/Core\/LinkError.swift",
       "kind": "IntegerLiteral",
       "offset": 217,
       "length": 1,
       "value": "-1"
     },
     {
-      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkError.swift",
+      "filePath": "\/Users\/Linus\/Documents\/Project\/Vlending AppLink\/applink-ios\/Sources\/Core\/LinkError.swift",
       "kind": "IntegerLiteral",
       "offset": 248,
       "length": 1,
       "value": "-2"
     },
     {
-      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkError.swift",
+      "filePath": "\/Users\/Linus\/Documents\/Project\/Vlending AppLink\/applink-ios\/Sources\/Core\/LinkError.swift",
       "kind": "IntegerLiteral",
       "offset": 277,
       "length": 1,
       "value": "-3"
     },
     {
-      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkError.swift",
+      "filePath": "\/Users\/Linus\/Documents\/Project\/Vlending AppLink\/applink-ios\/Sources\/Core\/LinkError.swift",
       "kind": "IntegerLiteral",
       "offset": 308,
       "length": 1,
       "value": "-4"
     },
     {
-      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkError.swift",
+      "filePath": "\/Users\/Linus\/Documents\/Project\/Vlending AppLink\/applink-ios\/Sources\/Core\/LinkError.swift",
       "kind": "IntegerLiteral",
       "offset": 333,
       "length": 1,
       "value": "-5"
     },
     {
-      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkError.swift",
+      "filePath": "\/Users\/Linus\/Documents\/Project\/Vlending AppLink\/applink-ios\/Sources\/Core\/LinkError.swift",
       "kind": "IntegerLiteral",
       "offset": 359,
       "length": 1,
       "value": "-6"
     },
     {
-      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkError.swift",
+      "filePath": "\/Users\/Linus\/Documents\/Project\/Vlending AppLink\/applink-ios\/Sources\/Core\/LinkError.swift",
       "kind": "IntegerLiteral",
       "offset": 384,
       "length": 1,
       "value": "-11"
     },
     {
-      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkError.swift",
+      "filePath": "\/Users\/Linus\/Documents\/Project\/Vlending AppLink\/applink-ios\/Sources\/Core\/LinkError.swift",
       "kind": "IntegerLiteral",
       "offset": 407,
       "length": 1,
       "value": "-999"
     },
     {
-      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkError.swift",
+      "filePath": "\/Users\/Linus\/Documents\/Project\/Vlending AppLink\/applink-ios\/Sources\/Core\/LinkError.swift",
       "kind": "StringLiteral",
       "offset": 428,
       "length": 9,
       "value": "\"AppLink.LinkError\""
     },
     {
-      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkError.swift",
+      "filePath": "\/Users\/Linus\/Documents\/Project\/Vlending AppLink\/applink-ios\/Sources\/Core\/LinkError.swift",
       "kind": "StringLiteral",
       "offset": 1224,
       "length": 5,
       "value": "\"msg\""
     },
     {
-      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkError.swift",
+      "filePath": "\/Users\/Linus\/Documents\/Project\/Vlending AppLink\/applink-ios\/Sources\/Core\/LinkError.swift",
       "kind": "StringLiteral",
       "offset": 1224,
       "length": 5,
       "value": "\"msg\""
     },
     {
-      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/AppLink.swift",
+      "filePath": "\/Users\/Linus\/Documents\/Project\/Vlending AppLink\/applink-ios\/Sources\/AppLink.swift",
       "kind": "StringLiteral",
       "offset": 500,
       "length": 7,
-      "value": "\"1.0.0\""
+      "value": "\"0.0.1\""
     },
     {
-      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/AppLinkDataInfo.swift",
+      "filePath": "\/Users\/Linus\/Documents\/Project\/Vlending AppLink\/applink-ios\/Sources\/Core\/AppLinkDataInfo.swift",
       "kind": "StringLiteral",
       "offset": 550,
       "length": 13,
       "value": "\"description\""
     },
     {
-      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/AppLinkDataInfo.swift",
+      "filePath": "\/Users\/Linus\/Documents\/Project\/Vlending AppLink\/applink-ios\/Sources\/Core\/AppLinkDataInfo.swift",
       "kind": "StringLiteral",
       "offset": 589,
       "length": 11,
       "value": "\"image_url\""
     },
     {
-      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/AppLinkDataInfo.swift",
+      "filePath": "\/Users\/Linus\/Documents\/Project\/Vlending AppLink\/applink-ios\/Sources\/Core\/AppLinkDataInfo.swift",
       "kind": "StringLiteral",
       "offset": 623,
       "length": 9,
       "value": "\"web_url\""
     },
     {
-      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/AppLinkDataInfo.swift",
+      "filePath": "\/Users\/Linus\/Documents\/Project\/Vlending AppLink\/applink-ios\/Sources\/Core\/AppLinkDataInfo.swift",
       "kind": "StringLiteral",
       "offset": 550,
       "length": 13,
       "value": "\"description\""
     },
     {
-      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/AppLinkDataInfo.swift",
+      "filePath": "\/Users\/Linus\/Documents\/Project\/Vlending AppLink\/applink-ios\/Sources\/Core\/AppLinkDataInfo.swift",
       "kind": "StringLiteral",
       "offset": 589,
       "length": 11,
       "value": "\"image_url\""
     },
     {
-      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/AppLinkDataInfo.swift",
+      "filePath": "\/Users\/Linus\/Documents\/Project\/Vlending AppLink\/applink-ios\/Sources\/Core\/AppLinkDataInfo.swift",
       "kind": "StringLiteral",
       "offset": 623,
       "length": 9,
       "value": "\"web_url\""
     },
     {
-      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/AppLinkDataInfo.swift",
+      "filePath": "\/Users\/Linus\/Documents\/Project\/Vlending AppLink\/applink-ios\/Sources\/Core\/AppLinkDataInfo.swift",
       "kind": "StringLiteral",
       "offset": 3039,
       "length": 6,
       "value": "\"name\""
     },
     {
-      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/AppLinkDataInfo.swift",
+      "filePath": "\/Users\/Linus\/Documents\/Project\/Vlending AppLink\/applink-ios\/Sources\/Core\/AppLinkDataInfo.swift",
       "kind": "StringLiteral",
       "offset": 3039,
       "length": 6,
       "value": "\"name\""
     },
     {
-      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/AppLinkSession.swift",
+      "filePath": "\/Users\/Linus\/Documents\/Project\/Vlending AppLink\/applink-ios\/Sources\/Core\/AppLinkSession.swift",
       "kind": "StringLiteral",
       "offset": 2086,
       "length": 14,

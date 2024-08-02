@@ -1,0 +1,5 @@
+platform :ios, '13.0'
+
+target 'AppLinkExample' do
+    pod 'VlendingAppLink', :git => 'https://github.com/vlending-dev/applink-ios-sdk.git', :branch => 'develop'
+end
