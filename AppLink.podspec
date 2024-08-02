@@ -12,5 +12,4 @@ Pod::Spec.new do |s|
   s.ios.vendored_frameworks = "Framework/AppLink.xcframework"
   s.frameworks   = 'UIKit', 'Foundation'
   s.swift_version = '5.10'
-  s.resource_bundles = {'VlendingAppLink' => ['Framework/PrivacyInfo.xcprivacy']}
 end
