@@ -23,11 +23,16 @@ public enum LinkErrorrType : Swift.Int {
     get
   }
 }
-@objc @_hasMissingDesignatedInitializers open class LinkError : Foundation.NSError {
+@objc @_hasMissingDesignatedInitializers public class LinkError : Foundation.NSError {
   @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  public var error: any Swift.Error {
+    get
+  }
   @objc deinit
 }
 public struct AppLinkDataError : Swift.Codable {
+  public var code: AppLink.LinkErrorrType?
+  public var message: Swift.String?
   public init(from decoder: any Swift.Decoder) throws
   public func encode(to encoder: any Swift.Encoder) throws
 }
@@ -39,17 +44,30 @@ public enum AppLinkDataCodingError : Swift.Error {
   case decoding(Swift.String)
 }
 public struct AppLinkDataInfo : Swift.Codable {
+  public var title: Swift.String?
+  public var contents: Swift.String?
+  public var thumbnail: Swift.String?
+  public var utm: AppLink.AppLinkDataInfo.AppLinkUTM?
+  public var scheme: Swift.String?
+  public var action: Swift.String?
+  public var webURL: Swift.String?
   public init(from decoder: any Swift.Decoder) throws
   public func encode(to encoder: any Swift.Encoder) throws
   public struct AppLinkUTM : Swift.Codable {
+    public var source: Swift.String?
+    public var medium: Swift.String?
+    public var campaignName: Swift.String?
     public init(from decoder: any Swift.Decoder) throws
     public func encode(to encoder: any Swift.Encoder) throws
   }
 }
-@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers open class AppLinkSession : ObjectiveC.NSObject {
-  public static let shared: AppLink.AppLinkSession
-  open func isAppLink(_ url: Foundation.URL) -> Swift.Bool
-  open func parse(url: Foundation.URL, completion: @escaping ((AppLink.AppLinkDataInfo?, Swift.String, [Foundation.URLQueryItem]?, AppLink.LinkError?) -> Swift.Void))
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class AppLinkSession : ObjectiveC.NSObject {
+  public var apiKey: Swift.String?
+  public var domainURIPrefix: Swift.String?
+  public var userId: Swift.String?
+  public var customScheme: Swift.String?
+  public func isAppLink(_ url: Foundation.URL) -> Swift.Bool
+  public func parse(url: Foundation.URL, completion: @escaping ((AppLink.AppLinkDataInfo?, Swift.String, [Foundation.URLQueryItem]?, AppLink.LinkError?) -> Swift.Void))
   @objc deinit
 }
 extension AppLink.LinkErrorrType : Swift.Equatable {}
