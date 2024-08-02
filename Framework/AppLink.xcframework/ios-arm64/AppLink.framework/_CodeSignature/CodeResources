@@ -14,27 +14,31 @@
 		</data>
 		<key>Modules/AppLink.swiftmodule/arm64-apple-ios.abi.json</key>
 		<data>
-		/bqplLH9CvT+j67YmftNLZkiTgA=
+		gs3H7nf+Jepwi1pN97z/LPVk4wY=
 		</data>
 		<key>Modules/AppLink.swiftmodule/arm64-apple-ios.private.swiftinterface</key>
 		<data>
-		nj5qZ8UTeHht7zwFIrrjK636igg=
+		Dr4/P6qtG3tYqe+i/ngjNLMvIA4=
 		</data>
 		<key>Modules/AppLink.swiftmodule/arm64-apple-ios.swiftdoc</key>
 		<data>
-		YKfEKCiajCbjQMOGqe6yk+PmEC8=
+		RAQtA5bxnbRhzhq0EloOGcrzwz0=
 		</data>
 		<key>Modules/AppLink.swiftmodule/arm64-apple-ios.swiftinterface</key>
 		<data>
-		nj5qZ8UTeHht7zwFIrrjK636igg=
+		Dr4/P6qtG3tYqe+i/ngjNLMvIA4=
 		</data>
 		<key>Modules/AppLink.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<data>
-		pkJ+n8Wj/1lKi8tZnK6t8sO+0WI=
+		SLpvLA5k1/zpSiU8XMijeb53ARA=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
 		6CILuw2EF/6nWituB8boJC+Savg=
+		</data>
+		<key>PrivacyInfo.xcprivacy</key>
+		<data>
+		NShneK41OmWexu9rG/7wq5Jcw4s=
 		</data>
 	</dict>
 	<key>files2</key>
@@ -50,35 +54,35 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			mlD7gC3B0qEMaRdr5FIYbO71wBM0IGMgnNsV3BIKxLI=
+			n2ujwuJVq0FvX/RORpoYHn1MMlR0QI7wPObMVfz6WhM=
 			</data>
 		</dict>
 		<key>Modules/AppLink.swiftmodule/arm64-apple-ios.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			BJQqmn5/LJPZdsAiLoVjKD8oJghWct6E9buaNR8puuU=
+			tikstDmDHwrELH4QpTD/YXtUF3WYY9TfFNnu7yioT4k=
 			</data>
 		</dict>
 		<key>Modules/AppLink.swiftmodule/arm64-apple-ios.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			Np+LpiycKNx7kA8MHJmNyTm8Ku8LfmSh1WPeOQ4GoNE=
+			0b0iu5STgdXakd8OsC5oQemaDQ/ha34+m8u3mrqmAKU=
 			</data>
 		</dict>
 		<key>Modules/AppLink.swiftmodule/arm64-apple-ios.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			BJQqmn5/LJPZdsAiLoVjKD8oJghWct6E9buaNR8puuU=
+			tikstDmDHwrELH4QpTD/YXtUF3WYY9TfFNnu7yioT4k=
 			</data>
 		</dict>
 		<key>Modules/AppLink.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			6dQkj3+0uKnT+1mQEWy+MqMQ8ADubjYatE2ragov5gg=
+			S7lrj/j5fMj3QboNvHgZP7ZNUkbA+zmvbXfb5NfH6Ew=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
@@ -86,6 +90,13 @@
 			<key>hash2</key>
 			<data>
 			izCfXtdTQX/XkbINR9QMFfqQRBD87oxTAxZ96lCbpPU=
+			</data>
+		</dict>
+		<key>PrivacyInfo.xcprivacy</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			XVus/DYyOzJX3kKA1DGFOeIpjAZ8Zvr+35qwR5ChEF4=
 			</data>
 		</dict>
 	</dict>

@@ -483,6 +483,46 @@
           {
             "kind": "Constructor",
             "name": "init",
+            "printedName": "init(coder:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "AppLink.LinkError?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "LinkError",
+                    "printedName": "AppLink.LinkError",
+                    "usr": "c:@M@AppLink@objc(cs)LinkError"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "NSCoder",
+                "printedName": "Foundation.NSCoder",
+                "usr": "c:objc(cs)NSCoder"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "c:@M@AppLink@objc(cs)LinkError(im)initWithCoder:",
+            "mangledName": "$s7AppLink0B5ErrorC5coderACSgSo7NSCoderC_tcfc",
+            "moduleName": "AppLink",
+            "overriding": true,
+            "objc_name": "initWithCoder:",
+            "declAttributes": [
+              "Dynamic",
+              "ObjC",
+              "AccessControl",
+              "Required"
+            ],
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
             "printedName": "init(domain:code:userInfo:)",
             "children": [
               {
@@ -551,6 +591,7 @@
         "usr": "c:@M@AppLink@objc(cs)LinkError",
         "mangledName": "$s7AppLink0B5ErrorC",
         "moduleName": "AppLink",
+        "isOpen": true,
         "declAttributes": [
           "AccessControl",
           "ObjC"
@@ -624,6 +665,91 @@
             "printedName": "Error",
             "usr": "s:s5ErrorP",
             "mangledName": "$ss5ErrorP"
+          }
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "AppLinkDataError",
+        "printedName": "AppLinkDataError",
+        "children": [
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(from:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "AppLinkDataError",
+                "printedName": "AppLink.AppLinkDataError",
+                "usr": "s:7AppLink0aB9DataErrorV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Decoder",
+                "printedName": "any Swift.Decoder",
+                "usr": "s:s7DecoderP"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:7AppLink0aB9DataErrorV4fromACs7Decoder_p_tKcfc",
+            "mangledName": "$s7AppLink0aB9DataErrorV4fromACs7Decoder_p_tKcfc",
+            "moduleName": "AppLink",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "throwing": true,
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Function",
+            "name": "encode",
+            "printedName": "encode(to:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Encoder",
+                "printedName": "any Swift.Encoder",
+                "usr": "s:s7EncoderP"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:7AppLink0aB9DataErrorV6encode2toys7Encoder_p_tKF",
+            "mangledName": "$s7AppLink0aB9DataErrorV6encode2toys7Encoder_p_tKF",
+            "moduleName": "AppLink",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "throwing": true,
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Struct",
+        "usr": "s:7AppLink0aB9DataErrorV",
+        "mangledName": "$s7AppLink0aB9DataErrorV",
+        "moduleName": "AppLink",
+        "declAttributes": [
+          "AccessControl"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Decodable",
+            "printedName": "Decodable",
+            "usr": "s:Se",
+            "mangledName": "$sSe"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Encodable",
+            "printedName": "Encodable",
+            "usr": "s:SE",
+            "mangledName": "$sSE"
           }
         ]
       },
@@ -766,6 +892,256 @@
         ]
       },
       {
+        "kind": "TypeDecl",
+        "name": "AppLinkDataCodingError",
+        "printedName": "AppLinkDataCodingError",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "decoding",
+            "printedName": "decoding",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(AppLink.AppLinkDataCodingError.Type) -> (Swift.String) -> AppLink.AppLinkDataCodingError",
+                "children": [
+                  {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "(Swift.String) -> AppLink.AppLinkDataCodingError",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "AppLinkDataCodingError",
+                        "printedName": "AppLink.AppLinkDataCodingError",
+                        "usr": "s:7AppLink0aB15DataCodingErrorO"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ]
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "AppLink.AppLinkDataCodingError.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "AppLinkDataCodingError",
+                        "printedName": "AppLink.AppLinkDataCodingError",
+                        "usr": "s:7AppLink0aB15DataCodingErrorO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:7AppLink0aB15DataCodingErrorO8decodingyACSScACmF",
+            "mangledName": "$s7AppLink0aB15DataCodingErrorO8decodingyACSScACmF",
+            "moduleName": "AppLink"
+          }
+        ],
+        "declKind": "Enum",
+        "usr": "s:7AppLink0aB15DataCodingErrorO",
+        "mangledName": "$s7AppLink0aB15DataCodingErrorO",
+        "moduleName": "AppLink",
+        "declAttributes": [
+          "AccessControl"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Error",
+            "printedName": "Error",
+            "usr": "s:s5ErrorP",
+            "mangledName": "$ss5ErrorP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Sendable",
+            "printedName": "Sendable",
+            "usr": "s:s8SendableP",
+            "mangledName": "$ss8SendableP"
+          }
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "AppLinkDataInfo",
+        "printedName": "AppLinkDataInfo",
+        "children": [
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(from:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "AppLinkDataInfo",
+                "printedName": "AppLink.AppLinkDataInfo",
+                "usr": "s:7AppLink0aB8DataInfoV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Decoder",
+                "printedName": "any Swift.Decoder",
+                "usr": "s:s7DecoderP"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:7AppLink0aB8DataInfoV4fromACs7Decoder_p_tKcfc",
+            "mangledName": "$s7AppLink0aB8DataInfoV4fromACs7Decoder_p_tKcfc",
+            "moduleName": "AppLink",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "throwing": true,
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Function",
+            "name": "encode",
+            "printedName": "encode(to:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Encoder",
+                "printedName": "any Swift.Encoder",
+                "usr": "s:s7EncoderP"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:7AppLink0aB8DataInfoV6encode2toys7Encoder_p_tKF",
+            "mangledName": "$s7AppLink0aB8DataInfoV6encode2toys7Encoder_p_tKF",
+            "moduleName": "AppLink",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "throwing": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "TypeDecl",
+            "name": "AppLinkUTM",
+            "printedName": "AppLinkUTM",
+            "children": [
+              {
+                "kind": "Constructor",
+                "name": "init",
+                "printedName": "init(from:)",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "AppLinkUTM",
+                    "printedName": "AppLink.AppLinkDataInfo.AppLinkUTM",
+                    "usr": "s:7AppLink0aB8DataInfoV0aB3UTMV"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Decoder",
+                    "printedName": "any Swift.Decoder",
+                    "usr": "s:s7DecoderP"
+                  }
+                ],
+                "declKind": "Constructor",
+                "usr": "s:7AppLink0aB8DataInfoV0aB3UTMV4fromAEs7Decoder_p_tKcfc",
+                "mangledName": "$s7AppLink0aB8DataInfoV0aB3UTMV4fromAEs7Decoder_p_tKcfc",
+                "moduleName": "AppLink",
+                "declAttributes": [
+                  "AccessControl"
+                ],
+                "throwing": true,
+                "init_kind": "Designated"
+              },
+              {
+                "kind": "Function",
+                "name": "encode",
+                "printedName": "encode(to:)",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Encoder",
+                    "printedName": "any Swift.Encoder",
+                    "usr": "s:s7EncoderP"
+                  }
+                ],
+                "declKind": "Func",
+                "usr": "s:7AppLink0aB8DataInfoV0aB3UTMV6encode2toys7Encoder_p_tKF",
+                "mangledName": "$s7AppLink0aB8DataInfoV0aB3UTMV6encode2toys7Encoder_p_tKF",
+                "moduleName": "AppLink",
+                "declAttributes": [
+                  "AccessControl"
+                ],
+                "throwing": true,
+                "funcSelfKind": "NonMutating"
+              }
+            ],
+            "declKind": "Struct",
+            "usr": "s:7AppLink0aB8DataInfoV0aB3UTMV",
+            "mangledName": "$s7AppLink0aB8DataInfoV0aB3UTMV",
+            "moduleName": "AppLink",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "conformances": [
+              {
+                "kind": "Conformance",
+                "name": "Decodable",
+                "printedName": "Decodable",
+                "usr": "s:Se",
+                "mangledName": "$sSe"
+              },
+              {
+                "kind": "Conformance",
+                "name": "Encodable",
+                "printedName": "Encodable",
+                "usr": "s:SE",
+                "mangledName": "$sSE"
+              }
+            ]
+          }
+        ],
+        "declKind": "Struct",
+        "usr": "s:7AppLink0aB8DataInfoV",
+        "mangledName": "$s7AppLink0aB8DataInfoV",
+        "moduleName": "AppLink",
+        "declAttributes": [
+          "AccessControl"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Decodable",
+            "printedName": "Decodable",
+            "usr": "s:Se",
+            "mangledName": "$sSe"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Encodable",
+            "printedName": "Encodable",
+            "usr": "s:SE",
+            "mangledName": "$sSE"
+          }
+        ]
+      },
+      {
         "kind": "Import",
         "name": "UIKit",
         "printedName": "UIKit",
@@ -866,6 +1242,109 @@
             "isOpen": true,
             "declAttributes": [
               "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "parse",
+            "printedName": "parse(url:completion:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "URL",
+                "printedName": "Foundation.URL",
+                "usr": "s:10Foundation3URLV"
+              },
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(AppLink.AppLinkDataInfo?, Swift.String, [Foundation.URLQueryItem]?, AppLink.LinkError?) -> ()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Tuple",
+                    "printedName": "(AppLink.AppLinkDataInfo?, Swift.String, [Foundation.URLQueryItem]?, AppLink.LinkError?)",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Optional",
+                        "printedName": "AppLink.AppLinkDataInfo?",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "AppLinkDataInfo",
+                            "printedName": "AppLink.AppLinkDataInfo",
+                            "usr": "s:7AppLink0aB8DataInfoV"
+                          }
+                        ],
+                        "usr": "s:Sq"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Optional",
+                        "printedName": "[Foundation.URLQueryItem]?",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Array",
+                            "printedName": "[Foundation.URLQueryItem]",
+                            "children": [
+                              {
+                                "kind": "TypeNominal",
+                                "name": "URLQueryItem",
+                                "printedName": "Foundation.URLQueryItem",
+                                "usr": "s:10Foundation12URLQueryItemV"
+                              }
+                            ],
+                            "usr": "s:Sa"
+                          }
+                        ],
+                        "usr": "s:Sq"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Optional",
+                        "printedName": "AppLink.LinkError?",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "LinkError",
+                            "printedName": "AppLink.LinkError",
+                            "usr": "c:@M@AppLink@objc(cs)LinkError"
+                          }
+                        ],
+                        "usr": "s:Sq"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:7AppLink0aB7SessionC5parse3url10completiony10Foundation3URLV_yAA0aB8DataInfoVSg_SSSayAG12URLQueryItemVGSgAA0B5ErrorCSgtctF",
+            "mangledName": "$s7AppLink0aB7SessionC5parse3url10completiony10Foundation3URLV_yAA0aB8DataInfoVSg_SSSayAG12URLQueryItemVGSgAA0B5ErrorCSgtctF",
+            "moduleName": "AppLink",
+            "isOpen": true,
+            "declAttributes": [
+              "AccessControl",
+              "RawDocComment"
             ],
             "funcSelfKind": "NonMutating"
           }
@@ -1286,21 +1765,21 @@
     {
       "filePath": "\/Users\/Linus\/Documents\/Project\/Vlending AppLink\/applink-ios\/Sources\/Core\/LinkError.swift",
       "kind": "StringLiteral",
-      "offset": 428,
+      "offset": 426,
       "length": 9,
       "value": "\"AppLink.LinkError\""
     },
     {
       "filePath": "\/Users\/Linus\/Documents\/Project\/Vlending AppLink\/applink-ios\/Sources\/Core\/LinkError.swift",
       "kind": "StringLiteral",
-      "offset": 1224,
+      "offset": 1236,
       "length": 5,
       "value": "\"msg\""
     },
     {
       "filePath": "\/Users\/Linus\/Documents\/Project\/Vlending AppLink\/applink-ios\/Sources\/Core\/LinkError.swift",
       "kind": "StringLiteral",
-      "offset": 1224,
+      "offset": 1236,
       "length": 5,
       "value": "\"msg\""
     },
@@ -1314,56 +1793,56 @@
     {
       "filePath": "\/Users\/Linus\/Documents\/Project\/Vlending AppLink\/applink-ios\/Sources\/Core\/AppLinkDataInfo.swift",
       "kind": "StringLiteral",
-      "offset": 550,
+      "offset": 564,
       "length": 13,
       "value": "\"description\""
     },
     {
       "filePath": "\/Users\/Linus\/Documents\/Project\/Vlending AppLink\/applink-ios\/Sources\/Core\/AppLinkDataInfo.swift",
       "kind": "StringLiteral",
-      "offset": 589,
+      "offset": 603,
       "length": 11,
       "value": "\"image_url\""
     },
     {
       "filePath": "\/Users\/Linus\/Documents\/Project\/Vlending AppLink\/applink-ios\/Sources\/Core\/AppLinkDataInfo.swift",
       "kind": "StringLiteral",
-      "offset": 623,
+      "offset": 637,
       "length": 9,
       "value": "\"web_url\""
     },
     {
       "filePath": "\/Users\/Linus\/Documents\/Project\/Vlending AppLink\/applink-ios\/Sources\/Core\/AppLinkDataInfo.swift",
       "kind": "StringLiteral",
-      "offset": 550,
+      "offset": 564,
       "length": 13,
       "value": "\"description\""
     },
     {
       "filePath": "\/Users\/Linus\/Documents\/Project\/Vlending AppLink\/applink-ios\/Sources\/Core\/AppLinkDataInfo.swift",
       "kind": "StringLiteral",
-      "offset": 589,
+      "offset": 603,
       "length": 11,
       "value": "\"image_url\""
     },
     {
       "filePath": "\/Users\/Linus\/Documents\/Project\/Vlending AppLink\/applink-ios\/Sources\/Core\/AppLinkDataInfo.swift",
       "kind": "StringLiteral",
-      "offset": 623,
+      "offset": 637,
       "length": 9,
       "value": "\"web_url\""
     },
     {
       "filePath": "\/Users\/Linus\/Documents\/Project\/Vlending AppLink\/applink-ios\/Sources\/Core\/AppLinkDataInfo.swift",
       "kind": "StringLiteral",
-      "offset": 3039,
+      "offset": 3074,
       "length": 6,
       "value": "\"name\""
     },
     {
       "filePath": "\/Users\/Linus\/Documents\/Project\/Vlending AppLink\/applink-ios\/Sources\/Core\/AppLinkDataInfo.swift",
       "kind": "StringLiteral",
-      "offset": 3039,
+      "offset": 3074,
       "length": 6,
       "value": "\"name\""
     },

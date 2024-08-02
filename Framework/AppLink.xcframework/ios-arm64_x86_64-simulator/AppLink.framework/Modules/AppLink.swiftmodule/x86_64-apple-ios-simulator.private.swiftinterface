@@ -23,16 +23,33 @@ public enum LinkErrorrType : Swift.Int {
     get
   }
 }
-@objc @_hasMissingDesignatedInitializers public class LinkError : Foundation.NSError {
+@objc @_hasMissingDesignatedInitializers open class LinkError : Foundation.NSError {
+  @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
   @objc deinit
+}
+public struct AppLinkDataError : Swift.Codable {
+  public init(from decoder: any Swift.Decoder) throws
+  public func encode(to encoder: any Swift.Encoder) throws
 }
 public let AppLink: AppLink.AppLinkSession
 public enum AppLinkInfo {
   public static let version: Swift.String
 }
+public enum AppLinkDataCodingError : Swift.Error {
+  case decoding(Swift.String)
+}
+public struct AppLinkDataInfo : Swift.Codable {
+  public init(from decoder: any Swift.Decoder) throws
+  public func encode(to encoder: any Swift.Encoder) throws
+  public struct AppLinkUTM : Swift.Codable {
+    public init(from decoder: any Swift.Decoder) throws
+    public func encode(to encoder: any Swift.Encoder) throws
+  }
+}
 @objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers open class AppLinkSession : ObjectiveC.NSObject {
   public static let shared: AppLink.AppLinkSession
   open func isAppLink(_ url: Foundation.URL) -> Swift.Bool
+  open func parse(url: Foundation.URL, completion: @escaping ((AppLink.AppLinkDataInfo?, Swift.String, [Foundation.URLQueryItem]?, AppLink.LinkError?) -> Swift.Void))
   @objc deinit
 }
 extension AppLink.LinkErrorrType : Swift.Equatable {}
