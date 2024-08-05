@@ -44,6 +44,7 @@ public struct AppLinkRequest : Swift.Codable {
   public var title: Swift.String?
   public var description: Swift.String?
   public var deeplinkAction: Swift.String?
+  public init(scheme: Swift.String?, title: Swift.String?, description: Swift.String? = nil, url: Swift.String?)
   public init(from decoder: any Swift.Decoder) throws
   public func encode(to encoder: any Swift.Encoder) throws
 }

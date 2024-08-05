@@ -1064,7 +1064,8 @@
             "declAttributes": [
               "HasInitialValue",
               "HasStorage",
-              "AccessControl"
+              "AccessControl",
+              "RawDocComment"
             ],
             "hasStorage": true,
             "accessors": [
@@ -1806,6 +1807,84 @@
                 "accessorKind": "_modify"
               }
             ]
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(scheme:title:description:url:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "AppLinkRequest",
+                "printedName": "AppLink.AppLinkRequest",
+                "usr": "s:7AppLink0aB7RequestV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:7AppLink0aB7RequestV6scheme5title11description3urlACSSSg_A3Htcfc",
+            "mangledName": "$s7AppLink0aB7RequestV6scheme5title11description3urlACSSSg_A3Htcfc",
+            "moduleName": "AppLink",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "init_kind": "Designated"
           },
           {
             "kind": "Constructor",
@@ -4470,58 +4549,44 @@
     {
       "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/AppLinkRequest.swift",
       "kind": "StringLiteral",
-      "offset": 604,
+      "offset": 606,
       "length": 9,
       "value": "\"web_url\""
     },
     {
       "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/AppLinkRequest.swift",
       "kind": "StringLiteral",
-      "offset": 638,
+      "offset": 640,
       "length": 11,
       "value": "\"image_url\""
     },
     {
       "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/AppLinkRequest.swift",
       "kind": "StringLiteral",
-      "offset": 680,
+      "offset": 682,
       "length": 8,
       "value": "\"action\""
     },
     {
       "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/AppLinkRequest.swift",
       "kind": "StringLiteral",
-      "offset": 714,
-      "length": 19,
-      "value": "\"domain_uri_prefix\""
-    },
-    {
-      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/AppLinkRequest.swift",
-      "kind": "StringLiteral",
-      "offset": 604,
+      "offset": 606,
       "length": 9,
       "value": "\"web_url\""
     },
     {
       "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/AppLinkRequest.swift",
       "kind": "StringLiteral",
-      "offset": 638,
+      "offset": 640,
       "length": 11,
       "value": "\"image_url\""
     },
     {
       "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/AppLinkRequest.swift",
       "kind": "StringLiteral",
-      "offset": 680,
+      "offset": 682,
       "length": 8,
       "value": "\"action\""
-    },
-    {
-      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/AppLinkRequest.swift",
-      "kind": "StringLiteral",
-      "offset": 714,
-      "length": 19,
-      "value": "\"domain_uri_prefix\""
     },
     {
       "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/AppLink.swift",
