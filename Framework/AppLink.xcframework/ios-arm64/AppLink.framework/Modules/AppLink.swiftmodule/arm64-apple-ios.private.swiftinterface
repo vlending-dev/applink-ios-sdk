@@ -36,6 +36,17 @@ public struct AppLinkDataError : Swift.Codable {
   public init(from decoder: any Swift.Decoder) throws
   public func encode(to encoder: any Swift.Encoder) throws
 }
+public struct AppLinkRequest : Swift.Codable {
+  public var webURL: Swift.String?
+  public var imageURL: Swift.String?
+  public var scheme: Swift.String?
+  public var utm: AppLink.AppLinkDataInfo.AppLinkUTM?
+  public var title: Swift.String?
+  public var description: Swift.String?
+  public var deeplinkAction: Swift.String?
+  public init(from decoder: any Swift.Decoder) throws
+  public func encode(to encoder: any Swift.Encoder) throws
+}
 public let AppLink: AppLink.AppLinkSession
 public enum AppLinkInfo {
   public static let version: Swift.String
@@ -68,6 +79,7 @@ public struct AppLinkDataInfo : Swift.Codable {
   public var customScheme: Swift.String?
   public func isAppLink(_ url: Foundation.URL) -> Swift.Bool
   public func parse(url: Foundation.URL, completion: @escaping ((AppLink.AppLinkDataInfo?, Swift.String, [Foundation.URLQueryItem]?, AppLink.LinkError?) -> Swift.Void))
+  public func request(link request: AppLink.AppLinkRequest, completion: @escaping ((Foundation.URL?, AppLink.LinkError?) -> Swift.Void))
   @objc deinit
 }
 extension AppLink.LinkErrorrType : Swift.Equatable {}

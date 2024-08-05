@@ -1033,6 +1033,872 @@
         ]
       },
       {
+        "kind": "TypeDecl",
+        "name": "AppLinkRequest",
+        "printedName": "AppLinkRequest",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "webURL",
+            "printedName": "webURL",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:7AppLink0aB7RequestV6webURLSSSgvp",
+            "mangledName": "$s7AppLink0aB7RequestV6webURLSSSgvp",
+            "moduleName": "AppLink",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:7AppLink0aB7RequestV6webURLSSSgvg",
+                "mangledName": "$s7AppLink0aB7RequestV6webURLSSSgvg",
+                "moduleName": "AppLink",
+                "implicit": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:7AppLink0aB7RequestV6webURLSSSgvs",
+                "mangledName": "$s7AppLink0aB7RequestV6webURLSSSgvs",
+                "moduleName": "AppLink",
+                "implicit": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:7AppLink0aB7RequestV6webURLSSSgvM",
+                "mangledName": "$s7AppLink0aB7RequestV6webURLSSSgvM",
+                "moduleName": "AppLink",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "imageURL",
+            "printedName": "imageURL",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:7AppLink0aB7RequestV8imageURLSSSgvp",
+            "mangledName": "$s7AppLink0aB7RequestV8imageURLSSSgvp",
+            "moduleName": "AppLink",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:7AppLink0aB7RequestV8imageURLSSSgvg",
+                "mangledName": "$s7AppLink0aB7RequestV8imageURLSSSgvg",
+                "moduleName": "AppLink",
+                "implicit": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:7AppLink0aB7RequestV8imageURLSSSgvs",
+                "mangledName": "$s7AppLink0aB7RequestV8imageURLSSSgvs",
+                "moduleName": "AppLink",
+                "implicit": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:7AppLink0aB7RequestV8imageURLSSSgvM",
+                "mangledName": "$s7AppLink0aB7RequestV8imageURLSSSgvM",
+                "moduleName": "AppLink",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "scheme",
+            "printedName": "scheme",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:7AppLink0aB7RequestV6schemeSSSgvp",
+            "mangledName": "$s7AppLink0aB7RequestV6schemeSSSgvp",
+            "moduleName": "AppLink",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:7AppLink0aB7RequestV6schemeSSSgvg",
+                "mangledName": "$s7AppLink0aB7RequestV6schemeSSSgvg",
+                "moduleName": "AppLink",
+                "implicit": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:7AppLink0aB7RequestV6schemeSSSgvs",
+                "mangledName": "$s7AppLink0aB7RequestV6schemeSSSgvs",
+                "moduleName": "AppLink",
+                "implicit": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:7AppLink0aB7RequestV6schemeSSSgvM",
+                "mangledName": "$s7AppLink0aB7RequestV6schemeSSSgvM",
+                "moduleName": "AppLink",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "utm",
+            "printedName": "utm",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "AppLink.AppLinkDataInfo.AppLinkUTM?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "AppLinkUTM",
+                    "printedName": "AppLink.AppLinkDataInfo.AppLinkUTM",
+                    "usr": "s:7AppLink0aB8DataInfoV0aB3UTMV"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:7AppLink0aB7RequestV3utmAA0aB8DataInfoV0aB3UTMVSgvp",
+            "mangledName": "$s7AppLink0aB7RequestV3utmAA0aB8DataInfoV0aB3UTMVSgvp",
+            "moduleName": "AppLink",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "AppLink.AppLinkDataInfo.AppLinkUTM?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "AppLinkUTM",
+                        "printedName": "AppLink.AppLinkDataInfo.AppLinkUTM",
+                        "usr": "s:7AppLink0aB8DataInfoV0aB3UTMV"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:7AppLink0aB7RequestV3utmAA0aB8DataInfoV0aB3UTMVSgvg",
+                "mangledName": "$s7AppLink0aB7RequestV3utmAA0aB8DataInfoV0aB3UTMVSgvg",
+                "moduleName": "AppLink",
+                "implicit": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "AppLink.AppLinkDataInfo.AppLinkUTM?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "AppLinkUTM",
+                        "printedName": "AppLink.AppLinkDataInfo.AppLinkUTM",
+                        "usr": "s:7AppLink0aB8DataInfoV0aB3UTMV"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:7AppLink0aB7RequestV3utmAA0aB8DataInfoV0aB3UTMVSgvs",
+                "mangledName": "$s7AppLink0aB7RequestV3utmAA0aB8DataInfoV0aB3UTMVSgvs",
+                "moduleName": "AppLink",
+                "implicit": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:7AppLink0aB7RequestV3utmAA0aB8DataInfoV0aB3UTMVSgvM",
+                "mangledName": "$s7AppLink0aB7RequestV3utmAA0aB8DataInfoV0aB3UTMVSgvM",
+                "moduleName": "AppLink",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "title",
+            "printedName": "title",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:7AppLink0aB7RequestV5titleSSSgvp",
+            "mangledName": "$s7AppLink0aB7RequestV5titleSSSgvp",
+            "moduleName": "AppLink",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:7AppLink0aB7RequestV5titleSSSgvg",
+                "mangledName": "$s7AppLink0aB7RequestV5titleSSSgvg",
+                "moduleName": "AppLink",
+                "implicit": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:7AppLink0aB7RequestV5titleSSSgvs",
+                "mangledName": "$s7AppLink0aB7RequestV5titleSSSgvs",
+                "moduleName": "AppLink",
+                "implicit": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:7AppLink0aB7RequestV5titleSSSgvM",
+                "mangledName": "$s7AppLink0aB7RequestV5titleSSSgvM",
+                "moduleName": "AppLink",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "description",
+            "printedName": "description",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:7AppLink0aB7RequestV11descriptionSSSgvp",
+            "mangledName": "$s7AppLink0aB7RequestV11descriptionSSSgvp",
+            "moduleName": "AppLink",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:7AppLink0aB7RequestV11descriptionSSSgvg",
+                "mangledName": "$s7AppLink0aB7RequestV11descriptionSSSgvg",
+                "moduleName": "AppLink",
+                "implicit": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:7AppLink0aB7RequestV11descriptionSSSgvs",
+                "mangledName": "$s7AppLink0aB7RequestV11descriptionSSSgvs",
+                "moduleName": "AppLink",
+                "implicit": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:7AppLink0aB7RequestV11descriptionSSSgvM",
+                "mangledName": "$s7AppLink0aB7RequestV11descriptionSSSgvM",
+                "moduleName": "AppLink",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "deeplinkAction",
+            "printedName": "deeplinkAction",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:7AppLink0aB7RequestV14deeplinkActionSSSgvp",
+            "mangledName": "$s7AppLink0aB7RequestV14deeplinkActionSSSgvp",
+            "moduleName": "AppLink",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:7AppLink0aB7RequestV14deeplinkActionSSSgvg",
+                "mangledName": "$s7AppLink0aB7RequestV14deeplinkActionSSSgvg",
+                "moduleName": "AppLink",
+                "implicit": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:7AppLink0aB7RequestV14deeplinkActionSSSgvs",
+                "mangledName": "$s7AppLink0aB7RequestV14deeplinkActionSSSgvs",
+                "moduleName": "AppLink",
+                "implicit": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:7AppLink0aB7RequestV14deeplinkActionSSSgvM",
+                "mangledName": "$s7AppLink0aB7RequestV14deeplinkActionSSSgvM",
+                "moduleName": "AppLink",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(from:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "AppLinkRequest",
+                "printedName": "AppLink.AppLinkRequest",
+                "usr": "s:7AppLink0aB7RequestV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Decoder",
+                "printedName": "any Swift.Decoder",
+                "usr": "s:s7DecoderP"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:7AppLink0aB7RequestV4fromACs7Decoder_p_tKcfc",
+            "mangledName": "$s7AppLink0aB7RequestV4fromACs7Decoder_p_tKcfc",
+            "moduleName": "AppLink",
+            "declAttributes": [
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "throwing": true,
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Function",
+            "name": "encode",
+            "printedName": "encode(to:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Encoder",
+                "printedName": "any Swift.Encoder",
+                "usr": "s:s7EncoderP"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:7AppLink0aB7RequestV6encode2toys7Encoder_p_tKF",
+            "mangledName": "$s7AppLink0aB7RequestV6encode2toys7Encoder_p_tKF",
+            "moduleName": "AppLink",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "throwing": true,
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Struct",
+        "usr": "s:7AppLink0aB7RequestV",
+        "mangledName": "$s7AppLink0aB7RequestV",
+        "moduleName": "AppLink",
+        "declAttributes": [
+          "AccessControl"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Decodable",
+            "printedName": "Decodable",
+            "usr": "s:Se",
+            "mangledName": "$sSe"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Encodable",
+            "printedName": "Encodable",
+            "usr": "s:SE",
+            "mangledName": "$sSE"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "AppLink",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
         "kind": "Var",
         "name": "AppLink",
         "printedName": "AppLink",
@@ -3093,6 +3959,79 @@
               "RawDocComment"
             ],
             "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "request",
+            "printedName": "request(link:completion:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "AppLinkRequest",
+                "printedName": "AppLink.AppLinkRequest",
+                "usr": "s:7AppLink0aB7RequestV"
+              },
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(Foundation.URL?, AppLink.LinkError?) -> ()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Tuple",
+                    "printedName": "(Foundation.URL?, AppLink.LinkError?)",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Optional",
+                        "printedName": "Foundation.URL?",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "URL",
+                            "printedName": "Foundation.URL",
+                            "usr": "s:10Foundation3URLV"
+                          }
+                        ],
+                        "usr": "s:Sq"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Optional",
+                        "printedName": "AppLink.LinkError?",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "LinkError",
+                            "printedName": "AppLink.LinkError",
+                            "usr": "c:@M@AppLink@objc(cs)LinkError"
+                          }
+                        ],
+                        "usr": "s:Sq"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:7AppLink0aB7SessionC7request4link10completionyAA0aB7RequestV_y10Foundation3URLVSg_AA0B5ErrorCSgtctF",
+            "mangledName": "$s7AppLink0aB7SessionC7request4link10completionyAA0aB7RequestV_y10Foundation3URLVSg_AA0B5ErrorCSgtctF",
+            "moduleName": "AppLink",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
           }
         ],
         "declKind": "Class",
@@ -3186,413 +4125,469 @@
   },
   "ConstValues": [
     {
-      "filePath": "\/Users\/Linus\/Documents\/Project\/Vlending AppLink\/applink-ios\/Sources\/Core\/AppLinkNetwork.swift",
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/AppLinkNetwork.swift",
       "kind": "StringLiteral",
       "offset": 249,
       "length": 9,
       "value": "\"OPTIONS\""
     },
     {
-      "filePath": "\/Users\/Linus\/Documents\/Project\/Vlending AppLink\/applink-ios\/Sources\/Core\/AppLinkNetwork.swift",
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/AppLinkNetwork.swift",
       "kind": "StringLiteral",
       "offset": 278,
       "length": 5,
       "value": "\"GET\""
     },
     {
-      "filePath": "\/Users\/Linus\/Documents\/Project\/Vlending AppLink\/applink-ios\/Sources\/Core\/AppLinkNetwork.swift",
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/AppLinkNetwork.swift",
       "kind": "StringLiteral",
       "offset": 303,
       "length": 6,
       "value": "\"HEAD\""
     },
     {
-      "filePath": "\/Users\/Linus\/Documents\/Project\/Vlending AppLink\/applink-ios\/Sources\/Core\/AppLinkNetwork.swift",
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/AppLinkNetwork.swift",
       "kind": "StringLiteral",
       "offset": 329,
       "length": 6,
       "value": "\"POST\""
     },
     {
-      "filePath": "\/Users\/Linus\/Documents\/Project\/Vlending AppLink\/applink-ios\/Sources\/Core\/AppLinkNetwork.swift",
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/AppLinkNetwork.swift",
       "kind": "StringLiteral",
       "offset": 355,
       "length": 5,
       "value": "\"PUT\""
     },
     {
-      "filePath": "\/Users\/Linus\/Documents\/Project\/Vlending AppLink\/applink-ios\/Sources\/Core\/AppLinkNetwork.swift",
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/AppLinkNetwork.swift",
       "kind": "StringLiteral",
       "offset": 380,
       "length": 7,
       "value": "\"PATCH\""
     },
     {
-      "filePath": "\/Users\/Linus\/Documents\/Project\/Vlending AppLink\/applink-ios\/Sources\/Core\/AppLinkNetwork.swift",
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/AppLinkNetwork.swift",
       "kind": "StringLiteral",
       "offset": 407,
       "length": 8,
       "value": "\"DELETE\""
     },
     {
-      "filePath": "\/Users\/Linus\/Documents\/Project\/Vlending AppLink\/applink-ios\/Sources\/Core\/AppLinkNetwork.swift",
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/AppLinkNetwork.swift",
       "kind": "StringLiteral",
       "offset": 435,
       "length": 7,
       "value": "\"TRACE\""
     },
     {
-      "filePath": "\/Users\/Linus\/Documents\/Project\/Vlending AppLink\/applink-ios\/Sources\/Core\/AppLinkNetwork.swift",
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/AppLinkNetwork.swift",
       "kind": "StringLiteral",
       "offset": 462,
       "length": 9,
       "value": "\"CONNECT\""
     },
     {
-      "filePath": "\/Users\/Linus\/Documents\/Project\/Vlending AppLink\/applink-ios\/Sources\/Core\/AppLinkNetwork.swift",
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/AppLinkNetwork.swift",
       "kind": "StringLiteral",
       "offset": 249,
       "length": 9,
       "value": "\"OPTIONS\""
     },
     {
-      "filePath": "\/Users\/Linus\/Documents\/Project\/Vlending AppLink\/applink-ios\/Sources\/Core\/AppLinkNetwork.swift",
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/AppLinkNetwork.swift",
       "kind": "StringLiteral",
       "offset": 278,
       "length": 5,
       "value": "\"GET\""
     },
     {
-      "filePath": "\/Users\/Linus\/Documents\/Project\/Vlending AppLink\/applink-ios\/Sources\/Core\/AppLinkNetwork.swift",
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/AppLinkNetwork.swift",
       "kind": "StringLiteral",
       "offset": 303,
       "length": 6,
       "value": "\"HEAD\""
     },
     {
-      "filePath": "\/Users\/Linus\/Documents\/Project\/Vlending AppLink\/applink-ios\/Sources\/Core\/AppLinkNetwork.swift",
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/AppLinkNetwork.swift",
       "kind": "StringLiteral",
       "offset": 329,
       "length": 6,
       "value": "\"POST\""
     },
     {
-      "filePath": "\/Users\/Linus\/Documents\/Project\/Vlending AppLink\/applink-ios\/Sources\/Core\/AppLinkNetwork.swift",
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/AppLinkNetwork.swift",
       "kind": "StringLiteral",
       "offset": 355,
       "length": 5,
       "value": "\"PUT\""
     },
     {
-      "filePath": "\/Users\/Linus\/Documents\/Project\/Vlending AppLink\/applink-ios\/Sources\/Core\/AppLinkNetwork.swift",
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/AppLinkNetwork.swift",
       "kind": "StringLiteral",
       "offset": 380,
       "length": 7,
       "value": "\"PATCH\""
     },
     {
-      "filePath": "\/Users\/Linus\/Documents\/Project\/Vlending AppLink\/applink-ios\/Sources\/Core\/AppLinkNetwork.swift",
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/AppLinkNetwork.swift",
       "kind": "StringLiteral",
       "offset": 407,
       "length": 8,
       "value": "\"DELETE\""
     },
     {
-      "filePath": "\/Users\/Linus\/Documents\/Project\/Vlending AppLink\/applink-ios\/Sources\/Core\/AppLinkNetwork.swift",
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/AppLinkNetwork.swift",
       "kind": "StringLiteral",
       "offset": 435,
       "length": 7,
       "value": "\"TRACE\""
     },
     {
-      "filePath": "\/Users\/Linus\/Documents\/Project\/Vlending AppLink\/applink-ios\/Sources\/Core\/AppLinkNetwork.swift",
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/AppLinkNetwork.swift",
       "kind": "StringLiteral",
       "offset": 462,
       "length": 9,
       "value": "\"CONNECT\""
     },
     {
-      "filePath": "\/Users\/Linus\/Documents\/Project\/Vlending AppLink\/applink-ios\/Sources\/Core\/AppLinkNetwork.swift",
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/AppLinkNetwork.swift",
       "kind": "Dictionary",
       "offset": 1820,
       "length": 3,
       "value": "[]"
     },
     {
-      "filePath": "\/Users\/Linus\/Documents\/Project\/Vlending AppLink\/applink-ios\/Sources\/Core\/AppLinkNetwork.swift",
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/AppLinkNetwork.swift",
       "kind": "StringLiteral",
       "offset": 3485,
       "length": 27,
       "value": "\"co.vlending.queue.network\""
     },
     {
-      "filePath": "\/Users\/Linus\/Documents\/Project\/Vlending AppLink\/applink-ios\/Sources\/Core\/AppLinkNetwork.swift",
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/AppLinkNetwork.swift",
       "kind": "StringLiteral",
       "offset": 3689,
       "length": 14,
       "value": "\"applink.info\""
     },
     {
-      "filePath": "\/Users\/Linus\/Documents\/Project\/Vlending AppLink\/applink-ios\/Sources\/Core\/AppLinkNetwork.swift",
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/AppLinkNetwork.swift",
       "kind": "BooleanLiteral",
       "offset": 5881,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/Linus\/Documents\/Project\/Vlending AppLink\/applink-ios\/Sources\/Core\/LinkError.swift",
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkError.swift",
       "kind": "IntegerLiteral",
       "offset": 217,
       "length": 2,
       "value": "-1"
     },
     {
-      "filePath": "\/Users\/Linus\/Documents\/Project\/Vlending AppLink\/applink-ios\/Sources\/Core\/LinkError.swift",
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkError.swift",
       "kind": "IntegerLiteral",
       "offset": 248,
       "length": 2,
       "value": "-2"
     },
     {
-      "filePath": "\/Users\/Linus\/Documents\/Project\/Vlending AppLink\/applink-ios\/Sources\/Core\/LinkError.swift",
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkError.swift",
       "kind": "IntegerLiteral",
       "offset": 277,
       "length": 2,
       "value": "-3"
     },
     {
-      "filePath": "\/Users\/Linus\/Documents\/Project\/Vlending AppLink\/applink-ios\/Sources\/Core\/LinkError.swift",
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkError.swift",
       "kind": "IntegerLiteral",
       "offset": 308,
       "length": 2,
       "value": "-4"
     },
     {
-      "filePath": "\/Users\/Linus\/Documents\/Project\/Vlending AppLink\/applink-ios\/Sources\/Core\/LinkError.swift",
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkError.swift",
       "kind": "IntegerLiteral",
       "offset": 333,
       "length": 2,
       "value": "-5"
     },
     {
-      "filePath": "\/Users\/Linus\/Documents\/Project\/Vlending AppLink\/applink-ios\/Sources\/Core\/LinkError.swift",
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkError.swift",
       "kind": "IntegerLiteral",
       "offset": 359,
       "length": 2,
       "value": "-6"
     },
     {
-      "filePath": "\/Users\/Linus\/Documents\/Project\/Vlending AppLink\/applink-ios\/Sources\/Core\/LinkError.swift",
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkError.swift",
       "kind": "IntegerLiteral",
       "offset": 384,
       "length": 3,
       "value": "-11"
     },
     {
-      "filePath": "\/Users\/Linus\/Documents\/Project\/Vlending AppLink\/applink-ios\/Sources\/Core\/LinkError.swift",
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkError.swift",
       "kind": "IntegerLiteral",
       "offset": 407,
       "length": 4,
       "value": "-999"
     },
     {
-      "filePath": "\/Users\/Linus\/Documents\/Project\/Vlending AppLink\/applink-ios\/Sources\/Core\/LinkError.swift",
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkError.swift",
       "kind": "IntegerLiteral",
       "offset": 217,
       "length": 1,
       "value": "-1"
     },
     {
-      "filePath": "\/Users\/Linus\/Documents\/Project\/Vlending AppLink\/applink-ios\/Sources\/Core\/LinkError.swift",
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkError.swift",
       "kind": "IntegerLiteral",
       "offset": 248,
       "length": 1,
       "value": "-2"
     },
     {
-      "filePath": "\/Users\/Linus\/Documents\/Project\/Vlending AppLink\/applink-ios\/Sources\/Core\/LinkError.swift",
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkError.swift",
       "kind": "IntegerLiteral",
       "offset": 277,
       "length": 1,
       "value": "-3"
     },
     {
-      "filePath": "\/Users\/Linus\/Documents\/Project\/Vlending AppLink\/applink-ios\/Sources\/Core\/LinkError.swift",
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkError.swift",
       "kind": "IntegerLiteral",
       "offset": 308,
       "length": 1,
       "value": "-4"
     },
     {
-      "filePath": "\/Users\/Linus\/Documents\/Project\/Vlending AppLink\/applink-ios\/Sources\/Core\/LinkError.swift",
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkError.swift",
       "kind": "IntegerLiteral",
       "offset": 333,
       "length": 1,
       "value": "-5"
     },
     {
-      "filePath": "\/Users\/Linus\/Documents\/Project\/Vlending AppLink\/applink-ios\/Sources\/Core\/LinkError.swift",
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkError.swift",
       "kind": "IntegerLiteral",
       "offset": 359,
       "length": 1,
       "value": "-6"
     },
     {
-      "filePath": "\/Users\/Linus\/Documents\/Project\/Vlending AppLink\/applink-ios\/Sources\/Core\/LinkError.swift",
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkError.swift",
       "kind": "IntegerLiteral",
       "offset": 384,
       "length": 1,
       "value": "-11"
     },
     {
-      "filePath": "\/Users\/Linus\/Documents\/Project\/Vlending AppLink\/applink-ios\/Sources\/Core\/LinkError.swift",
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkError.swift",
       "kind": "IntegerLiteral",
       "offset": 407,
       "length": 1,
       "value": "-999"
     },
     {
-      "filePath": "\/Users\/Linus\/Documents\/Project\/Vlending AppLink\/applink-ios\/Sources\/Core\/LinkError.swift",
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkError.swift",
       "kind": "IntegerLiteral",
       "offset": 217,
       "length": 1,
       "value": "-1"
     },
     {
-      "filePath": "\/Users\/Linus\/Documents\/Project\/Vlending AppLink\/applink-ios\/Sources\/Core\/LinkError.swift",
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkError.swift",
       "kind": "IntegerLiteral",
       "offset": 248,
       "length": 1,
       "value": "-2"
     },
     {
-      "filePath": "\/Users\/Linus\/Documents\/Project\/Vlending AppLink\/applink-ios\/Sources\/Core\/LinkError.swift",
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkError.swift",
       "kind": "IntegerLiteral",
       "offset": 277,
       "length": 1,
       "value": "-3"
     },
     {
-      "filePath": "\/Users\/Linus\/Documents\/Project\/Vlending AppLink\/applink-ios\/Sources\/Core\/LinkError.swift",
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkError.swift",
       "kind": "IntegerLiteral",
       "offset": 308,
       "length": 1,
       "value": "-4"
     },
     {
-      "filePath": "\/Users\/Linus\/Documents\/Project\/Vlending AppLink\/applink-ios\/Sources\/Core\/LinkError.swift",
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkError.swift",
       "kind": "IntegerLiteral",
       "offset": 333,
       "length": 1,
       "value": "-5"
     },
     {
-      "filePath": "\/Users\/Linus\/Documents\/Project\/Vlending AppLink\/applink-ios\/Sources\/Core\/LinkError.swift",
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkError.swift",
       "kind": "IntegerLiteral",
       "offset": 359,
       "length": 1,
       "value": "-6"
     },
     {
-      "filePath": "\/Users\/Linus\/Documents\/Project\/Vlending AppLink\/applink-ios\/Sources\/Core\/LinkError.swift",
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkError.swift",
       "kind": "IntegerLiteral",
       "offset": 384,
       "length": 1,
       "value": "-11"
     },
     {
-      "filePath": "\/Users\/Linus\/Documents\/Project\/Vlending AppLink\/applink-ios\/Sources\/Core\/LinkError.swift",
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkError.swift",
       "kind": "IntegerLiteral",
       "offset": 407,
       "length": 1,
       "value": "-999"
     },
     {
-      "filePath": "\/Users\/Linus\/Documents\/Project\/Vlending AppLink\/applink-ios\/Sources\/Core\/LinkError.swift",
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkError.swift",
       "kind": "StringLiteral",
       "offset": 428,
       "length": 9,
       "value": "\"AppLink.LinkError\""
     },
     {
-      "filePath": "\/Users\/Linus\/Documents\/Project\/Vlending AppLink\/applink-ios\/Sources\/Core\/LinkError.swift",
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkError.swift",
       "kind": "StringLiteral",
       "offset": 1259,
       "length": 5,
       "value": "\"msg\""
     },
     {
-      "filePath": "\/Users\/Linus\/Documents\/Project\/Vlending AppLink\/applink-ios\/Sources\/Core\/LinkError.swift",
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkError.swift",
       "kind": "StringLiteral",
       "offset": 1259,
       "length": 5,
       "value": "\"msg\""
     },
     {
-      "filePath": "\/Users\/Linus\/Documents\/Project\/Vlending AppLink\/applink-ios\/Sources\/AppLink.swift",
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/AppLinkRequest.swift",
+      "kind": "StringLiteral",
+      "offset": 604,
+      "length": 9,
+      "value": "\"web_url\""
+    },
+    {
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/AppLinkRequest.swift",
+      "kind": "StringLiteral",
+      "offset": 638,
+      "length": 11,
+      "value": "\"image_url\""
+    },
+    {
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/AppLinkRequest.swift",
+      "kind": "StringLiteral",
+      "offset": 680,
+      "length": 8,
+      "value": "\"action\""
+    },
+    {
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/AppLinkRequest.swift",
+      "kind": "StringLiteral",
+      "offset": 714,
+      "length": 19,
+      "value": "\"domain_uri_prefix\""
+    },
+    {
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/AppLinkRequest.swift",
+      "kind": "StringLiteral",
+      "offset": 604,
+      "length": 9,
+      "value": "\"web_url\""
+    },
+    {
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/AppLinkRequest.swift",
+      "kind": "StringLiteral",
+      "offset": 638,
+      "length": 11,
+      "value": "\"image_url\""
+    },
+    {
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/AppLinkRequest.swift",
+      "kind": "StringLiteral",
+      "offset": 680,
+      "length": 8,
+      "value": "\"action\""
+    },
+    {
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/AppLinkRequest.swift",
+      "kind": "StringLiteral",
+      "offset": 714,
+      "length": 19,
+      "value": "\"domain_uri_prefix\""
+    },
+    {
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/AppLink.swift",
       "kind": "StringLiteral",
       "offset": 500,
       "length": 7,
       "value": "\"0.0.1\""
     },
     {
-      "filePath": "\/Users\/Linus\/Documents\/Project\/Vlending AppLink\/applink-ios\/Sources\/Core\/AppLinkDataInfo.swift",
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/AppLinkDataInfo.swift",
       "kind": "StringLiteral",
       "offset": 613,
       "length": 13,
       "value": "\"description\""
     },
     {
-      "filePath": "\/Users\/Linus\/Documents\/Project\/Vlending AppLink\/applink-ios\/Sources\/Core\/AppLinkDataInfo.swift",
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/AppLinkDataInfo.swift",
       "kind": "StringLiteral",
       "offset": 652,
       "length": 11,
       "value": "\"image_url\""
     },
     {
-      "filePath": "\/Users\/Linus\/Documents\/Project\/Vlending AppLink\/applink-ios\/Sources\/Core\/AppLinkDataInfo.swift",
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/AppLinkDataInfo.swift",
       "kind": "StringLiteral",
       "offset": 686,
       "length": 9,
       "value": "\"web_url\""
     },
     {
-      "filePath": "\/Users\/Linus\/Documents\/Project\/Vlending AppLink\/applink-ios\/Sources\/Core\/AppLinkDataInfo.swift",
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/AppLinkDataInfo.swift",
       "kind": "StringLiteral",
       "offset": 613,
       "length": 13,
       "value": "\"description\""
     },
     {
-      "filePath": "\/Users\/Linus\/Documents\/Project\/Vlending AppLink\/applink-ios\/Sources\/Core\/AppLinkDataInfo.swift",
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/AppLinkDataInfo.swift",
       "kind": "StringLiteral",
       "offset": 652,
       "length": 11,
       "value": "\"image_url\""
     },
     {
-      "filePath": "\/Users\/Linus\/Documents\/Project\/Vlending AppLink\/applink-ios\/Sources\/Core\/AppLinkDataInfo.swift",
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/AppLinkDataInfo.swift",
       "kind": "StringLiteral",
       "offset": 686,
       "length": 9,
       "value": "\"web_url\""
     },
     {
-      "filePath": "\/Users\/Linus\/Documents\/Project\/Vlending AppLink\/applink-ios\/Sources\/Core\/AppLinkDataInfo.swift",
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/AppLinkDataInfo.swift",
       "kind": "StringLiteral",
       "offset": 3144,
       "length": 6,
       "value": "\"name\""
     },
     {
-      "filePath": "\/Users\/Linus\/Documents\/Project\/Vlending AppLink\/applink-ios\/Sources\/Core\/AppLinkDataInfo.swift",
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/AppLinkDataInfo.swift",
       "kind": "StringLiteral",
       "offset": 3144,
       "length": 6,
       "value": "\"name\""
     },
     {
-      "filePath": "\/Users\/Linus\/Documents\/Project\/Vlending AppLink\/applink-ios\/Sources\/Core\/AppLinkSession.swift",
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/AppLinkSession.swift",
       "kind": "StringLiteral",
       "offset": 2077,
       "length": 14,
