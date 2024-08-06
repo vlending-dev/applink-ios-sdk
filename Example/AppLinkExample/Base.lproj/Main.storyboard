@@ -12,7 +12,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="AppLink_Test" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="AppLinkExample" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -27,14 +27,14 @@
                                     <action selector="onButtonWithGenerate:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ipv-Ir-MAG"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Input AppLink" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ten-za-uL7">
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" verticalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Input AppLink" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ten-za-uL7">
                                 <rect key="frame" x="40" y="154" width="190" height="40"/>
                                 <color key="backgroundColor" systemColor="systemGreenColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="xLk-UI-rDD"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
                             </textField>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IhL-aj-GgT">
                                 <rect key="frame" x="40" y="214" width="313" height="584"/>
@@ -43,10 +43,14 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wel-Dp-RNs">
-                                <rect key="frame" x="238" y="156.66666666666666" width="115" height="35"/>
+                            <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="748" verticalCompressionResistancePriority="748" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wel-Dp-RNs">
+                                <rect key="frame" x="238" y="154" width="115" height="40"/>
                                 <color key="backgroundColor" systemColor="systemBlueColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="115" id="vF1-cw-Oge"/>
+                                </constraints>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <inset key="contentEdgeInsets" minX="10" minY="2" maxX="10" maxY="2"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Get link Info"/>
                                 <connections>
@@ -61,6 +65,7 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="IhL-aj-GgT" secondAttribute="trailing" constant="40" id="DDj-t0-Lya"/>
                             <constraint firstItem="Ten-za-uL7" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="GhD-Vu-vf1"/>
                             <constraint firstItem="Ten-za-uL7" firstAttribute="top" secondItem="XhF-y2-8jO" secondAttribute="bottom" constant="20" id="Jkk-77-82J"/>
+                            <constraint firstItem="wel-Dp-RNs" firstAttribute="height" secondItem="Ten-za-uL7" secondAttribute="height" id="Kcy-pG-had"/>
                             <constraint firstItem="IhL-aj-GgT" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="SLq-UY-ym4"/>
                             <constraint firstItem="IhL-aj-GgT" firstAttribute="top" secondItem="Ten-za-uL7" secondAttribute="bottom" constant="20" id="SyS-h0-qjo"/>
                             <constraint firstItem="wel-Dp-RNs" firstAttribute="leading" secondItem="Ten-za-uL7" secondAttribute="trailing" constant="8" id="bbn-vr-S2S"/>

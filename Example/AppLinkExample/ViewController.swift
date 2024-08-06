@@ -9,7 +9,13 @@ import UIKit
 import AppLink
 
 extension ViewController: UITextFieldDelegate {
-    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField.text?.isEmpty == false {
+            receiveAppLinkInfo()
+        }
+        textField.resignFirstResponder()
+        return true
+    }
 }
 
 class ViewController: UIViewController {
@@ -24,17 +30,30 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
+        textField.clipsToBounds = true
         textField.delegate = self
-        textField.text = "{yout domain uri}m0LCrJ5Dnm"
+        textField.text = nil
+        textField.clearButtonMode = .whileEditing
+        textField.textColor = .white
+        textField.tintColor = .white
+        textField.keyboardType = .URL
+        textField.returnKeyType = .done
+        textField.backgroundColor = .purple
+        textField.layer.borderColor = UIColor.black.cgColor
+        textField.layer.borderWidth = 1.0
+        
+        textView.text = nil
+        textView.isEditable = false
+        textView.isSelectable = false
+        textView.textColor = .black
+        textView.tintColor = .black
     }
     
     func share(url: URL) {
         DispatchQueue.main.async { [weak self] in
             guard let self = self else { return }
             let shareActivities = UIActivityViewController(activityItems: [url.absoluteString], applicationActivities: nil)
-//            shareActivities.completionWithItemsHandler = { type, success, data, error in
-//            }
-            
             if UIDevice.current.userInterfaceIdiom == .pad {
                 shareActivities.popoverPresentationController?.sourceView = self.buttonGenerateLink
                 shareActivities.popoverPresentationController?.sourceRect = self.buttonGenerateLink.bounds
@@ -43,29 +62,8 @@ class ViewController: UIViewController {
         }
     }
     
-    // MARK: - actions
-
-    @IBAction func onButton(generate sender: UIButton) {
-        guard !isLoading else { return }
-        isLoading = true
-        
-        var request = AppLinkRequest(scheme: "{your scheme}", title: "Test Title", description: "Test description", url: "https://www.google.com/")
-        request.imageURL = "https://{your thumnail image url}.png"
-        request.deeplinkAction = "{action without scheme}"
-        AppLink.request(link: request) { [weak self] url, error in
-            self?.isLoading = false
-            if let u = url {
-                self?.share(url: u)
-            }
-            guard let error = error else {
-                return
-            }
-            print("Generate link error: \(error)")
-        }
-    }
-    
-    
-    @IBAction func onButton(receiveInfo sender: UIButton) {
+    func receiveAppLinkInfo() {
+        textField.resignFirstResponder()
         textView.text = nil
         guard !isLoading, let text = textField.text, !text.isEmpty, let url = URL(string: text) else { return }
         isLoading = true
@@ -112,6 +110,33 @@ class ViewController: UIViewController {
             self?.textView.text = infoText
             self?.isLoading = false
         }
+    }
+    
+    // MARK: - actions
+
+    @IBAction func onButton(generate sender: UIButton) {
+        guard !isLoading else { return }
+        isLoading = true
+        
+        // TODO: AppLink request setting
+        var request = AppLinkRequest(scheme: "{your scheme}", title: "Test Title", description: "Test description", url: "https://www.google.com/")
+        request.imageURL = "https://{your thumnail image url}.png"
+        request.deeplinkAction = "{action without scheme}"
+        AppLink.request(link: request) { [weak self] url, error in
+            self?.isLoading = false
+            if let u = url {
+                self?.share(url: u)
+            }
+            guard let error = error else {
+                return
+            }
+            print("Generate link error: \(error)")
+        }
+    }
+    
+    
+    @IBAction func onButton(receiveInfo sender: UIButton) {
+        receiveAppLinkInfo()
     }
 }
 
