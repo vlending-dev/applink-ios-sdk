@@ -61,7 +61,7 @@ public struct AppLinkDataInfo : Swift.Codable {
   public var thumbnail: Swift.String?
   public var utm: AppLink.AppLinkDataInfo.AppLinkUTM?
   public var scheme: Swift.String?
-  public var action: Swift.String?
+  public var deeplinkAction: Swift.String?
   public var webURL: Swift.String?
   public init(from decoder: any Swift.Decoder) throws
   public func encode(to encoder: any Swift.Encoder) throws
@@ -74,8 +74,11 @@ public struct AppLinkDataInfo : Swift.Codable {
   }
 }
 @objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class AppLinkSession : ObjectiveC.NSObject {
+  public var domainURIPrefix: Swift.String? {
+    get
+    set
+  }
   public var apiKey: Swift.String?
-  public var domainURIPrefix: Swift.String?
   public var userId: Swift.String?
   public var customScheme: Swift.String?
   public func isAppLink(_ url: Foundation.URL) -> Swift.Bool
