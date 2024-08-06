@@ -40,7 +40,7 @@ public struct AppLinkRequest : Swift.Codable {
   public var webURL: Swift.String?
   public var imageURL: Swift.String?
   public var scheme: Swift.String?
-  public var utm: AppLink.AppLinkDataInfo.AppLinkUTM?
+  public var utm: AppLink.AppLinkUTM?
   public var title: Swift.String?
   public var description: Swift.String?
   public var deeplinkAction: Swift.String?
@@ -55,23 +55,24 @@ public enum AppLinkInfo {
 public enum AppLinkDataCodingError : Swift.Error {
   case decoding(Swift.String)
 }
+public struct AppLinkUTM : Swift.Codable {
+  public var source: Swift.String?
+  public var medium: Swift.String?
+  public var campaignName: Swift.String?
+  public init?(source: Swift.String?, medium: Swift.String?, campaign: Swift.String?)
+  public init(from decoder: any Swift.Decoder) throws
+  public func encode(to encoder: any Swift.Encoder) throws
+}
 public struct AppLinkDataInfo : Swift.Codable {
   public var title: Swift.String?
   public var contents: Swift.String?
-  public var thumbnail: Swift.String?
-  public var utm: AppLink.AppLinkDataInfo.AppLinkUTM?
+  public var imageURL: Swift.String?
+  public var utm: AppLink.AppLinkUTM?
   public var scheme: Swift.String?
   public var deeplinkAction: Swift.String?
   public var webURL: Swift.String?
   public init(from decoder: any Swift.Decoder) throws
   public func encode(to encoder: any Swift.Encoder) throws
-  public struct AppLinkUTM : Swift.Codable {
-    public var source: Swift.String?
-    public var medium: Swift.String?
-    public var campaignName: Swift.String?
-    public init(from decoder: any Swift.Decoder) throws
-    public func encode(to encoder: any Swift.Encoder) throws
-  }
 }
 @objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class AppLinkSession : ObjectiveC.NSObject {
   public var domainURIPrefix: Swift.String? {
