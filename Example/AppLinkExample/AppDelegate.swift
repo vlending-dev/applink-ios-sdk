@@ -13,8 +13,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        // TODO: AppLink Setting (apiKey, domainURIPrefix, customScheme)
         AppLink.apiKey = #"{your app key}"#
-        AppLink.domainURIPrefix = "{yout domain uri}"
+        AppLink.domainURIPrefix = "{yout domain uri}" // ex) https://{subdomain}.applink.info/
         AppLink.customScheme = "{your scheme}"
         return true
     }
