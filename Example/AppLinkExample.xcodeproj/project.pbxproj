@@ -37,19 +37,11 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		7CD1EEDA118E3E9C3BFB0A85 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Pods;
-			sourceTree = "<group>";
-		};
 		B5DCD11A2C5B81CF00CA5688 = {
 			isa = PBXGroup;
 			children = (
 				B5DCD1252C5B81CF00CA5688 /* AppLinkExample */,
 				B5DCD1242C5B81CF00CA5688 /* Products */,
-				7CD1EEDA118E3E9C3BFB0A85 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -91,6 +83,8 @@
 			dependencies = (
 			);
 			name = AppLinkExample;
+			packageProductDependencies = (
+			);
 			productName = AppLinkExample;
 			productReference = B5DCD1232C5B81CF00CA5688 /* AppLinkExample.app */;
 			productType = "com.apple.product-type.application";
@@ -119,6 +113,8 @@
 				Base,
 			);
 			mainGroup = B5DCD11A2C5B81CF00CA5688;
+			packageReferences = (
+			);
 			productRefGroup = B5DCD1242C5B81CF00CA5688 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
