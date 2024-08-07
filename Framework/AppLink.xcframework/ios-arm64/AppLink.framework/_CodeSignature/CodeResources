@@ -12,25 +12,29 @@
 		<data>
 		7tEbnpQtxDSjBkcinI829lyXz9w=
 		</data>
+		<key>LICENSE.txt</key>
+		<data>
+		5uiNbo/BF1cLZvye+H5NkyRzV1c=
+		</data>
 		<key>Modules/AppLink.swiftmodule/arm64-apple-ios.abi.json</key>
 		<data>
-		D80lEax9BjaL9POgsovyUk8tqco=
+		fswTVjhKkZKhMzw267LYNCdBkTc=
 		</data>
 		<key>Modules/AppLink.swiftmodule/arm64-apple-ios.private.swiftinterface</key>
 		<data>
-		lINBiv3ieh/OIgu/kPwlVFPe/6w=
+		jqGJsQx1WguoofWRY3Ip6Eg0hrg=
 		</data>
 		<key>Modules/AppLink.swiftmodule/arm64-apple-ios.swiftdoc</key>
 		<data>
-		/dC4ANhsLU2Q+ZiNastVCyhy9AE=
+		C+f9n1Lpl0oPR1sEZ6SHOCg4XEo=
 		</data>
 		<key>Modules/AppLink.swiftmodule/arm64-apple-ios.swiftinterface</key>
 		<data>
-		kojOhdsDc2lWUB8wTXHy9oCpmU8=
+		jqGJsQx1WguoofWRY3Ip6Eg0hrg=
 		</data>
 		<key>Modules/AppLink.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<data>
-		CG+JroACiMYn6kuuBvF5LvBZg+k=
+		6idwvritNFHU/gzfzLEXQaVvLy4=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -50,39 +54,46 @@
 			2CaPxzABlBH1OkIhCIfgUVPHXC5CWHlctRIHIZ61rQU=
 			</data>
 		</dict>
+		<key>LICENSE.txt</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			+nWXNU4PD9abmeO/P9A/ZKK/ejUa2h38J9DOWdDWqco=
+			</data>
+		</dict>
 		<key>Modules/AppLink.swiftmodule/arm64-apple-ios.abi.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			wRiTi+kASV/naLFZbQ7CfWnsENOYkcdg50BQcycJwhI=
+			lGhKnE8wTKUYWBZlKQJlPYE4NPm/5bLKtg2GTQg4V7g=
 			</data>
 		</dict>
 		<key>Modules/AppLink.swiftmodule/arm64-apple-ios.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			0HhV0xCgbAYSADvK5lex351G8MODHAYl3pQ5VIs1oag=
+			piO/8e3mP5tBsf5PbgeB6JMk89aTaE9dIfPY6Uz/WaE=
 			</data>
 		</dict>
 		<key>Modules/AppLink.swiftmodule/arm64-apple-ios.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			dHk9Mjej1nuWUTF99smDDOH8HhkVl4UjAzG13QBX5HY=
+			TCERWCIYtXt+vhfWoauhE2zdGUkT0dqDn71f1Z4nPy0=
 			</data>
 		</dict>
 		<key>Modules/AppLink.swiftmodule/arm64-apple-ios.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			uI6mPmO8zHaJEHqOV76zqpHme9Cqec4aRNhmAWo4GHM=
+			piO/8e3mP5tBsf5PbgeB6JMk89aTaE9dIfPY6Uz/WaE=
 			</data>
 		</dict>
 		<key>Modules/AppLink.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			hS9no0JLQ/0ok8jCepsqurHdVJTKm4zTkD7qjad4mQE=
+			HHKj1PwJYLSwyHsStt/HUI/SV96ljE/XmCfnSoAwdI4=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
