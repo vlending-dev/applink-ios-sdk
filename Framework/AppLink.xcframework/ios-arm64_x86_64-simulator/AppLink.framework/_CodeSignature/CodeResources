@@ -4,6 +4,18 @@
 <dict>
 	<key>files</key>
 	<dict>
+		<key>Frameworks/AlamofireDynamic.framework/AlamofireDynamic</key>
+		<data>
+		wmduNdd0IK9WSF2fYSktVMTbR1k=
+		</data>
+		<key>Frameworks/AlamofireDynamic.framework/Info.plist</key>
+		<data>
+		t0YEm0+tzeNGwZqt7VfslDVCKsM=
+		</data>
+		<key>Frameworks/AlamofireDynamic.framework/_CodeSignature/CodeResources</key>
+		<data>
+		M9LMntgcJMCMNjyOCSvKfz9ah1c=
+		</data>
 		<key>Headers/AppLink.h</key>
 		<data>
 		lJid78Mk6IaM5qQSzN1+xuh3lpg=
@@ -63,6 +75,27 @@
 	</dict>
 	<key>files2</key>
 	<dict>
+		<key>Frameworks/AlamofireDynamic.framework/AlamofireDynamic</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			CNEsEDNm4XvNd4N/Mwo5wEKO+PvMewfHWgmLZHPz/1o=
+			</data>
+		</dict>
+		<key>Frameworks/AlamofireDynamic.framework/Info.plist</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			E0GK6Fjt86IzSs3bG32GgQm1h0sciUgDMr14UcdKRO0=
+			</data>
+		</dict>
+		<key>Frameworks/AlamofireDynamic.framework/_CodeSignature/CodeResources</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			GUHbDE1KqWQzF/cSjQGxUB3GW12P46ip5XBx/knl0e0=
+			</data>
+		</dict>
 		<key>Headers/AppLink.h</key>
 		<dict>
 			<key>hash2</key>
