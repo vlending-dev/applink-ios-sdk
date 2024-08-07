@@ -123,427 +123,6 @@
       },
       {
         "kind": "TypeDecl",
-        "name": "LinkErrorrType",
-        "printedName": "LinkErrorrType",
-        "children": [
-          {
-            "kind": "Var",
-            "name": "unauthorized",
-            "printedName": "unauthorized",
-            "children": [
-              {
-                "kind": "TypeFunc",
-                "name": "Function",
-                "printedName": "(AppLink.LinkErrorrType.Type) -> AppLink.LinkErrorrType",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "LinkErrorrType",
-                    "printedName": "AppLink.LinkErrorrType",
-                    "usr": "s:7AppLink0B10ErrorrTypeO"
-                  },
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Metatype",
-                    "printedName": "AppLink.LinkErrorrType.Type",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "LinkErrorrType",
-                        "printedName": "AppLink.LinkErrorrType",
-                        "usr": "s:7AppLink0B10ErrorrTypeO"
-                      }
-                    ]
-                  }
-                ]
-              }
-            ],
-            "declKind": "EnumElement",
-            "usr": "s:7AppLink0B10ErrorrTypeO12unauthorizedyA2CmF",
-            "mangledName": "$s7AppLink0B10ErrorrTypeO12unauthorizedyA2CmF",
-            "moduleName": "AppLink"
-          },
-          {
-            "kind": "Var",
-            "name": "missingParameter",
-            "printedName": "missingParameter",
-            "children": [
-              {
-                "kind": "TypeFunc",
-                "name": "Function",
-                "printedName": "(AppLink.LinkErrorrType.Type) -> AppLink.LinkErrorrType",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "LinkErrorrType",
-                    "printedName": "AppLink.LinkErrorrType",
-                    "usr": "s:7AppLink0B10ErrorrTypeO"
-                  },
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Metatype",
-                    "printedName": "AppLink.LinkErrorrType.Type",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "LinkErrorrType",
-                        "printedName": "AppLink.LinkErrorrType",
-                        "usr": "s:7AppLink0B10ErrorrTypeO"
-                      }
-                    ]
-                  }
-                ]
-              }
-            ],
-            "declKind": "EnumElement",
-            "usr": "s:7AppLink0B10ErrorrTypeO16missingParameteryA2CmF",
-            "mangledName": "$s7AppLink0B10ErrorrTypeO16missingParameteryA2CmF",
-            "moduleName": "AppLink"
-          },
-          {
-            "kind": "Var",
-            "name": "tooManyRequest",
-            "printedName": "tooManyRequest",
-            "children": [
-              {
-                "kind": "TypeFunc",
-                "name": "Function",
-                "printedName": "(AppLink.LinkErrorrType.Type) -> AppLink.LinkErrorrType",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "LinkErrorrType",
-                    "printedName": "AppLink.LinkErrorrType",
-                    "usr": "s:7AppLink0B10ErrorrTypeO"
-                  },
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Metatype",
-                    "printedName": "AppLink.LinkErrorrType.Type",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "LinkErrorrType",
-                        "printedName": "AppLink.LinkErrorrType",
-                        "usr": "s:7AppLink0B10ErrorrTypeO"
-                      }
-                    ]
-                  }
-                ]
-              }
-            ],
-            "declKind": "EnumElement",
-            "usr": "s:7AppLink0B10ErrorrTypeO14tooManyRequestyA2CmF",
-            "mangledName": "$s7AppLink0B10ErrorrTypeO14tooManyRequestyA2CmF",
-            "moduleName": "AppLink"
-          },
-          {
-            "kind": "Var",
-            "name": "invalidParameter",
-            "printedName": "invalidParameter",
-            "children": [
-              {
-                "kind": "TypeFunc",
-                "name": "Function",
-                "printedName": "(AppLink.LinkErrorrType.Type) -> AppLink.LinkErrorrType",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "LinkErrorrType",
-                    "printedName": "AppLink.LinkErrorrType",
-                    "usr": "s:7AppLink0B10ErrorrTypeO"
-                  },
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Metatype",
-                    "printedName": "AppLink.LinkErrorrType.Type",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "LinkErrorrType",
-                        "printedName": "AppLink.LinkErrorrType",
-                        "usr": "s:7AppLink0B10ErrorrTypeO"
-                      }
-                    ]
-                  }
-                ]
-              }
-            ],
-            "declKind": "EnumElement",
-            "usr": "s:7AppLink0B10ErrorrTypeO16invalidParameteryA2CmF",
-            "mangledName": "$s7AppLink0B10ErrorrTypeO16invalidParameteryA2CmF",
-            "moduleName": "AppLink"
-          },
-          {
-            "kind": "Var",
-            "name": "badRequest",
-            "printedName": "badRequest",
-            "children": [
-              {
-                "kind": "TypeFunc",
-                "name": "Function",
-                "printedName": "(AppLink.LinkErrorrType.Type) -> AppLink.LinkErrorrType",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "LinkErrorrType",
-                    "printedName": "AppLink.LinkErrorrType",
-                    "usr": "s:7AppLink0B10ErrorrTypeO"
-                  },
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Metatype",
-                    "printedName": "AppLink.LinkErrorrType.Type",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "LinkErrorrType",
-                        "printedName": "AppLink.LinkErrorrType",
-                        "usr": "s:7AppLink0B10ErrorrTypeO"
-                      }
-                    ]
-                  }
-                ]
-              }
-            ],
-            "declKind": "EnumElement",
-            "usr": "s:7AppLink0B10ErrorrTypeO10badRequestyA2CmF",
-            "mangledName": "$s7AppLink0B10ErrorrTypeO10badRequestyA2CmF",
-            "moduleName": "AppLink"
-          },
-          {
-            "kind": "Var",
-            "name": "serverError",
-            "printedName": "serverError",
-            "children": [
-              {
-                "kind": "TypeFunc",
-                "name": "Function",
-                "printedName": "(AppLink.LinkErrorrType.Type) -> AppLink.LinkErrorrType",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "LinkErrorrType",
-                    "printedName": "AppLink.LinkErrorrType",
-                    "usr": "s:7AppLink0B10ErrorrTypeO"
-                  },
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Metatype",
-                    "printedName": "AppLink.LinkErrorrType.Type",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "LinkErrorrType",
-                        "printedName": "AppLink.LinkErrorrType",
-                        "usr": "s:7AppLink0B10ErrorrTypeO"
-                      }
-                    ]
-                  }
-                ]
-              }
-            ],
-            "declKind": "EnumElement",
-            "usr": "s:7AppLink0B10ErrorrTypeO11serverErroryA2CmF",
-            "mangledName": "$s7AppLink0B10ErrorrTypeO11serverErroryA2CmF",
-            "moduleName": "AppLink"
-          },
-          {
-            "kind": "Var",
-            "name": "invalidURL",
-            "printedName": "invalidURL",
-            "children": [
-              {
-                "kind": "TypeFunc",
-                "name": "Function",
-                "printedName": "(AppLink.LinkErrorrType.Type) -> AppLink.LinkErrorrType",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "LinkErrorrType",
-                    "printedName": "AppLink.LinkErrorrType",
-                    "usr": "s:7AppLink0B10ErrorrTypeO"
-                  },
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Metatype",
-                    "printedName": "AppLink.LinkErrorrType.Type",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "LinkErrorrType",
-                        "printedName": "AppLink.LinkErrorrType",
-                        "usr": "s:7AppLink0B10ErrorrTypeO"
-                      }
-                    ]
-                  }
-                ]
-              }
-            ],
-            "declKind": "EnumElement",
-            "usr": "s:7AppLink0B10ErrorrTypeO10invalidURLyA2CmF",
-            "mangledName": "$s7AppLink0B10ErrorrTypeO10invalidURLyA2CmF",
-            "moduleName": "AppLink"
-          },
-          {
-            "kind": "Var",
-            "name": "unknown",
-            "printedName": "unknown",
-            "children": [
-              {
-                "kind": "TypeFunc",
-                "name": "Function",
-                "printedName": "(AppLink.LinkErrorrType.Type) -> AppLink.LinkErrorrType",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "LinkErrorrType",
-                    "printedName": "AppLink.LinkErrorrType",
-                    "usr": "s:7AppLink0B10ErrorrTypeO"
-                  },
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Metatype",
-                    "printedName": "AppLink.LinkErrorrType.Type",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "LinkErrorrType",
-                        "printedName": "AppLink.LinkErrorrType",
-                        "usr": "s:7AppLink0B10ErrorrTypeO"
-                      }
-                    ]
-                  }
-                ]
-              }
-            ],
-            "declKind": "EnumElement",
-            "usr": "s:7AppLink0B10ErrorrTypeO7unknownyA2CmF",
-            "mangledName": "$s7AppLink0B10ErrorrTypeO7unknownyA2CmF",
-            "moduleName": "AppLink"
-          },
-          {
-            "kind": "Constructor",
-            "name": "init",
-            "printedName": "init(rawValue:)",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Optional",
-                "printedName": "AppLink.LinkErrorrType?",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "LinkErrorrType",
-                    "printedName": "AppLink.LinkErrorrType",
-                    "usr": "s:7AppLink0B10ErrorrTypeO"
-                  }
-                ],
-                "usr": "s:Sq"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "Int",
-                "printedName": "Swift.Int",
-                "usr": "s:Si"
-              }
-            ],
-            "declKind": "Constructor",
-            "usr": "s:7AppLink0B10ErrorrTypeO8rawValueACSgSi_tcfc",
-            "mangledName": "$s7AppLink0B10ErrorrTypeO8rawValueACSgSi_tcfc",
-            "moduleName": "AppLink",
-            "implicit": true,
-            "init_kind": "Designated"
-          },
-          {
-            "kind": "Var",
-            "name": "rawValue",
-            "printedName": "rawValue",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Int",
-                "printedName": "Swift.Int",
-                "usr": "s:Si"
-              }
-            ],
-            "declKind": "Var",
-            "usr": "s:7AppLink0B10ErrorrTypeO8rawValueSivp",
-            "mangledName": "$s7AppLink0B10ErrorrTypeO8rawValueSivp",
-            "moduleName": "AppLink",
-            "implicit": true,
-            "accessors": [
-              {
-                "kind": "Accessor",
-                "name": "Get",
-                "printedName": "Get()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Int",
-                    "printedName": "Swift.Int",
-                    "usr": "s:Si"
-                  }
-                ],
-                "declKind": "Accessor",
-                "usr": "s:7AppLink0B10ErrorrTypeO8rawValueSivg",
-                "mangledName": "$s7AppLink0B10ErrorrTypeO8rawValueSivg",
-                "moduleName": "AppLink",
-                "implicit": true,
-                "accessorKind": "get"
-              }
-            ]
-          }
-        ],
-        "declKind": "Enum",
-        "usr": "s:7AppLink0B10ErrorrTypeO",
-        "mangledName": "$s7AppLink0B10ErrorrTypeO",
-        "moduleName": "AppLink",
-        "declAttributes": [
-          "AccessControl"
-        ],
-        "enumRawTypeName": "Int",
-        "conformances": [
-          {
-            "kind": "Conformance",
-            "name": "Equatable",
-            "printedName": "Equatable",
-            "usr": "s:SQ",
-            "mangledName": "$sSQ"
-          },
-          {
-            "kind": "Conformance",
-            "name": "Hashable",
-            "printedName": "Hashable",
-            "usr": "s:SH",
-            "mangledName": "$sSH"
-          },
-          {
-            "kind": "Conformance",
-            "name": "RawRepresentable",
-            "printedName": "RawRepresentable",
-            "children": [
-              {
-                "kind": "TypeWitness",
-                "name": "RawValue",
-                "printedName": "RawValue",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Int",
-                    "printedName": "Swift.Int",
-                    "usr": "s:Si"
-                  }
-                ]
-              }
-            ],
-            "usr": "s:SY",
-            "mangledName": "$sSY"
-          }
-        ]
-      },
-      {
-        "kind": "TypeDecl",
         "name": "LinkError",
         "printedName": "LinkError",
         "children": [
@@ -2475,6 +2054,3276 @@
         "printedName": "Foundation",
         "declKind": "Import",
         "moduleName": "AppLink"
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "AppLink",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "HTTPStatusCode",
+        "printedName": "HTTPStatusCode",
+        "children": [
+          {
+            "kind": "TypeDecl",
+            "name": "ResponseType",
+            "printedName": "ResponseType",
+            "children": [
+              {
+                "kind": "Var",
+                "name": "informational",
+                "printedName": "informational",
+                "children": [
+                  {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "(AppLink.HTTPStatusCode.ResponseType.Type) -> AppLink.HTTPStatusCode.ResponseType",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "ResponseType",
+                        "printedName": "AppLink.HTTPStatusCode.ResponseType",
+                        "usr": "s:7AppLink14HTTPStatusCodeO12ResponseTypeO"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Metatype",
+                        "printedName": "AppLink.HTTPStatusCode.ResponseType.Type",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "ResponseType",
+                            "printedName": "AppLink.HTTPStatusCode.ResponseType",
+                            "usr": "s:7AppLink14HTTPStatusCodeO12ResponseTypeO"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ],
+                "declKind": "EnumElement",
+                "usr": "s:7AppLink14HTTPStatusCodeO12ResponseTypeO13informationalyA2EmF",
+                "mangledName": "$s7AppLink14HTTPStatusCodeO12ResponseTypeO13informationalyA2EmF",
+                "moduleName": "AppLink",
+                "declAttributes": [
+                  "RawDocComment"
+                ]
+              },
+              {
+                "kind": "Var",
+                "name": "success",
+                "printedName": "success",
+                "children": [
+                  {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "(AppLink.HTTPStatusCode.ResponseType.Type) -> AppLink.HTTPStatusCode.ResponseType",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "ResponseType",
+                        "printedName": "AppLink.HTTPStatusCode.ResponseType",
+                        "usr": "s:7AppLink14HTTPStatusCodeO12ResponseTypeO"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Metatype",
+                        "printedName": "AppLink.HTTPStatusCode.ResponseType.Type",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "ResponseType",
+                            "printedName": "AppLink.HTTPStatusCode.ResponseType",
+                            "usr": "s:7AppLink14HTTPStatusCodeO12ResponseTypeO"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ],
+                "declKind": "EnumElement",
+                "usr": "s:7AppLink14HTTPStatusCodeO12ResponseTypeO7successyA2EmF",
+                "mangledName": "$s7AppLink14HTTPStatusCodeO12ResponseTypeO7successyA2EmF",
+                "moduleName": "AppLink",
+                "declAttributes": [
+                  "RawDocComment"
+                ]
+              },
+              {
+                "kind": "Var",
+                "name": "redirection",
+                "printedName": "redirection",
+                "children": [
+                  {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "(AppLink.HTTPStatusCode.ResponseType.Type) -> AppLink.HTTPStatusCode.ResponseType",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "ResponseType",
+                        "printedName": "AppLink.HTTPStatusCode.ResponseType",
+                        "usr": "s:7AppLink14HTTPStatusCodeO12ResponseTypeO"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Metatype",
+                        "printedName": "AppLink.HTTPStatusCode.ResponseType.Type",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "ResponseType",
+                            "printedName": "AppLink.HTTPStatusCode.ResponseType",
+                            "usr": "s:7AppLink14HTTPStatusCodeO12ResponseTypeO"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ],
+                "declKind": "EnumElement",
+                "usr": "s:7AppLink14HTTPStatusCodeO12ResponseTypeO11redirectionyA2EmF",
+                "mangledName": "$s7AppLink14HTTPStatusCodeO12ResponseTypeO11redirectionyA2EmF",
+                "moduleName": "AppLink",
+                "declAttributes": [
+                  "RawDocComment"
+                ]
+              },
+              {
+                "kind": "Var",
+                "name": "clientError",
+                "printedName": "clientError",
+                "children": [
+                  {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "(AppLink.HTTPStatusCode.ResponseType.Type) -> AppLink.HTTPStatusCode.ResponseType",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "ResponseType",
+                        "printedName": "AppLink.HTTPStatusCode.ResponseType",
+                        "usr": "s:7AppLink14HTTPStatusCodeO12ResponseTypeO"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Metatype",
+                        "printedName": "AppLink.HTTPStatusCode.ResponseType.Type",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "ResponseType",
+                            "printedName": "AppLink.HTTPStatusCode.ResponseType",
+                            "usr": "s:7AppLink14HTTPStatusCodeO12ResponseTypeO"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ],
+                "declKind": "EnumElement",
+                "usr": "s:7AppLink14HTTPStatusCodeO12ResponseTypeO11clientErroryA2EmF",
+                "mangledName": "$s7AppLink14HTTPStatusCodeO12ResponseTypeO11clientErroryA2EmF",
+                "moduleName": "AppLink",
+                "declAttributes": [
+                  "RawDocComment"
+                ]
+              },
+              {
+                "kind": "Var",
+                "name": "serverError",
+                "printedName": "serverError",
+                "children": [
+                  {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "(AppLink.HTTPStatusCode.ResponseType.Type) -> AppLink.HTTPStatusCode.ResponseType",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "ResponseType",
+                        "printedName": "AppLink.HTTPStatusCode.ResponseType",
+                        "usr": "s:7AppLink14HTTPStatusCodeO12ResponseTypeO"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Metatype",
+                        "printedName": "AppLink.HTTPStatusCode.ResponseType.Type",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "ResponseType",
+                            "printedName": "AppLink.HTTPStatusCode.ResponseType",
+                            "usr": "s:7AppLink14HTTPStatusCodeO12ResponseTypeO"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ],
+                "declKind": "EnumElement",
+                "usr": "s:7AppLink14HTTPStatusCodeO12ResponseTypeO11serverErroryA2EmF",
+                "mangledName": "$s7AppLink14HTTPStatusCodeO12ResponseTypeO11serverErroryA2EmF",
+                "moduleName": "AppLink",
+                "declAttributes": [
+                  "RawDocComment"
+                ]
+              },
+              {
+                "kind": "Var",
+                "name": "undefined",
+                "printedName": "undefined",
+                "children": [
+                  {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "(AppLink.HTTPStatusCode.ResponseType.Type) -> AppLink.HTTPStatusCode.ResponseType",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "ResponseType",
+                        "printedName": "AppLink.HTTPStatusCode.ResponseType",
+                        "usr": "s:7AppLink14HTTPStatusCodeO12ResponseTypeO"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Metatype",
+                        "printedName": "AppLink.HTTPStatusCode.ResponseType.Type",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "ResponseType",
+                            "printedName": "AppLink.HTTPStatusCode.ResponseType",
+                            "usr": "s:7AppLink14HTTPStatusCodeO12ResponseTypeO"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ],
+                "declKind": "EnumElement",
+                "usr": "s:7AppLink14HTTPStatusCodeO12ResponseTypeO9undefinedyA2EmF",
+                "mangledName": "$s7AppLink14HTTPStatusCodeO12ResponseTypeO9undefinedyA2EmF",
+                "moduleName": "AppLink",
+                "declAttributes": [
+                  "RawDocComment"
+                ]
+              },
+              {
+                "kind": "Function",
+                "name": "==",
+                "printedName": "==(_:_:)",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "ResponseType",
+                    "printedName": "AppLink.HTTPStatusCode.ResponseType",
+                    "usr": "s:7AppLink14HTTPStatusCodeO12ResponseTypeO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "ResponseType",
+                    "printedName": "AppLink.HTTPStatusCode.ResponseType",
+                    "usr": "s:7AppLink14HTTPStatusCodeO12ResponseTypeO"
+                  }
+                ],
+                "declKind": "Func",
+                "usr": "s:7AppLink14HTTPStatusCodeO12ResponseTypeO2eeoiySbAE_AEtFZ",
+                "mangledName": "$s7AppLink14HTTPStatusCodeO12ResponseTypeO2eeoiySbAE_AEtFZ",
+                "moduleName": "AppLink",
+                "static": true,
+                "implicit": true,
+                "funcSelfKind": "NonMutating"
+              },
+              {
+                "kind": "Var",
+                "name": "hashValue",
+                "printedName": "hashValue",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int",
+                    "printedName": "Swift.Int",
+                    "usr": "s:Si"
+                  }
+                ],
+                "declKind": "Var",
+                "usr": "s:7AppLink14HTTPStatusCodeO12ResponseTypeO9hashValueSivp",
+                "mangledName": "$s7AppLink14HTTPStatusCodeO12ResponseTypeO9hashValueSivp",
+                "moduleName": "AppLink",
+                "implicit": true,
+                "accessors": [
+                  {
+                    "kind": "Accessor",
+                    "name": "Get",
+                    "printedName": "Get()",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Int",
+                        "printedName": "Swift.Int",
+                        "usr": "s:Si"
+                      }
+                    ],
+                    "declKind": "Accessor",
+                    "usr": "s:7AppLink14HTTPStatusCodeO12ResponseTypeO9hashValueSivg",
+                    "mangledName": "$s7AppLink14HTTPStatusCodeO12ResponseTypeO9hashValueSivg",
+                    "moduleName": "AppLink",
+                    "implicit": true,
+                    "accessorKind": "get"
+                  }
+                ]
+              },
+              {
+                "kind": "Function",
+                "name": "hash",
+                "printedName": "hash(into:)",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Hasher",
+                    "printedName": "Swift.Hasher",
+                    "paramValueOwnership": "InOut",
+                    "usr": "s:s6HasherV"
+                  }
+                ],
+                "declKind": "Func",
+                "usr": "s:7AppLink14HTTPStatusCodeO12ResponseTypeO4hash4intoys6HasherVz_tF",
+                "mangledName": "$s7AppLink14HTTPStatusCodeO12ResponseTypeO4hash4intoys6HasherVz_tF",
+                "moduleName": "AppLink",
+                "implicit": true,
+                "funcSelfKind": "NonMutating"
+              }
+            ],
+            "declKind": "Enum",
+            "usr": "s:7AppLink14HTTPStatusCodeO12ResponseTypeO",
+            "mangledName": "$s7AppLink14HTTPStatusCodeO12ResponseTypeO",
+            "moduleName": "AppLink",
+            "declAttributes": [
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "conformances": [
+              {
+                "kind": "Conformance",
+                "name": "Equatable",
+                "printedName": "Equatable",
+                "usr": "s:SQ",
+                "mangledName": "$sSQ"
+              },
+              {
+                "kind": "Conformance",
+                "name": "Hashable",
+                "printedName": "Hashable",
+                "usr": "s:SH",
+                "mangledName": "$sSH"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "continue",
+            "printedName": "continue",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(AppLink.HTTPStatusCode.Type) -> AppLink.HTTPStatusCode",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "HTTPStatusCode",
+                    "printedName": "AppLink.HTTPStatusCode",
+                    "usr": "s:7AppLink14HTTPStatusCodeO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "AppLink.HTTPStatusCode.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "HTTPStatusCode",
+                        "printedName": "AppLink.HTTPStatusCode",
+                        "usr": "s:7AppLink14HTTPStatusCodeO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:7AppLink14HTTPStatusCodeO8continueyA2CmF",
+            "mangledName": "$s7AppLink14HTTPStatusCodeO8continueyA2CmF",
+            "moduleName": "AppLink",
+            "declAttributes": [
+              "RawDocComment"
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "switchingProtocols",
+            "printedName": "switchingProtocols",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(AppLink.HTTPStatusCode.Type) -> AppLink.HTTPStatusCode",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "HTTPStatusCode",
+                    "printedName": "AppLink.HTTPStatusCode",
+                    "usr": "s:7AppLink14HTTPStatusCodeO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "AppLink.HTTPStatusCode.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "HTTPStatusCode",
+                        "printedName": "AppLink.HTTPStatusCode",
+                        "usr": "s:7AppLink14HTTPStatusCodeO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:7AppLink14HTTPStatusCodeO18switchingProtocolsyA2CmF",
+            "mangledName": "$s7AppLink14HTTPStatusCodeO18switchingProtocolsyA2CmF",
+            "moduleName": "AppLink",
+            "declAttributes": [
+              "RawDocComment"
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "processing",
+            "printedName": "processing",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(AppLink.HTTPStatusCode.Type) -> AppLink.HTTPStatusCode",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "HTTPStatusCode",
+                    "printedName": "AppLink.HTTPStatusCode",
+                    "usr": "s:7AppLink14HTTPStatusCodeO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "AppLink.HTTPStatusCode.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "HTTPStatusCode",
+                        "printedName": "AppLink.HTTPStatusCode",
+                        "usr": "s:7AppLink14HTTPStatusCodeO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:7AppLink14HTTPStatusCodeO10processingyA2CmF",
+            "mangledName": "$s7AppLink14HTTPStatusCodeO10processingyA2CmF",
+            "moduleName": "AppLink",
+            "declAttributes": [
+              "RawDocComment"
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "ok",
+            "printedName": "ok",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(AppLink.HTTPStatusCode.Type) -> AppLink.HTTPStatusCode",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "HTTPStatusCode",
+                    "printedName": "AppLink.HTTPStatusCode",
+                    "usr": "s:7AppLink14HTTPStatusCodeO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "AppLink.HTTPStatusCode.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "HTTPStatusCode",
+                        "printedName": "AppLink.HTTPStatusCode",
+                        "usr": "s:7AppLink14HTTPStatusCodeO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:7AppLink14HTTPStatusCodeO2okyA2CmF",
+            "mangledName": "$s7AppLink14HTTPStatusCodeO2okyA2CmF",
+            "moduleName": "AppLink",
+            "declAttributes": [
+              "RawDocComment"
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "created",
+            "printedName": "created",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(AppLink.HTTPStatusCode.Type) -> AppLink.HTTPStatusCode",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "HTTPStatusCode",
+                    "printedName": "AppLink.HTTPStatusCode",
+                    "usr": "s:7AppLink14HTTPStatusCodeO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "AppLink.HTTPStatusCode.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "HTTPStatusCode",
+                        "printedName": "AppLink.HTTPStatusCode",
+                        "usr": "s:7AppLink14HTTPStatusCodeO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:7AppLink14HTTPStatusCodeO7createdyA2CmF",
+            "mangledName": "$s7AppLink14HTTPStatusCodeO7createdyA2CmF",
+            "moduleName": "AppLink",
+            "declAttributes": [
+              "RawDocComment"
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "accepted",
+            "printedName": "accepted",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(AppLink.HTTPStatusCode.Type) -> AppLink.HTTPStatusCode",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "HTTPStatusCode",
+                    "printedName": "AppLink.HTTPStatusCode",
+                    "usr": "s:7AppLink14HTTPStatusCodeO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "AppLink.HTTPStatusCode.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "HTTPStatusCode",
+                        "printedName": "AppLink.HTTPStatusCode",
+                        "usr": "s:7AppLink14HTTPStatusCodeO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:7AppLink14HTTPStatusCodeO8acceptedyA2CmF",
+            "mangledName": "$s7AppLink14HTTPStatusCodeO8acceptedyA2CmF",
+            "moduleName": "AppLink",
+            "declAttributes": [
+              "RawDocComment"
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "nonAuthoritativeInformation",
+            "printedName": "nonAuthoritativeInformation",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(AppLink.HTTPStatusCode.Type) -> AppLink.HTTPStatusCode",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "HTTPStatusCode",
+                    "printedName": "AppLink.HTTPStatusCode",
+                    "usr": "s:7AppLink14HTTPStatusCodeO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "AppLink.HTTPStatusCode.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "HTTPStatusCode",
+                        "printedName": "AppLink.HTTPStatusCode",
+                        "usr": "s:7AppLink14HTTPStatusCodeO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:7AppLink14HTTPStatusCodeO27nonAuthoritativeInformationyA2CmF",
+            "mangledName": "$s7AppLink14HTTPStatusCodeO27nonAuthoritativeInformationyA2CmF",
+            "moduleName": "AppLink",
+            "declAttributes": [
+              "RawDocComment"
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "noContent",
+            "printedName": "noContent",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(AppLink.HTTPStatusCode.Type) -> AppLink.HTTPStatusCode",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "HTTPStatusCode",
+                    "printedName": "AppLink.HTTPStatusCode",
+                    "usr": "s:7AppLink14HTTPStatusCodeO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "AppLink.HTTPStatusCode.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "HTTPStatusCode",
+                        "printedName": "AppLink.HTTPStatusCode",
+                        "usr": "s:7AppLink14HTTPStatusCodeO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:7AppLink14HTTPStatusCodeO9noContentyA2CmF",
+            "mangledName": "$s7AppLink14HTTPStatusCodeO9noContentyA2CmF",
+            "moduleName": "AppLink",
+            "declAttributes": [
+              "RawDocComment"
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "resetContent",
+            "printedName": "resetContent",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(AppLink.HTTPStatusCode.Type) -> AppLink.HTTPStatusCode",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "HTTPStatusCode",
+                    "printedName": "AppLink.HTTPStatusCode",
+                    "usr": "s:7AppLink14HTTPStatusCodeO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "AppLink.HTTPStatusCode.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "HTTPStatusCode",
+                        "printedName": "AppLink.HTTPStatusCode",
+                        "usr": "s:7AppLink14HTTPStatusCodeO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:7AppLink14HTTPStatusCodeO12resetContentyA2CmF",
+            "mangledName": "$s7AppLink14HTTPStatusCodeO12resetContentyA2CmF",
+            "moduleName": "AppLink",
+            "declAttributes": [
+              "RawDocComment"
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "partialContent",
+            "printedName": "partialContent",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(AppLink.HTTPStatusCode.Type) -> AppLink.HTTPStatusCode",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "HTTPStatusCode",
+                    "printedName": "AppLink.HTTPStatusCode",
+                    "usr": "s:7AppLink14HTTPStatusCodeO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "AppLink.HTTPStatusCode.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "HTTPStatusCode",
+                        "printedName": "AppLink.HTTPStatusCode",
+                        "usr": "s:7AppLink14HTTPStatusCodeO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:7AppLink14HTTPStatusCodeO14partialContentyA2CmF",
+            "mangledName": "$s7AppLink14HTTPStatusCodeO14partialContentyA2CmF",
+            "moduleName": "AppLink",
+            "declAttributes": [
+              "RawDocComment"
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "multiStatus",
+            "printedName": "multiStatus",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(AppLink.HTTPStatusCode.Type) -> AppLink.HTTPStatusCode",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "HTTPStatusCode",
+                    "printedName": "AppLink.HTTPStatusCode",
+                    "usr": "s:7AppLink14HTTPStatusCodeO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "AppLink.HTTPStatusCode.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "HTTPStatusCode",
+                        "printedName": "AppLink.HTTPStatusCode",
+                        "usr": "s:7AppLink14HTTPStatusCodeO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:7AppLink14HTTPStatusCodeO11multiStatusyA2CmF",
+            "mangledName": "$s7AppLink14HTTPStatusCodeO11multiStatusyA2CmF",
+            "moduleName": "AppLink",
+            "declAttributes": [
+              "RawDocComment"
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "alreadyReported",
+            "printedName": "alreadyReported",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(AppLink.HTTPStatusCode.Type) -> AppLink.HTTPStatusCode",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "HTTPStatusCode",
+                    "printedName": "AppLink.HTTPStatusCode",
+                    "usr": "s:7AppLink14HTTPStatusCodeO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "AppLink.HTTPStatusCode.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "HTTPStatusCode",
+                        "printedName": "AppLink.HTTPStatusCode",
+                        "usr": "s:7AppLink14HTTPStatusCodeO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:7AppLink14HTTPStatusCodeO15alreadyReportedyA2CmF",
+            "mangledName": "$s7AppLink14HTTPStatusCodeO15alreadyReportedyA2CmF",
+            "moduleName": "AppLink",
+            "declAttributes": [
+              "RawDocComment"
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "IMUsed",
+            "printedName": "IMUsed",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(AppLink.HTTPStatusCode.Type) -> AppLink.HTTPStatusCode",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "HTTPStatusCode",
+                    "printedName": "AppLink.HTTPStatusCode",
+                    "usr": "s:7AppLink14HTTPStatusCodeO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "AppLink.HTTPStatusCode.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "HTTPStatusCode",
+                        "printedName": "AppLink.HTTPStatusCode",
+                        "usr": "s:7AppLink14HTTPStatusCodeO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:7AppLink14HTTPStatusCodeO6IMUsedyA2CmF",
+            "mangledName": "$s7AppLink14HTTPStatusCodeO6IMUsedyA2CmF",
+            "moduleName": "AppLink",
+            "declAttributes": [
+              "RawDocComment"
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "multipleChoices",
+            "printedName": "multipleChoices",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(AppLink.HTTPStatusCode.Type) -> AppLink.HTTPStatusCode",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "HTTPStatusCode",
+                    "printedName": "AppLink.HTTPStatusCode",
+                    "usr": "s:7AppLink14HTTPStatusCodeO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "AppLink.HTTPStatusCode.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "HTTPStatusCode",
+                        "printedName": "AppLink.HTTPStatusCode",
+                        "usr": "s:7AppLink14HTTPStatusCodeO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:7AppLink14HTTPStatusCodeO15multipleChoicesyA2CmF",
+            "mangledName": "$s7AppLink14HTTPStatusCodeO15multipleChoicesyA2CmF",
+            "moduleName": "AppLink",
+            "declAttributes": [
+              "RawDocComment"
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "movedPermanently",
+            "printedName": "movedPermanently",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(AppLink.HTTPStatusCode.Type) -> AppLink.HTTPStatusCode",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "HTTPStatusCode",
+                    "printedName": "AppLink.HTTPStatusCode",
+                    "usr": "s:7AppLink14HTTPStatusCodeO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "AppLink.HTTPStatusCode.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "HTTPStatusCode",
+                        "printedName": "AppLink.HTTPStatusCode",
+                        "usr": "s:7AppLink14HTTPStatusCodeO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:7AppLink14HTTPStatusCodeO16movedPermanentlyyA2CmF",
+            "mangledName": "$s7AppLink14HTTPStatusCodeO16movedPermanentlyyA2CmF",
+            "moduleName": "AppLink",
+            "declAttributes": [
+              "RawDocComment"
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "found",
+            "printedName": "found",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(AppLink.HTTPStatusCode.Type) -> AppLink.HTTPStatusCode",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "HTTPStatusCode",
+                    "printedName": "AppLink.HTTPStatusCode",
+                    "usr": "s:7AppLink14HTTPStatusCodeO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "AppLink.HTTPStatusCode.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "HTTPStatusCode",
+                        "printedName": "AppLink.HTTPStatusCode",
+                        "usr": "s:7AppLink14HTTPStatusCodeO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:7AppLink14HTTPStatusCodeO5foundyA2CmF",
+            "mangledName": "$s7AppLink14HTTPStatusCodeO5foundyA2CmF",
+            "moduleName": "AppLink",
+            "declAttributes": [
+              "RawDocComment"
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "seeOther",
+            "printedName": "seeOther",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(AppLink.HTTPStatusCode.Type) -> AppLink.HTTPStatusCode",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "HTTPStatusCode",
+                    "printedName": "AppLink.HTTPStatusCode",
+                    "usr": "s:7AppLink14HTTPStatusCodeO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "AppLink.HTTPStatusCode.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "HTTPStatusCode",
+                        "printedName": "AppLink.HTTPStatusCode",
+                        "usr": "s:7AppLink14HTTPStatusCodeO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:7AppLink14HTTPStatusCodeO8seeOtheryA2CmF",
+            "mangledName": "$s7AppLink14HTTPStatusCodeO8seeOtheryA2CmF",
+            "moduleName": "AppLink",
+            "declAttributes": [
+              "RawDocComment"
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "notModified",
+            "printedName": "notModified",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(AppLink.HTTPStatusCode.Type) -> AppLink.HTTPStatusCode",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "HTTPStatusCode",
+                    "printedName": "AppLink.HTTPStatusCode",
+                    "usr": "s:7AppLink14HTTPStatusCodeO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "AppLink.HTTPStatusCode.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "HTTPStatusCode",
+                        "printedName": "AppLink.HTTPStatusCode",
+                        "usr": "s:7AppLink14HTTPStatusCodeO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:7AppLink14HTTPStatusCodeO11notModifiedyA2CmF",
+            "mangledName": "$s7AppLink14HTTPStatusCodeO11notModifiedyA2CmF",
+            "moduleName": "AppLink",
+            "declAttributes": [
+              "RawDocComment"
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "useProxy",
+            "printedName": "useProxy",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(AppLink.HTTPStatusCode.Type) -> AppLink.HTTPStatusCode",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "HTTPStatusCode",
+                    "printedName": "AppLink.HTTPStatusCode",
+                    "usr": "s:7AppLink14HTTPStatusCodeO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "AppLink.HTTPStatusCode.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "HTTPStatusCode",
+                        "printedName": "AppLink.HTTPStatusCode",
+                        "usr": "s:7AppLink14HTTPStatusCodeO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:7AppLink14HTTPStatusCodeO8useProxyyA2CmF",
+            "mangledName": "$s7AppLink14HTTPStatusCodeO8useProxyyA2CmF",
+            "moduleName": "AppLink",
+            "declAttributes": [
+              "RawDocComment"
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "switchProxy",
+            "printedName": "switchProxy",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(AppLink.HTTPStatusCode.Type) -> AppLink.HTTPStatusCode",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "HTTPStatusCode",
+                    "printedName": "AppLink.HTTPStatusCode",
+                    "usr": "s:7AppLink14HTTPStatusCodeO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "AppLink.HTTPStatusCode.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "HTTPStatusCode",
+                        "printedName": "AppLink.HTTPStatusCode",
+                        "usr": "s:7AppLink14HTTPStatusCodeO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:7AppLink14HTTPStatusCodeO11switchProxyyA2CmF",
+            "mangledName": "$s7AppLink14HTTPStatusCodeO11switchProxyyA2CmF",
+            "moduleName": "AppLink",
+            "declAttributes": [
+              "RawDocComment"
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "temporaryRedirect",
+            "printedName": "temporaryRedirect",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(AppLink.HTTPStatusCode.Type) -> AppLink.HTTPStatusCode",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "HTTPStatusCode",
+                    "printedName": "AppLink.HTTPStatusCode",
+                    "usr": "s:7AppLink14HTTPStatusCodeO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "AppLink.HTTPStatusCode.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "HTTPStatusCode",
+                        "printedName": "AppLink.HTTPStatusCode",
+                        "usr": "s:7AppLink14HTTPStatusCodeO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:7AppLink14HTTPStatusCodeO17temporaryRedirectyA2CmF",
+            "mangledName": "$s7AppLink14HTTPStatusCodeO17temporaryRedirectyA2CmF",
+            "moduleName": "AppLink",
+            "declAttributes": [
+              "RawDocComment"
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "permenantRedirect",
+            "printedName": "permenantRedirect",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(AppLink.HTTPStatusCode.Type) -> AppLink.HTTPStatusCode",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "HTTPStatusCode",
+                    "printedName": "AppLink.HTTPStatusCode",
+                    "usr": "s:7AppLink14HTTPStatusCodeO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "AppLink.HTTPStatusCode.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "HTTPStatusCode",
+                        "printedName": "AppLink.HTTPStatusCode",
+                        "usr": "s:7AppLink14HTTPStatusCodeO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:7AppLink14HTTPStatusCodeO17permenantRedirectyA2CmF",
+            "mangledName": "$s7AppLink14HTTPStatusCodeO17permenantRedirectyA2CmF",
+            "moduleName": "AppLink",
+            "declAttributes": [
+              "RawDocComment"
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "badRequest",
+            "printedName": "badRequest",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(AppLink.HTTPStatusCode.Type) -> AppLink.HTTPStatusCode",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "HTTPStatusCode",
+                    "printedName": "AppLink.HTTPStatusCode",
+                    "usr": "s:7AppLink14HTTPStatusCodeO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "AppLink.HTTPStatusCode.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "HTTPStatusCode",
+                        "printedName": "AppLink.HTTPStatusCode",
+                        "usr": "s:7AppLink14HTTPStatusCodeO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:7AppLink14HTTPStatusCodeO10badRequestyA2CmF",
+            "mangledName": "$s7AppLink14HTTPStatusCodeO10badRequestyA2CmF",
+            "moduleName": "AppLink",
+            "declAttributes": [
+              "RawDocComment"
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "unauthorized",
+            "printedName": "unauthorized",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(AppLink.HTTPStatusCode.Type) -> AppLink.HTTPStatusCode",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "HTTPStatusCode",
+                    "printedName": "AppLink.HTTPStatusCode",
+                    "usr": "s:7AppLink14HTTPStatusCodeO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "AppLink.HTTPStatusCode.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "HTTPStatusCode",
+                        "printedName": "AppLink.HTTPStatusCode",
+                        "usr": "s:7AppLink14HTTPStatusCodeO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:7AppLink14HTTPStatusCodeO12unauthorizedyA2CmF",
+            "mangledName": "$s7AppLink14HTTPStatusCodeO12unauthorizedyA2CmF",
+            "moduleName": "AppLink",
+            "declAttributes": [
+              "RawDocComment"
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "paymentRequired",
+            "printedName": "paymentRequired",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(AppLink.HTTPStatusCode.Type) -> AppLink.HTTPStatusCode",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "HTTPStatusCode",
+                    "printedName": "AppLink.HTTPStatusCode",
+                    "usr": "s:7AppLink14HTTPStatusCodeO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "AppLink.HTTPStatusCode.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "HTTPStatusCode",
+                        "printedName": "AppLink.HTTPStatusCode",
+                        "usr": "s:7AppLink14HTTPStatusCodeO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:7AppLink14HTTPStatusCodeO15paymentRequiredyA2CmF",
+            "mangledName": "$s7AppLink14HTTPStatusCodeO15paymentRequiredyA2CmF",
+            "moduleName": "AppLink",
+            "declAttributes": [
+              "RawDocComment"
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "forbidden",
+            "printedName": "forbidden",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(AppLink.HTTPStatusCode.Type) -> AppLink.HTTPStatusCode",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "HTTPStatusCode",
+                    "printedName": "AppLink.HTTPStatusCode",
+                    "usr": "s:7AppLink14HTTPStatusCodeO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "AppLink.HTTPStatusCode.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "HTTPStatusCode",
+                        "printedName": "AppLink.HTTPStatusCode",
+                        "usr": "s:7AppLink14HTTPStatusCodeO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:7AppLink14HTTPStatusCodeO9forbiddenyA2CmF",
+            "mangledName": "$s7AppLink14HTTPStatusCodeO9forbiddenyA2CmF",
+            "moduleName": "AppLink",
+            "declAttributes": [
+              "RawDocComment"
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "notFound",
+            "printedName": "notFound",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(AppLink.HTTPStatusCode.Type) -> AppLink.HTTPStatusCode",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "HTTPStatusCode",
+                    "printedName": "AppLink.HTTPStatusCode",
+                    "usr": "s:7AppLink14HTTPStatusCodeO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "AppLink.HTTPStatusCode.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "HTTPStatusCode",
+                        "printedName": "AppLink.HTTPStatusCode",
+                        "usr": "s:7AppLink14HTTPStatusCodeO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:7AppLink14HTTPStatusCodeO8notFoundyA2CmF",
+            "mangledName": "$s7AppLink14HTTPStatusCodeO8notFoundyA2CmF",
+            "moduleName": "AppLink",
+            "declAttributes": [
+              "RawDocComment"
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "methodNotAllowed",
+            "printedName": "methodNotAllowed",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(AppLink.HTTPStatusCode.Type) -> AppLink.HTTPStatusCode",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "HTTPStatusCode",
+                    "printedName": "AppLink.HTTPStatusCode",
+                    "usr": "s:7AppLink14HTTPStatusCodeO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "AppLink.HTTPStatusCode.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "HTTPStatusCode",
+                        "printedName": "AppLink.HTTPStatusCode",
+                        "usr": "s:7AppLink14HTTPStatusCodeO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:7AppLink14HTTPStatusCodeO16methodNotAllowedyA2CmF",
+            "mangledName": "$s7AppLink14HTTPStatusCodeO16methodNotAllowedyA2CmF",
+            "moduleName": "AppLink",
+            "declAttributes": [
+              "RawDocComment"
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "notAcceptable",
+            "printedName": "notAcceptable",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(AppLink.HTTPStatusCode.Type) -> AppLink.HTTPStatusCode",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "HTTPStatusCode",
+                    "printedName": "AppLink.HTTPStatusCode",
+                    "usr": "s:7AppLink14HTTPStatusCodeO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "AppLink.HTTPStatusCode.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "HTTPStatusCode",
+                        "printedName": "AppLink.HTTPStatusCode",
+                        "usr": "s:7AppLink14HTTPStatusCodeO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:7AppLink14HTTPStatusCodeO13notAcceptableyA2CmF",
+            "mangledName": "$s7AppLink14HTTPStatusCodeO13notAcceptableyA2CmF",
+            "moduleName": "AppLink",
+            "declAttributes": [
+              "RawDocComment"
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "proxyAuthenticationRequired",
+            "printedName": "proxyAuthenticationRequired",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(AppLink.HTTPStatusCode.Type) -> AppLink.HTTPStatusCode",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "HTTPStatusCode",
+                    "printedName": "AppLink.HTTPStatusCode",
+                    "usr": "s:7AppLink14HTTPStatusCodeO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "AppLink.HTTPStatusCode.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "HTTPStatusCode",
+                        "printedName": "AppLink.HTTPStatusCode",
+                        "usr": "s:7AppLink14HTTPStatusCodeO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:7AppLink14HTTPStatusCodeO27proxyAuthenticationRequiredyA2CmF",
+            "mangledName": "$s7AppLink14HTTPStatusCodeO27proxyAuthenticationRequiredyA2CmF",
+            "moduleName": "AppLink",
+            "declAttributes": [
+              "RawDocComment"
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "requestTimeout",
+            "printedName": "requestTimeout",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(AppLink.HTTPStatusCode.Type) -> AppLink.HTTPStatusCode",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "HTTPStatusCode",
+                    "printedName": "AppLink.HTTPStatusCode",
+                    "usr": "s:7AppLink14HTTPStatusCodeO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "AppLink.HTTPStatusCode.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "HTTPStatusCode",
+                        "printedName": "AppLink.HTTPStatusCode",
+                        "usr": "s:7AppLink14HTTPStatusCodeO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:7AppLink14HTTPStatusCodeO14requestTimeoutyA2CmF",
+            "mangledName": "$s7AppLink14HTTPStatusCodeO14requestTimeoutyA2CmF",
+            "moduleName": "AppLink",
+            "declAttributes": [
+              "RawDocComment"
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "conflict",
+            "printedName": "conflict",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(AppLink.HTTPStatusCode.Type) -> AppLink.HTTPStatusCode",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "HTTPStatusCode",
+                    "printedName": "AppLink.HTTPStatusCode",
+                    "usr": "s:7AppLink14HTTPStatusCodeO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "AppLink.HTTPStatusCode.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "HTTPStatusCode",
+                        "printedName": "AppLink.HTTPStatusCode",
+                        "usr": "s:7AppLink14HTTPStatusCodeO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:7AppLink14HTTPStatusCodeO8conflictyA2CmF",
+            "mangledName": "$s7AppLink14HTTPStatusCodeO8conflictyA2CmF",
+            "moduleName": "AppLink",
+            "declAttributes": [
+              "RawDocComment"
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "gone",
+            "printedName": "gone",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(AppLink.HTTPStatusCode.Type) -> AppLink.HTTPStatusCode",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "HTTPStatusCode",
+                    "printedName": "AppLink.HTTPStatusCode",
+                    "usr": "s:7AppLink14HTTPStatusCodeO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "AppLink.HTTPStatusCode.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "HTTPStatusCode",
+                        "printedName": "AppLink.HTTPStatusCode",
+                        "usr": "s:7AppLink14HTTPStatusCodeO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:7AppLink14HTTPStatusCodeO4goneyA2CmF",
+            "mangledName": "$s7AppLink14HTTPStatusCodeO4goneyA2CmF",
+            "moduleName": "AppLink",
+            "declAttributes": [
+              "RawDocComment"
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "lengthRequired",
+            "printedName": "lengthRequired",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(AppLink.HTTPStatusCode.Type) -> AppLink.HTTPStatusCode",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "HTTPStatusCode",
+                    "printedName": "AppLink.HTTPStatusCode",
+                    "usr": "s:7AppLink14HTTPStatusCodeO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "AppLink.HTTPStatusCode.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "HTTPStatusCode",
+                        "printedName": "AppLink.HTTPStatusCode",
+                        "usr": "s:7AppLink14HTTPStatusCodeO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:7AppLink14HTTPStatusCodeO14lengthRequiredyA2CmF",
+            "mangledName": "$s7AppLink14HTTPStatusCodeO14lengthRequiredyA2CmF",
+            "moduleName": "AppLink",
+            "declAttributes": [
+              "RawDocComment"
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "preconditionFailed",
+            "printedName": "preconditionFailed",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(AppLink.HTTPStatusCode.Type) -> AppLink.HTTPStatusCode",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "HTTPStatusCode",
+                    "printedName": "AppLink.HTTPStatusCode",
+                    "usr": "s:7AppLink14HTTPStatusCodeO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "AppLink.HTTPStatusCode.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "HTTPStatusCode",
+                        "printedName": "AppLink.HTTPStatusCode",
+                        "usr": "s:7AppLink14HTTPStatusCodeO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:7AppLink14HTTPStatusCodeO18preconditionFailedyA2CmF",
+            "mangledName": "$s7AppLink14HTTPStatusCodeO18preconditionFailedyA2CmF",
+            "moduleName": "AppLink",
+            "declAttributes": [
+              "RawDocComment"
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "payloadTooLarge",
+            "printedName": "payloadTooLarge",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(AppLink.HTTPStatusCode.Type) -> AppLink.HTTPStatusCode",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "HTTPStatusCode",
+                    "printedName": "AppLink.HTTPStatusCode",
+                    "usr": "s:7AppLink14HTTPStatusCodeO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "AppLink.HTTPStatusCode.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "HTTPStatusCode",
+                        "printedName": "AppLink.HTTPStatusCode",
+                        "usr": "s:7AppLink14HTTPStatusCodeO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:7AppLink14HTTPStatusCodeO15payloadTooLargeyA2CmF",
+            "mangledName": "$s7AppLink14HTTPStatusCodeO15payloadTooLargeyA2CmF",
+            "moduleName": "AppLink",
+            "declAttributes": [
+              "RawDocComment"
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "URITooLong",
+            "printedName": "URITooLong",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(AppLink.HTTPStatusCode.Type) -> AppLink.HTTPStatusCode",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "HTTPStatusCode",
+                    "printedName": "AppLink.HTTPStatusCode",
+                    "usr": "s:7AppLink14HTTPStatusCodeO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "AppLink.HTTPStatusCode.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "HTTPStatusCode",
+                        "printedName": "AppLink.HTTPStatusCode",
+                        "usr": "s:7AppLink14HTTPStatusCodeO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:7AppLink14HTTPStatusCodeO10URITooLongyA2CmF",
+            "mangledName": "$s7AppLink14HTTPStatusCodeO10URITooLongyA2CmF",
+            "moduleName": "AppLink",
+            "declAttributes": [
+              "RawDocComment"
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "unsupportedMediaType",
+            "printedName": "unsupportedMediaType",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(AppLink.HTTPStatusCode.Type) -> AppLink.HTTPStatusCode",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "HTTPStatusCode",
+                    "printedName": "AppLink.HTTPStatusCode",
+                    "usr": "s:7AppLink14HTTPStatusCodeO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "AppLink.HTTPStatusCode.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "HTTPStatusCode",
+                        "printedName": "AppLink.HTTPStatusCode",
+                        "usr": "s:7AppLink14HTTPStatusCodeO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:7AppLink14HTTPStatusCodeO20unsupportedMediaTypeyA2CmF",
+            "mangledName": "$s7AppLink14HTTPStatusCodeO20unsupportedMediaTypeyA2CmF",
+            "moduleName": "AppLink",
+            "declAttributes": [
+              "RawDocComment"
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "rangeNotSatisfiable",
+            "printedName": "rangeNotSatisfiable",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(AppLink.HTTPStatusCode.Type) -> AppLink.HTTPStatusCode",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "HTTPStatusCode",
+                    "printedName": "AppLink.HTTPStatusCode",
+                    "usr": "s:7AppLink14HTTPStatusCodeO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "AppLink.HTTPStatusCode.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "HTTPStatusCode",
+                        "printedName": "AppLink.HTTPStatusCode",
+                        "usr": "s:7AppLink14HTTPStatusCodeO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:7AppLink14HTTPStatusCodeO19rangeNotSatisfiableyA2CmF",
+            "mangledName": "$s7AppLink14HTTPStatusCodeO19rangeNotSatisfiableyA2CmF",
+            "moduleName": "AppLink",
+            "declAttributes": [
+              "RawDocComment"
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "expectationFailed",
+            "printedName": "expectationFailed",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(AppLink.HTTPStatusCode.Type) -> AppLink.HTTPStatusCode",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "HTTPStatusCode",
+                    "printedName": "AppLink.HTTPStatusCode",
+                    "usr": "s:7AppLink14HTTPStatusCodeO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "AppLink.HTTPStatusCode.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "HTTPStatusCode",
+                        "printedName": "AppLink.HTTPStatusCode",
+                        "usr": "s:7AppLink14HTTPStatusCodeO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:7AppLink14HTTPStatusCodeO17expectationFailedyA2CmF",
+            "mangledName": "$s7AppLink14HTTPStatusCodeO17expectationFailedyA2CmF",
+            "moduleName": "AppLink",
+            "declAttributes": [
+              "RawDocComment"
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "teapot",
+            "printedName": "teapot",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(AppLink.HTTPStatusCode.Type) -> AppLink.HTTPStatusCode",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "HTTPStatusCode",
+                    "printedName": "AppLink.HTTPStatusCode",
+                    "usr": "s:7AppLink14HTTPStatusCodeO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "AppLink.HTTPStatusCode.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "HTTPStatusCode",
+                        "printedName": "AppLink.HTTPStatusCode",
+                        "usr": "s:7AppLink14HTTPStatusCodeO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:7AppLink14HTTPStatusCodeO6teapotyA2CmF",
+            "mangledName": "$s7AppLink14HTTPStatusCodeO6teapotyA2CmF",
+            "moduleName": "AppLink",
+            "declAttributes": [
+              "RawDocComment"
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "misdirectedRequest",
+            "printedName": "misdirectedRequest",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(AppLink.HTTPStatusCode.Type) -> AppLink.HTTPStatusCode",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "HTTPStatusCode",
+                    "printedName": "AppLink.HTTPStatusCode",
+                    "usr": "s:7AppLink14HTTPStatusCodeO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "AppLink.HTTPStatusCode.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "HTTPStatusCode",
+                        "printedName": "AppLink.HTTPStatusCode",
+                        "usr": "s:7AppLink14HTTPStatusCodeO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:7AppLink14HTTPStatusCodeO18misdirectedRequestyA2CmF",
+            "mangledName": "$s7AppLink14HTTPStatusCodeO18misdirectedRequestyA2CmF",
+            "moduleName": "AppLink",
+            "declAttributes": [
+              "RawDocComment"
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "unprocessableEntity",
+            "printedName": "unprocessableEntity",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(AppLink.HTTPStatusCode.Type) -> AppLink.HTTPStatusCode",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "HTTPStatusCode",
+                    "printedName": "AppLink.HTTPStatusCode",
+                    "usr": "s:7AppLink14HTTPStatusCodeO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "AppLink.HTTPStatusCode.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "HTTPStatusCode",
+                        "printedName": "AppLink.HTTPStatusCode",
+                        "usr": "s:7AppLink14HTTPStatusCodeO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:7AppLink14HTTPStatusCodeO19unprocessableEntityyA2CmF",
+            "mangledName": "$s7AppLink14HTTPStatusCodeO19unprocessableEntityyA2CmF",
+            "moduleName": "AppLink",
+            "declAttributes": [
+              "RawDocComment"
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "locked",
+            "printedName": "locked",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(AppLink.HTTPStatusCode.Type) -> AppLink.HTTPStatusCode",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "HTTPStatusCode",
+                    "printedName": "AppLink.HTTPStatusCode",
+                    "usr": "s:7AppLink14HTTPStatusCodeO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "AppLink.HTTPStatusCode.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "HTTPStatusCode",
+                        "printedName": "AppLink.HTTPStatusCode",
+                        "usr": "s:7AppLink14HTTPStatusCodeO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:7AppLink14HTTPStatusCodeO6lockedyA2CmF",
+            "mangledName": "$s7AppLink14HTTPStatusCodeO6lockedyA2CmF",
+            "moduleName": "AppLink",
+            "declAttributes": [
+              "RawDocComment"
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "failedDependency",
+            "printedName": "failedDependency",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(AppLink.HTTPStatusCode.Type) -> AppLink.HTTPStatusCode",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "HTTPStatusCode",
+                    "printedName": "AppLink.HTTPStatusCode",
+                    "usr": "s:7AppLink14HTTPStatusCodeO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "AppLink.HTTPStatusCode.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "HTTPStatusCode",
+                        "printedName": "AppLink.HTTPStatusCode",
+                        "usr": "s:7AppLink14HTTPStatusCodeO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:7AppLink14HTTPStatusCodeO16failedDependencyyA2CmF",
+            "mangledName": "$s7AppLink14HTTPStatusCodeO16failedDependencyyA2CmF",
+            "moduleName": "AppLink",
+            "declAttributes": [
+              "RawDocComment"
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "upgradeRequired",
+            "printedName": "upgradeRequired",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(AppLink.HTTPStatusCode.Type) -> AppLink.HTTPStatusCode",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "HTTPStatusCode",
+                    "printedName": "AppLink.HTTPStatusCode",
+                    "usr": "s:7AppLink14HTTPStatusCodeO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "AppLink.HTTPStatusCode.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "HTTPStatusCode",
+                        "printedName": "AppLink.HTTPStatusCode",
+                        "usr": "s:7AppLink14HTTPStatusCodeO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:7AppLink14HTTPStatusCodeO15upgradeRequiredyA2CmF",
+            "mangledName": "$s7AppLink14HTTPStatusCodeO15upgradeRequiredyA2CmF",
+            "moduleName": "AppLink",
+            "declAttributes": [
+              "RawDocComment"
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "preconditionRequired",
+            "printedName": "preconditionRequired",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(AppLink.HTTPStatusCode.Type) -> AppLink.HTTPStatusCode",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "HTTPStatusCode",
+                    "printedName": "AppLink.HTTPStatusCode",
+                    "usr": "s:7AppLink14HTTPStatusCodeO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "AppLink.HTTPStatusCode.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "HTTPStatusCode",
+                        "printedName": "AppLink.HTTPStatusCode",
+                        "usr": "s:7AppLink14HTTPStatusCodeO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:7AppLink14HTTPStatusCodeO20preconditionRequiredyA2CmF",
+            "mangledName": "$s7AppLink14HTTPStatusCodeO20preconditionRequiredyA2CmF",
+            "moduleName": "AppLink",
+            "declAttributes": [
+              "RawDocComment"
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "tooManyRequests",
+            "printedName": "tooManyRequests",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(AppLink.HTTPStatusCode.Type) -> AppLink.HTTPStatusCode",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "HTTPStatusCode",
+                    "printedName": "AppLink.HTTPStatusCode",
+                    "usr": "s:7AppLink14HTTPStatusCodeO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "AppLink.HTTPStatusCode.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "HTTPStatusCode",
+                        "printedName": "AppLink.HTTPStatusCode",
+                        "usr": "s:7AppLink14HTTPStatusCodeO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:7AppLink14HTTPStatusCodeO15tooManyRequestsyA2CmF",
+            "mangledName": "$s7AppLink14HTTPStatusCodeO15tooManyRequestsyA2CmF",
+            "moduleName": "AppLink",
+            "declAttributes": [
+              "RawDocComment"
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "requestHeaderFieldsTooLarge",
+            "printedName": "requestHeaderFieldsTooLarge",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(AppLink.HTTPStatusCode.Type) -> AppLink.HTTPStatusCode",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "HTTPStatusCode",
+                    "printedName": "AppLink.HTTPStatusCode",
+                    "usr": "s:7AppLink14HTTPStatusCodeO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "AppLink.HTTPStatusCode.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "HTTPStatusCode",
+                        "printedName": "AppLink.HTTPStatusCode",
+                        "usr": "s:7AppLink14HTTPStatusCodeO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:7AppLink14HTTPStatusCodeO27requestHeaderFieldsTooLargeyA2CmF",
+            "mangledName": "$s7AppLink14HTTPStatusCodeO27requestHeaderFieldsTooLargeyA2CmF",
+            "moduleName": "AppLink",
+            "declAttributes": [
+              "RawDocComment"
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "noResponse",
+            "printedName": "noResponse",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(AppLink.HTTPStatusCode.Type) -> AppLink.HTTPStatusCode",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "HTTPStatusCode",
+                    "printedName": "AppLink.HTTPStatusCode",
+                    "usr": "s:7AppLink14HTTPStatusCodeO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "AppLink.HTTPStatusCode.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "HTTPStatusCode",
+                        "printedName": "AppLink.HTTPStatusCode",
+                        "usr": "s:7AppLink14HTTPStatusCodeO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:7AppLink14HTTPStatusCodeO10noResponseyA2CmF",
+            "mangledName": "$s7AppLink14HTTPStatusCodeO10noResponseyA2CmF",
+            "moduleName": "AppLink",
+            "declAttributes": [
+              "RawDocComment"
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "unavailableForLegalReasons",
+            "printedName": "unavailableForLegalReasons",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(AppLink.HTTPStatusCode.Type) -> AppLink.HTTPStatusCode",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "HTTPStatusCode",
+                    "printedName": "AppLink.HTTPStatusCode",
+                    "usr": "s:7AppLink14HTTPStatusCodeO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "AppLink.HTTPStatusCode.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "HTTPStatusCode",
+                        "printedName": "AppLink.HTTPStatusCode",
+                        "usr": "s:7AppLink14HTTPStatusCodeO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:7AppLink14HTTPStatusCodeO26unavailableForLegalReasonsyA2CmF",
+            "mangledName": "$s7AppLink14HTTPStatusCodeO26unavailableForLegalReasonsyA2CmF",
+            "moduleName": "AppLink",
+            "declAttributes": [
+              "RawDocComment"
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "SSLCertificateError",
+            "printedName": "SSLCertificateError",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(AppLink.HTTPStatusCode.Type) -> AppLink.HTTPStatusCode",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "HTTPStatusCode",
+                    "printedName": "AppLink.HTTPStatusCode",
+                    "usr": "s:7AppLink14HTTPStatusCodeO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "AppLink.HTTPStatusCode.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "HTTPStatusCode",
+                        "printedName": "AppLink.HTTPStatusCode",
+                        "usr": "s:7AppLink14HTTPStatusCodeO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:7AppLink14HTTPStatusCodeO19SSLCertificateErroryA2CmF",
+            "mangledName": "$s7AppLink14HTTPStatusCodeO19SSLCertificateErroryA2CmF",
+            "moduleName": "AppLink",
+            "declAttributes": [
+              "RawDocComment"
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "SSLCertificateRequired",
+            "printedName": "SSLCertificateRequired",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(AppLink.HTTPStatusCode.Type) -> AppLink.HTTPStatusCode",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "HTTPStatusCode",
+                    "printedName": "AppLink.HTTPStatusCode",
+                    "usr": "s:7AppLink14HTTPStatusCodeO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "AppLink.HTTPStatusCode.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "HTTPStatusCode",
+                        "printedName": "AppLink.HTTPStatusCode",
+                        "usr": "s:7AppLink14HTTPStatusCodeO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:7AppLink14HTTPStatusCodeO22SSLCertificateRequiredyA2CmF",
+            "mangledName": "$s7AppLink14HTTPStatusCodeO22SSLCertificateRequiredyA2CmF",
+            "moduleName": "AppLink",
+            "declAttributes": [
+              "RawDocComment"
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "HTTPRequestSentToHTTPSPort",
+            "printedName": "HTTPRequestSentToHTTPSPort",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(AppLink.HTTPStatusCode.Type) -> AppLink.HTTPStatusCode",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "HTTPStatusCode",
+                    "printedName": "AppLink.HTTPStatusCode",
+                    "usr": "s:7AppLink14HTTPStatusCodeO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "AppLink.HTTPStatusCode.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "HTTPStatusCode",
+                        "printedName": "AppLink.HTTPStatusCode",
+                        "usr": "s:7AppLink14HTTPStatusCodeO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:7AppLink14HTTPStatusCodeO26HTTPRequestSentToHTTPSPortyA2CmF",
+            "mangledName": "$s7AppLink14HTTPStatusCodeO26HTTPRequestSentToHTTPSPortyA2CmF",
+            "moduleName": "AppLink",
+            "declAttributes": [
+              "RawDocComment"
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "clientClosedRequest",
+            "printedName": "clientClosedRequest",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(AppLink.HTTPStatusCode.Type) -> AppLink.HTTPStatusCode",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "HTTPStatusCode",
+                    "printedName": "AppLink.HTTPStatusCode",
+                    "usr": "s:7AppLink14HTTPStatusCodeO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "AppLink.HTTPStatusCode.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "HTTPStatusCode",
+                        "printedName": "AppLink.HTTPStatusCode",
+                        "usr": "s:7AppLink14HTTPStatusCodeO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:7AppLink14HTTPStatusCodeO19clientClosedRequestyA2CmF",
+            "mangledName": "$s7AppLink14HTTPStatusCodeO19clientClosedRequestyA2CmF",
+            "moduleName": "AppLink",
+            "declAttributes": [
+              "RawDocComment"
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "internalServerError",
+            "printedName": "internalServerError",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(AppLink.HTTPStatusCode.Type) -> AppLink.HTTPStatusCode",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "HTTPStatusCode",
+                    "printedName": "AppLink.HTTPStatusCode",
+                    "usr": "s:7AppLink14HTTPStatusCodeO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "AppLink.HTTPStatusCode.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "HTTPStatusCode",
+                        "printedName": "AppLink.HTTPStatusCode",
+                        "usr": "s:7AppLink14HTTPStatusCodeO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:7AppLink14HTTPStatusCodeO19internalServerErroryA2CmF",
+            "mangledName": "$s7AppLink14HTTPStatusCodeO19internalServerErroryA2CmF",
+            "moduleName": "AppLink",
+            "declAttributes": [
+              "RawDocComment"
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "notImplemented",
+            "printedName": "notImplemented",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(AppLink.HTTPStatusCode.Type) -> AppLink.HTTPStatusCode",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "HTTPStatusCode",
+                    "printedName": "AppLink.HTTPStatusCode",
+                    "usr": "s:7AppLink14HTTPStatusCodeO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "AppLink.HTTPStatusCode.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "HTTPStatusCode",
+                        "printedName": "AppLink.HTTPStatusCode",
+                        "usr": "s:7AppLink14HTTPStatusCodeO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:7AppLink14HTTPStatusCodeO14notImplementedyA2CmF",
+            "mangledName": "$s7AppLink14HTTPStatusCodeO14notImplementedyA2CmF",
+            "moduleName": "AppLink",
+            "declAttributes": [
+              "RawDocComment"
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "badGateway",
+            "printedName": "badGateway",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(AppLink.HTTPStatusCode.Type) -> AppLink.HTTPStatusCode",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "HTTPStatusCode",
+                    "printedName": "AppLink.HTTPStatusCode",
+                    "usr": "s:7AppLink14HTTPStatusCodeO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "AppLink.HTTPStatusCode.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "HTTPStatusCode",
+                        "printedName": "AppLink.HTTPStatusCode",
+                        "usr": "s:7AppLink14HTTPStatusCodeO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:7AppLink14HTTPStatusCodeO10badGatewayyA2CmF",
+            "mangledName": "$s7AppLink14HTTPStatusCodeO10badGatewayyA2CmF",
+            "moduleName": "AppLink",
+            "declAttributes": [
+              "RawDocComment"
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "serviceUnavailable",
+            "printedName": "serviceUnavailable",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(AppLink.HTTPStatusCode.Type) -> AppLink.HTTPStatusCode",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "HTTPStatusCode",
+                    "printedName": "AppLink.HTTPStatusCode",
+                    "usr": "s:7AppLink14HTTPStatusCodeO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "AppLink.HTTPStatusCode.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "HTTPStatusCode",
+                        "printedName": "AppLink.HTTPStatusCode",
+                        "usr": "s:7AppLink14HTTPStatusCodeO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:7AppLink14HTTPStatusCodeO18serviceUnavailableyA2CmF",
+            "mangledName": "$s7AppLink14HTTPStatusCodeO18serviceUnavailableyA2CmF",
+            "moduleName": "AppLink",
+            "declAttributes": [
+              "RawDocComment"
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "gatewayTimeout",
+            "printedName": "gatewayTimeout",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(AppLink.HTTPStatusCode.Type) -> AppLink.HTTPStatusCode",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "HTTPStatusCode",
+                    "printedName": "AppLink.HTTPStatusCode",
+                    "usr": "s:7AppLink14HTTPStatusCodeO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "AppLink.HTTPStatusCode.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "HTTPStatusCode",
+                        "printedName": "AppLink.HTTPStatusCode",
+                        "usr": "s:7AppLink14HTTPStatusCodeO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:7AppLink14HTTPStatusCodeO14gatewayTimeoutyA2CmF",
+            "mangledName": "$s7AppLink14HTTPStatusCodeO14gatewayTimeoutyA2CmF",
+            "moduleName": "AppLink",
+            "declAttributes": [
+              "RawDocComment"
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "HTTPVersionNotSupported",
+            "printedName": "HTTPVersionNotSupported",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(AppLink.HTTPStatusCode.Type) -> AppLink.HTTPStatusCode",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "HTTPStatusCode",
+                    "printedName": "AppLink.HTTPStatusCode",
+                    "usr": "s:7AppLink14HTTPStatusCodeO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "AppLink.HTTPStatusCode.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "HTTPStatusCode",
+                        "printedName": "AppLink.HTTPStatusCode",
+                        "usr": "s:7AppLink14HTTPStatusCodeO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:7AppLink14HTTPStatusCodeO23HTTPVersionNotSupportedyA2CmF",
+            "mangledName": "$s7AppLink14HTTPStatusCodeO23HTTPVersionNotSupportedyA2CmF",
+            "moduleName": "AppLink",
+            "declAttributes": [
+              "RawDocComment"
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "variantAlsoNegotiates",
+            "printedName": "variantAlsoNegotiates",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(AppLink.HTTPStatusCode.Type) -> AppLink.HTTPStatusCode",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "HTTPStatusCode",
+                    "printedName": "AppLink.HTTPStatusCode",
+                    "usr": "s:7AppLink14HTTPStatusCodeO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "AppLink.HTTPStatusCode.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "HTTPStatusCode",
+                        "printedName": "AppLink.HTTPStatusCode",
+                        "usr": "s:7AppLink14HTTPStatusCodeO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:7AppLink14HTTPStatusCodeO21variantAlsoNegotiatesyA2CmF",
+            "mangledName": "$s7AppLink14HTTPStatusCodeO21variantAlsoNegotiatesyA2CmF",
+            "moduleName": "AppLink",
+            "declAttributes": [
+              "RawDocComment"
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "insufficientStorage",
+            "printedName": "insufficientStorage",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(AppLink.HTTPStatusCode.Type) -> AppLink.HTTPStatusCode",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "HTTPStatusCode",
+                    "printedName": "AppLink.HTTPStatusCode",
+                    "usr": "s:7AppLink14HTTPStatusCodeO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "AppLink.HTTPStatusCode.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "HTTPStatusCode",
+                        "printedName": "AppLink.HTTPStatusCode",
+                        "usr": "s:7AppLink14HTTPStatusCodeO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:7AppLink14HTTPStatusCodeO19insufficientStorageyA2CmF",
+            "mangledName": "$s7AppLink14HTTPStatusCodeO19insufficientStorageyA2CmF",
+            "moduleName": "AppLink",
+            "declAttributes": [
+              "RawDocComment"
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "loopDetected",
+            "printedName": "loopDetected",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(AppLink.HTTPStatusCode.Type) -> AppLink.HTTPStatusCode",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "HTTPStatusCode",
+                    "printedName": "AppLink.HTTPStatusCode",
+                    "usr": "s:7AppLink14HTTPStatusCodeO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "AppLink.HTTPStatusCode.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "HTTPStatusCode",
+                        "printedName": "AppLink.HTTPStatusCode",
+                        "usr": "s:7AppLink14HTTPStatusCodeO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:7AppLink14HTTPStatusCodeO12loopDetectedyA2CmF",
+            "mangledName": "$s7AppLink14HTTPStatusCodeO12loopDetectedyA2CmF",
+            "moduleName": "AppLink",
+            "declAttributes": [
+              "RawDocComment"
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "notExtended",
+            "printedName": "notExtended",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(AppLink.HTTPStatusCode.Type) -> AppLink.HTTPStatusCode",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "HTTPStatusCode",
+                    "printedName": "AppLink.HTTPStatusCode",
+                    "usr": "s:7AppLink14HTTPStatusCodeO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "AppLink.HTTPStatusCode.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "HTTPStatusCode",
+                        "printedName": "AppLink.HTTPStatusCode",
+                        "usr": "s:7AppLink14HTTPStatusCodeO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:7AppLink14HTTPStatusCodeO11notExtendedyA2CmF",
+            "mangledName": "$s7AppLink14HTTPStatusCodeO11notExtendedyA2CmF",
+            "moduleName": "AppLink",
+            "declAttributes": [
+              "RawDocComment"
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "networkAuthenticationRequired",
+            "printedName": "networkAuthenticationRequired",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(AppLink.HTTPStatusCode.Type) -> AppLink.HTTPStatusCode",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "HTTPStatusCode",
+                    "printedName": "AppLink.HTTPStatusCode",
+                    "usr": "s:7AppLink14HTTPStatusCodeO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "AppLink.HTTPStatusCode.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "HTTPStatusCode",
+                        "printedName": "AppLink.HTTPStatusCode",
+                        "usr": "s:7AppLink14HTTPStatusCodeO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:7AppLink14HTTPStatusCodeO29networkAuthenticationRequiredyA2CmF",
+            "mangledName": "$s7AppLink14HTTPStatusCodeO29networkAuthenticationRequiredyA2CmF",
+            "moduleName": "AppLink",
+            "declAttributes": [
+              "RawDocComment"
+            ]
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(rawValue:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "AppLink.HTTPStatusCode?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "HTTPStatusCode",
+                    "printedName": "AppLink.HTTPStatusCode",
+                    "usr": "s:7AppLink14HTTPStatusCodeO"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:7AppLink14HTTPStatusCodeO8rawValueACSgSi_tcfc",
+            "mangledName": "$s7AppLink14HTTPStatusCodeO8rawValueACSgSi_tcfc",
+            "moduleName": "AppLink",
+            "implicit": true,
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Var",
+            "name": "rawValue",
+            "printedName": "rawValue",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:7AppLink14HTTPStatusCodeO8rawValueSivp",
+            "mangledName": "$s7AppLink14HTTPStatusCodeO8rawValueSivp",
+            "moduleName": "AppLink",
+            "implicit": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int",
+                    "printedName": "Swift.Int",
+                    "usr": "s:Si"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:7AppLink14HTTPStatusCodeO8rawValueSivg",
+                "mangledName": "$s7AppLink14HTTPStatusCodeO8rawValueSivg",
+                "moduleName": "AppLink",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          }
+        ],
+        "declKind": "Enum",
+        "usr": "s:7AppLink14HTTPStatusCodeO",
+        "mangledName": "$s7AppLink14HTTPStatusCodeO",
+        "moduleName": "AppLink",
+        "declAttributes": [
+          "AccessControl",
+          "RawDocComment"
+        ],
+        "enumRawTypeName": "Int",
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Hashable",
+            "printedName": "Hashable",
+            "usr": "s:SH",
+            "mangledName": "$sSH"
+          },
+          {
+            "kind": "Conformance",
+            "name": "RawRepresentable",
+            "printedName": "RawRepresentable",
+            "children": [
+              {
+                "kind": "TypeWitness",
+                "name": "RawValue",
+                "printedName": "RawValue",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int",
+                    "printedName": "Swift.Int",
+                    "usr": "s:Si"
+                  }
+                ]
+              }
+            ],
+            "usr": "s:SY",
+            "mangledName": "$sSY"
+          }
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "LinkErrorrType",
+        "printedName": "LinkErrorrType",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "httpStatus",
+            "printedName": "httpStatus",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(AppLink.LinkErrorrType.Type) -> (AppLink.HTTPStatusCode) -> AppLink.LinkErrorrType",
+                "children": [
+                  {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "(AppLink.HTTPStatusCode) -> AppLink.LinkErrorrType",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "LinkErrorrType",
+                        "printedName": "AppLink.LinkErrorrType",
+                        "usr": "s:7AppLink0B10ErrorrTypeO"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "HTTPStatusCode",
+                        "printedName": "AppLink.HTTPStatusCode",
+                        "usr": "s:7AppLink14HTTPStatusCodeO"
+                      }
+                    ]
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "AppLink.LinkErrorrType.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "LinkErrorrType",
+                        "printedName": "AppLink.LinkErrorrType",
+                        "usr": "s:7AppLink0B10ErrorrTypeO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:7AppLink0B10ErrorrTypeO10httpStatusyAcA14HTTPStatusCodeOcACmF",
+            "mangledName": "$s7AppLink0B10ErrorrTypeO10httpStatusyAcA14HTTPStatusCodeOcACmF",
+            "moduleName": "AppLink",
+            "declAttributes": [
+              "RawDocComment"
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "unknown",
+            "printedName": "unknown",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(AppLink.LinkErrorrType.Type) -> (Swift.Int) -> AppLink.LinkErrorrType",
+                "children": [
+                  {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "(Swift.Int) -> AppLink.LinkErrorrType",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "LinkErrorrType",
+                        "printedName": "AppLink.LinkErrorrType",
+                        "usr": "s:7AppLink0B10ErrorrTypeO"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Tuple",
+                        "printedName": "(code: Swift.Int)",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Int",
+                            "printedName": "Swift.Int",
+                            "usr": "s:Si"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "AppLink.LinkErrorrType.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "LinkErrorrType",
+                        "printedName": "AppLink.LinkErrorrType",
+                        "usr": "s:7AppLink0B10ErrorrTypeO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:7AppLink0B10ErrorrTypeO7unknownyACSi_tcACmF",
+            "mangledName": "$s7AppLink0B10ErrorrTypeO7unknownyACSi_tcACmF",
+            "moduleName": "AppLink",
+            "declAttributes": [
+              "RawDocComment"
+            ]
+          }
+        ],
+        "declKind": "Enum",
+        "usr": "s:7AppLink0B10ErrorrTypeO",
+        "mangledName": "$s7AppLink0B10ErrorrTypeO",
+        "moduleName": "AppLink",
+        "declAttributes": [
+          "AccessControl"
+        ]
       },
       {
         "kind": "Import",
@@ -7461,203 +10310,42 @@
     {
       "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkError.swift",
       "kind": "IntegerLiteral",
-      "offset": 217,
+      "offset": 244,
       "length": 2,
       "value": "-1"
-    },
-    {
-      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkError.swift",
-      "kind": "IntegerLiteral",
-      "offset": 248,
-      "length": 2,
-      "value": "-2"
-    },
-    {
-      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkError.swift",
-      "kind": "IntegerLiteral",
-      "offset": 277,
-      "length": 2,
-      "value": "-3"
-    },
-    {
-      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkError.swift",
-      "kind": "IntegerLiteral",
-      "offset": 308,
-      "length": 2,
-      "value": "-4"
-    },
-    {
-      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkError.swift",
-      "kind": "IntegerLiteral",
-      "offset": 333,
-      "length": 2,
-      "value": "-5"
-    },
-    {
-      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkError.swift",
-      "kind": "IntegerLiteral",
-      "offset": 359,
-      "length": 2,
-      "value": "-6"
-    },
-    {
-      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkError.swift",
-      "kind": "IntegerLiteral",
-      "offset": 384,
-      "length": 3,
-      "value": "-11"
-    },
-    {
-      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkError.swift",
-      "kind": "IntegerLiteral",
-      "offset": 407,
-      "length": 4,
-      "value": "-999"
-    },
-    {
-      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkError.swift",
-      "kind": "IntegerLiteral",
-      "offset": 217,
-      "length": 1,
-      "value": "-1"
-    },
-    {
-      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkError.swift",
-      "kind": "IntegerLiteral",
-      "offset": 248,
-      "length": 1,
-      "value": "-2"
-    },
-    {
-      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkError.swift",
-      "kind": "IntegerLiteral",
-      "offset": 277,
-      "length": 1,
-      "value": "-3"
-    },
-    {
-      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkError.swift",
-      "kind": "IntegerLiteral",
-      "offset": 308,
-      "length": 1,
-      "value": "-4"
-    },
-    {
-      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkError.swift",
-      "kind": "IntegerLiteral",
-      "offset": 333,
-      "length": 1,
-      "value": "-5"
-    },
-    {
-      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkError.swift",
-      "kind": "IntegerLiteral",
-      "offset": 359,
-      "length": 1,
-      "value": "-6"
-    },
-    {
-      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkError.swift",
-      "kind": "IntegerLiteral",
-      "offset": 384,
-      "length": 1,
-      "value": "-11"
-    },
-    {
-      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkError.swift",
-      "kind": "IntegerLiteral",
-      "offset": 407,
-      "length": 1,
-      "value": "-999"
-    },
-    {
-      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkError.swift",
-      "kind": "IntegerLiteral",
-      "offset": 217,
-      "length": 1,
-      "value": "-1"
-    },
-    {
-      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkError.swift",
-      "kind": "IntegerLiteral",
-      "offset": 248,
-      "length": 1,
-      "value": "-2"
-    },
-    {
-      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkError.swift",
-      "kind": "IntegerLiteral",
-      "offset": 277,
-      "length": 1,
-      "value": "-3"
-    },
-    {
-      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkError.swift",
-      "kind": "IntegerLiteral",
-      "offset": 308,
-      "length": 1,
-      "value": "-4"
-    },
-    {
-      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkError.swift",
-      "kind": "IntegerLiteral",
-      "offset": 333,
-      "length": 1,
-      "value": "-5"
-    },
-    {
-      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkError.swift",
-      "kind": "IntegerLiteral",
-      "offset": 359,
-      "length": 1,
-      "value": "-6"
-    },
-    {
-      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkError.swift",
-      "kind": "IntegerLiteral",
-      "offset": 384,
-      "length": 1,
-      "value": "-11"
-    },
-    {
-      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkError.swift",
-      "kind": "IntegerLiteral",
-      "offset": 407,
-      "length": 1,
-      "value": "-999"
     },
     {
       "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkError.swift",
       "kind": "StringLiteral",
-      "offset": 428,
+      "offset": 172,
       "length": 9,
       "value": "\"AppLink.LinkError\""
     },
     {
       "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkError.swift",
       "kind": "StringLiteral",
-      "offset": 1260,
+      "offset": 1075,
       "length": 6,
       "value": "\"data\""
     },
     {
       "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkError.swift",
       "kind": "StringLiteral",
-      "offset": 1290,
+      "offset": 1105,
       "length": 5,
       "value": "\"msg\""
     },
     {
       "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkError.swift",
       "kind": "StringLiteral",
-      "offset": 1260,
+      "offset": 1075,
       "length": 6,
       "value": "\"data\""
     },
     {
       "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkError.swift",
       "kind": "StringLiteral",
-      "offset": 1290,
+      "offset": 1105,
       "length": 5,
       "value": "\"msg\""
     },
@@ -8268,7 +10956,7 @@
       "kind": "StringLiteral",
       "offset": 500,
       "length": 7,
-      "value": "\"0.5.0\""
+      "value": "\"0.5.1\""
     },
     {
       "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Embedded\/Alamofire\/Source\/Core\/Notifications.swift",
@@ -8495,6 +11183,1392 @@
       "value": "\"5.9.1\""
     },
     {
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkErrorrType.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1587,
+      "length": 3,
+      "value": "100"
+    },
+    {
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkErrorrType.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1747,
+      "length": 3,
+      "value": "101"
+    },
+    {
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkErrorrType.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1914,
+      "length": 3,
+      "value": "102"
+    },
+    {
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkErrorrType.swift",
+      "kind": "IntegerLiteral",
+      "offset": 2039,
+      "length": 3,
+      "value": "200"
+    },
+    {
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkErrorrType.swift",
+      "kind": "IntegerLiteral",
+      "offset": 2163,
+      "length": 3,
+      "value": "201"
+    },
+    {
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkErrorrType.swift",
+      "kind": "IntegerLiteral",
+      "offset": 2301,
+      "length": 3,
+      "value": "202"
+    },
+    {
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkErrorrType.swift",
+      "kind": "IntegerLiteral",
+      "offset": 2550,
+      "length": 3,
+      "value": "203"
+    },
+    {
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkErrorrType.swift",
+      "kind": "IntegerLiteral",
+      "offset": 2681,
+      "length": 3,
+      "value": "204"
+    },
+    {
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkErrorrType.swift",
+      "kind": "IntegerLiteral",
+      "offset": 2819,
+      "length": 3,
+      "value": "205"
+    },
+    {
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkErrorrType.swift",
+      "kind": "IntegerLiteral",
+      "offset": 2988,
+      "length": 3,
+      "value": "206"
+    },
+    {
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkErrorrType.swift",
+      "kind": "IntegerLiteral",
+      "offset": 3190,
+      "length": 3,
+      "value": "207"
+    },
+    {
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkErrorrType.swift",
+      "kind": "IntegerLiteral",
+      "offset": 3382,
+      "length": 3,
+      "value": "208"
+    },
+    {
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkErrorrType.swift",
+      "kind": "IntegerLiteral",
+      "offset": 3602,
+      "length": 3,
+      "value": "226"
+    },
+    {
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkErrorrType.swift",
+      "kind": "IntegerLiteral",
+      "offset": 3786,
+      "length": 3,
+      "value": "300"
+    },
+    {
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkErrorrType.swift",
+      "kind": "IntegerLiteral",
+      "offset": 3917,
+      "length": 3,
+      "value": "301"
+    },
+    {
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkErrorrType.swift",
+      "kind": "IntegerLiteral",
+      "offset": 3984,
+      "length": 3,
+      "value": "302"
+    },
+    {
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkErrorrType.swift",
+      "kind": "IntegerLiteral",
+      "offset": 4112,
+      "length": 3,
+      "value": "303"
+    },
+    {
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkErrorrType.swift",
+      "kind": "IntegerLiteral",
+      "offset": 4304,
+      "length": 3,
+      "value": "304"
+    },
+    {
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkErrorrType.swift",
+      "kind": "IntegerLiteral",
+      "offset": 4462,
+      "length": 3,
+      "value": "305"
+    },
+    {
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkErrorrType.swift",
+      "kind": "IntegerLiteral",
+      "offset": 4603,
+      "length": 3,
+      "value": "306"
+    },
+    {
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkErrorrType.swift",
+      "kind": "IntegerLiteral",
+      "offset": 4719,
+      "length": 3,
+      "value": "307"
+    },
+    {
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkErrorrType.swift",
+      "kind": "IntegerLiteral",
+      "offset": 4860,
+      "length": 3,
+      "value": "308"
+    },
+    {
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkErrorrType.swift",
+      "kind": "IntegerLiteral",
+      "offset": 5046,
+      "length": 3,
+      "value": "400"
+    },
+    {
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkErrorrType.swift",
+      "kind": "IntegerLiteral",
+      "offset": 5231,
+      "length": 3,
+      "value": "401"
+    },
+    {
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkErrorrType.swift",
+      "kind": "IntegerLiteral",
+      "offset": 5348,
+      "length": 3,
+      "value": "402"
+    },
+    {
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkErrorrType.swift",
+      "kind": "IntegerLiteral",
+      "offset": 5477,
+      "length": 3,
+      "value": "403"
+    },
+    {
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkErrorrType.swift",
+      "kind": "IntegerLiteral",
+      "offset": 5604,
+      "length": 3,
+      "value": "404"
+    },
+    {
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkErrorrType.swift",
+      "kind": "IntegerLiteral",
+      "offset": 5805,
+      "length": 3,
+      "value": "405"
+    },
+    {
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkErrorrType.swift",
+      "kind": "IntegerLiteral",
+      "offset": 5993,
+      "length": 3,
+      "value": "406"
+    },
+    {
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkErrorrType.swift",
+      "kind": "IntegerLiteral",
+      "offset": 6138,
+      "length": 3,
+      "value": "407"
+    },
+    {
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkErrorrType.swift",
+      "kind": "IntegerLiteral",
+      "offset": 6245,
+      "length": 3,
+      "value": "408"
+    },
+    {
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkErrorrType.swift",
+      "kind": "IntegerLiteral",
+      "offset": 6444,
+      "length": 3,
+      "value": "409"
+    },
+    {
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkErrorrType.swift",
+      "kind": "IntegerLiteral",
+      "offset": 6579,
+      "length": 3,
+      "value": "410"
+    },
+    {
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkErrorrType.swift",
+      "kind": "IntegerLiteral",
+      "offset": 6740,
+      "length": 3,
+      "value": "411"
+    },
+    {
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkErrorrType.swift",
+      "kind": "IntegerLiteral",
+      "offset": 6898,
+      "length": 3,
+      "value": "412"
+    },
+    {
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkErrorrType.swift",
+      "kind": "IntegerLiteral",
+      "offset": 7030,
+      "length": 3,
+      "value": "413"
+    },
+    {
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkErrorrType.swift",
+      "kind": "IntegerLiteral",
+      "offset": 7140,
+      "length": 3,
+      "value": "414"
+    },
+    {
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkErrorrType.swift",
+      "kind": "IntegerLiteral",
+      "offset": 7296,
+      "length": 3,
+      "value": "415"
+    },
+    {
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkErrorrType.swift",
+      "kind": "IntegerLiteral",
+      "offset": 7473,
+      "length": 3,
+      "value": "416"
+    },
+    {
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkErrorrType.swift",
+      "kind": "IntegerLiteral",
+      "offset": 7616,
+      "length": 3,
+      "value": "417"
+    },
+    {
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkErrorrType.swift",
+      "kind": "IntegerLiteral",
+      "offset": 7721,
+      "length": 3,
+      "value": "418"
+    },
+    {
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkErrorrType.swift",
+      "kind": "IntegerLiteral",
+      "offset": 7867,
+      "length": 3,
+      "value": "421"
+    },
+    {
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkErrorrType.swift",
+      "kind": "IntegerLiteral",
+      "offset": 8020,
+      "length": 3,
+      "value": "422"
+    },
+    {
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkErrorrType.swift",
+      "kind": "IntegerLiteral",
+      "offset": 8112,
+      "length": 3,
+      "value": "423"
+    },
+    {
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkErrorrType.swift",
+      "kind": "IntegerLiteral",
+      "offset": 8254,
+      "length": 3,
+      "value": "424"
+    },
+    {
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkErrorrType.swift",
+      "kind": "IntegerLiteral",
+      "offset": 8418,
+      "length": 3,
+      "value": "426"
+    },
+    {
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkErrorrType.swift",
+      "kind": "IntegerLiteral",
+      "offset": 8549,
+      "length": 3,
+      "value": "428"
+    },
+    {
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkErrorrType.swift",
+      "kind": "IntegerLiteral",
+      "offset": 8675,
+      "length": 3,
+      "value": "429"
+    },
+    {
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkErrorrType.swift",
+      "kind": "IntegerLiteral",
+      "offset": 8906,
+      "length": 3,
+      "value": "431"
+    },
+    {
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkErrorrType.swift",
+      "kind": "IntegerLiteral",
+      "offset": 9061,
+      "length": 3,
+      "value": "444"
+    },
+    {
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkErrorrType.swift",
+      "kind": "IntegerLiteral",
+      "offset": 9284,
+      "length": 3,
+      "value": "451"
+    },
+    {
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkErrorrType.swift",
+      "kind": "IntegerLiteral",
+      "offset": 9471,
+      "length": 3,
+      "value": "495"
+    },
+    {
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkErrorrType.swift",
+      "kind": "IntegerLiteral",
+      "offset": 9660,
+      "length": 3,
+      "value": "496"
+    },
+    {
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkErrorrType.swift",
+      "kind": "IntegerLiteral",
+      "offset": 9881,
+      "length": 3,
+      "value": "497"
+    },
+    {
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkErrorrType.swift",
+      "kind": "IntegerLiteral",
+      "offset": 10037,
+      "length": 3,
+      "value": "499"
+    },
+    {
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkErrorrType.swift",
+      "kind": "IntegerLiteral",
+      "offset": 10271,
+      "length": 3,
+      "value": "500"
+    },
+    {
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkErrorrType.swift",
+      "kind": "IntegerLiteral",
+      "offset": 10437,
+      "length": 3,
+      "value": "501"
+    },
+    {
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkErrorrType.swift",
+      "kind": "IntegerLiteral",
+      "offset": 10593,
+      "length": 3,
+      "value": "502"
+    },
+    {
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkErrorrType.swift",
+      "kind": "IntegerLiteral",
+      "offset": 10788,
+      "length": 3,
+      "value": "503"
+    },
+    {
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkErrorrType.swift",
+      "kind": "IntegerLiteral",
+      "offset": 10957,
+      "length": 3,
+      "value": "504"
+    },
+    {
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkErrorrType.swift",
+      "kind": "IntegerLiteral",
+      "offset": 11111,
+      "length": 3,
+      "value": "505"
+    },
+    {
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkErrorrType.swift",
+      "kind": "IntegerLiteral",
+      "offset": 11267,
+      "length": 3,
+      "value": "506"
+    },
+    {
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkErrorrType.swift",
+      "kind": "IntegerLiteral",
+      "offset": 11419,
+      "length": 3,
+      "value": "507"
+    },
+    {
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkErrorrType.swift",
+      "kind": "IntegerLiteral",
+      "offset": 11543,
+      "length": 3,
+      "value": "508"
+    },
+    {
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkErrorrType.swift",
+      "kind": "IntegerLiteral",
+      "offset": 11675,
+      "length": 3,
+      "value": "510"
+    },
+    {
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkErrorrType.swift",
+      "kind": "IntegerLiteral",
+      "offset": 11823,
+      "length": 3,
+      "value": "511"
+    },
+    {
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkErrorrType.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1587,
+      "length": 3,
+      "value": "100"
+    },
+    {
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkErrorrType.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1747,
+      "length": 3,
+      "value": "101"
+    },
+    {
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkErrorrType.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1914,
+      "length": 3,
+      "value": "102"
+    },
+    {
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkErrorrType.swift",
+      "kind": "IntegerLiteral",
+      "offset": 2039,
+      "length": 3,
+      "value": "200"
+    },
+    {
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkErrorrType.swift",
+      "kind": "IntegerLiteral",
+      "offset": 2163,
+      "length": 3,
+      "value": "201"
+    },
+    {
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkErrorrType.swift",
+      "kind": "IntegerLiteral",
+      "offset": 2301,
+      "length": 3,
+      "value": "202"
+    },
+    {
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkErrorrType.swift",
+      "kind": "IntegerLiteral",
+      "offset": 2550,
+      "length": 3,
+      "value": "203"
+    },
+    {
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkErrorrType.swift",
+      "kind": "IntegerLiteral",
+      "offset": 2681,
+      "length": 3,
+      "value": "204"
+    },
+    {
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkErrorrType.swift",
+      "kind": "IntegerLiteral",
+      "offset": 2819,
+      "length": 3,
+      "value": "205"
+    },
+    {
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkErrorrType.swift",
+      "kind": "IntegerLiteral",
+      "offset": 2988,
+      "length": 3,
+      "value": "206"
+    },
+    {
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkErrorrType.swift",
+      "kind": "IntegerLiteral",
+      "offset": 3190,
+      "length": 3,
+      "value": "207"
+    },
+    {
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkErrorrType.swift",
+      "kind": "IntegerLiteral",
+      "offset": 3382,
+      "length": 3,
+      "value": "208"
+    },
+    {
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkErrorrType.swift",
+      "kind": "IntegerLiteral",
+      "offset": 3602,
+      "length": 3,
+      "value": "226"
+    },
+    {
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkErrorrType.swift",
+      "kind": "IntegerLiteral",
+      "offset": 3786,
+      "length": 3,
+      "value": "300"
+    },
+    {
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkErrorrType.swift",
+      "kind": "IntegerLiteral",
+      "offset": 3917,
+      "length": 3,
+      "value": "301"
+    },
+    {
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkErrorrType.swift",
+      "kind": "IntegerLiteral",
+      "offset": 3984,
+      "length": 3,
+      "value": "302"
+    },
+    {
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkErrorrType.swift",
+      "kind": "IntegerLiteral",
+      "offset": 4112,
+      "length": 3,
+      "value": "303"
+    },
+    {
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkErrorrType.swift",
+      "kind": "IntegerLiteral",
+      "offset": 4304,
+      "length": 3,
+      "value": "304"
+    },
+    {
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkErrorrType.swift",
+      "kind": "IntegerLiteral",
+      "offset": 4462,
+      "length": 3,
+      "value": "305"
+    },
+    {
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkErrorrType.swift",
+      "kind": "IntegerLiteral",
+      "offset": 4603,
+      "length": 3,
+      "value": "306"
+    },
+    {
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkErrorrType.swift",
+      "kind": "IntegerLiteral",
+      "offset": 4719,
+      "length": 3,
+      "value": "307"
+    },
+    {
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkErrorrType.swift",
+      "kind": "IntegerLiteral",
+      "offset": 4860,
+      "length": 3,
+      "value": "308"
+    },
+    {
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkErrorrType.swift",
+      "kind": "IntegerLiteral",
+      "offset": 5046,
+      "length": 3,
+      "value": "400"
+    },
+    {
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkErrorrType.swift",
+      "kind": "IntegerLiteral",
+      "offset": 5231,
+      "length": 3,
+      "value": "401"
+    },
+    {
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkErrorrType.swift",
+      "kind": "IntegerLiteral",
+      "offset": 5348,
+      "length": 3,
+      "value": "402"
+    },
+    {
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkErrorrType.swift",
+      "kind": "IntegerLiteral",
+      "offset": 5477,
+      "length": 3,
+      "value": "403"
+    },
+    {
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkErrorrType.swift",
+      "kind": "IntegerLiteral",
+      "offset": 5604,
+      "length": 3,
+      "value": "404"
+    },
+    {
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkErrorrType.swift",
+      "kind": "IntegerLiteral",
+      "offset": 5805,
+      "length": 3,
+      "value": "405"
+    },
+    {
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkErrorrType.swift",
+      "kind": "IntegerLiteral",
+      "offset": 5993,
+      "length": 3,
+      "value": "406"
+    },
+    {
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkErrorrType.swift",
+      "kind": "IntegerLiteral",
+      "offset": 6138,
+      "length": 3,
+      "value": "407"
+    },
+    {
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkErrorrType.swift",
+      "kind": "IntegerLiteral",
+      "offset": 6245,
+      "length": 3,
+      "value": "408"
+    },
+    {
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkErrorrType.swift",
+      "kind": "IntegerLiteral",
+      "offset": 6444,
+      "length": 3,
+      "value": "409"
+    },
+    {
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkErrorrType.swift",
+      "kind": "IntegerLiteral",
+      "offset": 6579,
+      "length": 3,
+      "value": "410"
+    },
+    {
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkErrorrType.swift",
+      "kind": "IntegerLiteral",
+      "offset": 6740,
+      "length": 3,
+      "value": "411"
+    },
+    {
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkErrorrType.swift",
+      "kind": "IntegerLiteral",
+      "offset": 6898,
+      "length": 3,
+      "value": "412"
+    },
+    {
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkErrorrType.swift",
+      "kind": "IntegerLiteral",
+      "offset": 7030,
+      "length": 3,
+      "value": "413"
+    },
+    {
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkErrorrType.swift",
+      "kind": "IntegerLiteral",
+      "offset": 7140,
+      "length": 3,
+      "value": "414"
+    },
+    {
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkErrorrType.swift",
+      "kind": "IntegerLiteral",
+      "offset": 7296,
+      "length": 3,
+      "value": "415"
+    },
+    {
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkErrorrType.swift",
+      "kind": "IntegerLiteral",
+      "offset": 7473,
+      "length": 3,
+      "value": "416"
+    },
+    {
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkErrorrType.swift",
+      "kind": "IntegerLiteral",
+      "offset": 7616,
+      "length": 3,
+      "value": "417"
+    },
+    {
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkErrorrType.swift",
+      "kind": "IntegerLiteral",
+      "offset": 7721,
+      "length": 3,
+      "value": "418"
+    },
+    {
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkErrorrType.swift",
+      "kind": "IntegerLiteral",
+      "offset": 7867,
+      "length": 3,
+      "value": "421"
+    },
+    {
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkErrorrType.swift",
+      "kind": "IntegerLiteral",
+      "offset": 8020,
+      "length": 3,
+      "value": "422"
+    },
+    {
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkErrorrType.swift",
+      "kind": "IntegerLiteral",
+      "offset": 8112,
+      "length": 3,
+      "value": "423"
+    },
+    {
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkErrorrType.swift",
+      "kind": "IntegerLiteral",
+      "offset": 8254,
+      "length": 3,
+      "value": "424"
+    },
+    {
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkErrorrType.swift",
+      "kind": "IntegerLiteral",
+      "offset": 8418,
+      "length": 3,
+      "value": "426"
+    },
+    {
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkErrorrType.swift",
+      "kind": "IntegerLiteral",
+      "offset": 8549,
+      "length": 3,
+      "value": "428"
+    },
+    {
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkErrorrType.swift",
+      "kind": "IntegerLiteral",
+      "offset": 8675,
+      "length": 3,
+      "value": "429"
+    },
+    {
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkErrorrType.swift",
+      "kind": "IntegerLiteral",
+      "offset": 8906,
+      "length": 3,
+      "value": "431"
+    },
+    {
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkErrorrType.swift",
+      "kind": "IntegerLiteral",
+      "offset": 9061,
+      "length": 3,
+      "value": "444"
+    },
+    {
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkErrorrType.swift",
+      "kind": "IntegerLiteral",
+      "offset": 9284,
+      "length": 3,
+      "value": "451"
+    },
+    {
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkErrorrType.swift",
+      "kind": "IntegerLiteral",
+      "offset": 9471,
+      "length": 3,
+      "value": "495"
+    },
+    {
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkErrorrType.swift",
+      "kind": "IntegerLiteral",
+      "offset": 9660,
+      "length": 3,
+      "value": "496"
+    },
+    {
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkErrorrType.swift",
+      "kind": "IntegerLiteral",
+      "offset": 9881,
+      "length": 3,
+      "value": "497"
+    },
+    {
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkErrorrType.swift",
+      "kind": "IntegerLiteral",
+      "offset": 10037,
+      "length": 3,
+      "value": "499"
+    },
+    {
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkErrorrType.swift",
+      "kind": "IntegerLiteral",
+      "offset": 10271,
+      "length": 3,
+      "value": "500"
+    },
+    {
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkErrorrType.swift",
+      "kind": "IntegerLiteral",
+      "offset": 10437,
+      "length": 3,
+      "value": "501"
+    },
+    {
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkErrorrType.swift",
+      "kind": "IntegerLiteral",
+      "offset": 10593,
+      "length": 3,
+      "value": "502"
+    },
+    {
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkErrorrType.swift",
+      "kind": "IntegerLiteral",
+      "offset": 10788,
+      "length": 3,
+      "value": "503"
+    },
+    {
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkErrorrType.swift",
+      "kind": "IntegerLiteral",
+      "offset": 10957,
+      "length": 3,
+      "value": "504"
+    },
+    {
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkErrorrType.swift",
+      "kind": "IntegerLiteral",
+      "offset": 11111,
+      "length": 3,
+      "value": "505"
+    },
+    {
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkErrorrType.swift",
+      "kind": "IntegerLiteral",
+      "offset": 11267,
+      "length": 3,
+      "value": "506"
+    },
+    {
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkErrorrType.swift",
+      "kind": "IntegerLiteral",
+      "offset": 11419,
+      "length": 3,
+      "value": "507"
+    },
+    {
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkErrorrType.swift",
+      "kind": "IntegerLiteral",
+      "offset": 11543,
+      "length": 3,
+      "value": "508"
+    },
+    {
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkErrorrType.swift",
+      "kind": "IntegerLiteral",
+      "offset": 11675,
+      "length": 3,
+      "value": "510"
+    },
+    {
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkErrorrType.swift",
+      "kind": "IntegerLiteral",
+      "offset": 11823,
+      "length": 3,
+      "value": "511"
+    },
+    {
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkErrorrType.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1587,
+      "length": 3,
+      "value": "100"
+    },
+    {
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkErrorrType.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1747,
+      "length": 3,
+      "value": "101"
+    },
+    {
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkErrorrType.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1914,
+      "length": 3,
+      "value": "102"
+    },
+    {
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkErrorrType.swift",
+      "kind": "IntegerLiteral",
+      "offset": 2039,
+      "length": 3,
+      "value": "200"
+    },
+    {
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkErrorrType.swift",
+      "kind": "IntegerLiteral",
+      "offset": 2163,
+      "length": 3,
+      "value": "201"
+    },
+    {
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkErrorrType.swift",
+      "kind": "IntegerLiteral",
+      "offset": 2301,
+      "length": 3,
+      "value": "202"
+    },
+    {
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkErrorrType.swift",
+      "kind": "IntegerLiteral",
+      "offset": 2550,
+      "length": 3,
+      "value": "203"
+    },
+    {
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkErrorrType.swift",
+      "kind": "IntegerLiteral",
+      "offset": 2681,
+      "length": 3,
+      "value": "204"
+    },
+    {
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkErrorrType.swift",
+      "kind": "IntegerLiteral",
+      "offset": 2819,
+      "length": 3,
+      "value": "205"
+    },
+    {
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkErrorrType.swift",
+      "kind": "IntegerLiteral",
+      "offset": 2988,
+      "length": 3,
+      "value": "206"
+    },
+    {
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkErrorrType.swift",
+      "kind": "IntegerLiteral",
+      "offset": 3190,
+      "length": 3,
+      "value": "207"
+    },
+    {
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkErrorrType.swift",
+      "kind": "IntegerLiteral",
+      "offset": 3382,
+      "length": 3,
+      "value": "208"
+    },
+    {
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkErrorrType.swift",
+      "kind": "IntegerLiteral",
+      "offset": 3602,
+      "length": 3,
+      "value": "226"
+    },
+    {
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkErrorrType.swift",
+      "kind": "IntegerLiteral",
+      "offset": 3786,
+      "length": 3,
+      "value": "300"
+    },
+    {
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkErrorrType.swift",
+      "kind": "IntegerLiteral",
+      "offset": 3917,
+      "length": 3,
+      "value": "301"
+    },
+    {
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkErrorrType.swift",
+      "kind": "IntegerLiteral",
+      "offset": 3984,
+      "length": 3,
+      "value": "302"
+    },
+    {
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkErrorrType.swift",
+      "kind": "IntegerLiteral",
+      "offset": 4112,
+      "length": 3,
+      "value": "303"
+    },
+    {
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkErrorrType.swift",
+      "kind": "IntegerLiteral",
+      "offset": 4304,
+      "length": 3,
+      "value": "304"
+    },
+    {
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkErrorrType.swift",
+      "kind": "IntegerLiteral",
+      "offset": 4462,
+      "length": 3,
+      "value": "305"
+    },
+    {
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkErrorrType.swift",
+      "kind": "IntegerLiteral",
+      "offset": 4603,
+      "length": 3,
+      "value": "306"
+    },
+    {
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkErrorrType.swift",
+      "kind": "IntegerLiteral",
+      "offset": 4719,
+      "length": 3,
+      "value": "307"
+    },
+    {
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkErrorrType.swift",
+      "kind": "IntegerLiteral",
+      "offset": 4860,
+      "length": 3,
+      "value": "308"
+    },
+    {
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkErrorrType.swift",
+      "kind": "IntegerLiteral",
+      "offset": 5046,
+      "length": 3,
+      "value": "400"
+    },
+    {
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkErrorrType.swift",
+      "kind": "IntegerLiteral",
+      "offset": 5231,
+      "length": 3,
+      "value": "401"
+    },
+    {
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkErrorrType.swift",
+      "kind": "IntegerLiteral",
+      "offset": 5348,
+      "length": 3,
+      "value": "402"
+    },
+    {
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkErrorrType.swift",
+      "kind": "IntegerLiteral",
+      "offset": 5477,
+      "length": 3,
+      "value": "403"
+    },
+    {
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkErrorrType.swift",
+      "kind": "IntegerLiteral",
+      "offset": 5604,
+      "length": 3,
+      "value": "404"
+    },
+    {
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkErrorrType.swift",
+      "kind": "IntegerLiteral",
+      "offset": 5805,
+      "length": 3,
+      "value": "405"
+    },
+    {
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkErrorrType.swift",
+      "kind": "IntegerLiteral",
+      "offset": 5993,
+      "length": 3,
+      "value": "406"
+    },
+    {
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkErrorrType.swift",
+      "kind": "IntegerLiteral",
+      "offset": 6138,
+      "length": 3,
+      "value": "407"
+    },
+    {
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkErrorrType.swift",
+      "kind": "IntegerLiteral",
+      "offset": 6245,
+      "length": 3,
+      "value": "408"
+    },
+    {
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkErrorrType.swift",
+      "kind": "IntegerLiteral",
+      "offset": 6444,
+      "length": 3,
+      "value": "409"
+    },
+    {
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkErrorrType.swift",
+      "kind": "IntegerLiteral",
+      "offset": 6579,
+      "length": 3,
+      "value": "410"
+    },
+    {
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkErrorrType.swift",
+      "kind": "IntegerLiteral",
+      "offset": 6740,
+      "length": 3,
+      "value": "411"
+    },
+    {
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkErrorrType.swift",
+      "kind": "IntegerLiteral",
+      "offset": 6898,
+      "length": 3,
+      "value": "412"
+    },
+    {
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkErrorrType.swift",
+      "kind": "IntegerLiteral",
+      "offset": 7030,
+      "length": 3,
+      "value": "413"
+    },
+    {
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkErrorrType.swift",
+      "kind": "IntegerLiteral",
+      "offset": 7140,
+      "length": 3,
+      "value": "414"
+    },
+    {
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkErrorrType.swift",
+      "kind": "IntegerLiteral",
+      "offset": 7296,
+      "length": 3,
+      "value": "415"
+    },
+    {
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkErrorrType.swift",
+      "kind": "IntegerLiteral",
+      "offset": 7473,
+      "length": 3,
+      "value": "416"
+    },
+    {
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkErrorrType.swift",
+      "kind": "IntegerLiteral",
+      "offset": 7616,
+      "length": 3,
+      "value": "417"
+    },
+    {
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkErrorrType.swift",
+      "kind": "IntegerLiteral",
+      "offset": 7721,
+      "length": 3,
+      "value": "418"
+    },
+    {
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkErrorrType.swift",
+      "kind": "IntegerLiteral",
+      "offset": 7867,
+      "length": 3,
+      "value": "421"
+    },
+    {
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkErrorrType.swift",
+      "kind": "IntegerLiteral",
+      "offset": 8020,
+      "length": 3,
+      "value": "422"
+    },
+    {
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkErrorrType.swift",
+      "kind": "IntegerLiteral",
+      "offset": 8112,
+      "length": 3,
+      "value": "423"
+    },
+    {
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkErrorrType.swift",
+      "kind": "IntegerLiteral",
+      "offset": 8254,
+      "length": 3,
+      "value": "424"
+    },
+    {
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkErrorrType.swift",
+      "kind": "IntegerLiteral",
+      "offset": 8418,
+      "length": 3,
+      "value": "426"
+    },
+    {
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkErrorrType.swift",
+      "kind": "IntegerLiteral",
+      "offset": 8549,
+      "length": 3,
+      "value": "428"
+    },
+    {
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkErrorrType.swift",
+      "kind": "IntegerLiteral",
+      "offset": 8675,
+      "length": 3,
+      "value": "429"
+    },
+    {
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkErrorrType.swift",
+      "kind": "IntegerLiteral",
+      "offset": 8906,
+      "length": 3,
+      "value": "431"
+    },
+    {
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkErrorrType.swift",
+      "kind": "IntegerLiteral",
+      "offset": 9061,
+      "length": 3,
+      "value": "444"
+    },
+    {
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkErrorrType.swift",
+      "kind": "IntegerLiteral",
+      "offset": 9284,
+      "length": 3,
+      "value": "451"
+    },
+    {
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkErrorrType.swift",
+      "kind": "IntegerLiteral",
+      "offset": 9471,
+      "length": 3,
+      "value": "495"
+    },
+    {
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkErrorrType.swift",
+      "kind": "IntegerLiteral",
+      "offset": 9660,
+      "length": 3,
+      "value": "496"
+    },
+    {
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkErrorrType.swift",
+      "kind": "IntegerLiteral",
+      "offset": 9881,
+      "length": 3,
+      "value": "497"
+    },
+    {
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkErrorrType.swift",
+      "kind": "IntegerLiteral",
+      "offset": 10037,
+      "length": 3,
+      "value": "499"
+    },
+    {
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkErrorrType.swift",
+      "kind": "IntegerLiteral",
+      "offset": 10271,
+      "length": 3,
+      "value": "500"
+    },
+    {
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkErrorrType.swift",
+      "kind": "IntegerLiteral",
+      "offset": 10437,
+      "length": 3,
+      "value": "501"
+    },
+    {
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkErrorrType.swift",
+      "kind": "IntegerLiteral",
+      "offset": 10593,
+      "length": 3,
+      "value": "502"
+    },
+    {
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkErrorrType.swift",
+      "kind": "IntegerLiteral",
+      "offset": 10788,
+      "length": 3,
+      "value": "503"
+    },
+    {
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkErrorrType.swift",
+      "kind": "IntegerLiteral",
+      "offset": 10957,
+      "length": 3,
+      "value": "504"
+    },
+    {
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkErrorrType.swift",
+      "kind": "IntegerLiteral",
+      "offset": 11111,
+      "length": 3,
+      "value": "505"
+    },
+    {
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkErrorrType.swift",
+      "kind": "IntegerLiteral",
+      "offset": 11267,
+      "length": 3,
+      "value": "506"
+    },
+    {
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkErrorrType.swift",
+      "kind": "IntegerLiteral",
+      "offset": 11419,
+      "length": 3,
+      "value": "507"
+    },
+    {
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkErrorrType.swift",
+      "kind": "IntegerLiteral",
+      "offset": 11543,
+      "length": 3,
+      "value": "508"
+    },
+    {
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkErrorrType.swift",
+      "kind": "IntegerLiteral",
+      "offset": 11675,
+      "length": 3,
+      "value": "510"
+    },
+    {
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkErrorrType.swift",
+      "kind": "IntegerLiteral",
+      "offset": 11823,
+      "length": 3,
+      "value": "511"
+    },
+    {
       "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Embedded\/Alamofire\/Source\/Core\/HTTPMethod.swift",
       "kind": "StringLiteral",
       "offset": 1556,
@@ -8637,7 +12711,7 @@
     {
       "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/AppLinkSession.swift",
       "kind": "StringLiteral",
-      "offset": 2029,
+      "offset": 1982,
       "length": 14,
       "value": "\"applink.info\""
     },
