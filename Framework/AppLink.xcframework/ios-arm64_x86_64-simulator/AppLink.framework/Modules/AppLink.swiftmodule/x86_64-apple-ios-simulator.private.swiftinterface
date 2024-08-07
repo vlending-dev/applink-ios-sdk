@@ -2,12 +2,411 @@
 // swift-compiler-version: Apple Swift version 5.10 (swiftlang-5.10.0.13 clang-1500.3.9.4)
 // swift-module-flags: -target x86_64-apple-ios13.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-bare-slash-regex -module-name AppLink
 @_exported import AppLink
+import Combine
+import Dispatch
 import Foundation
+import MobileCoreServices
+import Security
 import Swift
+import SystemConfiguration
 import UIKit
+import UniformTypeIdentifiers
 import _Concurrency
 import _StringProcessing
 import _SwiftConcurrencyShims
+import zlib
+public protocol CachedResponseHandler {
+  func dataTask(_ task: Foundation.URLSessionDataTask, willCacheResponse response: Foundation.CachedURLResponse, completion: @escaping (Foundation.CachedURLResponse?) -> Swift.Void)
+}
+public struct ResponseCacher {
+  public enum Behavior {
+    case cache
+    case doNotCache
+    case modify((Foundation.URLSessionDataTask, Foundation.CachedURLResponse) -> Foundation.CachedURLResponse?)
+  }
+  public static let cache: AppLink.ResponseCacher
+  public static let doNotCache: AppLink.ResponseCacher
+  public let behavior: AppLink.ResponseCacher.Behavior
+  public init(behavior: AppLink.ResponseCacher.Behavior)
+}
+extension AppLink.ResponseCacher : AppLink.CachedResponseHandler {
+  public func dataTask(_ task: Foundation.URLSessionDataTask, willCacheResponse response: Foundation.CachedURLResponse, completion: @escaping (Foundation.CachedURLResponse?) -> Swift.Void)
+}
+extension AppLink.CachedResponseHandler where Self == AppLink.ResponseCacher {
+  public static var cache: AppLink.ResponseCacher {
+    get
+  }
+  public static var doNotCache: AppLink.ResponseCacher {
+    get
+  }
+  public static func modify(using closure: @escaping ((Foundation.URLSessionDataTask, Foundation.CachedURLResponse) -> Foundation.CachedURLResponse?)) -> AppLink.ResponseCacher
+}
+public protocol AuthenticationCredential {
+  var requiresRefresh: Swift.Bool { get }
+}
+public protocol Authenticator : AnyObject {
+  associatedtype Credential : AppLink.AuthenticationCredential
+  func apply(_ credential: Self.Credential, to urlRequest: inout Foundation.URLRequest)
+  func refresh(_ credential: Self.Credential, for session: AppLink.Session, completion: @escaping (Swift.Result<Self.Credential, any Swift.Error>) -> Swift.Void)
+  func didRequest(_ urlRequest: Foundation.URLRequest, with response: Foundation.HTTPURLResponse, failDueToAuthenticationError error: any Swift.Error) -> Swift.Bool
+  func isRequest(_ urlRequest: Foundation.URLRequest, authenticatedWith credential: Self.Credential) -> Swift.Bool
+}
+public enum AuthenticationError : Swift.Error {
+  case missingCredential
+  case excessiveRefresh
+  public static func == (a: AppLink.AuthenticationError, b: AppLink.AuthenticationError) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public class AuthenticationInterceptor<AuthenticatorType> : AppLink.RequestInterceptor where AuthenticatorType : AppLink.Authenticator {
+  public typealias Credential = AuthenticatorType.Credential
+  public struct RefreshWindow {
+    public let interval: Foundation.TimeInterval
+    public let maximumAttempts: Swift.Int
+    public init(interval: Foundation.TimeInterval = 30.0, maximumAttempts: Swift.Int = 5)
+  }
+  public var credential: AppLink.AuthenticationInterceptor<AuthenticatorType>.Credential? {
+    get
+    set
+  }
+  public init(authenticator: AuthenticatorType, credential: AppLink.AuthenticationInterceptor<AuthenticatorType>.Credential? = nil, refreshWindow: AppLink.AuthenticationInterceptor<AuthenticatorType>.RefreshWindow? = RefreshWindow())
+  public func adapt(_ urlRequest: Foundation.URLRequest, for session: AppLink.Session, completion: @escaping (Swift.Result<Foundation.URLRequest, any Swift.Error>) -> Swift.Void)
+  public func retry(_ request: AppLink.Request, for session: AppLink.Session, dueTo error: any Swift.Error, completion: @escaping (AppLink.RetryResult) -> Swift.Void)
+  @objc deinit
+}
+@_spi(WebSocket) @_hasMissingDesignatedInitializers @available(macOS 10.15, iOS 13, tvOS 13, watchOS 6, *)
+final public class WebSocketRequest : AppLink.Request {
+  @_spi(WebSocket) public struct Event<Success, Failure> where Failure : Swift.Error {
+    @_spi(WebSocket) public enum Kind {
+      @_spi(WebSocket) case connected(protocol: Swift.String?)
+      @_spi(WebSocket) case receivedMessage(Success)
+      @_spi(WebSocket) case serializerFailed(Failure)
+      @_spi(WebSocket) case disconnected(closeCode: Foundation.URLSessionWebSocketTask.CloseCode, reason: Foundation.Data?)
+      @_spi(WebSocket) case completed(AppLink.WebSocketRequest.Completion)
+    }
+    @_spi(WebSocket) public let kind: AppLink.WebSocketRequest.Event<Success, Failure>.Kind
+    @_spi(WebSocket) public var message: Success? {
+      @_spi(WebSocket) get
+    }
+    @_spi(WebSocket) public func close(sending closeCode: Foundation.URLSessionWebSocketTask.CloseCode, reason: Foundation.Data? = nil)
+    @_spi(WebSocket) public func cancel()
+    @_spi(WebSocket) public func sendPing(respondingOn queue: Dispatch.DispatchQueue = .main, onResponse: @escaping (AppLink.WebSocketRequest.PingResponse) -> Swift.Void)
+  }
+  @_spi(WebSocket) public struct Completion {
+    @_spi(WebSocket) public let request: Foundation.URLRequest?
+    @_spi(WebSocket) public let response: Foundation.HTTPURLResponse?
+    @_spi(WebSocket) public let metrics: Foundation.URLSessionTaskMetrics?
+    @_spi(WebSocket) public let error: AppLink.AFError?
+  }
+  @_spi(WebSocket) public struct Configuration {
+    @_spi(WebSocket) public static var `default`: AppLink.WebSocketRequest.Configuration {
+      @_spi(WebSocket) get
+    }
+    @_spi(WebSocket) public static func `protocol`(_ protocol: Swift.String) -> AppLink.WebSocketRequest.Configuration
+    @_spi(WebSocket) public static func maximumMessageSize(_ maximumMessageSize: Swift.Int) -> AppLink.WebSocketRequest.Configuration
+    @_spi(WebSocket) public static func pingInterval(_ pingInterval: Foundation.TimeInterval) -> AppLink.WebSocketRequest.Configuration
+    @_spi(WebSocket) public let `protocol`: Swift.String?
+    @_spi(WebSocket) public let maximumMessageSize: Swift.Int
+    @_spi(WebSocket) public let pingInterval: Foundation.TimeInterval?
+  }
+  @_spi(WebSocket) public enum PingResponse {
+    @_spi(WebSocket) public struct Pong {
+    }
+    @_spi(WebSocket) case pong(AppLink.WebSocketRequest.PingResponse.Pong)
+    @_spi(WebSocket) case error(any Swift.Error)
+    @_spi(WebSocket) case unsent
+  }
+  @_spi(WebSocket) final public let convertible: any AppLink.URLRequestConvertible
+  @_spi(WebSocket) final public let configuration: AppLink.WebSocketRequest.Configuration
+  @_spi(WebSocket) @discardableResult
+  final public func close(sending closeCode: Foundation.URLSessionWebSocketTask.CloseCode, reason: Foundation.Data? = nil) -> Self
+  @_spi(WebSocket) @discardableResult
+  override final public func cancel() -> Self
+  @_spi(WebSocket) final public func sendPing(respondingOn queue: Dispatch.DispatchQueue = .main, onResponse: @escaping (AppLink.WebSocketRequest.PingResponse) -> Swift.Void)
+  @_spi(WebSocket) @discardableResult
+  final public func streamSerializer<Serializer>(_ serializer: Serializer, on queue: Dispatch.DispatchQueue = .main, handler: @escaping (_ event: AppLink.WebSocketRequest.Event<Serializer.Output, Serializer.Failure>) -> Swift.Void) -> Self where Serializer : AppLink.WebSocketMessageSerializer, Serializer.Failure == any Swift.Error
+  @_spi(WebSocket) @discardableResult
+  final public func streamDecodableEvents<Value>(_ type: Value.Type = Value.self, on queue: Dispatch.DispatchQueue = .main, using decoder: any AppLink.DataDecoder = JSONDecoder(), handler: @escaping (_ event: AppLink.WebSocketRequest.Event<Value, any Swift.Error>) -> Swift.Void) -> Self where Value : Swift.Decodable
+  @_spi(WebSocket) @discardableResult
+  final public func streamDecodable<Value>(_ type: Value.Type = Value.self, on queue: Dispatch.DispatchQueue = .main, using decoder: any AppLink.DataDecoder = JSONDecoder(), handler: @escaping (_ value: Value) -> Swift.Void) -> Self where Value : Swift.Decodable
+  @_spi(WebSocket) @discardableResult
+  final public func streamMessageEvents(on queue: Dispatch.DispatchQueue = .main, handler: @escaping (_ event: AppLink.WebSocketRequest.Event<Foundation.URLSessionWebSocketTask.Message, Swift.Never>) -> Swift.Void) -> Self
+  @_spi(WebSocket) @discardableResult
+  final public func streamMessages(on queue: Dispatch.DispatchQueue = .main, handler: @escaping (_ message: Foundation.URLSessionWebSocketTask.Message) -> Swift.Void) -> Self
+  @_spi(WebSocket) final public func send(_ message: Foundation.URLSessionWebSocketTask.Message, queue: Dispatch.DispatchQueue = .main, completionHandler: @escaping (Swift.Result<Swift.Void, any Swift.Error>) -> Swift.Void)
+  @_spi(WebSocket) @objc deinit
+}
+#if compiler(>=5.3) && $PrimaryAssociatedTypes2
+@available(macOS 10.15, iOS 13, tvOS 13, watchOS 6, *)
+public protocol WebSocketMessageSerializer<Output, Failure> {
+  associatedtype Output
+  associatedtype Failure : Swift.Error = any Swift.Error
+  func decode(_ message: Foundation.URLSessionWebSocketTask.Message) throws -> Self.Output
+}
+#else
+@available(macOS 10.15, iOS 13, tvOS 13, watchOS 6, *)
+public protocol WebSocketMessageSerializer {
+  associatedtype Output
+  associatedtype Failure : Swift.Error = any Swift.Error
+  func decode(_ message: Foundation.URLSessionWebSocketTask.Message) throws -> Self.Output
+}
+#endif
+@available(macOS 10.15, iOS 13, tvOS 13, watchOS 6, *)
+extension AppLink.WebSocketMessageSerializer {
+  public static func json<Value>(decoding _: Value.Type = Value.self, using decoder: Foundation.JSONDecoder = JSONDecoder()) -> AppLink.DecodableWebSocketMessageDecoder<Value> where Self == AppLink.DecodableWebSocketMessageDecoder<Value>, Value : Swift.Decodable
+}
+@available(macOS 10.15, iOS 13, tvOS 13, watchOS 6, *)
+public struct DecodableWebSocketMessageDecoder<Value> : AppLink.WebSocketMessageSerializer where Value : Swift.Decodable {
+  public enum Error : Swift.Error {
+    case decoding(any Swift.Error)
+    case unknownMessage(description: Swift.String)
+  }
+  public let decoder: any AppLink.DataDecoder
+  public init(decoder: any AppLink.DataDecoder)
+  public func decode(_ message: Foundation.URLSessionWebSocketTask.Message) throws -> Value
+  public typealias Failure = any Swift.Error
+  public typealias Output = Value
+}
+@available(macOS 10.15, iOS 13, tvOS 13, watchOS 6, *)
+extension AppLink.Request {
+  #if compiler(>=5.3) && $RethrowsProtocol
+  public func uploadProgress(bufferingPolicy: AppLink.StreamOf<Foundation.Progress>.BufferingPolicy = .unbounded) -> AppLink.StreamOf<Foundation.Progress>
+  #endif
+  #if compiler(>=5.3) && $RethrowsProtocol
+  public func downloadProgress(bufferingPolicy: AppLink.StreamOf<Foundation.Progress>.BufferingPolicy = .unbounded) -> AppLink.StreamOf<Foundation.Progress>
+  #endif
+  #if compiler(>=5.3) && $RethrowsProtocol
+  public func urlRequests(bufferingPolicy: AppLink.StreamOf<Foundation.URLRequest>.BufferingPolicy = .unbounded) -> AppLink.StreamOf<Foundation.URLRequest>
+  #endif
+  #if compiler(>=5.3) && $RethrowsProtocol
+  public func urlSessionTasks(bufferingPolicy: AppLink.StreamOf<Foundation.URLSessionTask>.BufferingPolicy = .unbounded) -> AppLink.StreamOf<Foundation.URLSessionTask>
+  #endif
+  #if compiler(>=5.3) && $RethrowsProtocol
+  public func cURLDescriptions(bufferingPolicy: AppLink.StreamOf<Swift.String>.BufferingPolicy = .unbounded) -> AppLink.StreamOf<Swift.String>
+  #endif
+}
+@available(macOS 10.15, iOS 13, tvOS 13, watchOS 6, *)
+public struct DataTask<Value> {
+  #if compiler(>=5.3) && $EffectfulProp
+  public var response: AppLink.DataResponse<Value, AppLink.AFError> {
+    get async
+  }
+  #endif
+  #if compiler(>=5.3) && $EffectfulProp
+  public var result: Swift.Result<Value, AppLink.AFError> {
+    get async
+  }
+  #endif
+  #if compiler(>=5.3) && $EffectfulProp
+  public var value: Value {
+    get async throws
+  }
+  #endif
+  public func cancel()
+  public func resume()
+  public func suspend()
+}
+@available(macOS 10.15, iOS 13, tvOS 13, watchOS 6, *)
+extension AppLink.DataRequest {
+  #if compiler(>=5.3) && $RethrowsProtocol
+  public func httpResponses(bufferingPolicy: AppLink.StreamOf<Foundation.HTTPURLResponse>.BufferingPolicy = .unbounded) -> AppLink.StreamOf<Foundation.HTTPURLResponse>
+  #endif
+  #if compiler(>=5.3) && $AsyncAwait && $Sendable
+  @discardableResult
+  @_disfavoredOverload public func onHTTPResponse(perform handler: @escaping @Sendable (_ response: Foundation.HTTPURLResponse) async -> AppLink.Request.ResponseDisposition) -> Self
+  #endif
+  #if compiler(>=5.3) && $AsyncAwait && $Sendable
+  @discardableResult
+  public func onHTTPResponse(perform handler: @escaping @Sendable (_ response: Foundation.HTTPURLResponse) async -> Swift.Void) -> Self
+  #endif
+  public func serializingData(automaticallyCancelling shouldAutomaticallyCancel: Swift.Bool = true, dataPreprocessor: any AppLink.DataPreprocessor = DataResponseSerializer.defaultDataPreprocessor, emptyResponseCodes: Swift.Set<Swift.Int> = DataResponseSerializer.defaultEmptyResponseCodes, emptyRequestMethods: Swift.Set<AppLink.HTTPMethod> = DataResponseSerializer.defaultEmptyRequestMethods) -> AppLink.DataTask<Foundation.Data>
+  public func serializingDecodable<Value>(_ type: Value.Type = Value.self, automaticallyCancelling shouldAutomaticallyCancel: Swift.Bool = true, dataPreprocessor: any AppLink.DataPreprocessor = DecodableResponseSerializer<Value>.defaultDataPreprocessor, decoder: any AppLink.DataDecoder = JSONDecoder(), emptyResponseCodes: Swift.Set<Swift.Int> = DecodableResponseSerializer<Value>.defaultEmptyResponseCodes, emptyRequestMethods: Swift.Set<AppLink.HTTPMethod> = DecodableResponseSerializer<Value>.defaultEmptyRequestMethods) -> AppLink.DataTask<Value> where Value : Swift.Decodable
+  public func serializingString(automaticallyCancelling shouldAutomaticallyCancel: Swift.Bool = true, dataPreprocessor: any AppLink.DataPreprocessor = StringResponseSerializer.defaultDataPreprocessor, encoding: Swift.String.Encoding? = nil, emptyResponseCodes: Swift.Set<Swift.Int> = StringResponseSerializer.defaultEmptyResponseCodes, emptyRequestMethods: Swift.Set<AppLink.HTTPMethod> = StringResponseSerializer.defaultEmptyRequestMethods) -> AppLink.DataTask<Swift.String>
+  public func serializingResponse<Serializer>(using serializer: Serializer, automaticallyCancelling shouldAutomaticallyCancel: Swift.Bool = true) -> AppLink.DataTask<Serializer.SerializedObject> where Serializer : AppLink.ResponseSerializer
+  public func serializingResponse<Serializer>(using serializer: Serializer, automaticallyCancelling shouldAutomaticallyCancel: Swift.Bool = true) -> AppLink.DataTask<Serializer.SerializedObject> where Serializer : AppLink.DataResponseSerializerProtocol
+}
+@available(macOS 10.15, iOS 13, tvOS 13, watchOS 6, *)
+public struct DownloadTask<Value> {
+  #if compiler(>=5.3) && $EffectfulProp
+  public var response: AppLink.DownloadResponse<Value, AppLink.AFError> {
+    get async
+  }
+  #endif
+  #if compiler(>=5.3) && $EffectfulProp
+  public var result: Swift.Result<Value, AppLink.AFError> {
+    get async
+  }
+  #endif
+  #if compiler(>=5.3) && $EffectfulProp
+  public var value: Value {
+    get async throws
+  }
+  #endif
+  public func cancel()
+  public func resume()
+  public func suspend()
+}
+@available(macOS 10.15, iOS 13, tvOS 13, watchOS 6, *)
+extension AppLink.DownloadRequest {
+  final public func serializingData(automaticallyCancelling shouldAutomaticallyCancel: Swift.Bool = true, dataPreprocessor: any AppLink.DataPreprocessor = DataResponseSerializer.defaultDataPreprocessor, emptyResponseCodes: Swift.Set<Swift.Int> = DataResponseSerializer.defaultEmptyResponseCodes, emptyRequestMethods: Swift.Set<AppLink.HTTPMethod> = DataResponseSerializer.defaultEmptyRequestMethods) -> AppLink.DownloadTask<Foundation.Data>
+  final public func serializingDecodable<Value>(_ type: Value.Type = Value.self, automaticallyCancelling shouldAutomaticallyCancel: Swift.Bool = true, dataPreprocessor: any AppLink.DataPreprocessor = DecodableResponseSerializer<Value>.defaultDataPreprocessor, decoder: any AppLink.DataDecoder = JSONDecoder(), emptyResponseCodes: Swift.Set<Swift.Int> = DecodableResponseSerializer<Value>.defaultEmptyResponseCodes, emptyRequestMethods: Swift.Set<AppLink.HTTPMethod> = DecodableResponseSerializer<Value>.defaultEmptyRequestMethods) -> AppLink.DownloadTask<Value> where Value : Swift.Decodable
+  final public func serializingDownloadedFileURL(automaticallyCancelling shouldAutomaticallyCancel: Swift.Bool = true) -> AppLink.DownloadTask<Foundation.URL>
+  final public func serializingString(automaticallyCancelling shouldAutomaticallyCancel: Swift.Bool = true, dataPreprocessor: any AppLink.DataPreprocessor = StringResponseSerializer.defaultDataPreprocessor, encoding: Swift.String.Encoding? = nil, emptyResponseCodes: Swift.Set<Swift.Int> = StringResponseSerializer.defaultEmptyResponseCodes, emptyRequestMethods: Swift.Set<AppLink.HTTPMethod> = StringResponseSerializer.defaultEmptyRequestMethods) -> AppLink.DownloadTask<Swift.String>
+  final public func serializingDownload<Serializer>(using serializer: Serializer, automaticallyCancelling shouldAutomaticallyCancel: Swift.Bool = true) -> AppLink.DownloadTask<Serializer.SerializedObject> where Serializer : AppLink.ResponseSerializer
+  final public func serializingDownload<Serializer>(using serializer: Serializer, automaticallyCancelling shouldAutomaticallyCancel: Swift.Bool = true) -> AppLink.DownloadTask<Serializer.SerializedObject> where Serializer : AppLink.DownloadResponseSerializerProtocol
+}
+@available(macOS 10.15, iOS 13, tvOS 13, watchOS 6, *)
+public struct DataStreamTask {
+  #if compiler(>=5.3) && $RethrowsProtocol
+  public typealias Stream<Success, Failure> = AppLink.StreamOf<AppLink.DataStreamRequest.Stream<Success, Failure>> where Failure : Swift.Error
+  #endif
+  #if compiler(>=5.3) && $RethrowsProtocol
+  public func streamingData(automaticallyCancelling shouldAutomaticallyCancel: Swift.Bool = true, bufferingPolicy: AppLink.DataStreamTask.Stream<Foundation.Data, Swift.Never>.BufferingPolicy = .unbounded) -> AppLink.DataStreamTask.Stream<Foundation.Data, Swift.Never>
+  #endif
+  #if compiler(>=5.3) && $RethrowsProtocol
+  public func streamingStrings(automaticallyCancelling shouldAutomaticallyCancel: Swift.Bool = true, bufferingPolicy: AppLink.DataStreamTask.Stream<Swift.String, Swift.Never>.BufferingPolicy = .unbounded) -> AppLink.DataStreamTask.Stream<Swift.String, Swift.Never>
+  #endif
+  #if compiler(>=5.3) && $RethrowsProtocol
+  public func streamingDecodables<T>(_ type: T.Type = T.self, automaticallyCancelling shouldAutomaticallyCancel: Swift.Bool = true, bufferingPolicy: AppLink.DataStreamTask.Stream<T, AppLink.AFError>.BufferingPolicy = .unbounded) -> AppLink.DataStreamTask.Stream<T, AppLink.AFError> where T : Swift.Decodable
+  #endif
+  #if compiler(>=5.3) && $RethrowsProtocol
+  public func streamingResponses<Serializer>(serializedUsing serializer: Serializer, automaticallyCancelling shouldAutomaticallyCancel: Swift.Bool = true, bufferingPolicy: AppLink.DataStreamTask.Stream<Serializer.SerializedObject, AppLink.AFError>.BufferingPolicy = .unbounded) -> AppLink.DataStreamTask.Stream<Serializer.SerializedObject, AppLink.AFError> where Serializer : AppLink.DataStreamSerializer
+  #endif
+  public func cancel()
+  public func resume()
+  public func suspend()
+}
+@available(macOS 10.15, iOS 13, tvOS 13, watchOS 6, *)
+extension AppLink.DataStreamRequest {
+  #if compiler(>=5.3) && $RethrowsProtocol
+  final public func httpResponses(bufferingPolicy: AppLink.StreamOf<Foundation.HTTPURLResponse>.BufferingPolicy = .unbounded) -> AppLink.StreamOf<Foundation.HTTPURLResponse>
+  #endif
+  #if compiler(>=5.3) && $AsyncAwait && $Sendable
+  @discardableResult
+  @_disfavoredOverload final public func onHTTPResponse(perform handler: @escaping @Sendable (Foundation.HTTPURLResponse) async -> AppLink.Request.ResponseDisposition) -> Self
+  #endif
+  #if compiler(>=5.3) && $AsyncAwait && $Sendable
+  @discardableResult
+  final public func onHTTPResponse(perform handler: @escaping @Sendable (Foundation.HTTPURLResponse) async -> Swift.Void) -> Self
+  #endif
+  final public func streamTask() -> AppLink.DataStreamTask
+}
+@_spi(WebSocket) @available(macOS 10.15, iOS 13, tvOS 13, watchOS 6, *)
+public struct WebSocketTask {
+  #if compiler(>=5.3) && $RethrowsProtocol
+  @_spi(WebSocket) public typealias EventStreamOf<Success, Failure> = AppLink.StreamOf<AppLink.WebSocketRequest.Event<Success, Failure>> where Failure : Swift.Error
+  #endif
+  #if compiler(>=5.3) && $RethrowsProtocol
+  @_spi(WebSocket) public func streamingMessageEvents(automaticallyCancelling shouldAutomaticallyCancel: Swift.Bool = true, bufferingPolicy: AppLink.WebSocketTask.EventStreamOf<Foundation.URLSessionWebSocketTask.Message, Swift.Never>.BufferingPolicy = .unbounded) -> AppLink.WebSocketTask.EventStreamOf<Foundation.URLSessionWebSocketTask.Message, Swift.Never>
+  #endif
+  #if compiler(>=5.3) && $RethrowsProtocol
+  @_spi(WebSocket) public func streamingMessages(automaticallyCancelling shouldAutomaticallyCancel: Swift.Bool = true, bufferingPolicy: AppLink.StreamOf<Foundation.URLSessionWebSocketTask.Message>.BufferingPolicy = .unbounded) -> AppLink.StreamOf<Foundation.URLSessionWebSocketTask.Message>
+  #endif
+  #if compiler(>=5.3) && $RethrowsProtocol
+  @_spi(WebSocket) public func streamingDecodableEvents<Value>(_ type: Value.Type = Value.self, automaticallyCancelling shouldAutomaticallyCancel: Swift.Bool = true, using decoder: any AppLink.DataDecoder = JSONDecoder(), bufferingPolicy: AppLink.WebSocketTask.EventStreamOf<Value, any Swift.Error>.BufferingPolicy = .unbounded) -> AppLink.WebSocketTask.EventStreamOf<Value, any Swift.Error> where Value : Swift.Decodable
+  #endif
+  #if compiler(>=5.3) && $RethrowsProtocol
+  @_spi(WebSocket) public func streamingDecodable<Value>(_ type: Value.Type = Value.self, automaticallyCancelling shouldAutomaticallyCancel: Swift.Bool = true, using decoder: any AppLink.DataDecoder = JSONDecoder(), bufferingPolicy: AppLink.StreamOf<Value>.BufferingPolicy = .unbounded) -> AppLink.StreamOf<Value> where Value : Swift.Decodable
+  #endif
+  #if compiler(>=5.3) && $AsyncAwait
+  @_spi(WebSocket) public func send(_ message: Foundation.URLSessionWebSocketTask.Message) async throws
+  #endif
+  @_spi(WebSocket) public func close(sending closeCode: Foundation.URLSessionWebSocketTask.CloseCode, reason: Foundation.Data? = nil)
+  @_spi(WebSocket) public func cancel()
+  @_spi(WebSocket) public func resume()
+  @_spi(WebSocket) public func suspend()
+}
+@_spi(WebSocket) @available(macOS 10.15, iOS 13, tvOS 13, watchOS 6, *)
+extension AppLink.WebSocketRequest {
+  @_spi(WebSocket) final public func webSocketTask() -> AppLink.WebSocketTask
+}
+#if compiler(>=5.3) && $RethrowsProtocol
+@available(macOS 10.15, iOS 13, tvOS 13, watchOS 6, *)
+public struct StreamOf<Element> : _Concurrency.AsyncSequence {
+  public typealias AsyncIterator = AppLink.StreamOf<Element>.Iterator
+  public typealias BufferingPolicy = _Concurrency.AsyncStream<Element>.Continuation.BufferingPolicy
+  public func makeAsyncIterator() -> AppLink.StreamOf<Element>.Iterator
+  public struct Iterator : _Concurrency.AsyncIteratorProtocol {
+    #if compiler(>=5.3) && $AsyncAwait
+    public mutating func next() async -> Element?
+    #endif
+  }
+}
+#endif
+public typealias Parameters = [Swift.String : Any]
+public protocol ParameterEncoding {
+  func encode(_ urlRequest: any AppLink.URLRequestConvertible, with parameters: AppLink.Parameters?) throws -> Foundation.URLRequest
+}
+public struct URLEncoding : AppLink.ParameterEncoding {
+  public enum Destination {
+    case methodDependent
+    case queryString
+    case httpBody
+    public static func == (a: AppLink.URLEncoding.Destination, b: AppLink.URLEncoding.Destination) -> Swift.Bool
+    public func hash(into hasher: inout Swift.Hasher)
+    public var hashValue: Swift.Int {
+      get
+    }
+  }
+  public enum ArrayEncoding {
+    case brackets
+    case noBrackets
+    case indexInBrackets
+    case custom((_ key: Swift.String, _ index: Swift.Int) -> Swift.String)
+  }
+  public enum BoolEncoding {
+    case numeric
+    case literal
+    public static func == (a: AppLink.URLEncoding.BoolEncoding, b: AppLink.URLEncoding.BoolEncoding) -> Swift.Bool
+    public func hash(into hasher: inout Swift.Hasher)
+    public var hashValue: Swift.Int {
+      get
+    }
+  }
+  public static var `default`: AppLink.URLEncoding {
+    get
+  }
+  public static var queryString: AppLink.URLEncoding {
+    get
+  }
+  public static var httpBody: AppLink.URLEncoding {
+    get
+  }
+  public let destination: AppLink.URLEncoding.Destination
+  public let arrayEncoding: AppLink.URLEncoding.ArrayEncoding
+  public let boolEncoding: AppLink.URLEncoding.BoolEncoding
+  public init(destination: AppLink.URLEncoding.Destination = .methodDependent, arrayEncoding: AppLink.URLEncoding.ArrayEncoding = .brackets, boolEncoding: AppLink.URLEncoding.BoolEncoding = .numeric)
+  public func encode(_ urlRequest: any AppLink.URLRequestConvertible, with parameters: AppLink.Parameters?) throws -> Foundation.URLRequest
+  public func queryComponents(fromKey key: Swift.String, value: Any) -> [(Swift.String, Swift.String)]
+  public func escape(_ string: Swift.String) -> Swift.String
+}
+public struct JSONEncoding : AppLink.ParameterEncoding {
+  public enum Error : Swift.Error {
+    case invalidJSONObject
+    public static func == (a: AppLink.JSONEncoding.Error, b: AppLink.JSONEncoding.Error) -> Swift.Bool
+    public func hash(into hasher: inout Swift.Hasher)
+    public var hashValue: Swift.Int {
+      get
+    }
+  }
+  public static var `default`: AppLink.JSONEncoding {
+    get
+  }
+  public static var prettyPrinted: AppLink.JSONEncoding {
+    get
+  }
+  public let options: Foundation.JSONSerialization.WritingOptions
+  public init(options: Foundation.JSONSerialization.WritingOptions = [])
+  public func encode(_ urlRequest: any AppLink.URLRequestConvertible, with parameters: AppLink.Parameters?) throws -> Foundation.URLRequest
+  public func encode(_ urlRequest: any AppLink.URLRequestConvertible, withJSONObject jsonObject: Any? = nil) throws -> Foundation.URLRequest
+}
+extension AppLink.JSONEncoding.Error {
+  public var localizedDescription: Swift.String {
+    get
+  }
+}
 public enum LinkErrorrType : Swift.Int {
   case unauthorized
   case missingParameter
@@ -36,6 +435,1330 @@ public struct AppLinkDataError : Swift.Codable {
   public init(from decoder: any Swift.Decoder) throws
   public func encode(to encoder: any Swift.Encoder) throws
 }
+@available(macOS 10.15, iOS 13, tvOS 13, watchOS 6, *)
+public struct DeflateRequestCompressor : AppLink.RequestInterceptor {
+  public enum DuplicateHeaderBehavior {
+    case error
+    case replace
+    case skip
+    public static func == (a: AppLink.DeflateRequestCompressor.DuplicateHeaderBehavior, b: AppLink.DeflateRequestCompressor.DuplicateHeaderBehavior) -> Swift.Bool
+    public func hash(into hasher: inout Swift.Hasher)
+    public var hashValue: Swift.Int {
+      get
+    }
+  }
+  public struct DuplicateHeaderError : Swift.Error {
+  }
+  public let duplicateHeaderBehavior: AppLink.DeflateRequestCompressor.DuplicateHeaderBehavior
+  public let shouldCompressBodyData: (_ bodyData: Foundation.Data) -> Swift.Bool
+  public init(duplicateHeaderBehavior: AppLink.DeflateRequestCompressor.DuplicateHeaderBehavior = .error, shouldCompressBodyData: @escaping (_ bodyData: Foundation.Data) -> Swift.Bool = { _ in true })
+  public func adapt(_ urlRequest: Foundation.URLRequest, for session: AppLink.Session, completion: @escaping (Swift.Result<Foundation.URLRequest, any Swift.Error>) -> Swift.Void)
+}
+@available(macOS 10.15, iOS 13, tvOS 13, watchOS 6, *)
+extension AppLink.RequestInterceptor where Self == AppLink.DeflateRequestCompressor {
+  public static var deflateCompressor: AppLink.DeflateRequestCompressor {
+    get
+  }
+  public static func deflateCompressor(duplicateHeaderBehavior: AppLink.DeflateRequestCompressor.DuplicateHeaderBehavior = .error, shouldCompressBodyData: @escaping (_ bodyData: Foundation.Data) -> Swift.Bool = { _ in true }) -> AppLink.DeflateRequestCompressor
+}
+@_hasMissingDesignatedInitializers public class DataRequest : AppLink.Request {
+  final public let convertible: any AppLink.URLRequestConvertible
+  public var data: Foundation.Data? {
+    get
+  }
+  @discardableResult
+  public func validate(_ validation: @escaping AppLink.DataRequest.Validation) -> Self
+  @discardableResult
+  @_disfavoredOverload public func onHTTPResponse(on queue: Dispatch.DispatchQueue = .main, perform handler: @escaping (_ response: Foundation.HTTPURLResponse, _ completionHandler: @escaping (AppLink.Request.ResponseDisposition) -> Swift.Void) -> Swift.Void) -> Self
+  @discardableResult
+  public func onHTTPResponse(on queue: Dispatch.DispatchQueue = .main, perform handler: @escaping (Foundation.HTTPURLResponse) -> Swift.Void) -> Self
+  @discardableResult
+  public func response(queue: Dispatch.DispatchQueue = .main, completionHandler: @escaping (AppLink.AFDataResponse<Foundation.Data?>) -> Swift.Void) -> Self
+  @discardableResult
+  public func response<Serializer>(queue: Dispatch.DispatchQueue = .main, responseSerializer: Serializer, completionHandler: @escaping (AppLink.AFDataResponse<Serializer.SerializedObject>) -> Swift.Void) -> Self where Serializer : AppLink.DataResponseSerializerProtocol
+  @discardableResult
+  public func response<Serializer>(queue: Dispatch.DispatchQueue = .main, responseSerializer: Serializer, completionHandler: @escaping (AppLink.AFDataResponse<Serializer.SerializedObject>) -> Swift.Void) -> Self where Serializer : AppLink.ResponseSerializer
+  @discardableResult
+  public func responseData(queue: Dispatch.DispatchQueue = .main, dataPreprocessor: any AppLink.DataPreprocessor = DataResponseSerializer.defaultDataPreprocessor, emptyResponseCodes: Swift.Set<Swift.Int> = DataResponseSerializer.defaultEmptyResponseCodes, emptyRequestMethods: Swift.Set<AppLink.HTTPMethod> = DataResponseSerializer.defaultEmptyRequestMethods, completionHandler: @escaping (AppLink.AFDataResponse<Foundation.Data>) -> Swift.Void) -> Self
+  @discardableResult
+  public func responseString(queue: Dispatch.DispatchQueue = .main, dataPreprocessor: any AppLink.DataPreprocessor = StringResponseSerializer.defaultDataPreprocessor, encoding: Swift.String.Encoding? = nil, emptyResponseCodes: Swift.Set<Swift.Int> = StringResponseSerializer.defaultEmptyResponseCodes, emptyRequestMethods: Swift.Set<AppLink.HTTPMethod> = StringResponseSerializer.defaultEmptyRequestMethods, completionHandler: @escaping (AppLink.AFDataResponse<Swift.String>) -> Swift.Void) -> Self
+  @available(*, deprecated, message: "responseJSON deprecated and will be removed in Alamofire 6. Use responseDecodable instead.")
+  @discardableResult
+  public func responseJSON(queue: Dispatch.DispatchQueue = .main, dataPreprocessor: any AppLink.DataPreprocessor = JSONResponseSerializer.defaultDataPreprocessor, emptyResponseCodes: Swift.Set<Swift.Int> = JSONResponseSerializer.defaultEmptyResponseCodes, emptyRequestMethods: Swift.Set<AppLink.HTTPMethod> = JSONResponseSerializer.defaultEmptyRequestMethods, options: Foundation.JSONSerialization.ReadingOptions = .allowFragments, completionHandler: @escaping (AppLink.AFDataResponse<Any>) -> Swift.Void) -> Self
+  @discardableResult
+  public func responseDecodable<T>(of type: T.Type = T.self, queue: Dispatch.DispatchQueue = .main, dataPreprocessor: any AppLink.DataPreprocessor = DecodableResponseSerializer<T>.defaultDataPreprocessor, decoder: any AppLink.DataDecoder = JSONDecoder(), emptyResponseCodes: Swift.Set<Swift.Int> = DecodableResponseSerializer<T>.defaultEmptyResponseCodes, emptyRequestMethods: Swift.Set<AppLink.HTTPMethod> = DecodableResponseSerializer<T>.defaultEmptyRequestMethods, completionHandler: @escaping (AppLink.AFDataResponse<T>) -> Swift.Void) -> Self where T : Swift.Decodable
+  @objc deinit
+}
+open class RetryPolicy : AppLink.RequestInterceptor {
+  public static let defaultRetryLimit: Swift.UInt
+  public static let defaultExponentialBackoffBase: Swift.UInt
+  public static let defaultExponentialBackoffScale: Swift.Double
+  public static let defaultRetryableHTTPMethods: Swift.Set<AppLink.HTTPMethod>
+  public static let defaultRetryableHTTPStatusCodes: Swift.Set<Swift.Int>
+  public static let defaultRetryableURLErrorCodes: Swift.Set<Foundation.URLError.Code>
+  final public let retryLimit: Swift.UInt
+  final public let exponentialBackoffBase: Swift.UInt
+  final public let exponentialBackoffScale: Swift.Double
+  final public let retryableHTTPMethods: Swift.Set<AppLink.HTTPMethod>
+  final public let retryableHTTPStatusCodes: Swift.Set<Swift.Int>
+  final public let retryableURLErrorCodes: Swift.Set<Foundation.URLError.Code>
+  public init(retryLimit: Swift.UInt = RetryPolicy.defaultRetryLimit, exponentialBackoffBase: Swift.UInt = RetryPolicy.defaultExponentialBackoffBase, exponentialBackoffScale: Swift.Double = RetryPolicy.defaultExponentialBackoffScale, retryableHTTPMethods: Swift.Set<AppLink.HTTPMethod> = RetryPolicy.defaultRetryableHTTPMethods, retryableHTTPStatusCodes: Swift.Set<Swift.Int> = RetryPolicy.defaultRetryableHTTPStatusCodes, retryableURLErrorCodes: Swift.Set<Foundation.URLError.Code> = RetryPolicy.defaultRetryableURLErrorCodes)
+  open func retry(_ request: AppLink.Request, for session: AppLink.Session, dueTo error: any Swift.Error, completion: @escaping (AppLink.RetryResult) -> Swift.Void)
+  open func shouldRetry(request: AppLink.Request, dueTo error: any Swift.Error) -> Swift.Bool
+  @objc deinit
+}
+extension AppLink.RequestInterceptor where Self == AppLink.RetryPolicy {
+  public static var retryPolicy: AppLink.RetryPolicy {
+    get
+  }
+  public static func retryPolicy(retryLimit: Swift.UInt = RetryPolicy.defaultRetryLimit, exponentialBackoffBase: Swift.UInt = RetryPolicy.defaultExponentialBackoffBase, exponentialBackoffScale: Swift.Double = RetryPolicy.defaultExponentialBackoffScale, retryableHTTPMethods: Swift.Set<AppLink.HTTPMethod> = RetryPolicy.defaultRetryableHTTPMethods, retryableHTTPStatusCodes: Swift.Set<Swift.Int> = RetryPolicy.defaultRetryableHTTPStatusCodes, retryableURLErrorCodes: Swift.Set<Foundation.URLError.Code> = RetryPolicy.defaultRetryableURLErrorCodes) -> AppLink.RetryPolicy
+}
+open class ConnectionLostRetryPolicy : AppLink.RetryPolicy {
+  public init(retryLimit: Swift.UInt = RetryPolicy.defaultRetryLimit, exponentialBackoffBase: Swift.UInt = RetryPolicy.defaultExponentialBackoffBase, exponentialBackoffScale: Swift.Double = RetryPolicy.defaultExponentialBackoffScale, retryableHTTPMethods: Swift.Set<AppLink.HTTPMethod> = RetryPolicy.defaultRetryableHTTPMethods)
+  @objc deinit
+}
+extension AppLink.RequestInterceptor where Self == AppLink.ConnectionLostRetryPolicy {
+  public static var connectionLostRetryPolicy: AppLink.ConnectionLostRetryPolicy {
+    get
+  }
+  public static func connectionLostRetryPolicy(retryLimit: Swift.UInt = RetryPolicy.defaultRetryLimit, exponentialBackoffBase: Swift.UInt = RetryPolicy.defaultExponentialBackoffBase, exponentialBackoffScale: Swift.Double = RetryPolicy.defaultExponentialBackoffScale, retryableHTTPMethods: Swift.Set<AppLink.HTTPMethod> = RetryPolicy.defaultRetryableHTTPMethods) -> AppLink.ConnectionLostRetryPolicy
+}
+extension Foundation.URLRequest {
+  public var method: AppLink.HTTPMethod? {
+    get
+    set
+  }
+  public func validate() throws
+}
+public enum AFError : Swift.Error {
+  public enum MultipartEncodingFailureReason {
+    case bodyPartURLInvalid(url: Foundation.URL)
+    case bodyPartFilenameInvalid(in: Foundation.URL)
+    case bodyPartFileNotReachable(at: Foundation.URL)
+    case bodyPartFileNotReachableWithError(atURL: Foundation.URL, error: any Swift.Error)
+    case bodyPartFileIsDirectory(at: Foundation.URL)
+    case bodyPartFileSizeNotAvailable(at: Foundation.URL)
+    case bodyPartFileSizeQueryFailedWithError(forURL: Foundation.URL, error: any Swift.Error)
+    case bodyPartInputStreamCreationFailed(for: Foundation.URL)
+    case outputStreamCreationFailed(for: Foundation.URL)
+    case outputStreamFileAlreadyExists(at: Foundation.URL)
+    case outputStreamURLInvalid(url: Foundation.URL)
+    case outputStreamWriteFailed(error: any Swift.Error)
+    case inputStreamReadFailed(error: any Swift.Error)
+  }
+  public struct UnexpectedInputStreamLength : Swift.Error {
+    public var bytesExpected: Swift.UInt64
+    public var bytesRead: Swift.UInt64
+  }
+  public enum ParameterEncodingFailureReason {
+    case missingURL
+    case jsonEncodingFailed(error: any Swift.Error)
+    case customEncodingFailed(error: any Swift.Error)
+  }
+  public enum ParameterEncoderFailureReason {
+    public enum RequiredComponent {
+      case url
+      case httpMethod(rawValue: Swift.String)
+    }
+    case missingRequiredComponent(AppLink.AFError.ParameterEncoderFailureReason.RequiredComponent)
+    case encoderFailed(error: any Swift.Error)
+  }
+  public enum ResponseValidationFailureReason {
+    case dataFileNil
+    case dataFileReadFailed(at: Foundation.URL)
+    case missingContentType(acceptableContentTypes: [Swift.String])
+    case unacceptableContentType(acceptableContentTypes: [Swift.String], responseContentType: Swift.String)
+    case unacceptableStatusCode(code: Swift.Int)
+    case customValidationFailed(error: any Swift.Error)
+  }
+  public enum ResponseSerializationFailureReason {
+    case inputDataNilOrZeroLength
+    case inputFileNil
+    case inputFileReadFailed(at: Foundation.URL)
+    case stringSerializationFailed(encoding: Swift.String.Encoding)
+    case jsonSerializationFailed(error: any Swift.Error)
+    case decodingFailed(error: any Swift.Error)
+    case customSerializationFailed(error: any Swift.Error)
+    case invalidEmptyResponse(type: Swift.String)
+  }
+  public enum ServerTrustFailureReason {
+    public struct Output {
+      public let host: Swift.String
+      public let trust: Security.SecTrust
+      public let status: Darwin.OSStatus
+      public let result: Security.SecTrustResultType
+    }
+    case noRequiredEvaluator(host: Swift.String)
+    case noCertificatesFound
+    case noPublicKeysFound
+    case policyApplicationFailed(trust: Security.SecTrust, policy: Security.SecPolicy, status: Darwin.OSStatus)
+    case settingAnchorCertificatesFailed(status: Darwin.OSStatus, certificates: [Security.SecCertificate])
+    case revocationPolicyCreationFailed
+    case trustEvaluationFailed(error: (any Swift.Error)?)
+    case defaultEvaluationFailed(output: AppLink.AFError.ServerTrustFailureReason.Output)
+    case hostValidationFailed(output: AppLink.AFError.ServerTrustFailureReason.Output)
+    case revocationCheckFailed(output: AppLink.AFError.ServerTrustFailureReason.Output, options: AppLink.RevocationTrustEvaluator.Options)
+    case certificatePinningFailed(host: Swift.String, trust: Security.SecTrust, pinnedCertificates: [Security.SecCertificate], serverCertificates: [Security.SecCertificate])
+    case publicKeyPinningFailed(host: Swift.String, trust: Security.SecTrust, pinnedKeys: [Security.SecKey], serverKeys: [Security.SecKey])
+    case customEvaluationFailed(error: any Swift.Error)
+  }
+  public enum URLRequestValidationFailureReason {
+    case bodyDataInGETRequest(Foundation.Data)
+  }
+  case createUploadableFailed(error: any Swift.Error)
+  case createURLRequestFailed(error: any Swift.Error)
+  case downloadedFileMoveFailed(error: any Swift.Error, source: Foundation.URL, destination: Foundation.URL)
+  case explicitlyCancelled
+  case invalidURL(url: any AppLink.URLConvertible)
+  case multipartEncodingFailed(reason: AppLink.AFError.MultipartEncodingFailureReason)
+  case parameterEncodingFailed(reason: AppLink.AFError.ParameterEncodingFailureReason)
+  case parameterEncoderFailed(reason: AppLink.AFError.ParameterEncoderFailureReason)
+  case requestAdaptationFailed(error: any Swift.Error)
+  case requestRetryFailed(retryError: any Swift.Error, originalError: any Swift.Error)
+  case responseValidationFailed(reason: AppLink.AFError.ResponseValidationFailureReason)
+  case responseSerializationFailed(reason: AppLink.AFError.ResponseSerializationFailureReason)
+  case serverTrustEvaluationFailed(reason: AppLink.AFError.ServerTrustFailureReason)
+  case sessionDeinitialized
+  case sessionInvalidated(error: (any Swift.Error)?)
+  case sessionTaskFailed(error: any Swift.Error)
+  case urlRequestValidationFailed(reason: AppLink.AFError.URLRequestValidationFailureReason)
+}
+extension Swift.Error {
+  public var asAFError: AppLink.AFError? {
+    get
+  }
+  public func asAFError(orFailWith message: @autoclosure () -> Swift.String, file: Swift.StaticString = #file, line: Swift.UInt = #line) -> AppLink.AFError
+}
+extension AppLink.AFError {
+  public var isSessionDeinitializedError: Swift.Bool {
+    get
+  }
+  public var isSessionInvalidatedError: Swift.Bool {
+    get
+  }
+  public var isExplicitlyCancelledError: Swift.Bool {
+    get
+  }
+  public var isInvalidURLError: Swift.Bool {
+    get
+  }
+  public var isParameterEncodingError: Swift.Bool {
+    get
+  }
+  public var isParameterEncoderError: Swift.Bool {
+    get
+  }
+  public var isMultipartEncodingError: Swift.Bool {
+    get
+  }
+  public var isRequestAdaptationError: Swift.Bool {
+    get
+  }
+  public var isResponseValidationError: Swift.Bool {
+    get
+  }
+  public var isResponseSerializationError: Swift.Bool {
+    get
+  }
+  public var isServerTrustEvaluationError: Swift.Bool {
+    get
+  }
+  public var isRequestRetryError: Swift.Bool {
+    get
+  }
+  public var isCreateUploadableError: Swift.Bool {
+    get
+  }
+  public var isCreateURLRequestError: Swift.Bool {
+    get
+  }
+  public var isDownloadedFileMoveError: Swift.Bool {
+    get
+  }
+  public var isSessionTaskError: Swift.Bool {
+    get
+  }
+}
+extension AppLink.AFError {
+  public var urlConvertible: (any AppLink.URLConvertible)? {
+    get
+  }
+  public var url: Foundation.URL? {
+    get
+  }
+  public var underlyingError: (any Swift.Error)? {
+    get
+  }
+  public var acceptableContentTypes: [Swift.String]? {
+    get
+  }
+  public var responseContentType: Swift.String? {
+    get
+  }
+  public var responseCode: Swift.Int? {
+    get
+  }
+  public var failedStringEncoding: Swift.String.Encoding? {
+    get
+  }
+  public var sourceURL: Foundation.URL? {
+    get
+  }
+  public var destinationURL: Foundation.URL? {
+    get
+  }
+  public var downloadResumeData: Foundation.Data? {
+    get
+  }
+}
+extension AppLink.AFError : Foundation.LocalizedError {
+  public var errorDescription: Swift.String? {
+    get
+  }
+}
+public typealias AFResult<Success> = Swift.Result<Success, AppLink.AFError>
+open class ServerTrustManager {
+  final public let allHostsMustBeEvaluated: Swift.Bool
+  final public let evaluators: [Swift.String : any AppLink.ServerTrustEvaluating]
+  public init(allHostsMustBeEvaluated: Swift.Bool = true, evaluators: [Swift.String : any AppLink.ServerTrustEvaluating])
+  open func serverTrustEvaluator(forHost host: Swift.String) throws -> (any AppLink.ServerTrustEvaluating)?
+  @objc deinit
+}
+public protocol ServerTrustEvaluating {
+  func evaluate(_ trust: Security.SecTrust, forHost host: Swift.String) throws
+}
+final public class DefaultTrustEvaluator : AppLink.ServerTrustEvaluating {
+  public init(validateHost: Swift.Bool = true)
+  final public func evaluate(_ trust: Security.SecTrust, forHost host: Swift.String) throws
+  @objc deinit
+}
+final public class RevocationTrustEvaluator : AppLink.ServerTrustEvaluating {
+  public struct Options : Swift.OptionSet {
+    public static let crl: AppLink.RevocationTrustEvaluator.Options
+    public static let networkAccessDisabled: AppLink.RevocationTrustEvaluator.Options
+    public static let ocsp: AppLink.RevocationTrustEvaluator.Options
+    public static let preferCRL: AppLink.RevocationTrustEvaluator.Options
+    public static let requirePositiveResponse: AppLink.RevocationTrustEvaluator.Options
+    public static let any: AppLink.RevocationTrustEvaluator.Options
+    public let rawValue: CoreFoundation.CFOptionFlags
+    public init(rawValue: CoreFoundation.CFOptionFlags)
+    public typealias ArrayLiteralElement = AppLink.RevocationTrustEvaluator.Options
+    public typealias Element = AppLink.RevocationTrustEvaluator.Options
+    public typealias RawValue = CoreFoundation.CFOptionFlags
+  }
+  public init(performDefaultValidation: Swift.Bool = true, validateHost: Swift.Bool = true, options: AppLink.RevocationTrustEvaluator.Options = .any)
+  final public func evaluate(_ trust: Security.SecTrust, forHost host: Swift.String) throws
+  @objc deinit
+}
+extension AppLink.ServerTrustEvaluating where Self == AppLink.RevocationTrustEvaluator {
+  public static var revocationChecking: AppLink.RevocationTrustEvaluator {
+    get
+  }
+  public static func revocationChecking(performDefaultValidation: Swift.Bool = true, validateHost: Swift.Bool = true, options: AppLink.RevocationTrustEvaluator.Options = .any) -> AppLink.RevocationTrustEvaluator
+}
+final public class PinnedCertificatesTrustEvaluator : AppLink.ServerTrustEvaluating {
+  public init(certificates: [Security.SecCertificate] = Bundle.main.af.certificates, acceptSelfSignedCertificates: Swift.Bool = false, performDefaultValidation: Swift.Bool = true, validateHost: Swift.Bool = true)
+  final public func evaluate(_ trust: Security.SecTrust, forHost host: Swift.String) throws
+  @objc deinit
+}
+extension AppLink.ServerTrustEvaluating where Self == AppLink.PinnedCertificatesTrustEvaluator {
+  public static var pinnedCertificates: AppLink.PinnedCertificatesTrustEvaluator {
+    get
+  }
+  public static func pinnedCertificates(certificates: [Security.SecCertificate] = Bundle.main.af.certificates, acceptSelfSignedCertificates: Swift.Bool = false, performDefaultValidation: Swift.Bool = true, validateHost: Swift.Bool = true) -> AppLink.PinnedCertificatesTrustEvaluator
+}
+final public class PublicKeysTrustEvaluator : AppLink.ServerTrustEvaluating {
+  public init(keys: [Security.SecKey] = Bundle.main.af.publicKeys, performDefaultValidation: Swift.Bool = true, validateHost: Swift.Bool = true)
+  final public func evaluate(_ trust: Security.SecTrust, forHost host: Swift.String) throws
+  @objc deinit
+}
+extension AppLink.ServerTrustEvaluating where Self == AppLink.PublicKeysTrustEvaluator {
+  public static var publicKeys: AppLink.PublicKeysTrustEvaluator {
+    get
+  }
+  public static func publicKeys(keys: [Security.SecKey] = Bundle.main.af.publicKeys, performDefaultValidation: Swift.Bool = true, validateHost: Swift.Bool = true) -> AppLink.PublicKeysTrustEvaluator
+}
+final public class CompositeTrustEvaluator : AppLink.ServerTrustEvaluating {
+  public init(evaluators: [any AppLink.ServerTrustEvaluating])
+  final public func evaluate(_ trust: Security.SecTrust, forHost host: Swift.String) throws
+  @objc deinit
+}
+extension AppLink.ServerTrustEvaluating where Self == AppLink.CompositeTrustEvaluator {
+  public static func composite(evaluators: [any AppLink.ServerTrustEvaluating]) -> AppLink.CompositeTrustEvaluator
+}
+@available(*, deprecated, renamed: "DisabledTrustEvaluator", message: "DisabledEvaluator has been renamed DisabledTrustEvaluator.")
+public typealias DisabledEvaluator = AppLink.DisabledTrustEvaluator
+final public class DisabledTrustEvaluator : AppLink.ServerTrustEvaluating {
+  public init()
+  final public func evaluate(_ trust: Security.SecTrust, forHost host: Swift.String) throws
+  @objc deinit
+}
+extension Swift.Array where Element == any AppLink.ServerTrustEvaluating {
+  public func evaluate(_ trust: Security.SecTrust, forHost host: Swift.String) throws
+}
+extension Foundation.Bundle : AppLink.AlamofireExtended {
+  public typealias ExtendedType = Foundation.Bundle
+}
+extension AppLink.AlamofireExtension where ExtendedType : Foundation.Bundle {
+  public var certificates: [Security.SecCertificate] {
+    get
+  }
+  public var publicKeys: [Security.SecKey] {
+    get
+  }
+  public func paths(forResourcesOfTypes types: [Swift.String]) -> [Swift.String]
+}
+extension Security.SecTrust : AppLink.AlamofireExtended {
+  public typealias ExtendedType = Security.SecTrust
+}
+extension AppLink.AlamofireExtension where ExtendedType == Security.SecTrust {
+  @available(iOS 12, macOS 10.14, tvOS 12, watchOS 5, *)
+  public func evaluate(afterApplying policy: Security.SecPolicy) throws
+  @available(iOS, introduced: 10, deprecated: 12, renamed: "evaluate(afterApplying:)")
+  @available(macOS, introduced: 10.12, deprecated: 10.14, renamed: "evaluate(afterApplying:)")
+  @available(tvOS, introduced: 10, deprecated: 12, renamed: "evaluate(afterApplying:)")
+  @available(watchOS, introduced: 3, deprecated: 5, renamed: "evaluate(afterApplying:)")
+  public func validate(policy: Security.SecPolicy, errorProducer: (_ status: Darwin.OSStatus, _ result: Security.SecTrustResultType) -> any Swift.Error) throws
+  public func apply(policy: Security.SecPolicy) throws -> Security.SecTrust
+  @available(iOS 12, macOS 10.14, tvOS 12, watchOS 5, *)
+  public func evaluate() throws
+  @available(iOS, introduced: 10, deprecated: 12, renamed: "evaluate()")
+  @available(macOS, introduced: 10.12, deprecated: 10.14, renamed: "evaluate()")
+  @available(tvOS, introduced: 10, deprecated: 12, renamed: "evaluate()")
+  @available(watchOS, introduced: 3, deprecated: 5, renamed: "evaluate()")
+  public func validate(errorProducer: (_ status: Darwin.OSStatus, _ result: Security.SecTrustResultType) -> any Swift.Error) throws
+  public func setAnchorCertificates(_ certificates: [Security.SecCertificate]) throws
+  public var publicKeys: [Security.SecKey] {
+    get
+  }
+  public var certificates: [Security.SecCertificate] {
+    get
+  }
+  public var certificateData: [Foundation.Data] {
+    get
+  }
+  public func performDefaultValidation(forHost host: Swift.String) throws
+  public func performValidation(forHost host: Swift.String) throws
+}
+extension Security.SecPolicy : AppLink.AlamofireExtended {
+  public typealias ExtendedType = Security.SecPolicy
+}
+extension AppLink.AlamofireExtension where ExtendedType == Security.SecPolicy {
+  public static let `default`: Security.SecPolicy
+  public static func hostname(_ hostname: Swift.String) -> Security.SecPolicy
+  public static func revocation(options: AppLink.RevocationTrustEvaluator.Options) throws -> Security.SecPolicy
+}
+extension Swift.Array : AppLink.AlamofireExtended {
+  public typealias ExtendedType = Swift.Array<Element>
+}
+extension AppLink.AlamofireExtension where ExtendedType == [Security.SecCertificate] {
+  public var data: [Foundation.Data] {
+    get
+  }
+  public var publicKeys: [Security.SecKey] {
+    get
+  }
+}
+extension Security.SecCertificate : AppLink.AlamofireExtended {
+  public typealias ExtendedType = Security.SecCertificate
+}
+extension AppLink.AlamofireExtension where ExtendedType == Security.SecCertificate {
+  public var publicKey: Security.SecKey? {
+    get
+  }
+}
+extension Swift.Int32 : AppLink.AlamofireExtended {
+  public typealias ExtendedType = Swift.Int32
+}
+extension AppLink.AlamofireExtension where ExtendedType == Swift.Int32 {
+  public var isSuccess: Swift.Bool {
+    get
+  }
+}
+extension Security.SecTrustResultType : AppLink.AlamofireExtended {
+  public typealias ExtendedType = Security.SecTrustResultType
+}
+extension AppLink.AlamofireExtension where ExtendedType == Security.SecTrustResultType {
+  public var isSuccess: Swift.Bool {
+    get
+  }
+}
+@_hasMissingDesignatedInitializers final public class DataStreamRequest : AppLink.Request {
+  public typealias Handler<Success, Failure> = (AppLink.DataStreamRequest.Stream<Success, Failure>) throws -> Swift.Void where Failure : Swift.Error
+  public struct Stream<Success, Failure> where Failure : Swift.Error {
+    public let event: AppLink.DataStreamRequest.Event<Success, Failure>
+    public let token: AppLink.DataStreamRequest.CancellationToken
+    public func cancel()
+  }
+  public enum Event<Success, Failure> where Failure : Swift.Error {
+    case stream(Swift.Result<Success, Failure>)
+    case complete(AppLink.DataStreamRequest.Completion)
+  }
+  public struct Completion {
+    public let request: Foundation.URLRequest?
+    public let response: Foundation.HTTPURLResponse?
+    public let metrics: Foundation.URLSessionTaskMetrics?
+    public let error: AppLink.AFError?
+  }
+  public struct CancellationToken {
+    public func cancel()
+  }
+  final public let convertible: any AppLink.URLRequestConvertible
+  final public let automaticallyCancelOnStreamError: Swift.Bool
+  @discardableResult
+  final public func validate(_ validation: @escaping AppLink.DataStreamRequest.Validation) -> Self
+  final public func asInputStream(bufferSize: Swift.Int = 1024) -> Foundation.InputStream?
+  @discardableResult
+  @_disfavoredOverload final public func onHTTPResponse(on queue: Dispatch.DispatchQueue = .main, perform handler: @escaping (_ response: Foundation.HTTPURLResponse, _ completionHandler: @escaping (AppLink.Request.ResponseDisposition) -> Swift.Void) -> Swift.Void) -> Self
+  @discardableResult
+  final public func onHTTPResponse(on queue: Dispatch.DispatchQueue = .main, perform handler: @escaping (Foundation.HTTPURLResponse) -> Swift.Void) -> Self
+  @discardableResult
+  final public func responseStream(on queue: Dispatch.DispatchQueue = .main, stream: @escaping AppLink.DataStreamRequest.Handler<Foundation.Data, Swift.Never>) -> Self
+  @discardableResult
+  final public func responseStream<Serializer>(using serializer: Serializer, on queue: Dispatch.DispatchQueue = .main, stream: @escaping AppLink.DataStreamRequest.Handler<Serializer.SerializedObject, AppLink.AFError>) -> Self where Serializer : AppLink.DataStreamSerializer
+  @discardableResult
+  final public func responseStreamString(on queue: Dispatch.DispatchQueue = .main, stream: @escaping AppLink.DataStreamRequest.Handler<Swift.String, Swift.Never>) -> Self
+  @discardableResult
+  final public func responseStreamDecodable<T>(of type: T.Type = T.self, on queue: Dispatch.DispatchQueue = .main, using decoder: any AppLink.DataDecoder = JSONDecoder(), preprocessor: any AppLink.DataPreprocessor = PassthroughPreprocessor(), stream: @escaping AppLink.DataStreamRequest.Handler<T, AppLink.AFError>) -> Self where T : Swift.Decodable
+  @objc deinit
+}
+extension AppLink.DataStreamRequest.Stream {
+  public var result: Swift.Result<Success, Failure>? {
+    get
+  }
+  public var value: Success? {
+    get
+  }
+  public var error: Failure? {
+    get
+  }
+  public var completion: AppLink.DataStreamRequest.Completion? {
+    get
+  }
+}
+public protocol DataStreamSerializer {
+  associatedtype SerializedObject
+  func serialize(_ data: Foundation.Data) throws -> Self.SerializedObject
+}
+public struct DecodableStreamSerializer<T> : AppLink.DataStreamSerializer where T : Swift.Decodable {
+  public let decoder: any AppLink.DataDecoder
+  public let dataPreprocessor: any AppLink.DataPreprocessor
+  public init(decoder: any AppLink.DataDecoder = JSONDecoder(), dataPreprocessor: any AppLink.DataPreprocessor = PassthroughPreprocessor())
+  public func serialize(_ data: Foundation.Data) throws -> T
+  public typealias SerializedObject = T
+}
+public struct PassthroughStreamSerializer : AppLink.DataStreamSerializer {
+  public init()
+  public func serialize(_ data: Foundation.Data) throws -> Foundation.Data
+  public typealias SerializedObject = Foundation.Data
+}
+public struct StringStreamSerializer : AppLink.DataStreamSerializer {
+  public init()
+  public func serialize(_ data: Foundation.Data) throws -> Swift.String
+  public typealias SerializedObject = Swift.String
+}
+extension AppLink.DataStreamSerializer {
+  public static func decodable<T>(of type: T.Type, decoder: any AppLink.DataDecoder = JSONDecoder(), dataPreprocessor: any AppLink.DataPreprocessor = PassthroughPreprocessor()) -> Self where Self == AppLink.DecodableStreamSerializer<T>, T : Swift.Decodable
+}
+extension AppLink.DataStreamSerializer where Self == AppLink.PassthroughStreamSerializer {
+  public static var passthrough: AppLink.PassthroughStreamSerializer {
+    get
+  }
+}
+extension AppLink.DataStreamSerializer where Self == AppLink.StringStreamSerializer {
+  public static var string: AppLink.StringStreamSerializer {
+    get
+  }
+}
+#if compiler(>=5.3) && $PrimaryAssociatedTypes2
+public protocol DataResponseSerializerProtocol<SerializedObject> {
+  associatedtype SerializedObject
+  func serialize(request: Foundation.URLRequest?, response: Foundation.HTTPURLResponse?, data: Foundation.Data?, error: (any Swift.Error)?) throws -> Self.SerializedObject
+}
+#else
+public protocol DataResponseSerializerProtocol {
+  associatedtype SerializedObject
+  func serialize(request: Foundation.URLRequest?, response: Foundation.HTTPURLResponse?, data: Foundation.Data?, error: (any Swift.Error)?) throws -> Self.SerializedObject
+}
+#endif
+#if compiler(>=5.3) && $PrimaryAssociatedTypes2
+public protocol DownloadResponseSerializerProtocol<SerializedObject> {
+  associatedtype SerializedObject
+  func serializeDownload(request: Foundation.URLRequest?, response: Foundation.HTTPURLResponse?, fileURL: Foundation.URL?, error: (any Swift.Error)?) throws -> Self.SerializedObject
+}
+#else
+public protocol DownloadResponseSerializerProtocol {
+  associatedtype SerializedObject
+  func serializeDownload(request: Foundation.URLRequest?, response: Foundation.HTTPURLResponse?, fileURL: Foundation.URL?, error: (any Swift.Error)?) throws -> Self.SerializedObject
+}
+#endif
+#if compiler(>=5.3) && $PrimaryAssociatedTypes2
+public protocol ResponseSerializer<SerializedObject> : AppLink.DataResponseSerializerProtocol, AppLink.DownloadResponseSerializerProtocol {
+  var dataPreprocessor: any AppLink.DataPreprocessor { get }
+  var emptyRequestMethods: Swift.Set<AppLink.HTTPMethod> { get }
+  var emptyResponseCodes: Swift.Set<Swift.Int> { get }
+}
+#else
+public protocol ResponseSerializer : AppLink.DataResponseSerializerProtocol, AppLink.DownloadResponseSerializerProtocol {
+  var dataPreprocessor: any AppLink.DataPreprocessor { get }
+  var emptyRequestMethods: Swift.Set<AppLink.HTTPMethod> { get }
+  var emptyResponseCodes: Swift.Set<Swift.Int> { get }
+}
+#endif
+public protocol DataPreprocessor {
+  func preprocess(_ data: Foundation.Data) throws -> Foundation.Data
+}
+public struct PassthroughPreprocessor : AppLink.DataPreprocessor {
+  public init()
+  public func preprocess(_ data: Foundation.Data) throws -> Foundation.Data
+}
+public struct GoogleXSSIPreprocessor : AppLink.DataPreprocessor {
+  public init()
+  public func preprocess(_ data: Foundation.Data) throws -> Foundation.Data
+}
+extension AppLink.DataPreprocessor where Self == AppLink.PassthroughPreprocessor {
+  public static var passthrough: AppLink.PassthroughPreprocessor {
+    get
+  }
+}
+extension AppLink.DataPreprocessor where Self == AppLink.GoogleXSSIPreprocessor {
+  public static var googleXSSI: AppLink.GoogleXSSIPreprocessor {
+    get
+  }
+}
+extension AppLink.ResponseSerializer {
+  public static var defaultDataPreprocessor: any AppLink.DataPreprocessor {
+    get
+  }
+  public static var defaultEmptyRequestMethods: Swift.Set<AppLink.HTTPMethod> {
+    get
+  }
+  public static var defaultEmptyResponseCodes: Swift.Set<Swift.Int> {
+    get
+  }
+  public var dataPreprocessor: any AppLink.DataPreprocessor {
+    get
+  }
+  public var emptyRequestMethods: Swift.Set<AppLink.HTTPMethod> {
+    get
+  }
+  public var emptyResponseCodes: Swift.Set<Swift.Int> {
+    get
+  }
+  public func requestAllowsEmptyResponseData(_ request: Foundation.URLRequest?) -> Swift.Bool?
+  public func responseAllowsEmptyResponseData(_ response: Foundation.HTTPURLResponse?) -> Swift.Bool?
+  public func emptyResponseAllowed(forRequest request: Foundation.URLRequest?, response: Foundation.HTTPURLResponse?) -> Swift.Bool
+}
+extension AppLink.DownloadResponseSerializerProtocol where Self : AppLink.DataResponseSerializerProtocol {
+  public func serializeDownload(request: Foundation.URLRequest?, response: Foundation.HTTPURLResponse?, fileURL: Foundation.URL?, error: (any Swift.Error)?) throws -> Self.SerializedObject
+}
+public struct URLResponseSerializer : AppLink.DownloadResponseSerializerProtocol {
+  public init()
+  public func serializeDownload(request: Foundation.URLRequest?, response: Foundation.HTTPURLResponse?, fileURL: Foundation.URL?, error: (any Swift.Error)?) throws -> Foundation.URL
+  public typealias SerializedObject = Foundation.URL
+}
+extension AppLink.DownloadResponseSerializerProtocol where Self == AppLink.URLResponseSerializer {
+  public static var url: AppLink.URLResponseSerializer {
+    get
+  }
+}
+final public class DataResponseSerializer : AppLink.ResponseSerializer {
+  final public let dataPreprocessor: any AppLink.DataPreprocessor
+  final public let emptyResponseCodes: Swift.Set<Swift.Int>
+  final public let emptyRequestMethods: Swift.Set<AppLink.HTTPMethod>
+  public init(dataPreprocessor: any AppLink.DataPreprocessor = DataResponseSerializer.defaultDataPreprocessor, emptyResponseCodes: Swift.Set<Swift.Int> = DataResponseSerializer.defaultEmptyResponseCodes, emptyRequestMethods: Swift.Set<AppLink.HTTPMethod> = DataResponseSerializer.defaultEmptyRequestMethods)
+  final public func serialize(request: Foundation.URLRequest?, response: Foundation.HTTPURLResponse?, data: Foundation.Data?, error: (any Swift.Error)?) throws -> Foundation.Data
+  public typealias SerializedObject = Foundation.Data
+  @objc deinit
+}
+extension AppLink.ResponseSerializer where Self == AppLink.DataResponseSerializer {
+  public static var data: AppLink.DataResponseSerializer {
+    get
+  }
+  public static func data(dataPreprocessor: any AppLink.DataPreprocessor = DataResponseSerializer.defaultDataPreprocessor, emptyResponseCodes: Swift.Set<Swift.Int> = DataResponseSerializer.defaultEmptyResponseCodes, emptyRequestMethods: Swift.Set<AppLink.HTTPMethod> = DataResponseSerializer.defaultEmptyRequestMethods) -> AppLink.DataResponseSerializer
+}
+final public class StringResponseSerializer : AppLink.ResponseSerializer {
+  final public let dataPreprocessor: any AppLink.DataPreprocessor
+  final public let encoding: Swift.String.Encoding?
+  final public let emptyResponseCodes: Swift.Set<Swift.Int>
+  final public let emptyRequestMethods: Swift.Set<AppLink.HTTPMethod>
+  public init(dataPreprocessor: any AppLink.DataPreprocessor = StringResponseSerializer.defaultDataPreprocessor, encoding: Swift.String.Encoding? = nil, emptyResponseCodes: Swift.Set<Swift.Int> = StringResponseSerializer.defaultEmptyResponseCodes, emptyRequestMethods: Swift.Set<AppLink.HTTPMethod> = StringResponseSerializer.defaultEmptyRequestMethods)
+  final public func serialize(request: Foundation.URLRequest?, response: Foundation.HTTPURLResponse?, data: Foundation.Data?, error: (any Swift.Error)?) throws -> Swift.String
+  public typealias SerializedObject = Swift.String
+  @objc deinit
+}
+extension AppLink.ResponseSerializer where Self == AppLink.StringResponseSerializer {
+  public static var string: AppLink.StringResponseSerializer {
+    get
+  }
+  public static func string(dataPreprocessor: any AppLink.DataPreprocessor = StringResponseSerializer.defaultDataPreprocessor, encoding: Swift.String.Encoding? = nil, emptyResponseCodes: Swift.Set<Swift.Int> = StringResponseSerializer.defaultEmptyResponseCodes, emptyRequestMethods: Swift.Set<AppLink.HTTPMethod> = StringResponseSerializer.defaultEmptyRequestMethods) -> AppLink.StringResponseSerializer
+}
+@available(*, deprecated, message: "JSONResponseSerializer deprecated and will be removed in Alamofire 6. Use DecodableResponseSerializer instead.")
+final public class JSONResponseSerializer : AppLink.ResponseSerializer {
+  final public let dataPreprocessor: any AppLink.DataPreprocessor
+  final public let emptyResponseCodes: Swift.Set<Swift.Int>
+  final public let emptyRequestMethods: Swift.Set<AppLink.HTTPMethod>
+  final public let options: Foundation.JSONSerialization.ReadingOptions
+  public init(dataPreprocessor: any AppLink.DataPreprocessor = JSONResponseSerializer.defaultDataPreprocessor, emptyResponseCodes: Swift.Set<Swift.Int> = JSONResponseSerializer.defaultEmptyResponseCodes, emptyRequestMethods: Swift.Set<AppLink.HTTPMethod> = JSONResponseSerializer.defaultEmptyRequestMethods, options: Foundation.JSONSerialization.ReadingOptions = .allowFragments)
+  final public func serialize(request: Foundation.URLRequest?, response: Foundation.HTTPURLResponse?, data: Foundation.Data?, error: (any Swift.Error)?) throws -> Any
+  public typealias SerializedObject = Any
+  @objc deinit
+}
+public protocol EmptyResponse {
+  static func emptyValue() -> Self
+}
+public struct Empty : Swift.Codable, Swift.Sendable {
+  public static let value: AppLink.Empty
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+extension AppLink.Empty : AppLink.EmptyResponse {
+  public static func emptyValue() -> AppLink.Empty
+}
+public protocol DataDecoder {
+  func decode<D>(_ type: D.Type, from data: Foundation.Data) throws -> D where D : Swift.Decodable
+}
+extension Foundation.JSONDecoder : AppLink.DataDecoder {
+}
+extension Foundation.PropertyListDecoder : AppLink.DataDecoder {
+}
+final public class DecodableResponseSerializer<T> : AppLink.ResponseSerializer where T : Swift.Decodable {
+  final public let dataPreprocessor: any AppLink.DataPreprocessor
+  final public let decoder: any AppLink.DataDecoder
+  final public let emptyResponseCodes: Swift.Set<Swift.Int>
+  final public let emptyRequestMethods: Swift.Set<AppLink.HTTPMethod>
+  public init(dataPreprocessor: any AppLink.DataPreprocessor = DecodableResponseSerializer.defaultDataPreprocessor, decoder: any AppLink.DataDecoder = JSONDecoder(), emptyResponseCodes: Swift.Set<Swift.Int> = DecodableResponseSerializer.defaultEmptyResponseCodes, emptyRequestMethods: Swift.Set<AppLink.HTTPMethod> = DecodableResponseSerializer.defaultEmptyRequestMethods)
+  final public func serialize(request: Foundation.URLRequest?, response: Foundation.HTTPURLResponse?, data: Foundation.Data?, error: (any Swift.Error)?) throws -> T
+  public typealias SerializedObject = T
+  @objc deinit
+}
+extension AppLink.ResponseSerializer {
+  public static func decodable<T>(of type: T.Type, dataPreprocessor: any AppLink.DataPreprocessor = DecodableResponseSerializer<T>.defaultDataPreprocessor, decoder: any AppLink.DataDecoder = JSONDecoder(), emptyResponseCodes: Swift.Set<Swift.Int> = DecodableResponseSerializer<T>.defaultEmptyResponseCodes, emptyRequestMethods: Swift.Set<AppLink.HTTPMethod> = DecodableResponseSerializer<T>.defaultEmptyRequestMethods) -> AppLink.DecodableResponseSerializer<T> where Self == AppLink.DecodableResponseSerializer<T>, T : Swift.Decodable
+}
+@_hasMissingDesignatedInitializers open class NetworkReachabilityManager {
+  public enum NetworkReachabilityStatus {
+    case unknown
+    case notReachable
+    case reachable(AppLink.NetworkReachabilityManager.NetworkReachabilityStatus.ConnectionType)
+    public enum ConnectionType {
+      case ethernetOrWiFi
+      case cellular
+      public static func == (a: AppLink.NetworkReachabilityManager.NetworkReachabilityStatus.ConnectionType, b: AppLink.NetworkReachabilityManager.NetworkReachabilityStatus.ConnectionType) -> Swift.Bool
+      public func hash(into hasher: inout Swift.Hasher)
+      public var hashValue: Swift.Int {
+        get
+      }
+    }
+  }
+  public typealias Listener = (AppLink.NetworkReachabilityManager.NetworkReachabilityStatus) -> Swift.Void
+  public static let `default`: AppLink.NetworkReachabilityManager?
+  open var isReachable: Swift.Bool {
+    get
+  }
+  open var isReachableOnCellular: Swift.Bool {
+    get
+  }
+  open var isReachableOnEthernetOrWiFi: Swift.Bool {
+    get
+  }
+  final public let reachabilityQueue: Dispatch.DispatchQueue
+  open var flags: SystemConfiguration.SCNetworkReachabilityFlags? {
+    get
+  }
+  open var status: AppLink.NetworkReachabilityManager.NetworkReachabilityStatus {
+    get
+  }
+  convenience public init?(host: Swift.String)
+  convenience public init?()
+  @objc deinit
+  @discardableResult
+  open func startListening(onQueue queue: Dispatch.DispatchQueue = .main, onUpdatePerforming listener: @escaping AppLink.NetworkReachabilityManager.Listener) -> Swift.Bool
+  open func stopListening()
+}
+extension AppLink.NetworkReachabilityManager.NetworkReachabilityStatus : Swift.Equatable {
+  public static func == (a: AppLink.NetworkReachabilityManager.NetworkReachabilityStatus, b: AppLink.NetworkReachabilityManager.NetworkReachabilityStatus) -> Swift.Bool
+}
+open class Session {
+  public static let `default`: AppLink.Session
+  final public let session: Foundation.URLSession
+  final public let delegate: AppLink.SessionDelegate
+  final public let rootQueue: Dispatch.DispatchQueue
+  final public let startRequestsImmediately: Swift.Bool
+  final public let requestQueue: Dispatch.DispatchQueue
+  final public let serializationQueue: Dispatch.DispatchQueue
+  final public let interceptor: (any AppLink.RequestInterceptor)?
+  final public let serverTrustManager: AppLink.ServerTrustManager?
+  final public let redirectHandler: (any AppLink.RedirectHandler)?
+  final public let cachedResponseHandler: (any AppLink.CachedResponseHandler)?
+  final public let eventMonitor: AppLink.CompositeEventMonitor
+  final public let defaultEventMonitors: [any AppLink.EventMonitor]
+  public init(session: Foundation.URLSession, delegate: AppLink.SessionDelegate, rootQueue: Dispatch.DispatchQueue, startRequestsImmediately: Swift.Bool = true, requestQueue: Dispatch.DispatchQueue? = nil, serializationQueue: Dispatch.DispatchQueue? = nil, interceptor: (any AppLink.RequestInterceptor)? = nil, serverTrustManager: AppLink.ServerTrustManager? = nil, redirectHandler: (any AppLink.RedirectHandler)? = nil, cachedResponseHandler: (any AppLink.CachedResponseHandler)? = nil, eventMonitors: [any AppLink.EventMonitor] = [])
+  convenience public init(configuration: Foundation.URLSessionConfiguration = URLSessionConfiguration.af.default, delegate: AppLink.SessionDelegate = SessionDelegate(), rootQueue: Dispatch.DispatchQueue = DispatchQueue(label: "org.alamofire.session.rootQueue"), startRequestsImmediately: Swift.Bool = true, requestQueue: Dispatch.DispatchQueue? = nil, serializationQueue: Dispatch.DispatchQueue? = nil, interceptor: (any AppLink.RequestInterceptor)? = nil, serverTrustManager: AppLink.ServerTrustManager? = nil, redirectHandler: (any AppLink.RedirectHandler)? = nil, cachedResponseHandler: (any AppLink.CachedResponseHandler)? = nil, eventMonitors: [any AppLink.EventMonitor] = [])
+  @objc deinit
+  public func withAllRequests(perform action: @escaping (Swift.Set<AppLink.Request>) -> Swift.Void)
+  public func cancelAllRequests(completingOnQueue queue: Dispatch.DispatchQueue = .main, completion: (() -> Swift.Void)? = nil)
+  public typealias RequestModifier = (inout Foundation.URLRequest) throws -> Swift.Void
+  open func request(_ convertible: any AppLink.URLConvertible, method: AppLink.HTTPMethod = .get, parameters: AppLink.Parameters? = nil, encoding: any AppLink.ParameterEncoding = URLEncoding.default, headers: AppLink.HTTPHeaders? = nil, interceptor: (any AppLink.RequestInterceptor)? = nil, requestModifier: AppLink.Session.RequestModifier? = nil) -> AppLink.DataRequest
+  open func request<Parameters>(_ convertible: any AppLink.URLConvertible, method: AppLink.HTTPMethod = .get, parameters: Parameters? = nil, encoder: any AppLink.ParameterEncoder = URLEncodedFormParameterEncoder.default, headers: AppLink.HTTPHeaders? = nil, interceptor: (any AppLink.RequestInterceptor)? = nil, requestModifier: AppLink.Session.RequestModifier? = nil) -> AppLink.DataRequest where Parameters : Swift.Encodable
+  open func request(_ convertible: any AppLink.URLRequestConvertible, interceptor: (any AppLink.RequestInterceptor)? = nil) -> AppLink.DataRequest
+  open func streamRequest<Parameters>(_ convertible: any AppLink.URLConvertible, method: AppLink.HTTPMethod = .get, parameters: Parameters? = nil, encoder: any AppLink.ParameterEncoder = URLEncodedFormParameterEncoder.default, headers: AppLink.HTTPHeaders? = nil, automaticallyCancelOnStreamError: Swift.Bool = false, interceptor: (any AppLink.RequestInterceptor)? = nil, requestModifier: AppLink.Session.RequestModifier? = nil) -> AppLink.DataStreamRequest where Parameters : Swift.Encodable
+  open func streamRequest(_ convertible: any AppLink.URLConvertible, method: AppLink.HTTPMethod = .get, headers: AppLink.HTTPHeaders? = nil, automaticallyCancelOnStreamError: Swift.Bool = false, interceptor: (any AppLink.RequestInterceptor)? = nil, requestModifier: AppLink.Session.RequestModifier? = nil) -> AppLink.DataStreamRequest
+  open func streamRequest(_ convertible: any AppLink.URLRequestConvertible, automaticallyCancelOnStreamError: Swift.Bool = false, interceptor: (any AppLink.RequestInterceptor)? = nil) -> AppLink.DataStreamRequest
+  @_spi(WebSocket) @available(macOS 10.15, iOS 13, tvOS 13, watchOS 6, *)
+  open func webSocketRequest(to url: any AppLink.URLConvertible, configuration: AppLink.WebSocketRequest.Configuration = .default, headers: AppLink.HTTPHeaders? = nil, interceptor: (any AppLink.RequestInterceptor)? = nil, requestModifier: AppLink.Session.RequestModifier? = nil) -> AppLink.WebSocketRequest
+  @_spi(WebSocket) @available(macOS 10.15, iOS 13, tvOS 13, watchOS 6, *)
+  open func webSocketRequest<Parameters>(to url: any AppLink.URLConvertible, configuration: AppLink.WebSocketRequest.Configuration = .default, parameters: Parameters? = nil, encoder: any AppLink.ParameterEncoder = URLEncodedFormParameterEncoder.default, headers: AppLink.HTTPHeaders? = nil, interceptor: (any AppLink.RequestInterceptor)? = nil, requestModifier: AppLink.Session.RequestModifier? = nil) -> AppLink.WebSocketRequest where Parameters : Swift.Encodable
+  @_spi(WebSocket) @available(macOS 10.15, iOS 13, tvOS 13, watchOS 6, *)
+  open func webSocketRequest(performing convertible: any AppLink.URLRequestConvertible, configuration: AppLink.WebSocketRequest.Configuration = .default, interceptor: (any AppLink.RequestInterceptor)? = nil) -> AppLink.WebSocketRequest
+  open func download(_ convertible: any AppLink.URLConvertible, method: AppLink.HTTPMethod = .get, parameters: AppLink.Parameters? = nil, encoding: any AppLink.ParameterEncoding = URLEncoding.default, headers: AppLink.HTTPHeaders? = nil, interceptor: (any AppLink.RequestInterceptor)? = nil, requestModifier: AppLink.Session.RequestModifier? = nil, to destination: AppLink.DownloadRequest.Destination? = nil) -> AppLink.DownloadRequest
+  open func download<Parameters>(_ convertible: any AppLink.URLConvertible, method: AppLink.HTTPMethod = .get, parameters: Parameters? = nil, encoder: any AppLink.ParameterEncoder = URLEncodedFormParameterEncoder.default, headers: AppLink.HTTPHeaders? = nil, interceptor: (any AppLink.RequestInterceptor)? = nil, requestModifier: AppLink.Session.RequestModifier? = nil, to destination: AppLink.DownloadRequest.Destination? = nil) -> AppLink.DownloadRequest where Parameters : Swift.Encodable
+  open func download(_ convertible: any AppLink.URLRequestConvertible, interceptor: (any AppLink.RequestInterceptor)? = nil, to destination: AppLink.DownloadRequest.Destination? = nil) -> AppLink.DownloadRequest
+  open func download(resumingWith data: Foundation.Data, interceptor: (any AppLink.RequestInterceptor)? = nil, to destination: AppLink.DownloadRequest.Destination? = nil) -> AppLink.DownloadRequest
+  open func upload(_ data: Foundation.Data, to convertible: any AppLink.URLConvertible, method: AppLink.HTTPMethod = .post, headers: AppLink.HTTPHeaders? = nil, interceptor: (any AppLink.RequestInterceptor)? = nil, fileManager: Foundation.FileManager = .default, requestModifier: AppLink.Session.RequestModifier? = nil) -> AppLink.UploadRequest
+  open func upload(_ data: Foundation.Data, with convertible: any AppLink.URLRequestConvertible, interceptor: (any AppLink.RequestInterceptor)? = nil, fileManager: Foundation.FileManager = .default) -> AppLink.UploadRequest
+  open func upload(_ fileURL: Foundation.URL, to convertible: any AppLink.URLConvertible, method: AppLink.HTTPMethod = .post, headers: AppLink.HTTPHeaders? = nil, interceptor: (any AppLink.RequestInterceptor)? = nil, fileManager: Foundation.FileManager = .default, requestModifier: AppLink.Session.RequestModifier? = nil) -> AppLink.UploadRequest
+  open func upload(_ fileURL: Foundation.URL, with convertible: any AppLink.URLRequestConvertible, interceptor: (any AppLink.RequestInterceptor)? = nil, fileManager: Foundation.FileManager = .default) -> AppLink.UploadRequest
+  open func upload(_ stream: Foundation.InputStream, to convertible: any AppLink.URLConvertible, method: AppLink.HTTPMethod = .post, headers: AppLink.HTTPHeaders? = nil, interceptor: (any AppLink.RequestInterceptor)? = nil, fileManager: Foundation.FileManager = .default, requestModifier: AppLink.Session.RequestModifier? = nil) -> AppLink.UploadRequest
+  open func upload(_ stream: Foundation.InputStream, with convertible: any AppLink.URLRequestConvertible, interceptor: (any AppLink.RequestInterceptor)? = nil, fileManager: Foundation.FileManager = .default) -> AppLink.UploadRequest
+  open func upload(multipartFormData: @escaping (AppLink.MultipartFormData) -> Swift.Void, to url: any AppLink.URLConvertible, usingThreshold encodingMemoryThreshold: Swift.UInt64 = MultipartFormData.encodingMemoryThreshold, method: AppLink.HTTPMethod = .post, headers: AppLink.HTTPHeaders? = nil, interceptor: (any AppLink.RequestInterceptor)? = nil, fileManager: Foundation.FileManager = .default, requestModifier: AppLink.Session.RequestModifier? = nil) -> AppLink.UploadRequest
+  open func upload(multipartFormData: @escaping (AppLink.MultipartFormData) -> Swift.Void, with request: any AppLink.URLRequestConvertible, usingThreshold encodingMemoryThreshold: Swift.UInt64 = MultipartFormData.encodingMemoryThreshold, interceptor: (any AppLink.RequestInterceptor)? = nil, fileManager: Foundation.FileManager = .default) -> AppLink.UploadRequest
+  open func upload(multipartFormData: AppLink.MultipartFormData, to url: any AppLink.URLConvertible, usingThreshold encodingMemoryThreshold: Swift.UInt64 = MultipartFormData.encodingMemoryThreshold, method: AppLink.HTTPMethod = .post, headers: AppLink.HTTPHeaders? = nil, interceptor: (any AppLink.RequestInterceptor)? = nil, fileManager: Foundation.FileManager = .default, requestModifier: AppLink.Session.RequestModifier? = nil) -> AppLink.UploadRequest
+  open func upload(multipartFormData: AppLink.MultipartFormData, with request: any AppLink.URLRequestConvertible, usingThreshold encodingMemoryThreshold: Swift.UInt64 = MultipartFormData.encodingMemoryThreshold, interceptor: (any AppLink.RequestInterceptor)? = nil, fileManager: Foundation.FileManager = .default) -> AppLink.UploadRequest
+}
+extension AppLink.Session : AppLink.RequestDelegate {
+  public var sessionConfiguration: Foundation.URLSessionConfiguration {
+    get
+  }
+  public var startImmediately: Swift.Bool {
+    get
+  }
+  public func cleanup(after request: AppLink.Request)
+  public func retryResult(for request: AppLink.Request, dueTo error: AppLink.AFError, completion: @escaping (AppLink.RetryResult) -> Swift.Void)
+  public func retryRequest(_ request: AppLink.Request, withDelay timeDelay: Foundation.TimeInterval?)
+}
+public protocol EventMonitor {
+  var queue: Dispatch.DispatchQueue { get }
+  func urlSession(_ session: Foundation.URLSession, didBecomeInvalidWithError error: (any Swift.Error)?)
+  func urlSession(_ session: Foundation.URLSession, task: Foundation.URLSessionTask, didReceive challenge: Foundation.URLAuthenticationChallenge)
+  func urlSession(_ session: Foundation.URLSession, task: Foundation.URLSessionTask, didSendBodyData bytesSent: Swift.Int64, totalBytesSent: Swift.Int64, totalBytesExpectedToSend: Swift.Int64)
+  func urlSession(_ session: Foundation.URLSession, taskNeedsNewBodyStream task: Foundation.URLSessionTask)
+  func urlSession(_ session: Foundation.URLSession, task: Foundation.URLSessionTask, willPerformHTTPRedirection response: Foundation.HTTPURLResponse, newRequest request: Foundation.URLRequest)
+  func urlSession(_ session: Foundation.URLSession, task: Foundation.URLSessionTask, didFinishCollecting metrics: Foundation.URLSessionTaskMetrics)
+  func urlSession(_ session: Foundation.URLSession, task: Foundation.URLSessionTask, didCompleteWithError error: (any Swift.Error)?)
+  func urlSession(_ session: Foundation.URLSession, taskIsWaitingForConnectivity task: Foundation.URLSessionTask)
+  func urlSession(_ session: Foundation.URLSession, dataTask: Foundation.URLSessionDataTask, didReceive response: Foundation.URLResponse)
+  func urlSession(_ session: Foundation.URLSession, dataTask: Foundation.URLSessionDataTask, didReceive data: Foundation.Data)
+  func urlSession(_ session: Foundation.URLSession, dataTask: Foundation.URLSessionDataTask, willCacheResponse proposedResponse: Foundation.CachedURLResponse)
+  func urlSession(_ session: Foundation.URLSession, downloadTask: Foundation.URLSessionDownloadTask, didResumeAtOffset fileOffset: Swift.Int64, expectedTotalBytes: Swift.Int64)
+  func urlSession(_ session: Foundation.URLSession, downloadTask: Foundation.URLSessionDownloadTask, didWriteData bytesWritten: Swift.Int64, totalBytesWritten: Swift.Int64, totalBytesExpectedToWrite: Swift.Int64)
+  func urlSession(_ session: Foundation.URLSession, downloadTask: Foundation.URLSessionDownloadTask, didFinishDownloadingTo location: Foundation.URL)
+  func request(_ request: AppLink.Request, didCreateInitialURLRequest urlRequest: Foundation.URLRequest)
+  func request(_ request: AppLink.Request, didFailToCreateURLRequestWithError error: AppLink.AFError)
+  func request(_ request: AppLink.Request, didAdaptInitialRequest initialRequest: Foundation.URLRequest, to adaptedRequest: Foundation.URLRequest)
+  func request(_ request: AppLink.Request, didFailToAdaptURLRequest initialRequest: Foundation.URLRequest, withError error: AppLink.AFError)
+  func request(_ request: AppLink.Request, didCreateURLRequest urlRequest: Foundation.URLRequest)
+  func request(_ request: AppLink.Request, didCreateTask task: Foundation.URLSessionTask)
+  func request(_ request: AppLink.Request, didGatherMetrics metrics: Foundation.URLSessionTaskMetrics)
+  func request(_ request: AppLink.Request, didFailTask task: Foundation.URLSessionTask, earlyWithError error: AppLink.AFError)
+  func request(_ request: AppLink.Request, didCompleteTask task: Foundation.URLSessionTask, with error: AppLink.AFError?)
+  func requestIsRetrying(_ request: AppLink.Request)
+  func requestDidFinish(_ request: AppLink.Request)
+  func requestDidResume(_ request: AppLink.Request)
+  func request(_ request: AppLink.Request, didResumeTask task: Foundation.URLSessionTask)
+  func requestDidSuspend(_ request: AppLink.Request)
+  func request(_ request: AppLink.Request, didSuspendTask task: Foundation.URLSessionTask)
+  func requestDidCancel(_ request: AppLink.Request)
+  func request(_ request: AppLink.Request, didCancelTask task: Foundation.URLSessionTask)
+  func request(_ request: AppLink.DataRequest, didValidateRequest urlRequest: Foundation.URLRequest?, response: Foundation.HTTPURLResponse, data: Foundation.Data?, withResult result: AppLink.Request.ValidationResult)
+  func request(_ request: AppLink.DataRequest, didParseResponse response: AppLink.DataResponse<Foundation.Data?, AppLink.AFError>)
+  func request<Value>(_ request: AppLink.DataRequest, didParseResponse response: AppLink.DataResponse<Value, AppLink.AFError>)
+  func request(_ request: AppLink.DataStreamRequest, didValidateRequest urlRequest: Foundation.URLRequest?, response: Foundation.HTTPURLResponse, withResult result: AppLink.Request.ValidationResult)
+  func request<Value>(_ request: AppLink.DataStreamRequest, didParseStream result: Swift.Result<Value, AppLink.AFError>)
+  func request(_ request: AppLink.UploadRequest, didCreateUploadable uploadable: AppLink.UploadRequest.Uploadable)
+  func request(_ request: AppLink.UploadRequest, didFailToCreateUploadableWithError error: AppLink.AFError)
+  func request(_ request: AppLink.UploadRequest, didProvideInputStream stream: Foundation.InputStream)
+  func request(_ request: AppLink.DownloadRequest, didFinishDownloadingUsing task: Foundation.URLSessionTask, with result: Swift.Result<Foundation.URL, AppLink.AFError>)
+  func request(_ request: AppLink.DownloadRequest, didCreateDestinationURL url: Foundation.URL)
+  func request(_ request: AppLink.DownloadRequest, didValidateRequest urlRequest: Foundation.URLRequest?, response: Foundation.HTTPURLResponse, fileURL: Foundation.URL?, withResult result: AppLink.Request.ValidationResult)
+  func request(_ request: AppLink.DownloadRequest, didParseResponse response: AppLink.DownloadResponse<Foundation.URL?, AppLink.AFError>)
+  func request<Value>(_ request: AppLink.DownloadRequest, didParseResponse response: AppLink.DownloadResponse<Value, AppLink.AFError>)
+}
+extension AppLink.EventMonitor {
+  public var queue: Dispatch.DispatchQueue {
+    get
+  }
+  public func urlSession(_ session: Foundation.URLSession, didBecomeInvalidWithError error: (any Swift.Error)?)
+  public func urlSession(_ session: Foundation.URLSession, task: Foundation.URLSessionTask, didReceive challenge: Foundation.URLAuthenticationChallenge)
+  public func urlSession(_ session: Foundation.URLSession, task: Foundation.URLSessionTask, didSendBodyData bytesSent: Swift.Int64, totalBytesSent: Swift.Int64, totalBytesExpectedToSend: Swift.Int64)
+  public func urlSession(_ session: Foundation.URLSession, taskNeedsNewBodyStream task: Foundation.URLSessionTask)
+  public func urlSession(_ session: Foundation.URLSession, task: Foundation.URLSessionTask, willPerformHTTPRedirection response: Foundation.HTTPURLResponse, newRequest request: Foundation.URLRequest)
+  public func urlSession(_ session: Foundation.URLSession, task: Foundation.URLSessionTask, didFinishCollecting metrics: Foundation.URLSessionTaskMetrics)
+  public func urlSession(_ session: Foundation.URLSession, task: Foundation.URLSessionTask, didCompleteWithError error: (any Swift.Error)?)
+  public func urlSession(_ session: Foundation.URLSession, taskIsWaitingForConnectivity task: Foundation.URLSessionTask)
+  public func urlSession(_ session: Foundation.URLSession, dataTask: Foundation.URLSessionDataTask, didReceive response: Foundation.URLResponse)
+  public func urlSession(_ session: Foundation.URLSession, dataTask: Foundation.URLSessionDataTask, didReceive data: Foundation.Data)
+  public func urlSession(_ session: Foundation.URLSession, dataTask: Foundation.URLSessionDataTask, willCacheResponse proposedResponse: Foundation.CachedURLResponse)
+  public func urlSession(_ session: Foundation.URLSession, downloadTask: Foundation.URLSessionDownloadTask, didResumeAtOffset fileOffset: Swift.Int64, expectedTotalBytes: Swift.Int64)
+  public func urlSession(_ session: Foundation.URLSession, downloadTask: Foundation.URLSessionDownloadTask, didWriteData bytesWritten: Swift.Int64, totalBytesWritten: Swift.Int64, totalBytesExpectedToWrite: Swift.Int64)
+  public func urlSession(_ session: Foundation.URLSession, downloadTask: Foundation.URLSessionDownloadTask, didFinishDownloadingTo location: Foundation.URL)
+  public func request(_ request: AppLink.Request, didCreateInitialURLRequest urlRequest: Foundation.URLRequest)
+  public func request(_ request: AppLink.Request, didFailToCreateURLRequestWithError error: AppLink.AFError)
+  public func request(_ request: AppLink.Request, didAdaptInitialRequest initialRequest: Foundation.URLRequest, to adaptedRequest: Foundation.URLRequest)
+  public func request(_ request: AppLink.Request, didFailToAdaptURLRequest initialRequest: Foundation.URLRequest, withError error: AppLink.AFError)
+  public func request(_ request: AppLink.Request, didCreateURLRequest urlRequest: Foundation.URLRequest)
+  public func request(_ request: AppLink.Request, didCreateTask task: Foundation.URLSessionTask)
+  public func request(_ request: AppLink.Request, didGatherMetrics metrics: Foundation.URLSessionTaskMetrics)
+  public func request(_ request: AppLink.Request, didFailTask task: Foundation.URLSessionTask, earlyWithError error: AppLink.AFError)
+  public func request(_ request: AppLink.Request, didCompleteTask task: Foundation.URLSessionTask, with error: AppLink.AFError?)
+  public func requestIsRetrying(_ request: AppLink.Request)
+  public func requestDidFinish(_ request: AppLink.Request)
+  public func requestDidResume(_ request: AppLink.Request)
+  public func request(_ request: AppLink.Request, didResumeTask task: Foundation.URLSessionTask)
+  public func requestDidSuspend(_ request: AppLink.Request)
+  public func request(_ request: AppLink.Request, didSuspendTask task: Foundation.URLSessionTask)
+  public func requestDidCancel(_ request: AppLink.Request)
+  public func request(_ request: AppLink.Request, didCancelTask task: Foundation.URLSessionTask)
+  public func request(_ request: AppLink.DataRequest, didValidateRequest urlRequest: Foundation.URLRequest?, response: Foundation.HTTPURLResponse, data: Foundation.Data?, withResult result: AppLink.Request.ValidationResult)
+  public func request(_ request: AppLink.DataRequest, didParseResponse response: AppLink.DataResponse<Foundation.Data?, AppLink.AFError>)
+  public func request<Value>(_ request: AppLink.DataRequest, didParseResponse response: AppLink.DataResponse<Value, AppLink.AFError>)
+  public func request(_ request: AppLink.DataStreamRequest, didValidateRequest urlRequest: Foundation.URLRequest?, response: Foundation.HTTPURLResponse, withResult result: AppLink.Request.ValidationResult)
+  public func request<Value>(_ request: AppLink.DataStreamRequest, didParseStream result: Swift.Result<Value, AppLink.AFError>)
+  public func request(_ request: AppLink.UploadRequest, didCreateUploadable uploadable: AppLink.UploadRequest.Uploadable)
+  public func request(_ request: AppLink.UploadRequest, didFailToCreateUploadableWithError error: AppLink.AFError)
+  public func request(_ request: AppLink.UploadRequest, didProvideInputStream stream: Foundation.InputStream)
+  public func request(_ request: AppLink.DownloadRequest, didFinishDownloadingUsing task: Foundation.URLSessionTask, with result: Swift.Result<Foundation.URL, AppLink.AFError>)
+  public func request(_ request: AppLink.DownloadRequest, didCreateDestinationURL url: Foundation.URL)
+  public func request(_ request: AppLink.DownloadRequest, didValidateRequest urlRequest: Foundation.URLRequest?, response: Foundation.HTTPURLResponse, fileURL: Foundation.URL?, withResult result: AppLink.Request.ValidationResult)
+  public func request(_ request: AppLink.DownloadRequest, didParseResponse response: AppLink.DownloadResponse<Foundation.URL?, AppLink.AFError>)
+  public func request<Value>(_ request: AppLink.DownloadRequest, didParseResponse response: AppLink.DownloadResponse<Value, AppLink.AFError>)
+}
+@_hasMissingDesignatedInitializers final public class CompositeEventMonitor : AppLink.EventMonitor {
+  final public let queue: Dispatch.DispatchQueue
+  final public func urlSession(_ session: Foundation.URLSession, didBecomeInvalidWithError error: (any Swift.Error)?)
+  final public func urlSession(_ session: Foundation.URLSession, task: Foundation.URLSessionTask, didReceive challenge: Foundation.URLAuthenticationChallenge)
+  final public func urlSession(_ session: Foundation.URLSession, task: Foundation.URLSessionTask, didSendBodyData bytesSent: Swift.Int64, totalBytesSent: Swift.Int64, totalBytesExpectedToSend: Swift.Int64)
+  final public func urlSession(_ session: Foundation.URLSession, taskNeedsNewBodyStream task: Foundation.URLSessionTask)
+  final public func urlSession(_ session: Foundation.URLSession, task: Foundation.URLSessionTask, willPerformHTTPRedirection response: Foundation.HTTPURLResponse, newRequest request: Foundation.URLRequest)
+  final public func urlSession(_ session: Foundation.URLSession, task: Foundation.URLSessionTask, didFinishCollecting metrics: Foundation.URLSessionTaskMetrics)
+  final public func urlSession(_ session: Foundation.URLSession, task: Foundation.URLSessionTask, didCompleteWithError error: (any Swift.Error)?)
+  @available(macOS 10.13, iOS 11.0, tvOS 11.0, watchOS 4.0, *)
+  final public func urlSession(_ session: Foundation.URLSession, taskIsWaitingForConnectivity task: Foundation.URLSessionTask)
+  final public func urlSession(_ session: Foundation.URLSession, dataTask: Foundation.URLSessionDataTask, didReceive response: Foundation.URLResponse)
+  final public func urlSession(_ session: Foundation.URLSession, dataTask: Foundation.URLSessionDataTask, didReceive data: Foundation.Data)
+  final public func urlSession(_ session: Foundation.URLSession, dataTask: Foundation.URLSessionDataTask, willCacheResponse proposedResponse: Foundation.CachedURLResponse)
+  final public func urlSession(_ session: Foundation.URLSession, downloadTask: Foundation.URLSessionDownloadTask, didResumeAtOffset fileOffset: Swift.Int64, expectedTotalBytes: Swift.Int64)
+  final public func urlSession(_ session: Foundation.URLSession, downloadTask: Foundation.URLSessionDownloadTask, didWriteData bytesWritten: Swift.Int64, totalBytesWritten: Swift.Int64, totalBytesExpectedToWrite: Swift.Int64)
+  final public func urlSession(_ session: Foundation.URLSession, downloadTask: Foundation.URLSessionDownloadTask, didFinishDownloadingTo location: Foundation.URL)
+  final public func request(_ request: AppLink.Request, didCreateInitialURLRequest urlRequest: Foundation.URLRequest)
+  final public func request(_ request: AppLink.Request, didFailToCreateURLRequestWithError error: AppLink.AFError)
+  final public func request(_ request: AppLink.Request, didAdaptInitialRequest initialRequest: Foundation.URLRequest, to adaptedRequest: Foundation.URLRequest)
+  final public func request(_ request: AppLink.Request, didFailToAdaptURLRequest initialRequest: Foundation.URLRequest, withError error: AppLink.AFError)
+  final public func request(_ request: AppLink.Request, didCreateURLRequest urlRequest: Foundation.URLRequest)
+  final public func request(_ request: AppLink.Request, didCreateTask task: Foundation.URLSessionTask)
+  final public func request(_ request: AppLink.Request, didGatherMetrics metrics: Foundation.URLSessionTaskMetrics)
+  final public func request(_ request: AppLink.Request, didFailTask task: Foundation.URLSessionTask, earlyWithError error: AppLink.AFError)
+  final public func request(_ request: AppLink.Request, didCompleteTask task: Foundation.URLSessionTask, with error: AppLink.AFError?)
+  final public func requestIsRetrying(_ request: AppLink.Request)
+  final public func requestDidFinish(_ request: AppLink.Request)
+  final public func requestDidResume(_ request: AppLink.Request)
+  final public func request(_ request: AppLink.Request, didResumeTask task: Foundation.URLSessionTask)
+  final public func requestDidSuspend(_ request: AppLink.Request)
+  final public func request(_ request: AppLink.Request, didSuspendTask task: Foundation.URLSessionTask)
+  final public func requestDidCancel(_ request: AppLink.Request)
+  final public func request(_ request: AppLink.Request, didCancelTask task: Foundation.URLSessionTask)
+  final public func request(_ request: AppLink.DataRequest, didValidateRequest urlRequest: Foundation.URLRequest?, response: Foundation.HTTPURLResponse, data: Foundation.Data?, withResult result: AppLink.Request.ValidationResult)
+  final public func request(_ request: AppLink.DataRequest, didParseResponse response: AppLink.DataResponse<Foundation.Data?, AppLink.AFError>)
+  final public func request<Value>(_ request: AppLink.DataRequest, didParseResponse response: AppLink.DataResponse<Value, AppLink.AFError>)
+  final public func request(_ request: AppLink.DataStreamRequest, didValidateRequest urlRequest: Foundation.URLRequest?, response: Foundation.HTTPURLResponse, withResult result: AppLink.Request.ValidationResult)
+  final public func request<Value>(_ request: AppLink.DataStreamRequest, didParseStream result: Swift.Result<Value, AppLink.AFError>)
+  final public func request(_ request: AppLink.UploadRequest, didCreateUploadable uploadable: AppLink.UploadRequest.Uploadable)
+  final public func request(_ request: AppLink.UploadRequest, didFailToCreateUploadableWithError error: AppLink.AFError)
+  final public func request(_ request: AppLink.UploadRequest, didProvideInputStream stream: Foundation.InputStream)
+  final public func request(_ request: AppLink.DownloadRequest, didFinishDownloadingUsing task: Foundation.URLSessionTask, with result: Swift.Result<Foundation.URL, AppLink.AFError>)
+  final public func request(_ request: AppLink.DownloadRequest, didCreateDestinationURL url: Foundation.URL)
+  final public func request(_ request: AppLink.DownloadRequest, didValidateRequest urlRequest: Foundation.URLRequest?, response: Foundation.HTTPURLResponse, fileURL: Foundation.URL?, withResult result: AppLink.Request.ValidationResult)
+  final public func request(_ request: AppLink.DownloadRequest, didParseResponse response: AppLink.DownloadResponse<Foundation.URL?, AppLink.AFError>)
+  final public func request<Value>(_ request: AppLink.DownloadRequest, didParseResponse response: AppLink.DownloadResponse<Value, AppLink.AFError>)
+  @objc deinit
+}
+open class ClosureEventMonitor : AppLink.EventMonitor {
+  open var sessionDidBecomeInvalidWithError: ((Foundation.URLSession, (any Swift.Error)?) -> Swift.Void)?
+  open var taskDidReceiveChallenge: ((Foundation.URLSession, Foundation.URLSessionTask, Foundation.URLAuthenticationChallenge) -> Swift.Void)?
+  open var taskDidSendBodyData: ((Foundation.URLSession, Foundation.URLSessionTask, Swift.Int64, Swift.Int64, Swift.Int64) -> Swift.Void)?
+  open var taskNeedNewBodyStream: ((Foundation.URLSession, Foundation.URLSessionTask) -> Swift.Void)?
+  open var taskWillPerformHTTPRedirection: ((Foundation.URLSession, Foundation.URLSessionTask, Foundation.HTTPURLResponse, Foundation.URLRequest) -> Swift.Void)?
+  open var taskDidFinishCollectingMetrics: ((Foundation.URLSession, Foundation.URLSessionTask, Foundation.URLSessionTaskMetrics) -> Swift.Void)?
+  open var taskDidComplete: ((Foundation.URLSession, Foundation.URLSessionTask, (any Swift.Error)?) -> Swift.Void)?
+  open var taskIsWaitingForConnectivity: ((Foundation.URLSession, Foundation.URLSessionTask) -> Swift.Void)?
+  open var dataTaskDidReceiveResponse: ((Foundation.URLSession, Foundation.URLSessionDataTask, Foundation.URLResponse) -> Swift.Void)?
+  open var dataTaskDidReceiveData: ((Foundation.URLSession, Foundation.URLSessionDataTask, Foundation.Data) -> Swift.Void)?
+  open var dataTaskWillCacheResponse: ((Foundation.URLSession, Foundation.URLSessionDataTask, Foundation.CachedURLResponse) -> Swift.Void)?
+  open var downloadTaskDidFinishDownloadingToURL: ((Foundation.URLSession, Foundation.URLSessionDownloadTask, Foundation.URL) -> Swift.Void)?
+  open var downloadTaskDidWriteData: ((Foundation.URLSession, Foundation.URLSessionDownloadTask, Swift.Int64, Swift.Int64, Swift.Int64) -> Swift.Void)?
+  open var downloadTaskDidResumeAtOffset: ((Foundation.URLSession, Foundation.URLSessionDownloadTask, Swift.Int64, Swift.Int64) -> Swift.Void)?
+  open var requestDidCreateInitialURLRequest: ((AppLink.Request, Foundation.URLRequest) -> Swift.Void)?
+  open var requestDidFailToCreateURLRequestWithError: ((AppLink.Request, AppLink.AFError) -> Swift.Void)?
+  open var requestDidAdaptInitialRequestToAdaptedRequest: ((AppLink.Request, Foundation.URLRequest, Foundation.URLRequest) -> Swift.Void)?
+  open var requestDidFailToAdaptURLRequestWithError: ((AppLink.Request, Foundation.URLRequest, AppLink.AFError) -> Swift.Void)?
+  open var requestDidCreateURLRequest: ((AppLink.Request, Foundation.URLRequest) -> Swift.Void)?
+  open var requestDidCreateTask: ((AppLink.Request, Foundation.URLSessionTask) -> Swift.Void)?
+  open var requestDidGatherMetrics: ((AppLink.Request, Foundation.URLSessionTaskMetrics) -> Swift.Void)?
+  open var requestDidFailTaskEarlyWithError: ((AppLink.Request, Foundation.URLSessionTask, AppLink.AFError) -> Swift.Void)?
+  open var requestDidCompleteTaskWithError: ((AppLink.Request, Foundation.URLSessionTask, AppLink.AFError?) -> Swift.Void)?
+  open var requestIsRetrying: ((AppLink.Request) -> Swift.Void)?
+  open var requestDidFinish: ((AppLink.Request) -> Swift.Void)?
+  open var requestDidResume: ((AppLink.Request) -> Swift.Void)?
+  open var requestDidResumeTask: ((AppLink.Request, Foundation.URLSessionTask) -> Swift.Void)?
+  open var requestDidSuspend: ((AppLink.Request) -> Swift.Void)?
+  open var requestDidSuspendTask: ((AppLink.Request, Foundation.URLSessionTask) -> Swift.Void)?
+  open var requestDidCancel: ((AppLink.Request) -> Swift.Void)?
+  open var requestDidCancelTask: ((AppLink.Request, Foundation.URLSessionTask) -> Swift.Void)?
+  open var requestDidValidateRequestResponseDataWithResult: ((AppLink.DataRequest, Foundation.URLRequest?, Foundation.HTTPURLResponse, Foundation.Data?, AppLink.Request.ValidationResult) -> Swift.Void)?
+  open var requestDidParseResponse: ((AppLink.DataRequest, AppLink.DataResponse<Foundation.Data?, AppLink.AFError>) -> Swift.Void)?
+  open var requestDidValidateRequestResponseWithResult: ((AppLink.DataStreamRequest, Foundation.URLRequest?, Foundation.HTTPURLResponse, AppLink.Request.ValidationResult) -> Swift.Void)?
+  open var requestDidCreateUploadable: ((AppLink.UploadRequest, AppLink.UploadRequest.Uploadable) -> Swift.Void)?
+  open var requestDidFailToCreateUploadableWithError: ((AppLink.UploadRequest, AppLink.AFError) -> Swift.Void)?
+  open var requestDidProvideInputStream: ((AppLink.UploadRequest, Foundation.InputStream) -> Swift.Void)?
+  open var requestDidFinishDownloadingUsingTaskWithResult: ((AppLink.DownloadRequest, Foundation.URLSessionTask, Swift.Result<Foundation.URL, AppLink.AFError>) -> Swift.Void)?
+  open var requestDidCreateDestinationURL: ((AppLink.DownloadRequest, Foundation.URL) -> Swift.Void)?
+  open var requestDidValidateRequestResponseFileURLWithResult: ((AppLink.DownloadRequest, Foundation.URLRequest?, Foundation.HTTPURLResponse, Foundation.URL?, AppLink.Request.ValidationResult) -> Swift.Void)?
+  open var requestDidParseDownloadResponse: ((AppLink.DownloadRequest, AppLink.DownloadResponse<Foundation.URL?, AppLink.AFError>) -> Swift.Void)?
+  final public let queue: Dispatch.DispatchQueue
+  public init(queue: Dispatch.DispatchQueue = .main)
+  open func urlSession(_ session: Foundation.URLSession, didBecomeInvalidWithError error: (any Swift.Error)?)
+  open func urlSession(_ session: Foundation.URLSession, task: Foundation.URLSessionTask, didReceive challenge: Foundation.URLAuthenticationChallenge)
+  open func urlSession(_ session: Foundation.URLSession, task: Foundation.URLSessionTask, didSendBodyData bytesSent: Swift.Int64, totalBytesSent: Swift.Int64, totalBytesExpectedToSend: Swift.Int64)
+  open func urlSession(_ session: Foundation.URLSession, taskNeedsNewBodyStream task: Foundation.URLSessionTask)
+  open func urlSession(_ session: Foundation.URLSession, task: Foundation.URLSessionTask, willPerformHTTPRedirection response: Foundation.HTTPURLResponse, newRequest request: Foundation.URLRequest)
+  open func urlSession(_ session: Foundation.URLSession, task: Foundation.URLSessionTask, didFinishCollecting metrics: Foundation.URLSessionTaskMetrics)
+  open func urlSession(_ session: Foundation.URLSession, task: Foundation.URLSessionTask, didCompleteWithError error: (any Swift.Error)?)
+  @available(macOS 10.13, iOS 11.0, tvOS 11.0, watchOS 4.0, *)
+  open func urlSession(_ session: Foundation.URLSession, taskIsWaitingForConnectivity task: Foundation.URLSessionTask)
+  open func urlSession(_ session: Foundation.URLSession, dataTask: Foundation.URLSessionDataTask, didReceive response: Foundation.URLResponse)
+  open func urlSession(_ session: Foundation.URLSession, dataTask: Foundation.URLSessionDataTask, didReceive data: Foundation.Data)
+  open func urlSession(_ session: Foundation.URLSession, dataTask: Foundation.URLSessionDataTask, willCacheResponse proposedResponse: Foundation.CachedURLResponse)
+  open func urlSession(_ session: Foundation.URLSession, downloadTask: Foundation.URLSessionDownloadTask, didResumeAtOffset fileOffset: Swift.Int64, expectedTotalBytes: Swift.Int64)
+  open func urlSession(_ session: Foundation.URLSession, downloadTask: Foundation.URLSessionDownloadTask, didWriteData bytesWritten: Swift.Int64, totalBytesWritten: Swift.Int64, totalBytesExpectedToWrite: Swift.Int64)
+  open func urlSession(_ session: Foundation.URLSession, downloadTask: Foundation.URLSessionDownloadTask, didFinishDownloadingTo location: Foundation.URL)
+  open func request(_ request: AppLink.Request, didCreateInitialURLRequest urlRequest: Foundation.URLRequest)
+  open func request(_ request: AppLink.Request, didFailToCreateURLRequestWithError error: AppLink.AFError)
+  open func request(_ request: AppLink.Request, didAdaptInitialRequest initialRequest: Foundation.URLRequest, to adaptedRequest: Foundation.URLRequest)
+  open func request(_ request: AppLink.Request, didFailToAdaptURLRequest initialRequest: Foundation.URLRequest, withError error: AppLink.AFError)
+  open func request(_ request: AppLink.Request, didCreateURLRequest urlRequest: Foundation.URLRequest)
+  open func request(_ request: AppLink.Request, didCreateTask task: Foundation.URLSessionTask)
+  open func request(_ request: AppLink.Request, didGatherMetrics metrics: Foundation.URLSessionTaskMetrics)
+  open func request(_ request: AppLink.Request, didFailTask task: Foundation.URLSessionTask, earlyWithError error: AppLink.AFError)
+  open func request(_ request: AppLink.Request, didCompleteTask task: Foundation.URLSessionTask, with error: AppLink.AFError?)
+  open func requestIsRetrying(_ request: AppLink.Request)
+  open func requestDidFinish(_ request: AppLink.Request)
+  open func requestDidResume(_ request: AppLink.Request)
+  public func request(_ request: AppLink.Request, didResumeTask task: Foundation.URLSessionTask)
+  open func requestDidSuspend(_ request: AppLink.Request)
+  public func request(_ request: AppLink.Request, didSuspendTask task: Foundation.URLSessionTask)
+  open func requestDidCancel(_ request: AppLink.Request)
+  public func request(_ request: AppLink.Request, didCancelTask task: Foundation.URLSessionTask)
+  open func request(_ request: AppLink.DataRequest, didValidateRequest urlRequest: Foundation.URLRequest?, response: Foundation.HTTPURLResponse, data: Foundation.Data?, withResult result: AppLink.Request.ValidationResult)
+  open func request(_ request: AppLink.DataRequest, didParseResponse response: AppLink.DataResponse<Foundation.Data?, AppLink.AFError>)
+  public func request(_ request: AppLink.DataStreamRequest, didValidateRequest urlRequest: Foundation.URLRequest?, response: Foundation.HTTPURLResponse, withResult result: AppLink.Request.ValidationResult)
+  open func request(_ request: AppLink.UploadRequest, didCreateUploadable uploadable: AppLink.UploadRequest.Uploadable)
+  open func request(_ request: AppLink.UploadRequest, didFailToCreateUploadableWithError error: AppLink.AFError)
+  open func request(_ request: AppLink.UploadRequest, didProvideInputStream stream: Foundation.InputStream)
+  open func request(_ request: AppLink.DownloadRequest, didFinishDownloadingUsing task: Foundation.URLSessionTask, with result: Swift.Result<Foundation.URL, AppLink.AFError>)
+  open func request(_ request: AppLink.DownloadRequest, didCreateDestinationURL url: Foundation.URL)
+  open func request(_ request: AppLink.DownloadRequest, didValidateRequest urlRequest: Foundation.URLRequest?, response: Foundation.HTTPURLResponse, fileURL: Foundation.URL?, withResult result: AppLink.Request.ValidationResult)
+  open func request(_ request: AppLink.DownloadRequest, didParseResponse response: AppLink.DownloadResponse<Foundation.URL?, AppLink.AFError>)
+  @objc deinit
+}
+public struct HTTPHeaders : Swift.Equatable, Swift.Hashable, Swift.Sendable {
+  public init()
+  public init(_ headers: [AppLink.HTTPHeader])
+  public init(_ dictionary: [Swift.String : Swift.String])
+  public mutating func add(name: Swift.String, value: Swift.String)
+  public mutating func add(_ header: AppLink.HTTPHeader)
+  public mutating func update(name: Swift.String, value: Swift.String)
+  public mutating func update(_ header: AppLink.HTTPHeader)
+  public mutating func remove(name: Swift.String)
+  public mutating func sort()
+  public func sorted() -> AppLink.HTTPHeaders
+  public func value(for name: Swift.String) -> Swift.String?
+  public subscript(name: Swift.String) -> Swift.String? {
+    get
+    set
+  }
+  public var dictionary: [Swift.String : Swift.String] {
+    get
+  }
+  public static func == (a: AppLink.HTTPHeaders, b: AppLink.HTTPHeaders) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+extension AppLink.HTTPHeaders : Swift.ExpressibleByDictionaryLiteral {
+  public init(dictionaryLiteral elements: (Swift.String, Swift.String)...)
+  public typealias Key = Swift.String
+  public typealias Value = Swift.String
+}
+extension AppLink.HTTPHeaders : Swift.ExpressibleByArrayLiteral {
+  public init(arrayLiteral elements: AppLink.HTTPHeader...)
+  public typealias ArrayLiteralElement = AppLink.HTTPHeader
+}
+extension AppLink.HTTPHeaders : Swift.Sequence {
+  public func makeIterator() -> Swift.IndexingIterator<[AppLink.HTTPHeader]>
+}
+extension AppLink.HTTPHeaders : Swift.Collection {
+  public var startIndex: Swift.Int {
+    get
+  }
+  public var endIndex: Swift.Int {
+    get
+  }
+  public subscript(position: Swift.Int) -> AppLink.HTTPHeader {
+    get
+  }
+  public func index(after i: Swift.Int) -> Swift.Int
+  public typealias Element = AppLink.HTTPHeader
+  public typealias Index = Swift.Int
+  public typealias Indices = Swift.DefaultIndices<AppLink.HTTPHeaders>
+  public typealias Iterator = Swift.IndexingIterator<[AppLink.HTTPHeader]>
+  public typealias SubSequence = Swift.Slice<AppLink.HTTPHeaders>
+}
+extension AppLink.HTTPHeaders : Swift.CustomStringConvertible {
+  public var description: Swift.String {
+    get
+  }
+}
+public struct HTTPHeader : Swift.Equatable, Swift.Hashable, Swift.Sendable {
+  public let name: Swift.String
+  public let value: Swift.String
+  public init(name: Swift.String, value: Swift.String)
+  public static func == (a: AppLink.HTTPHeader, b: AppLink.HTTPHeader) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+extension AppLink.HTTPHeader : Swift.CustomStringConvertible {
+  public var description: Swift.String {
+    get
+  }
+}
+extension AppLink.HTTPHeader {
+  public static func accept(_ value: Swift.String) -> AppLink.HTTPHeader
+  public static func acceptCharset(_ value: Swift.String) -> AppLink.HTTPHeader
+  public static func acceptLanguage(_ value: Swift.String) -> AppLink.HTTPHeader
+  public static func acceptEncoding(_ value: Swift.String) -> AppLink.HTTPHeader
+  public static func authorization(username: Swift.String, password: Swift.String) -> AppLink.HTTPHeader
+  public static func authorization(bearerToken: Swift.String) -> AppLink.HTTPHeader
+  public static func authorization(_ value: Swift.String) -> AppLink.HTTPHeader
+  public static func contentDisposition(_ value: Swift.String) -> AppLink.HTTPHeader
+  public static func contentEncoding(_ value: Swift.String) -> AppLink.HTTPHeader
+  public static func contentType(_ value: Swift.String) -> AppLink.HTTPHeader
+  public static func userAgent(_ value: Swift.String) -> AppLink.HTTPHeader
+  public static func websocketProtocol(_ value: Swift.String) -> AppLink.HTTPHeader
+}
+extension AppLink.HTTPHeaders {
+  public static let `default`: AppLink.HTTPHeaders
+}
+extension AppLink.HTTPHeader {
+  public static let defaultAcceptEncoding: AppLink.HTTPHeader
+  public static let defaultAcceptLanguage: AppLink.HTTPHeader
+  public static let defaultUserAgent: AppLink.HTTPHeader
+}
+extension Foundation.URLRequest {
+  public var headers: AppLink.HTTPHeaders {
+    get
+    set
+  }
+}
+extension Foundation.HTTPURLResponse {
+  public var headers: AppLink.HTTPHeaders {
+    get
+  }
+}
+extension Foundation.URLSessionConfiguration {
+  public var headers: AppLink.HTTPHeaders {
+    get
+    set
+  }
+}
+@available(macOS 10.15, iOS 13, watchOS 6, tvOS 13, *)
+public struct DataResponsePublisher<Value> : Combine.Publisher {
+  public typealias Output = AppLink.DataResponse<Value, AppLink.AFError>
+  public typealias Failure = Swift.Never
+  public init<Serializer>(_ request: AppLink.DataRequest, queue: Dispatch.DispatchQueue, serializer: Serializer) where Value == Serializer.SerializedObject, Serializer : AppLink.ResponseSerializer
+  public init<Serializer>(_ request: AppLink.DataRequest, queue: Dispatch.DispatchQueue, serializer: Serializer) where Value == Serializer.SerializedObject, Serializer : AppLink.DataResponseSerializerProtocol
+  public func result() -> Combine.AnyPublisher<Swift.Result<Value, AppLink.AFError>, Swift.Never>
+  public func value() -> Combine.AnyPublisher<Value, AppLink.AFError>
+  public func receive<S>(subscriber: S) where S : Combine.Subscriber, S.Failure == Swift.Never, S.Input == AppLink.DataResponse<Value, AppLink.AFError>
+}
+@available(macOS 10.15, iOS 13, watchOS 6, tvOS 13, *)
+extension AppLink.DataResponsePublisher where Value == Foundation.Data? {
+  @available(macOS 10.15, iOS 13, watchOS 6, tvOS 13, *)
+  public init(_ request: AppLink.DataRequest, queue: Dispatch.DispatchQueue)
+}
+extension AppLink.DataRequest {
+  @available(macOS 10.15, iOS 13, watchOS 6, tvOS 13, *)
+  public func publishResponse<Serializer, T>(using serializer: Serializer, on queue: Dispatch.DispatchQueue = .main) -> AppLink.DataResponsePublisher<T> where Serializer : AppLink.ResponseSerializer, T == Serializer.SerializedObject
+  @available(macOS 10.15, iOS 13, watchOS 6, tvOS 13, *)
+  public func publishData(queue: Dispatch.DispatchQueue = .main, preprocessor: any AppLink.DataPreprocessor = DataResponseSerializer.defaultDataPreprocessor, emptyResponseCodes: Swift.Set<Swift.Int> = DataResponseSerializer.defaultEmptyResponseCodes, emptyRequestMethods: Swift.Set<AppLink.HTTPMethod> = DataResponseSerializer.defaultEmptyRequestMethods) -> AppLink.DataResponsePublisher<Foundation.Data>
+  @available(macOS 10.15, iOS 13, watchOS 6, tvOS 13, *)
+  public func publishString(queue: Dispatch.DispatchQueue = .main, preprocessor: any AppLink.DataPreprocessor = StringResponseSerializer.defaultDataPreprocessor, encoding: Swift.String.Encoding? = nil, emptyResponseCodes: Swift.Set<Swift.Int> = StringResponseSerializer.defaultEmptyResponseCodes, emptyRequestMethods: Swift.Set<AppLink.HTTPMethod> = StringResponseSerializer.defaultEmptyRequestMethods) -> AppLink.DataResponsePublisher<Swift.String>
+  @available(macOS 10.15, iOS 13, watchOS 6, tvOS 13, *)
+  @available(*, deprecated, message: "Renamed publishDecodable(type:queue:preprocessor:decoder:emptyResponseCodes:emptyRequestMethods).")
+  @_disfavoredOverload public func publishDecodable<T>(type: T.Type = T.self, queue: Dispatch.DispatchQueue = .main, preprocessor: any AppLink.DataPreprocessor = DecodableResponseSerializer<T>.defaultDataPreprocessor, decoder: any AppLink.DataDecoder = JSONDecoder(), emptyResponseCodes: Swift.Set<Swift.Int> = DecodableResponseSerializer<T>.defaultEmptyResponseCodes, emptyResponseMethods: Swift.Set<AppLink.HTTPMethod> = DecodableResponseSerializer<T>.defaultEmptyRequestMethods) -> AppLink.DataResponsePublisher<T> where T : Swift.Decodable
+  @available(macOS 10.15, iOS 13, watchOS 6, tvOS 13, *)
+  public func publishDecodable<T>(type: T.Type = T.self, queue: Dispatch.DispatchQueue = .main, preprocessor: any AppLink.DataPreprocessor = DecodableResponseSerializer<T>.defaultDataPreprocessor, decoder: any AppLink.DataDecoder = JSONDecoder(), emptyResponseCodes: Swift.Set<Swift.Int> = DecodableResponseSerializer<T>.defaultEmptyResponseCodes, emptyRequestMethods: Swift.Set<AppLink.HTTPMethod> = DecodableResponseSerializer<T>.defaultEmptyRequestMethods) -> AppLink.DataResponsePublisher<T> where T : Swift.Decodable
+  @available(macOS 10.15, iOS 13, watchOS 6, tvOS 13, *)
+  public func publishUnserialized(queue: Dispatch.DispatchQueue = .main) -> AppLink.DataResponsePublisher<Foundation.Data?>
+}
+@available(macOS 10.15, iOS 13, watchOS 6, tvOS 13, *)
+public struct DataStreamPublisher<Value> : Combine.Publisher {
+  public typealias Output = AppLink.DataStreamRequest.Stream<Value, AppLink.AFError>
+  public typealias Failure = Swift.Never
+  public init<Serializer>(_ request: AppLink.DataStreamRequest, queue: Dispatch.DispatchQueue, serializer: Serializer) where Value == Serializer.SerializedObject, Serializer : AppLink.DataStreamSerializer
+  public func result() -> Combine.AnyPublisher<Swift.Result<Value, AppLink.AFError>, Swift.Never>
+  public func value() -> Combine.AnyPublisher<Value, AppLink.AFError>
+  public func receive<S>(subscriber: S) where S : Combine.Subscriber, S.Failure == Swift.Never, S.Input == AppLink.DataStreamRequest.Stream<Value, AppLink.AFError>
+}
+extension AppLink.DataStreamRequest {
+  @available(macOS 10.15, iOS 13, watchOS 6, tvOS 13, *)
+  final public func publishStream<Serializer>(using serializer: Serializer, on queue: Dispatch.DispatchQueue = .main) -> AppLink.DataStreamPublisher<Serializer.SerializedObject> where Serializer : AppLink.DataStreamSerializer
+  @available(macOS 10.15, iOS 13, watchOS 6, tvOS 13, *)
+  final public func publishData(queue: Dispatch.DispatchQueue = .main) -> AppLink.DataStreamPublisher<Foundation.Data>
+  @available(macOS 10.15, iOS 13, watchOS 6, tvOS 13, *)
+  final public func publishString(queue: Dispatch.DispatchQueue = .main) -> AppLink.DataStreamPublisher<Swift.String>
+  @available(macOS 10.15, iOS 13, watchOS 6, tvOS 13, *)
+  final public func publishDecodable<T>(type: T.Type = T.self, queue: Dispatch.DispatchQueue = .main, decoder: any AppLink.DataDecoder = JSONDecoder(), preprocessor: any AppLink.DataPreprocessor = PassthroughPreprocessor()) -> AppLink.DataStreamPublisher<T> where T : Swift.Decodable
+}
+@available(macOS 10.15, iOS 13, watchOS 6, tvOS 13, *)
+public struct DownloadResponsePublisher<Value> : Combine.Publisher {
+  public typealias Output = AppLink.DownloadResponse<Value, AppLink.AFError>
+  public typealias Failure = Swift.Never
+  public init<Serializer>(_ request: AppLink.DownloadRequest, queue: Dispatch.DispatchQueue, serializer: Serializer) where Value == Serializer.SerializedObject, Serializer : AppLink.ResponseSerializer
+  @available(macOS 10.15, iOS 13, watchOS 6, tvOS 13, *)
+  public init<Serializer>(_ request: AppLink.DownloadRequest, queue: Dispatch.DispatchQueue, serializer: Serializer) where Value == Serializer.SerializedObject, Serializer : AppLink.DownloadResponseSerializerProtocol
+  public func result() -> Combine.AnyPublisher<Swift.Result<Value, AppLink.AFError>, Swift.Never>
+  public func value() -> Combine.AnyPublisher<Value, AppLink.AFError>
+  public func receive<S>(subscriber: S) where S : Combine.Subscriber, S.Failure == Swift.Never, S.Input == AppLink.DownloadResponse<Value, AppLink.AFError>
+}
+extension AppLink.DownloadRequest {
+  @available(macOS 10.15, iOS 13, watchOS 6, tvOS 13, *)
+  final public func publishResponse<Serializer, T>(using serializer: Serializer, on queue: Dispatch.DispatchQueue = .main) -> AppLink.DownloadResponsePublisher<T> where Serializer : AppLink.ResponseSerializer, T == Serializer.SerializedObject
+  @available(macOS 10.15, iOS 13, watchOS 6, tvOS 13, *)
+  final public func publishResponse<Serializer, T>(using serializer: Serializer, on queue: Dispatch.DispatchQueue = .main) -> AppLink.DownloadResponsePublisher<T> where Serializer : AppLink.DownloadResponseSerializerProtocol, T == Serializer.SerializedObject
+  @available(macOS 10.15, iOS 13, watchOS 6, tvOS 13, *)
+  final public func publishURL(queue: Dispatch.DispatchQueue = .main) -> AppLink.DownloadResponsePublisher<Foundation.URL>
+  @available(macOS 10.15, iOS 13, watchOS 6, tvOS 13, *)
+  final public func publishData(queue: Dispatch.DispatchQueue = .main, preprocessor: any AppLink.DataPreprocessor = DataResponseSerializer.defaultDataPreprocessor, emptyResponseCodes: Swift.Set<Swift.Int> = DataResponseSerializer.defaultEmptyResponseCodes, emptyRequestMethods: Swift.Set<AppLink.HTTPMethod> = DataResponseSerializer.defaultEmptyRequestMethods) -> AppLink.DownloadResponsePublisher<Foundation.Data>
+  @available(macOS 10.15, iOS 13, watchOS 6, tvOS 13, *)
+  final public func publishString(queue: Dispatch.DispatchQueue = .main, preprocessor: any AppLink.DataPreprocessor = StringResponseSerializer.defaultDataPreprocessor, encoding: Swift.String.Encoding? = nil, emptyResponseCodes: Swift.Set<Swift.Int> = StringResponseSerializer.defaultEmptyResponseCodes, emptyRequestMethods: Swift.Set<AppLink.HTTPMethod> = StringResponseSerializer.defaultEmptyRequestMethods) -> AppLink.DownloadResponsePublisher<Swift.String>
+  @available(macOS 10.15, iOS 13, watchOS 6, tvOS 13, *)
+  @available(*, deprecated, message: "Renamed publishDecodable(type:queue:preprocessor:decoder:emptyResponseCodes:emptyRequestMethods).")
+  @_disfavoredOverload final public func publishDecodable<T>(type: T.Type = T.self, queue: Dispatch.DispatchQueue = .main, preprocessor: any AppLink.DataPreprocessor = DecodableResponseSerializer<T>.defaultDataPreprocessor, decoder: any AppLink.DataDecoder = JSONDecoder(), emptyResponseCodes: Swift.Set<Swift.Int> = DecodableResponseSerializer<T>.defaultEmptyResponseCodes, emptyResponseMethods: Swift.Set<AppLink.HTTPMethod> = DecodableResponseSerializer<T>.defaultEmptyRequestMethods) -> AppLink.DownloadResponsePublisher<T> where T : Swift.Decodable
+  @available(macOS 10.15, iOS 13, watchOS 6, tvOS 13, *)
+  final public func publishDecodable<T>(type: T.Type = T.self, queue: Dispatch.DispatchQueue = .main, preprocessor: any AppLink.DataPreprocessor = DecodableResponseSerializer<T>.defaultDataPreprocessor, decoder: any AppLink.DataDecoder = JSONDecoder(), emptyResponseCodes: Swift.Set<Swift.Int> = DecodableResponseSerializer<T>.defaultEmptyResponseCodes, emptyRequestMethods: Swift.Set<AppLink.HTTPMethod> = DecodableResponseSerializer<T>.defaultEmptyRequestMethods) -> AppLink.DownloadResponsePublisher<T> where T : Swift.Decodable
+}
+@available(macOS 10.15, iOS 13, watchOS 6, tvOS 13, *)
+extension AppLink.DownloadResponsePublisher where Value == Foundation.URL? {
+  @available(macOS 10.15, iOS 13, watchOS 6, tvOS 13, *)
+  public init(_ request: AppLink.DownloadRequest, queue: Dispatch.DispatchQueue)
+}
+extension AppLink.DownloadRequest {
+  @available(macOS 10.15, iOS 13, watchOS 6, tvOS 13, *)
+  final public func publishUnserialized(on queue: Dispatch.DispatchQueue = .main) -> AppLink.DownloadResponsePublisher<Foundation.URL?>
+}
+extension AppLink.Request {
+  public typealias ValidationResult = Swift.Result<Swift.Void, any Swift.Error>
+}
+extension AppLink.DataRequest {
+  public typealias Validation = (Foundation.URLRequest?, Foundation.HTTPURLResponse, Foundation.Data?) -> AppLink.DataRequest.ValidationResult
+  @discardableResult
+  public func validate<S>(statusCode acceptableStatusCodes: S) -> Self where S : Swift.Sequence, S.Element == Swift.Int
+  @discardableResult
+  public func validate<S>(contentType acceptableContentTypes: @autoclosure @escaping () -> S) -> Self where S : Swift.Sequence, S.Element == Swift.String
+  @discardableResult
+  public func validate() -> Self
+}
+extension AppLink.DataStreamRequest {
+  public typealias Validation = (_ request: Foundation.URLRequest?, _ response: Foundation.HTTPURLResponse) -> AppLink.DataStreamRequest.ValidationResult
+  @discardableResult
+  final public func validate<S>(statusCode acceptableStatusCodes: S) -> Self where S : Swift.Sequence, S.Element == Swift.Int
+  @discardableResult
+  final public func validate<S>(contentType acceptableContentTypes: @autoclosure @escaping () -> S) -> Self where S : Swift.Sequence, S.Element == Swift.String
+  @discardableResult
+  final public func validate() -> Self
+}
+extension AppLink.DownloadRequest {
+  public typealias Validation = (_ request: Foundation.URLRequest?, _ response: Foundation.HTTPURLResponse, _ fileURL: Foundation.URL?) -> AppLink.DownloadRequest.ValidationResult
+  @discardableResult
+  final public func validate<S>(statusCode acceptableStatusCodes: S) -> Self where S : Swift.Sequence, S.Element == Swift.Int
+  @discardableResult
+  final public func validate<S>(contentType acceptableContentTypes: @autoclosure @escaping () -> S) -> Self where S : Swift.Sequence, S.Element == Swift.String
+  @discardableResult
+  final public func validate() -> Self
+}
+public struct RequestAdapterState {
+  public let requestID: Foundation.UUID
+  public let session: AppLink.Session
+}
+public protocol RequestAdapter {
+  func adapt(_ urlRequest: Foundation.URLRequest, for session: AppLink.Session, completion: @escaping (Swift.Result<Foundation.URLRequest, any Swift.Error>) -> Swift.Void)
+  func adapt(_ urlRequest: Foundation.URLRequest, using state: AppLink.RequestAdapterState, completion: @escaping (Swift.Result<Foundation.URLRequest, any Swift.Error>) -> Swift.Void)
+}
+extension AppLink.RequestAdapter {
+  public func adapt(_ urlRequest: Foundation.URLRequest, using state: AppLink.RequestAdapterState, completion: @escaping (Swift.Result<Foundation.URLRequest, any Swift.Error>) -> Swift.Void)
+}
+public enum RetryResult {
+  case retry
+  case retryWithDelay(Foundation.TimeInterval)
+  case doNotRetry
+  case doNotRetryWithError(any Swift.Error)
+}
+public protocol RequestRetrier {
+  func retry(_ request: AppLink.Request, for session: AppLink.Session, dueTo error: any Swift.Error, completion: @escaping (AppLink.RetryResult) -> Swift.Void)
+}
+public protocol RequestInterceptor : AppLink.RequestAdapter, AppLink.RequestRetrier {
+}
+extension AppLink.RequestInterceptor {
+  public func adapt(_ urlRequest: Foundation.URLRequest, for session: AppLink.Session, completion: @escaping (Swift.Result<Foundation.URLRequest, any Swift.Error>) -> Swift.Void)
+  public func retry(_ request: AppLink.Request, for session: AppLink.Session, dueTo error: any Swift.Error, completion: @escaping (AppLink.RetryResult) -> Swift.Void)
+}
+public typealias AdaptHandler = (Foundation.URLRequest, AppLink.Session, _ completion: @escaping (Swift.Result<Foundation.URLRequest, any Swift.Error>) -> Swift.Void) -> Swift.Void
+public typealias RetryHandler = (AppLink.Request, AppLink.Session, any Swift.Error, _ completion: @escaping (AppLink.RetryResult) -> Swift.Void) -> Swift.Void
+open class Adapter : AppLink.RequestInterceptor {
+  public init(_ adaptHandler: @escaping AppLink.AdaptHandler)
+  open func adapt(_ urlRequest: Foundation.URLRequest, for session: AppLink.Session, completion: @escaping (Swift.Result<Foundation.URLRequest, any Swift.Error>) -> Swift.Void)
+  open func adapt(_ urlRequest: Foundation.URLRequest, using state: AppLink.RequestAdapterState, completion: @escaping (Swift.Result<Foundation.URLRequest, any Swift.Error>) -> Swift.Void)
+  @objc deinit
+}
+extension AppLink.RequestAdapter where Self == AppLink.Adapter {
+  public static func adapter(using closure: @escaping AppLink.AdaptHandler) -> AppLink.Adapter
+}
+open class Retrier : AppLink.RequestInterceptor {
+  public init(_ retryHandler: @escaping AppLink.RetryHandler)
+  open func retry(_ request: AppLink.Request, for session: AppLink.Session, dueTo error: any Swift.Error, completion: @escaping (AppLink.RetryResult) -> Swift.Void)
+  @objc deinit
+}
+extension AppLink.RequestRetrier where Self == AppLink.Retrier {
+  public static func retrier(using closure: @escaping AppLink.RetryHandler) -> AppLink.Retrier
+}
+open class Interceptor : AppLink.RequestInterceptor {
+  final public let adapters: [any AppLink.RequestAdapter]
+  final public let retriers: [any AppLink.RequestRetrier]
+  public init(adaptHandler: @escaping AppLink.AdaptHandler, retryHandler: @escaping AppLink.RetryHandler)
+  public init(adapter: any AppLink.RequestAdapter, retrier: any AppLink.RequestRetrier)
+  public init(adapters: [any AppLink.RequestAdapter] = [], retriers: [any AppLink.RequestRetrier] = [], interceptors: [any AppLink.RequestInterceptor] = [])
+  open func adapt(_ urlRequest: Foundation.URLRequest, for session: AppLink.Session, completion: @escaping (Swift.Result<Foundation.URLRequest, any Swift.Error>) -> Swift.Void)
+  open func adapt(_ urlRequest: Foundation.URLRequest, using state: AppLink.RequestAdapterState, completion: @escaping (Swift.Result<Foundation.URLRequest, any Swift.Error>) -> Swift.Void)
+  open func retry(_ request: AppLink.Request, for session: AppLink.Session, dueTo error: any Swift.Error, completion: @escaping (AppLink.RetryResult) -> Swift.Void)
+  @objc deinit
+}
+extension AppLink.RequestInterceptor where Self == AppLink.Interceptor {
+  public static func interceptor(adapter: @escaping AppLink.AdaptHandler, retrier: @escaping AppLink.RetryHandler) -> AppLink.Interceptor
+  public static func interceptor(adapter: any AppLink.RequestAdapter, retrier: any AppLink.RequestRetrier) -> AppLink.Interceptor
+  public static func interceptor(adapters: [any AppLink.RequestAdapter] = [], retriers: [any AppLink.RequestRetrier] = [], interceptors: [any AppLink.RequestInterceptor] = []) -> AppLink.Interceptor
+}
 public struct AppLinkRequest : Swift.Codable {
   public var webURL: Swift.String?
   public var imageURL: Swift.String?
@@ -48,9 +1771,381 @@ public struct AppLinkRequest : Swift.Codable {
   public init(from decoder: any Swift.Decoder) throws
   public func encode(to encoder: any Swift.Encoder) throws
 }
+@_hasMissingDesignatedInitializers final public class UploadRequest : AppLink.DataRequest {
+  public enum Uploadable {
+    case data(Foundation.Data)
+    case file(Foundation.URL, shouldRemove: Swift.Bool)
+    case stream(Foundation.InputStream)
+  }
+  final public let upload: any AppLink.UploadableConvertible
+  final public let fileManager: Foundation.FileManager
+  final public var uploadable: AppLink.UploadRequest.Uploadable?
+  final public func cleanup()
+  @objc deinit
+}
+public protocol UploadableConvertible {
+  func createUploadable() throws -> AppLink.UploadRequest.Uploadable
+}
+extension AppLink.UploadRequest.Uploadable : AppLink.UploadableConvertible {
+  public func createUploadable() throws -> AppLink.UploadRequest.Uploadable
+}
+public protocol UploadConvertible : AppLink.URLRequestConvertible, AppLink.UploadableConvertible {
+}
 public let AppLink: AppLink.AppLinkSession
 public enum AppLinkInfo {
   public static let version: Swift.String
+}
+extension AppLink.Request {
+  public static let didResumeNotification: Foundation.Notification.Name
+  public static let didSuspendNotification: Foundation.Notification.Name
+  public static let didCancelNotification: Foundation.Notification.Name
+  public static let didFinishNotification: Foundation.Notification.Name
+  public static let didResumeTaskNotification: Foundation.Notification.Name
+  public static let didSuspendTaskNotification: Foundation.Notification.Name
+  public static let didCancelTaskNotification: Foundation.Notification.Name
+  public static let didCompleteTaskNotification: Foundation.Notification.Name
+}
+extension Foundation.Notification {
+  public var request: AppLink.Request? {
+    get
+  }
+}
+@_hasMissingDesignatedInitializers final public class AlamofireNotifications : AppLink.EventMonitor {
+  final public func requestDidResume(_ request: AppLink.Request)
+  final public func requestDidSuspend(_ request: AppLink.Request)
+  final public func requestDidCancel(_ request: AppLink.Request)
+  final public func requestDidFinish(_ request: AppLink.Request)
+  final public func request(_ request: AppLink.Request, didResumeTask task: Foundation.URLSessionTask)
+  final public func request(_ request: AppLink.Request, didSuspendTask task: Foundation.URLSessionTask)
+  final public func request(_ request: AppLink.Request, didCancelTask task: Foundation.URLSessionTask)
+  final public func request(_ request: AppLink.Request, didCompleteTask task: Foundation.URLSessionTask, with error: AppLink.AFError?)
+  @objc deinit
+}
+@objc open class SessionDelegate : ObjectiveC.NSObject {
+  public init(fileManager: Foundation.FileManager = .default)
+  @objc deinit
+}
+extension AppLink.SessionDelegate : Foundation.URLSessionDelegate {
+  @objc dynamic open func urlSession(_ session: Foundation.URLSession, didBecomeInvalidWithError error: (any Swift.Error)?)
+}
+extension AppLink.SessionDelegate : Foundation.URLSessionTaskDelegate {
+  @objc dynamic open func urlSession(_ session: Foundation.URLSession, task: Foundation.URLSessionTask, didReceive challenge: Foundation.URLAuthenticationChallenge, completionHandler: @escaping (Foundation.URLSession.AuthChallengeDisposition, Foundation.URLCredential?) -> Swift.Void)
+  @objc dynamic open func urlSession(_ session: Foundation.URLSession, task: Foundation.URLSessionTask, didSendBodyData bytesSent: Swift.Int64, totalBytesSent: Swift.Int64, totalBytesExpectedToSend: Swift.Int64)
+  @objc dynamic open func urlSession(_ session: Foundation.URLSession, task: Foundation.URLSessionTask, needNewBodyStream completionHandler: @escaping (Foundation.InputStream?) -> Swift.Void)
+  @objc dynamic open func urlSession(_ session: Foundation.URLSession, task: Foundation.URLSessionTask, willPerformHTTPRedirection response: Foundation.HTTPURLResponse, newRequest request: Foundation.URLRequest, completionHandler: @escaping (Foundation.URLRequest?) -> Swift.Void)
+  @objc dynamic open func urlSession(_ session: Foundation.URLSession, task: Foundation.URLSessionTask, didFinishCollecting metrics: Foundation.URLSessionTaskMetrics)
+  @objc dynamic open func urlSession(_ session: Foundation.URLSession, task: Foundation.URLSessionTask, didCompleteWithError error: (any Swift.Error)?)
+  @available(macOS 10.13, iOS 11.0, tvOS 11.0, watchOS 4.0, *)
+  @objc dynamic open func urlSession(_ session: Foundation.URLSession, taskIsWaitingForConnectivity task: Foundation.URLSessionTask)
+}
+extension AppLink.SessionDelegate : Foundation.URLSessionDataDelegate {
+  @objc dynamic open func urlSession(_ session: Foundation.URLSession, dataTask: Foundation.URLSessionDataTask, didReceive response: Foundation.URLResponse, completionHandler: @escaping (Foundation.URLSession.ResponseDisposition) -> Swift.Void)
+  @objc dynamic open func urlSession(_ session: Foundation.URLSession, dataTask: Foundation.URLSessionDataTask, didReceive data: Foundation.Data)
+  @objc dynamic open func urlSession(_ session: Foundation.URLSession, dataTask: Foundation.URLSessionDataTask, willCacheResponse proposedResponse: Foundation.CachedURLResponse, completionHandler: @escaping (Foundation.CachedURLResponse?) -> Swift.Void)
+}
+@available(macOS 10.15, iOS 13, tvOS 13, watchOS 6, *)
+extension AppLink.SessionDelegate : Foundation.URLSessionWebSocketDelegate {
+  @objc dynamic open func urlSession(_ session: Foundation.URLSession, webSocketTask: Foundation.URLSessionWebSocketTask, didOpenWithProtocol protocol: Swift.String?)
+  @objc dynamic open func urlSession(_ session: Foundation.URLSession, webSocketTask: Foundation.URLSessionWebSocketTask, didCloseWith closeCode: Foundation.URLSessionWebSocketTask.CloseCode, reason: Foundation.Data?)
+}
+extension AppLink.SessionDelegate : Foundation.URLSessionDownloadDelegate {
+  @objc dynamic open func urlSession(_ session: Foundation.URLSession, downloadTask: Foundation.URLSessionDownloadTask, didResumeAtOffset fileOffset: Swift.Int64, expectedTotalBytes: Swift.Int64)
+  @objc dynamic open func urlSession(_ session: Foundation.URLSession, downloadTask: Foundation.URLSessionDownloadTask, didWriteData bytesWritten: Swift.Int64, totalBytesWritten: Swift.Int64, totalBytesExpectedToWrite: Swift.Int64)
+  @objc dynamic open func urlSession(_ session: Foundation.URLSession, downloadTask: Foundation.URLSessionDownloadTask, didFinishDownloadingTo location: Foundation.URL)
+}
+open class MultipartFormData {
+  public static let encodingMemoryThreshold: Swift.UInt64
+  open var contentType: Swift.String {
+    get
+    set
+  }
+  public var contentLength: Swift.UInt64 {
+    get
+  }
+  final public let boundary: Swift.String
+  public init(fileManager: Foundation.FileManager = .default, boundary: Swift.String? = nil)
+  public func append(_ data: Foundation.Data, withName name: Swift.String, fileName: Swift.String? = nil, mimeType: Swift.String? = nil)
+  public func append(_ fileURL: Foundation.URL, withName name: Swift.String)
+  public func append(_ fileURL: Foundation.URL, withName name: Swift.String, fileName: Swift.String, mimeType: Swift.String)
+  public func append(_ stream: Foundation.InputStream, withLength length: Swift.UInt64, name: Swift.String, fileName: Swift.String, mimeType: Swift.String)
+  public func append(_ stream: Foundation.InputStream, withLength length: Swift.UInt64, headers: AppLink.HTTPHeaders)
+  public func encode() throws -> Foundation.Data
+  public func writeEncodedData(to fileURL: Foundation.URL) throws
+  @objc deinit
+}
+public typealias AFDataResponse<Success> = AppLink.DataResponse<Success, AppLink.AFError>
+public typealias AFDownloadResponse<Success> = AppLink.DownloadResponse<Success, AppLink.AFError>
+public struct DataResponse<Success, Failure> where Failure : Swift.Error {
+  public let request: Foundation.URLRequest?
+  public let response: Foundation.HTTPURLResponse?
+  public let data: Foundation.Data?
+  public let metrics: Foundation.URLSessionTaskMetrics?
+  public let serializationDuration: Foundation.TimeInterval
+  public let result: Swift.Result<Success, Failure>
+  public var value: Success? {
+    get
+  }
+  public var error: Failure? {
+    get
+  }
+  public init(request: Foundation.URLRequest?, response: Foundation.HTTPURLResponse?, data: Foundation.Data?, metrics: Foundation.URLSessionTaskMetrics?, serializationDuration: Foundation.TimeInterval, result: Swift.Result<Success, Failure>)
+}
+extension AppLink.DataResponse : Swift.CustomStringConvertible, Swift.CustomDebugStringConvertible {
+  public var description: Swift.String {
+    get
+  }
+  public var debugDescription: Swift.String {
+    get
+  }
+}
+extension AppLink.DataResponse {
+  public func map<NewSuccess>(_ transform: (Success) -> NewSuccess) -> AppLink.DataResponse<NewSuccess, Failure>
+  public func tryMap<NewSuccess>(_ transform: (Success) throws -> NewSuccess) -> AppLink.DataResponse<NewSuccess, any Swift.Error>
+  public func mapError<NewFailure>(_ transform: (Failure) -> NewFailure) -> AppLink.DataResponse<Success, NewFailure> where NewFailure : Swift.Error
+  public func tryMapError<NewFailure>(_ transform: (Failure) throws -> NewFailure) -> AppLink.DataResponse<Success, any Swift.Error> where NewFailure : Swift.Error
+}
+public struct DownloadResponse<Success, Failure> where Failure : Swift.Error {
+  public let request: Foundation.URLRequest?
+  public let response: Foundation.HTTPURLResponse?
+  public let fileURL: Foundation.URL?
+  public let resumeData: Foundation.Data?
+  public let metrics: Foundation.URLSessionTaskMetrics?
+  public let serializationDuration: Foundation.TimeInterval
+  public let result: Swift.Result<Success, Failure>
+  public var value: Success? {
+    get
+  }
+  public var error: Failure? {
+    get
+  }
+  public init(request: Foundation.URLRequest?, response: Foundation.HTTPURLResponse?, fileURL: Foundation.URL?, resumeData: Foundation.Data?, metrics: Foundation.URLSessionTaskMetrics?, serializationDuration: Foundation.TimeInterval, result: Swift.Result<Success, Failure>)
+}
+extension AppLink.DownloadResponse : Swift.CustomStringConvertible, Swift.CustomDebugStringConvertible {
+  public var description: Swift.String {
+    get
+  }
+  public var debugDescription: Swift.String {
+    get
+  }
+}
+extension AppLink.DownloadResponse {
+  public func map<NewSuccess>(_ transform: (Success) -> NewSuccess) -> AppLink.DownloadResponse<NewSuccess, Failure>
+  public func tryMap<NewSuccess>(_ transform: (Success) throws -> NewSuccess) -> AppLink.DownloadResponse<NewSuccess, any Swift.Error>
+  public func mapError<NewFailure>(_ transform: (Failure) -> NewFailure) -> AppLink.DownloadResponse<Success, NewFailure> where NewFailure : Swift.Error
+  public func tryMapError<NewFailure>(_ transform: (Failure) throws -> NewFailure) -> AppLink.DownloadResponse<Success, any Swift.Error> where NewFailure : Swift.Error
+}
+@_hasMissingDesignatedInitializers public class Request {
+  public enum State {
+    case initialized
+    case resumed
+    case suspended
+    case cancelled
+    case finished
+    public static func == (a: AppLink.Request.State, b: AppLink.Request.State) -> Swift.Bool
+    public func hash(into hasher: inout Swift.Hasher)
+    public var hashValue: Swift.Int {
+      get
+    }
+  }
+  final public let id: Foundation.UUID
+  final public let underlyingQueue: Dispatch.DispatchQueue
+  final public let serializationQueue: Dispatch.DispatchQueue
+  final public let eventMonitor: (any AppLink.EventMonitor)?
+  final public let interceptor: (any AppLink.RequestInterceptor)?
+  weak public var delegate: (any AppLink.RequestDelegate)? {
+    get
+  }
+  public var state: AppLink.Request.State {
+    get
+  }
+  public var isInitialized: Swift.Bool {
+    get
+  }
+  public var isResumed: Swift.Bool {
+    get
+  }
+  public var isSuspended: Swift.Bool {
+    get
+  }
+  public var isCancelled: Swift.Bool {
+    get
+  }
+  public var isFinished: Swift.Bool {
+    get
+  }
+  public typealias ProgressHandler = (Foundation.Progress) -> Swift.Void
+  final public let uploadProgress: Foundation.Progress
+  final public let downloadProgress: Foundation.Progress
+  public var uploadProgressHandler: (handler: AppLink.Request.ProgressHandler, queue: Dispatch.DispatchQueue)? {
+    get
+  }
+  public var downloadProgressHandler: (handler: AppLink.Request.ProgressHandler, queue: Dispatch.DispatchQueue)? {
+    get
+  }
+  public var redirectHandler: (any AppLink.RedirectHandler)? {
+    get
+  }
+  public var cachedResponseHandler: (any AppLink.CachedResponseHandler)? {
+    get
+  }
+  public var credential: Foundation.URLCredential? {
+    get
+  }
+  public var requests: [Foundation.URLRequest] {
+    get
+  }
+  public var firstRequest: Foundation.URLRequest? {
+    get
+  }
+  public var lastRequest: Foundation.URLRequest? {
+    get
+  }
+  public var request: Foundation.URLRequest? {
+    get
+  }
+  public var performedRequests: [Foundation.URLRequest] {
+    get
+  }
+  public var response: Foundation.HTTPURLResponse? {
+    get
+  }
+  public var tasks: [Foundation.URLSessionTask] {
+    get
+  }
+  public var firstTask: Foundation.URLSessionTask? {
+    get
+  }
+  public var lastTask: Foundation.URLSessionTask? {
+    get
+  }
+  public var task: Foundation.URLSessionTask? {
+    get
+  }
+  public var allMetrics: [Foundation.URLSessionTaskMetrics] {
+    get
+  }
+  public var firstMetrics: Foundation.URLSessionTaskMetrics? {
+    get
+  }
+  public var lastMetrics: Foundation.URLSessionTaskMetrics? {
+    get
+  }
+  public var metrics: Foundation.URLSessionTaskMetrics? {
+    get
+  }
+  public var retryCount: Swift.Int {
+    get
+  }
+  public var error: AppLink.AFError? {
+    get
+  }
+  @discardableResult
+  public func cancel() -> Self
+  @discardableResult
+  public func suspend() -> Self
+  @discardableResult
+  public func resume() -> Self
+  @discardableResult
+  public func authenticate(username: Swift.String, password: Swift.String, persistence: Foundation.URLCredential.Persistence = .forSession) -> Self
+  @discardableResult
+  public func authenticate(with credential: Foundation.URLCredential) -> Self
+  @discardableResult
+  public func downloadProgress(queue: Dispatch.DispatchQueue = .main, closure: @escaping AppLink.Request.ProgressHandler) -> Self
+  @discardableResult
+  public func uploadProgress(queue: Dispatch.DispatchQueue = .main, closure: @escaping AppLink.Request.ProgressHandler) -> Self
+  @discardableResult
+  public func redirect(using handler: any AppLink.RedirectHandler) -> Self
+  @discardableResult
+  public func cacheResponse(using handler: any AppLink.CachedResponseHandler) -> Self
+  @discardableResult
+  public func cURLDescription(on queue: Dispatch.DispatchQueue, calling handler: @escaping (Swift.String) -> Swift.Void) -> Self
+  @discardableResult
+  public func cURLDescription(calling handler: @escaping (Swift.String) -> Swift.Void) -> Self
+  @discardableResult
+  public func onURLRequestCreation(on queue: Dispatch.DispatchQueue = .main, perform handler: @escaping (Foundation.URLRequest) -> Swift.Void) -> Self
+  @discardableResult
+  public func onURLSessionTaskCreation(on queue: Dispatch.DispatchQueue = .main, perform handler: @escaping (Foundation.URLSessionTask) -> Swift.Void) -> Self
+  @objc deinit
+}
+extension AppLink.Request {
+  public enum ResponseDisposition {
+    case allow
+    case cancel
+    public static func == (a: AppLink.Request.ResponseDisposition, b: AppLink.Request.ResponseDisposition) -> Swift.Bool
+    public func hash(into hasher: inout Swift.Hasher)
+    public var hashValue: Swift.Int {
+      get
+    }
+  }
+}
+extension AppLink.Request : Swift.Equatable {
+  public static func == (lhs: AppLink.Request, rhs: AppLink.Request) -> Swift.Bool
+}
+extension AppLink.Request : Swift.Hashable {
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+extension AppLink.Request : Swift.CustomStringConvertible {
+  public var description: Swift.String {
+    get
+  }
+}
+extension AppLink.Request {
+  public func cURLDescription() -> Swift.String
+}
+public protocol RequestDelegate : AnyObject {
+  var sessionConfiguration: Foundation.URLSessionConfiguration { get }
+  var startImmediately: Swift.Bool { get }
+  func cleanup(after request: AppLink.Request)
+  func retryResult(for request: AppLink.Request, dueTo error: AppLink.AFError, completion: @escaping (AppLink.RetryResult) -> Swift.Void)
+  func retryRequest(_ request: AppLink.Request, withDelay timeDelay: Foundation.TimeInterval?)
+}
+public protocol URLConvertible {
+  func asURL() throws -> Foundation.URL
+}
+extension Swift.String : AppLink.URLConvertible {
+  public func asURL() throws -> Foundation.URL
+}
+extension Foundation.URL : AppLink.URLConvertible {
+  public func asURL() throws -> Foundation.URL
+}
+extension Foundation.URLComponents : AppLink.URLConvertible {
+  public func asURL() throws -> Foundation.URL
+}
+public protocol URLRequestConvertible {
+  func asURLRequest() throws -> Foundation.URLRequest
+}
+extension AppLink.URLRequestConvertible {
+  public var urlRequest: Foundation.URLRequest? {
+    get
+  }
+}
+extension Foundation.URLRequest : AppLink.URLRequestConvertible {
+  public func asURLRequest() throws -> Foundation.URLRequest
+}
+extension Foundation.URLRequest {
+  public init(url: any AppLink.URLConvertible, method: AppLink.HTTPMethod, headers: AppLink.HTTPHeaders? = nil) throws
+}
+public let AF: AppLink.Session
+public enum AFInfo {
+  public static let version: Swift.String
+}
+public struct HTTPMethod : Swift.RawRepresentable, Swift.Equatable, Swift.Hashable, Swift.Sendable {
+  public static let connect: AppLink.HTTPMethod
+  public static let delete: AppLink.HTTPMethod
+  public static let get: AppLink.HTTPMethod
+  public static let head: AppLink.HTTPMethod
+  public static let options: AppLink.HTTPMethod
+  public static let patch: AppLink.HTTPMethod
+  public static let post: AppLink.HTTPMethod
+  public static let put: AppLink.HTTPMethod
+  public static let query: AppLink.HTTPMethod
+  public static let trace: AppLink.HTTPMethod
+  public let rawValue: Swift.String
+  public init(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
 }
 public enum AppLinkDataCodingError : Swift.Error {
   case decoding(Swift.String)
@@ -87,6 +2182,269 @@ public struct AppLinkDataInfo : Swift.Codable {
   public func request(link request: AppLink.AppLinkRequest, completion: @escaping ((Foundation.URL?, AppLink.LinkError?) -> Swift.Void))
   @objc deinit
 }
+@_hasMissingDesignatedInitializers final public class DownloadRequest : AppLink.Request {
+  public struct Options : Swift.OptionSet {
+    public static let createIntermediateDirectories: AppLink.DownloadRequest.Options
+    public static let removePreviousFile: AppLink.DownloadRequest.Options
+    public let rawValue: Swift.Int
+    public init(rawValue: Swift.Int)
+    public typealias ArrayLiteralElement = AppLink.DownloadRequest.Options
+    public typealias Element = AppLink.DownloadRequest.Options
+    public typealias RawValue = Swift.Int
+  }
+  public typealias Destination = (_ temporaryURL: Foundation.URL, _ response: Foundation.HTTPURLResponse) -> (destinationURL: Foundation.URL, options: AppLink.DownloadRequest.Options)
+  final public class func suggestedDownloadDestination(for directory: Foundation.FileManager.SearchPathDirectory = .documentDirectory, in domain: Foundation.FileManager.SearchPathDomainMask = .userDomainMask, options: AppLink.DownloadRequest.Options = []) -> AppLink.DownloadRequest.Destination
+  public enum Downloadable {
+    case request(any AppLink.URLRequestConvertible)
+    case resumeData(Foundation.Data)
+  }
+  final public var resumeData: Foundation.Data? {
+    get
+  }
+  final public var fileURL: Foundation.URL? {
+    get
+  }
+  final public let downloadable: AppLink.DownloadRequest.Downloadable
+  final public func task(forResumeData data: Foundation.Data, using session: Foundation.URLSession) -> Foundation.URLSessionTask
+  @discardableResult
+  override final public func cancel() -> Self
+  @discardableResult
+  final public func cancel(producingResumeData shouldProduceResumeData: Swift.Bool) -> Self
+  @discardableResult
+  final public func cancel(byProducingResumeData completionHandler: @escaping (_ data: Foundation.Data?) -> Swift.Void) -> Self
+  @discardableResult
+  final public func validate(_ validation: @escaping AppLink.DownloadRequest.Validation) -> Self
+  @discardableResult
+  final public func response(queue: Dispatch.DispatchQueue = .main, completionHandler: @escaping (AppLink.AFDownloadResponse<Foundation.URL?>) -> Swift.Void) -> Self
+  @discardableResult
+  final public func response<Serializer>(queue: Dispatch.DispatchQueue = .main, responseSerializer: Serializer, completionHandler: @escaping (AppLink.AFDownloadResponse<Serializer.SerializedObject>) -> Swift.Void) -> Self where Serializer : AppLink.DownloadResponseSerializerProtocol
+  @discardableResult
+  final public func response<Serializer>(queue: Dispatch.DispatchQueue = .main, responseSerializer: Serializer, completionHandler: @escaping (AppLink.AFDownloadResponse<Serializer.SerializedObject>) -> Swift.Void) -> Self where Serializer : AppLink.ResponseSerializer
+  @discardableResult
+  final public func responseURL(queue: Dispatch.DispatchQueue = .main, completionHandler: @escaping (AppLink.AFDownloadResponse<Foundation.URL>) -> Swift.Void) -> Self
+  @discardableResult
+  final public func responseData(queue: Dispatch.DispatchQueue = .main, dataPreprocessor: any AppLink.DataPreprocessor = DataResponseSerializer.defaultDataPreprocessor, emptyResponseCodes: Swift.Set<Swift.Int> = DataResponseSerializer.defaultEmptyResponseCodes, emptyRequestMethods: Swift.Set<AppLink.HTTPMethod> = DataResponseSerializer.defaultEmptyRequestMethods, completionHandler: @escaping (AppLink.AFDownloadResponse<Foundation.Data>) -> Swift.Void) -> Self
+  @discardableResult
+  final public func responseString(queue: Dispatch.DispatchQueue = .main, dataPreprocessor: any AppLink.DataPreprocessor = StringResponseSerializer.defaultDataPreprocessor, encoding: Swift.String.Encoding? = nil, emptyResponseCodes: Swift.Set<Swift.Int> = StringResponseSerializer.defaultEmptyResponseCodes, emptyRequestMethods: Swift.Set<AppLink.HTTPMethod> = StringResponseSerializer.defaultEmptyRequestMethods, completionHandler: @escaping (AppLink.AFDownloadResponse<Swift.String>) -> Swift.Void) -> Self
+  @available(*, deprecated, message: "responseJSON deprecated and will be removed in Alamofire 6. Use responseDecodable instead.")
+  @discardableResult
+  final public func responseJSON(queue: Dispatch.DispatchQueue = .main, dataPreprocessor: any AppLink.DataPreprocessor = JSONResponseSerializer.defaultDataPreprocessor, emptyResponseCodes: Swift.Set<Swift.Int> = JSONResponseSerializer.defaultEmptyResponseCodes, emptyRequestMethods: Swift.Set<AppLink.HTTPMethod> = JSONResponseSerializer.defaultEmptyRequestMethods, options: Foundation.JSONSerialization.ReadingOptions = .allowFragments, completionHandler: @escaping (AppLink.AFDownloadResponse<Any>) -> Swift.Void) -> Self
+  @discardableResult
+  final public func responseDecodable<T>(of type: T.Type = T.self, queue: Dispatch.DispatchQueue = .main, dataPreprocessor: any AppLink.DataPreprocessor = DecodableResponseSerializer<T>.defaultDataPreprocessor, decoder: any AppLink.DataDecoder = JSONDecoder(), emptyResponseCodes: Swift.Set<Swift.Int> = DecodableResponseSerializer<T>.defaultEmptyResponseCodes, emptyRequestMethods: Swift.Set<AppLink.HTTPMethod> = DecodableResponseSerializer<T>.defaultEmptyRequestMethods, completionHandler: @escaping (AppLink.AFDownloadResponse<T>) -> Swift.Void) -> Self where T : Swift.Decodable
+  @objc deinit
+}
+public protocol ParameterEncoder {
+  func encode<Parameters>(_ parameters: Parameters?, into request: Foundation.URLRequest) throws -> Foundation.URLRequest where Parameters : Swift.Encodable
+}
+open class JSONParameterEncoder : AppLink.ParameterEncoder {
+  public static var `default`: AppLink.JSONParameterEncoder {
+    get
+  }
+  public static var prettyPrinted: AppLink.JSONParameterEncoder {
+    get
+  }
+  @available(macOS 10.13, iOS 11.0, tvOS 11.0, watchOS 4.0, *)
+  public static var sortedKeys: AppLink.JSONParameterEncoder {
+    get
+  }
+  final public let encoder: Foundation.JSONEncoder
+  public init(encoder: Foundation.JSONEncoder = JSONEncoder())
+  open func encode<Parameters>(_ parameters: Parameters?, into request: Foundation.URLRequest) throws -> Foundation.URLRequest where Parameters : Swift.Encodable
+  @objc deinit
+}
+extension AppLink.ParameterEncoder where Self == AppLink.JSONParameterEncoder {
+  public static var json: AppLink.JSONParameterEncoder {
+    get
+  }
+  public static func json(encoder: Foundation.JSONEncoder = JSONEncoder()) -> AppLink.JSONParameterEncoder
+}
+open class URLEncodedFormParameterEncoder : AppLink.ParameterEncoder {
+  public enum Destination {
+    case methodDependent
+    case queryString
+    case httpBody
+    public static func == (a: AppLink.URLEncodedFormParameterEncoder.Destination, b: AppLink.URLEncodedFormParameterEncoder.Destination) -> Swift.Bool
+    public func hash(into hasher: inout Swift.Hasher)
+    public var hashValue: Swift.Int {
+      get
+    }
+  }
+  public static var `default`: AppLink.URLEncodedFormParameterEncoder {
+    get
+  }
+  final public let encoder: AppLink.URLEncodedFormEncoder
+  final public let destination: AppLink.URLEncodedFormParameterEncoder.Destination
+  public init(encoder: AppLink.URLEncodedFormEncoder = URLEncodedFormEncoder(), destination: AppLink.URLEncodedFormParameterEncoder.Destination = .methodDependent)
+  open func encode<Parameters>(_ parameters: Parameters?, into request: Foundation.URLRequest) throws -> Foundation.URLRequest where Parameters : Swift.Encodable
+  @objc deinit
+}
+extension AppLink.ParameterEncoder where Self == AppLink.URLEncodedFormParameterEncoder {
+  public static var urlEncodedForm: AppLink.URLEncodedFormParameterEncoder {
+    get
+  }
+  public static func urlEncodedForm(encoder: AppLink.URLEncodedFormEncoder = URLEncodedFormEncoder(), destination: AppLink.URLEncodedFormParameterEncoder.Destination = .methodDependent) -> AppLink.URLEncodedFormParameterEncoder
+}
+final public class URLEncodedFormEncoder {
+  public enum ArrayEncoding {
+    case brackets
+    case noBrackets
+    case indexInBrackets
+    case custom((_ key: Swift.String, _ index: Swift.Int) -> Swift.String)
+  }
+  public enum BoolEncoding {
+    case numeric
+    case literal
+    public static func == (a: AppLink.URLEncodedFormEncoder.BoolEncoding, b: AppLink.URLEncodedFormEncoder.BoolEncoding) -> Swift.Bool
+    public func hash(into hasher: inout Swift.Hasher)
+    public var hashValue: Swift.Int {
+      get
+    }
+  }
+  public enum DataEncoding {
+    case deferredToData
+    case base64
+    case custom((Foundation.Data) throws -> Swift.String)
+  }
+  public enum DateEncoding {
+    case deferredToDate
+    case secondsSince1970
+    case millisecondsSince1970
+    case iso8601
+    case formatted(Foundation.DateFormatter)
+    case custom((Foundation.Date) throws -> Swift.String)
+  }
+  public enum KeyEncoding {
+    case useDefaultKeys
+    case convertToSnakeCase
+    case convertToKebabCase
+    case capitalized
+    case uppercased
+    case lowercased
+    case custom((Swift.String) -> Swift.String)
+  }
+  public struct KeyPathEncoding {
+    public static let brackets: AppLink.URLEncodedFormEncoder.KeyPathEncoding
+    public static let dots: AppLink.URLEncodedFormEncoder.KeyPathEncoding
+    public init(encoding: @escaping (_ subkey: Swift.String) -> Swift.String)
+  }
+  public struct NilEncoding {
+    public static let dropKey: AppLink.URLEncodedFormEncoder.NilEncoding
+    public static let dropValue: AppLink.URLEncodedFormEncoder.NilEncoding
+    public static let null: AppLink.URLEncodedFormEncoder.NilEncoding
+    public init(encoding: @escaping () -> Swift.String?)
+  }
+  public enum SpaceEncoding {
+    case percentEscaped
+    case plusReplaced
+    public static func == (a: AppLink.URLEncodedFormEncoder.SpaceEncoding, b: AppLink.URLEncodedFormEncoder.SpaceEncoding) -> Swift.Bool
+    public func hash(into hasher: inout Swift.Hasher)
+    public var hashValue: Swift.Int {
+      get
+    }
+  }
+  public enum Error : Swift.Error {
+    case invalidRootObject(Swift.String)
+  }
+  final public let alphabetizeKeyValuePairs: Swift.Bool
+  final public let arrayEncoding: AppLink.URLEncodedFormEncoder.ArrayEncoding
+  final public let boolEncoding: AppLink.URLEncodedFormEncoder.BoolEncoding
+  final public let dataEncoding: AppLink.URLEncodedFormEncoder.DataEncoding
+  final public let dateEncoding: AppLink.URLEncodedFormEncoder.DateEncoding
+  final public let keyEncoding: AppLink.URLEncodedFormEncoder.KeyEncoding
+  final public let keyPathEncoding: AppLink.URLEncodedFormEncoder.KeyPathEncoding
+  final public let nilEncoding: AppLink.URLEncodedFormEncoder.NilEncoding
+  final public let spaceEncoding: AppLink.URLEncodedFormEncoder.SpaceEncoding
+  final public var allowedCharacters: Foundation.CharacterSet
+  public init(alphabetizeKeyValuePairs: Swift.Bool = true, arrayEncoding: AppLink.URLEncodedFormEncoder.ArrayEncoding = .brackets, boolEncoding: AppLink.URLEncodedFormEncoder.BoolEncoding = .numeric, dataEncoding: AppLink.URLEncodedFormEncoder.DataEncoding = .base64, dateEncoding: AppLink.URLEncodedFormEncoder.DateEncoding = .deferredToDate, keyEncoding: AppLink.URLEncodedFormEncoder.KeyEncoding = .useDefaultKeys, keyPathEncoding: AppLink.URLEncodedFormEncoder.KeyPathEncoding = .brackets, nilEncoding: AppLink.URLEncodedFormEncoder.NilEncoding = .dropKey, spaceEncoding: AppLink.URLEncodedFormEncoder.SpaceEncoding = .percentEscaped, allowedCharacters: Foundation.CharacterSet = .afURLQueryAllowed)
+  final public func encode(_ value: any Swift.Encodable) throws -> Swift.String
+  final public func encode(_ value: any Swift.Encodable) throws -> Foundation.Data
+  @objc deinit
+}
+extension Foundation.CharacterSet {
+  public static let afURLQueryAllowed: Foundation.CharacterSet
+}
+public protocol RedirectHandler {
+  func task(_ task: Foundation.URLSessionTask, willBeRedirectedTo request: Foundation.URLRequest, for response: Foundation.HTTPURLResponse, completion: @escaping (Foundation.URLRequest?) -> Swift.Void)
+}
+public struct Redirector {
+  public enum Behavior {
+    case follow
+    case doNotFollow
+    case modify((Foundation.URLSessionTask, Foundation.URLRequest, Foundation.HTTPURLResponse) -> Foundation.URLRequest?)
+  }
+  public static let follow: AppLink.Redirector
+  public static let doNotFollow: AppLink.Redirector
+  public let behavior: AppLink.Redirector.Behavior
+  public init(behavior: AppLink.Redirector.Behavior)
+}
+extension AppLink.Redirector : AppLink.RedirectHandler {
+  public func task(_ task: Foundation.URLSessionTask, willBeRedirectedTo request: Foundation.URLRequest, for response: Foundation.HTTPURLResponse, completion: @escaping (Foundation.URLRequest?) -> Swift.Void)
+}
+extension AppLink.RedirectHandler where Self == AppLink.Redirector {
+  public static var follow: AppLink.Redirector {
+    get
+  }
+  public static var doNotFollow: AppLink.Redirector {
+    get
+  }
+  public static func modify(using closure: @escaping (Foundation.URLSessionTask, Foundation.URLRequest, Foundation.HTTPURLResponse) -> Foundation.URLRequest?) -> AppLink.Redirector
+}
+extension Foundation.URLSessionConfiguration : AppLink.AlamofireExtended {
+  public typealias ExtendedType = Foundation.URLSessionConfiguration
+}
+extension AppLink.AlamofireExtension where ExtendedType : Foundation.URLSessionConfiguration {
+  public static var `default`: Foundation.URLSessionConfiguration {
+    get
+  }
+  public static var ephemeral: Foundation.URLSessionConfiguration {
+    get
+  }
+}
+public struct AlamofireExtension<ExtendedType> {
+  public var type: ExtendedType {
+    get
+  }
+  public init(_ type: ExtendedType)
+}
+public protocol AlamofireExtended {
+  associatedtype ExtendedType
+  static var af: AppLink.AlamofireExtension<Self.ExtendedType>.Type { get set }
+  var af: AppLink.AlamofireExtension<Self.ExtendedType> { get set }
+}
+extension AppLink.AlamofireExtended {
+  public static var af: AppLink.AlamofireExtension<Self>.Type {
+    get
+    set
+  }
+  public var af: AppLink.AlamofireExtension<Self> {
+    get
+    set
+  }
+}
+extension AppLink.AuthenticationError : Swift.Equatable {}
+extension AppLink.AuthenticationError : Swift.Hashable {}
+extension AppLink.URLEncoding.Destination : Swift.Equatable {}
+extension AppLink.URLEncoding.Destination : Swift.Hashable {}
+extension AppLink.URLEncoding.BoolEncoding : Swift.Equatable {}
+extension AppLink.URLEncoding.BoolEncoding : Swift.Hashable {}
+extension AppLink.JSONEncoding.Error : Swift.Equatable {}
+extension AppLink.JSONEncoding.Error : Swift.Hashable {}
 extension AppLink.LinkErrorrType : Swift.Equatable {}
 extension AppLink.LinkErrorrType : Swift.Hashable {}
 extension AppLink.LinkErrorrType : Swift.RawRepresentable {}
+@available(macOS 10.15, iOS 13, tvOS 13, watchOS 6, *)
+extension AppLink.DeflateRequestCompressor.DuplicateHeaderBehavior : Swift.Equatable {}
+@available(macOS 10.15, iOS 13, tvOS 13, watchOS 6, *)
+extension AppLink.DeflateRequestCompressor.DuplicateHeaderBehavior : Swift.Hashable {}
+extension AppLink.NetworkReachabilityManager.NetworkReachabilityStatus.ConnectionType : Swift.Equatable {}
+extension AppLink.NetworkReachabilityManager.NetworkReachabilityStatus.ConnectionType : Swift.Hashable {}
+extension AppLink.Request.State : Swift.Equatable {}
+extension AppLink.Request.State : Swift.Hashable {}
+extension AppLink.Request.ResponseDisposition : Swift.Equatable {}
+extension AppLink.Request.ResponseDisposition : Swift.Hashable {}
+extension AppLink.URLEncodedFormParameterEncoder.Destination : Swift.Equatable {}
+extension AppLink.URLEncodedFormParameterEncoder.Destination : Swift.Hashable {}
+extension AppLink.URLEncodedFormEncoder.BoolEncoding : Swift.Equatable {}
+extension AppLink.URLEncodedFormEncoder.BoolEncoding : Swift.Hashable {}
+extension AppLink.URLEncodedFormEncoder.SpaceEncoding : Swift.Equatable {}
+extension AppLink.URLEncodedFormEncoder.SpaceEncoding : Swift.Hashable {}

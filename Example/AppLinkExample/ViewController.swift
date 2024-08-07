@@ -132,6 +132,7 @@ class ViewController: UIViewController {
             guard let error = error else {
                 return
             }
+            self?.textView.text = "Generate link: " + error.localizedDescription
             print("Generate link error: \(error)")
         }
     }

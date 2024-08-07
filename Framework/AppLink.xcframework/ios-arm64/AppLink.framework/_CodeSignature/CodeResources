@@ -4,18 +4,6 @@
 <dict>
 	<key>files</key>
 	<dict>
-		<key>Frameworks/AlamofireDynamic.framework/AlamofireDynamic</key>
-		<data>
-		8VSBCI9kH1NOuEeqLc/M5s7JCYI=
-		</data>
-		<key>Frameworks/AlamofireDynamic.framework/Info.plist</key>
-		<data>
-		aOWKPVkPzR0G3cRTn2pXNLpTKVg=
-		</data>
-		<key>Frameworks/AlamofireDynamic.framework/_CodeSignature/CodeResources</key>
-		<data>
-		kWsZ4hdENyVG2kozNo8vo5JIB2c=
-		</data>
 		<key>Headers/AppLink.h</key>
 		<data>
 		lJid78Mk6IaM5qQSzN1+xuh3lpg=
@@ -26,23 +14,23 @@
 		</data>
 		<key>Modules/AppLink.swiftmodule/arm64-apple-ios.abi.json</key>
 		<data>
-		P6zfupwQwOCTdi0A0hBd6vjvRcI=
+		D80lEax9BjaL9POgsovyUk8tqco=
 		</data>
 		<key>Modules/AppLink.swiftmodule/arm64-apple-ios.private.swiftinterface</key>
 		<data>
-		kAeYOMpNCUAWClFXTHLfwysMcrc=
+		lINBiv3ieh/OIgu/kPwlVFPe/6w=
 		</data>
 		<key>Modules/AppLink.swiftmodule/arm64-apple-ios.swiftdoc</key>
 		<data>
-		RAQtA5bxnbRhzhq0EloOGcrzwz0=
+		/dC4ANhsLU2Q+ZiNastVCyhy9AE=
 		</data>
 		<key>Modules/AppLink.swiftmodule/arm64-apple-ios.swiftinterface</key>
 		<data>
-		kAeYOMpNCUAWClFXTHLfwysMcrc=
+		kojOhdsDc2lWUB8wTXHy9oCpmU8=
 		</data>
 		<key>Modules/AppLink.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<data>
-		3CEa635dbb5Hr+kMrrY4WvR+VMM=
+		CG+JroACiMYn6kuuBvF5LvBZg+k=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -55,27 +43,6 @@
 	</dict>
 	<key>files2</key>
 	<dict>
-		<key>Frameworks/AlamofireDynamic.framework/AlamofireDynamic</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			a/v4HwLBpPCfkrAyyrG0q+Q6X1NHXlN1ipNJsvA6HJM=
-			</data>
-		</dict>
-		<key>Frameworks/AlamofireDynamic.framework/Info.plist</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			oVkn8ince63FNiFTVvRtjEbVN3/kcbJLmfmX6qU2MdE=
-			</data>
-		</dict>
-		<key>Frameworks/AlamofireDynamic.framework/_CodeSignature/CodeResources</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			akG3DIbBeoIgQ1j8u78PA1hnitQ1kk5JB3bWSN2J5AU=
-			</data>
-		</dict>
 		<key>Headers/AppLink.h</key>
 		<dict>
 			<key>hash2</key>
@@ -87,35 +54,35 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			L8vy3D3/qVI+FUQbDAGTLU+IExE6qOb40Ttjn28E60k=
+			wRiTi+kASV/naLFZbQ7CfWnsENOYkcdg50BQcycJwhI=
 			</data>
 		</dict>
 		<key>Modules/AppLink.swiftmodule/arm64-apple-ios.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			WQHorf87MHuPbS9v9MrTKNkpv9wIdK856lSNK3/KMCk=
+			0HhV0xCgbAYSADvK5lex351G8MODHAYl3pQ5VIs1oag=
 			</data>
 		</dict>
 		<key>Modules/AppLink.swiftmodule/arm64-apple-ios.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			0b0iu5STgdXakd8OsC5oQemaDQ/ha34+m8u3mrqmAKU=
+			dHk9Mjej1nuWUTF99smDDOH8HhkVl4UjAzG13QBX5HY=
 			</data>
 		</dict>
 		<key>Modules/AppLink.swiftmodule/arm64-apple-ios.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			WQHorf87MHuPbS9v9MrTKNkpv9wIdK856lSNK3/KMCk=
+			uI6mPmO8zHaJEHqOV76zqpHme9Cqec4aRNhmAWo4GHM=
 			</data>
 		</dict>
 		<key>Modules/AppLink.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			FoUbPAEMWs4OVyj2tiGW40V8U6oDT8EIPedKxoO58Jo=
+			hS9no0JLQ/0ok8jCepsqurHdVJTKm4zTkD7qjad4mQE=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
