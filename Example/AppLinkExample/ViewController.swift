@@ -3,6 +3,7 @@
 //  AppLinkExample
 //
 //  Created by Hyunjoon Ko on 8/1/24.
+//  Copyright © 2024 Vlending Co., Ltd. All rights reserved.
 //
 
 import UIKit
@@ -83,7 +84,7 @@ class ViewController: UIViewController {
                 if let desc = information?.contents, !desc.isEmpty {
                     infoText += "\n" + "Preview Content Description: " + desc
                 }
-                if let image = information?.thumbnail, !image.isEmpty {
+                if let image = information?.imageURL, !image.isEmpty {
                     infoText += "\n" + "Preview Image URL: " + image
                 }
                 if let scheme = information?.scheme, !scheme.isEmpty {
@@ -120,8 +121,9 @@ class ViewController: UIViewController {
         
         // TODO: AppLink request setting
         var request = AppLinkRequest(scheme: "{your scheme}", title: "Test Title", description: "Test description", url: "https://www.google.com/")
-        request.imageURL = "https://{your thumnail image url}.png"
+        request.imageURL = "https://{your thumbnail image url}.png"
         request.deeplinkAction = "{action without scheme}"
+        request.utm = AppLinkUTM(source: "{utm source}", medium: "{utm medium}", campaign: "{utm campaign}")
         AppLink.request(link: request) { [weak self] url, error in
             self?.isLoading = false
             if let u = url {
