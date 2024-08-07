@@ -116,6 +116,7 @@ class ViewController: UIViewController {
     // MARK: - actions
 
     @IBAction func onButton(generate sender: UIButton) {
+        textField.resignFirstResponder()
         guard !isLoading else { return }
         isLoading = true
         
