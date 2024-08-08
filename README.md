@@ -19,6 +19,7 @@ Provides the following features:
     * [Intent scheme](https://developer.chrome.com/docs/android/intents)
  * Link's preview webpage and OGTAG
  * Webpage for management
+
 Analysis functions will also be provided in the future.
 
 To use the above functions, you must obtain a subdomain and API key.
