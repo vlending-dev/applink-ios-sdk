@@ -16,6 +16,7 @@ import _StringProcessing
 import _SwiftConcurrencyShims
 import zlib
 @objc @_hasMissingDesignatedInitializers public class LinkError : Foundation.NSError {
+  public var message: Swift.String?
   @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
   public var error: any Swift.Error {
     get
@@ -23,7 +24,7 @@ import zlib
   @objc deinit
 }
 public struct AppLinkDataError : Swift.Codable {
-  public var code: AppLink.LinkErrorrType?
+  public var code: Swift.Int?
   public var message: Swift.String?
   public init(from decoder: any Swift.Decoder) throws
   public func encode(to encoder: any Swift.Encoder) throws
@@ -43,96 +44,6 @@ public struct AppLinkRequest : Swift.Codable {
 public let AppLink: AppLink.AppLinkSession
 public enum AppLinkInfo {
   public static let version: Swift.String
-}
-public enum HTTPStatusCode : Swift.Int {
-  public enum ResponseType {
-    case informational
-    case success
-    case redirection
-    case clientError
-    case serverError
-    case undefined
-    public static func == (a: AppLink.HTTPStatusCode.ResponseType, b: AppLink.HTTPStatusCode.ResponseType) -> Swift.Bool
-    public func hash(into hasher: inout Swift.Hasher)
-    public var hashValue: Swift.Int {
-      get
-    }
-  }
-  case `continue`
-  case switchingProtocols
-  case processing
-  case ok
-  case created
-  case accepted
-  case nonAuthoritativeInformation
-  case noContent
-  case resetContent
-  case partialContent
-  case multiStatus
-  case alreadyReported
-  case IMUsed
-  case multipleChoices
-  case movedPermanently
-  case found
-  case seeOther
-  case notModified
-  case useProxy
-  case switchProxy
-  case temporaryRedirect
-  case permenantRedirect
-  case badRequest
-  case unauthorized
-  case paymentRequired
-  case forbidden
-  case notFound
-  case methodNotAllowed
-  case notAcceptable
-  case proxyAuthenticationRequired
-  case requestTimeout
-  case conflict
-  case gone
-  case lengthRequired
-  case preconditionFailed
-  case payloadTooLarge
-  case URITooLong
-  case unsupportedMediaType
-  case rangeNotSatisfiable
-  case expectationFailed
-  case teapot
-  case misdirectedRequest
-  case unprocessableEntity
-  case locked
-  case failedDependency
-  case upgradeRequired
-  case preconditionRequired
-  case tooManyRequests
-  case requestHeaderFieldsTooLarge
-  case noResponse
-  case unavailableForLegalReasons
-  case SSLCertificateError
-  case SSLCertificateRequired
-  case HTTPRequestSentToHTTPSPort
-  case clientClosedRequest
-  case internalServerError
-  case notImplemented
-  case badGateway
-  case serviceUnavailable
-  case gatewayTimeout
-  case HTTPVersionNotSupported
-  case variantAlsoNegotiates
-  case insufficientStorage
-  case loopDetected
-  case notExtended
-  case networkAuthenticationRequired
-  public init?(rawValue: Swift.Int)
-  public typealias RawValue = Swift.Int
-  public var rawValue: Swift.Int {
-    get
-  }
-}
-public enum LinkErrorrType {
-  case httpStatus(AppLink.HTTPStatusCode)
-  case unknown(code: Swift.Int)
 }
 public enum AppLinkDataCodingError : Swift.Error {
   case decoding(Swift.String)
@@ -169,8 +80,3 @@ public struct AppLinkDataInfo : Swift.Codable {
   public func request(link request: AppLink.AppLinkRequest, completion: @escaping ((Foundation.URL?, AppLink.LinkError?) -> Swift.Void))
   @objc deinit
 }
-extension AppLink.HTTPStatusCode : Swift.Equatable {}
-extension AppLink.HTTPStatusCode : Swift.Hashable {}
-extension AppLink.HTTPStatusCode : Swift.RawRepresentable {}
-extension AppLink.HTTPStatusCode.ResponseType : Swift.Equatable {}
-extension AppLink.HTTPStatusCode.ResponseType : Swift.Hashable {}
