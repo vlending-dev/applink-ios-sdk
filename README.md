@@ -1,4 +1,4 @@
-# Vlending AppLink for iO
+# Vlending AppLink for iOS
 Distribute the SDK of the deep link service provided by Vlending.
 
 ## Requirements
