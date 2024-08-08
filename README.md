@@ -1,14 +1,14 @@
-# Vlending AppLink for iOS
+# Vlending AppLink for iO
 Distribute the SDK of the deep link service provided by Vlending.
 
 ## Requirements
----
+
  * iOS 13+
  * Xcode 15+
  * Swift 5.10+
 
 ## Features
----
+
 Provides the following features:
  * Shortened URL
  * Apple
@@ -25,7 +25,7 @@ To use the above functions, you must obtain a subdomain and API key.
 Learn more about the provided documentation, integrating the SDK into your app, and more at [here](https://www.notion.so/vlending/Vlending-AppLink-Docs-42018af2e9bf46a6af73e9bbf76c18c9)
 
 ## Installation
----
+
 ### CocoaPods
 
 ```ruby
@@ -46,10 +46,10 @@ dependencies: [
 ```
 
 ## License
----
+
 See the [LICENSE](https://github.com/vlending-dev/applink-ios-sdk/blob/master/LICENSE.txt) file.
 Copyright © Vlending Co., Ltd.
 
 ## Contact
----
+
 For usage and development inquiries, please contact [here](mailto:applink@vlending.co.kr).
