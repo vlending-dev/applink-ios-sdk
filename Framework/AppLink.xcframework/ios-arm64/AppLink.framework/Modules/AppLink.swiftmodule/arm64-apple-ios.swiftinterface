@@ -30,14 +30,10 @@ public struct AppLinkDataError : Swift.Codable {
   public func encode(to encoder: any Swift.Encoder) throws
 }
 public struct AppLinkRequest : Swift.Codable {
-  public var webURL: Swift.String?
   public var imageURL: Swift.String?
-  public var scheme: Swift.String?
   public var utm: AppLink.AppLinkUTM?
-  public var title: Swift.String?
-  public var description: Swift.String?
   public var deeplinkAction: Swift.String?
-  public init(scheme: Swift.String?, title: Swift.String?, description: Swift.String? = nil, url: Swift.String?)
+  public init(title: Swift.String, description: Swift.String? = nil, url: Swift.String?)
   public init(from decoder: any Swift.Decoder) throws
   public func encode(to encoder: any Swift.Encoder) throws
 }
