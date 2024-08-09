@@ -51,6 +51,11 @@ class ViewController: UIViewController {
         textView.tintColor = .black
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        userLogin()
+    }
+    
     func share(url: URL) {
         DispatchQueue.main.async { [weak self] in
             guard let self = self else { return }
@@ -111,6 +116,12 @@ class ViewController: UIViewController {
             self?.textView.text = infoText
             self?.isLoading = false
         }
+    }
+    
+    // MARK: - login
+    
+    func userLogin() {
+        AppLink.userId = UUID().uuidString
     }
     
     // MARK: - actions
