@@ -7343,7 +7343,7 @@
       "kind": "StringLiteral",
       "offset": 500,
       "length": 7,
-      "value": "\"0.5.2\""
+      "value": "\"0.5.3\""
     },
     {
       "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Embedded\/Alamofire\/Source\/Core\/Notifications.swift",
