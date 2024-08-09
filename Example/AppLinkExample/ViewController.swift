@@ -121,7 +121,7 @@ class ViewController: UIViewController {
         isLoading = true
         
         // TODO: AppLink request setting
-        var request = AppLinkRequest(scheme: "{your scheme}", title: "Test Title", description: "Test description", url: "https://www.google.com/")
+        var request = AppLinkRequest(title: "Test Title", description: "Test description", url: "https://www.google.com/")
         request.imageURL = "https://{your thumbnail image url}.png"
         request.deeplinkAction = "{action without scheme}"
         request.utm = AppLinkUTM(source: "{utm source}", medium: "{utm medium}", campaign: "{utm campaign}")
@@ -129,6 +129,7 @@ class ViewController: UIViewController {
             self?.isLoading = false
             if let u = url {
                 self?.share(url: u)
+                print("Generated shortened URL : \(u)")
             }
             guard let error = error else {
                 return

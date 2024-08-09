@@ -39,10 +39,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
         if AppLink.isAppLink(url) {
             AppLink.parse(url: url) { linkInfo, key, queries, error in
-                if let info = linkInfo {
-                    print("AppLink \(key) :: \(String(describing: info.title))")
-                } else {
+                guard let info = linkInfo else {
                     print("AppLink parse error :: \(String(describing: error))")
+                    return
+                }
+                print("AppLink \(key) :: \(String(describing: info.title))")
+                
+                // Actions are executed according to the received deep link information.
+                if let scheme = info.scheme, let action = info.deeplinkAction, let url = URL(string: scheme + "://" + action) {
+                    UIApplication.shared.open(url, options: [:], completionHandler: nil)
                 }
             }
             return true
@@ -53,10 +58,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, continue userActivity: NSUserActivity, restorationHandler: @escaping ([any UIUserActivityRestoring]?) -> Void) -> Bool {
         if let url = userActivity.webpageURL, AppLink.isAppLink(url) {
             AppLink.parse(url: url) { linkInfo, key, queries, error in
-                if let info = linkInfo {
-                    print("AppLink \(key) :: \(String(describing: info.title))")
-                } else {
+                guard let info = linkInfo else {
                     print("AppLink parse error :: \(String(describing: error))")
+                    return
+                }
+                print("AppLink \(key) :: \(String(describing: info.title))")
+                
+                // Actions are executed according to the received deep link information.
+                if let scheme = info.scheme, let action = info.deeplinkAction, let url = URL(string: scheme + "://" + action) {
+                    UIApplication.shared.open(url, options: [:], completionHandler: nil)
                 }
             }
             return true
