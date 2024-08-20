@@ -153,7 +153,8 @@
             "declAttributes": [
               "HasInitialValue",
               "HasStorage",
-              "AccessControl"
+              "AccessControl",
+              "RawDocComment"
             ],
             "hasStorage": true,
             "accessors": [
@@ -1033,7 +1034,8 @@
             "declAttributes": [
               "HasInitialValue",
               "HasStorage",
-              "AccessControl"
+              "AccessControl",
+              "RawDocComment"
             ],
             "hasStorage": true,
             "accessors": [
@@ -1143,7 +1145,8 @@
             "declAttributes": [
               "HasInitialValue",
               "HasStorage",
-              "AccessControl"
+              "AccessControl",
+              "RawDocComment"
             ],
             "hasStorage": true,
             "accessors": [
@@ -1253,7 +1256,8 @@
             "declAttributes": [
               "HasInitialValue",
               "HasStorage",
-              "AccessControl"
+              "AccessControl",
+              "RawDocComment"
             ],
             "hasStorage": true,
             "accessors": [
@@ -1388,7 +1392,8 @@
             "mangledName": "$s7AppLink0aB7RequestV5title11description3urlACSS_SSSgAGtcfc",
             "moduleName": "AppLink",
             "declAttributes": [
-              "AccessControl"
+              "AccessControl",
+              "RawDocComment"
             ],
             "init_kind": "Designated"
           },
@@ -2320,7 +2325,8 @@
             "declAttributes": [
               "HasInitialValue",
               "HasStorage",
-              "AccessControl"
+              "AccessControl",
+              "RawDocComment"
             ],
             "hasStorage": true,
             "accessors": [
@@ -2430,7 +2436,8 @@
             "declAttributes": [
               "HasInitialValue",
               "HasStorage",
-              "AccessControl"
+              "AccessControl",
+              "RawDocComment"
             ],
             "hasStorage": true,
             "accessors": [
@@ -2540,7 +2547,8 @@
             "declAttributes": [
               "HasInitialValue",
               "HasStorage",
-              "AccessControl"
+              "AccessControl",
+              "RawDocComment"
             ],
             "hasStorage": true,
             "accessors": [
@@ -2650,7 +2658,8 @@
             "declAttributes": [
               "HasInitialValue",
               "HasStorage",
-              "AccessControl"
+              "AccessControl",
+              "RawDocComment"
             ],
             "hasStorage": true,
             "accessors": [
@@ -2760,7 +2769,8 @@
             "declAttributes": [
               "HasInitialValue",
               "HasStorage",
-              "AccessControl"
+              "AccessControl",
+              "RawDocComment"
             ],
             "hasStorage": true,
             "accessors": [
@@ -2870,7 +2880,8 @@
             "declAttributes": [
               "HasInitialValue",
               "HasStorage",
-              "AccessControl"
+              "AccessControl",
+              "RawDocComment"
             ],
             "hasStorage": true,
             "accessors": [
@@ -2980,7 +2991,8 @@
             "declAttributes": [
               "HasInitialValue",
               "HasStorage",
-              "AccessControl"
+              "AccessControl",
+              "RawDocComment"
             ],
             "hasStorage": true,
             "accessors": [
@@ -6697,7 +6709,7 @@
     {
       "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkError.swift",
       "kind": "IntegerLiteral",
-      "offset": 276,
+      "offset": 433,
       "length": 2,
       "value": "-1"
     },
@@ -6711,28 +6723,28 @@
     {
       "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkError.swift",
       "kind": "StringLiteral",
-      "offset": 1170,
+      "offset": 1327,
       "length": 6,
       "value": "\"data\""
     },
     {
       "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkError.swift",
       "kind": "StringLiteral",
-      "offset": 1200,
+      "offset": 1357,
       "length": 5,
       "value": "\"msg\""
     },
     {
       "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkError.swift",
       "kind": "StringLiteral",
-      "offset": 1170,
+      "offset": 1327,
       "length": 6,
       "value": "\"data\""
     },
     {
       "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkError.swift",
       "kind": "StringLiteral",
-      "offset": 1200,
+      "offset": 1357,
       "length": 5,
       "value": "\"msg\""
     },
@@ -7292,42 +7304,42 @@
     {
       "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/AppLinkRequest.swift",
       "kind": "StringLiteral",
-      "offset": 571,
+      "offset": 1128,
       "length": 9,
       "value": "\"web_url\""
     },
     {
       "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/AppLinkRequest.swift",
       "kind": "StringLiteral",
-      "offset": 605,
+      "offset": 1162,
       "length": 11,
       "value": "\"image_url\""
     },
     {
       "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/AppLinkRequest.swift",
       "kind": "StringLiteral",
-      "offset": 647,
+      "offset": 1204,
       "length": 8,
       "value": "\"action\""
     },
     {
       "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/AppLinkRequest.swift",
       "kind": "StringLiteral",
-      "offset": 571,
+      "offset": 1128,
       "length": 9,
       "value": "\"web_url\""
     },
     {
       "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/AppLinkRequest.swift",
       "kind": "StringLiteral",
-      "offset": 605,
+      "offset": 1162,
       "length": 11,
       "value": "\"image_url\""
     },
     {
       "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/AppLinkRequest.swift",
       "kind": "StringLiteral",
-      "offset": 647,
+      "offset": 1204,
       "length": 8,
       "value": "\"action\""
     },
@@ -7343,7 +7355,7 @@
       "kind": "StringLiteral",
       "offset": 500,
       "length": 7,
-      "value": "\"0.5.3\""
+      "value": "\"0.5.4\""
     },
     {
       "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Embedded\/Alamofire\/Source\/Core\/Notifications.swift",
@@ -9042,56 +9054,56 @@
     {
       "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/AppLinkDataInfo.swift",
       "kind": "StringLiteral",
-      "offset": 2785,
+      "offset": 3441,
       "length": 13,
       "value": "\"description\""
     },
     {
       "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/AppLinkDataInfo.swift",
       "kind": "StringLiteral",
-      "offset": 2824,
+      "offset": 3480,
       "length": 11,
       "value": "\"image_url\""
     },
     {
       "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/AppLinkDataInfo.swift",
       "kind": "StringLiteral",
-      "offset": 2858,
+      "offset": 3514,
       "length": 9,
       "value": "\"web_url\""
     },
     {
       "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/AppLinkDataInfo.swift",
       "kind": "StringLiteral",
-      "offset": 2898,
+      "offset": 3554,
       "length": 8,
       "value": "\"action\""
     },
     {
       "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/AppLinkDataInfo.swift",
       "kind": "StringLiteral",
-      "offset": 2785,
+      "offset": 3441,
       "length": 13,
       "value": "\"description\""
     },
     {
       "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/AppLinkDataInfo.swift",
       "kind": "StringLiteral",
-      "offset": 2824,
+      "offset": 3480,
       "length": 11,
       "value": "\"image_url\""
     },
     {
       "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/AppLinkDataInfo.swift",
       "kind": "StringLiteral",
-      "offset": 2858,
+      "offset": 3514,
       "length": 9,
       "value": "\"web_url\""
     },
     {
       "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/AppLinkDataInfo.swift",
       "kind": "StringLiteral",
-      "offset": 2898,
+      "offset": 3554,
       "length": 8,
       "value": "\"action\""
     },

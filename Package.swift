@@ -17,6 +17,8 @@ let package = Package(
     targets: [
         .binaryTarget(
             name: "applink-ios-sdk",
-            path: "Framework/AppLink.xcframework"),
+            path: "Framework/AppLink.xcframework",
+            resources: [.copy("Resources/PrivacyInfo.xcprivacy")]),
+        
     ]
 )
