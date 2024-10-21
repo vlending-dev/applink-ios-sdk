@@ -83,8 +83,6 @@
 			dependencies = (
 			);
 			name = AppLinkExample;
-			packageProductDependencies = (
-			);
 			productName = AppLinkExample;
 			productReference = B5DCD1232C5B81CF00CA5688 /* AppLinkExample.app */;
 			productType = "com.apple.product-type.application";
@@ -113,8 +111,6 @@
 				Base,
 			);
 			mainGroup = B5DCD11A2C5B81CF00CA5688;
-			packageReferences = (
-			);
 			productRefGroup = B5DCD1242C5B81CF00CA5688 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
