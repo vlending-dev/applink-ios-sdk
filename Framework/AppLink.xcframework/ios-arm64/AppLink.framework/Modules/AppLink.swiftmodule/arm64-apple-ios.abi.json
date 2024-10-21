@@ -866,10 +866,7 @@
         "name": "Security",
         "printedName": "Security",
         "declKind": "Import",
-        "moduleName": "AppLink",
-        "declAttributes": [
-          "Preconcurrency"
-        ]
+        "moduleName": "AppLink"
       },
       {
         "kind": "Import",
@@ -889,16 +886,6 @@
         "moduleName": "AppLink",
         "declAttributes": [
           "RawDocComment"
-        ]
-      },
-      {
-        "kind": "Import",
-        "name": "Security",
-        "printedName": "Security",
-        "declKind": "Import",
-        "moduleName": "AppLink",
-        "declAttributes": [
-          "Preconcurrency"
         ]
       },
       {
@@ -6633,70 +6620,70 @@
     {
       "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Embedded\/Alamofire\/Source\/Features\/AuthenticationInterceptor.swift",
       "kind": "FloatLiteral",
-      "offset": 11815,
+      "offset": 11759,
       "length": 4,
       "value": "30.0"
     },
     {
       "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Embedded\/Alamofire\/Source\/Features\/AuthenticationInterceptor.swift",
       "kind": "IntegerLiteral",
-      "offset": 11844,
+      "offset": 11788,
       "length": 1,
       "value": "5"
     },
     {
       "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Embedded\/Alamofire\/Source\/Features\/AuthenticationInterceptor.swift",
       "kind": "BooleanLiteral",
-      "offset": 12374,
+      "offset": 12304,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Embedded\/Alamofire\/Source\/Features\/AuthenticationInterceptor.swift",
       "kind": "Array",
-      "offset": 12428,
+      "offset": 12358,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Embedded\/Alamofire\/Source\/Features\/AuthenticationInterceptor.swift",
       "kind": "Array",
-      "offset": 12522,
+      "offset": 12452,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Embedded\/Alamofire\/Source\/Features\/AuthenticationInterceptor.swift",
       "kind": "Array",
-      "offset": 12590,
+      "offset": 12510,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Embedded\/Alamofire\/Source\/Features\/AuthenticationInterceptor.swift",
       "kind": "StringLiteral",
-      "offset": 12891,
+      "offset": 12811,
       "length": 40,
       "value": "\"org.alamofire.authentication.inspector\""
     },
     {
       "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Embedded\/Alamofire\/Source\/Core\/WebSocketRequest.swift",
       "kind": "IntegerLiteral",
-      "offset": 4436,
+      "offset": 4365,
       "length": 9,
       "value": "1048576"
     },
     {
       "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Embedded\/Alamofire\/Source\/Core\/WebSocketRequest.swift",
       "kind": "Array",
-      "offset": 5335,
+      "offset": 5226,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Embedded\/Alamofire\/Source\/Core\/WebSocketRequest.swift",
       "kind": "Array",
-      "offset": 5430,
+      "offset": 5321,
       "length": 2,
       "value": "[]"
     },
@@ -6815,154 +6802,154 @@
     {
       "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Embedded\/Alamofire\/Source\/Features\/Concurrency.swift",
       "kind": "BooleanLiteral",
-      "offset": 10710,
+      "offset": 10692,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Embedded\/Alamofire\/Source\/Features\/Concurrency.swift",
       "kind": "BooleanLiteral",
-      "offset": 12760,
+      "offset": 12738,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Embedded\/Alamofire\/Source\/Features\/Concurrency.swift",
       "kind": "BooleanLiteral",
-      "offset": 15144,
+      "offset": 15114,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Embedded\/Alamofire\/Source\/Features\/Concurrency.swift",
       "kind": "BooleanLiteral",
-      "offset": 16885,
+      "offset": 16851,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Embedded\/Alamofire\/Source\/Features\/Concurrency.swift",
       "kind": "BooleanLiteral",
-      "offset": 18080,
+      "offset": 18046,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Embedded\/Alamofire\/Source\/Features\/Concurrency.swift",
       "kind": "BooleanLiteral",
-      "offset": 21796,
+      "offset": 21724,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Embedded\/Alamofire\/Source\/Features\/Concurrency.swift",
       "kind": "BooleanLiteral",
-      "offset": 23974,
+      "offset": 23898,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Embedded\/Alamofire\/Source\/Features\/Concurrency.swift",
       "kind": "BooleanLiteral",
-      "offset": 25638,
+      "offset": 25554,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Embedded\/Alamofire\/Source\/Features\/Concurrency.swift",
       "kind": "BooleanLiteral",
-      "offset": 27139,
+      "offset": 27055,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Embedded\/Alamofire\/Source\/Features\/Concurrency.swift",
       "kind": "BooleanLiteral",
-      "offset": 28896,
+      "offset": 28808,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Embedded\/Alamofire\/Source\/Features\/Concurrency.swift",
       "kind": "BooleanLiteral",
-      "offset": 30135,
+      "offset": 30047,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Embedded\/Alamofire\/Source\/Features\/Concurrency.swift",
       "kind": "BooleanLiteral",
-      "offset": 32181,
+      "offset": 32063,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Embedded\/Alamofire\/Source\/Features\/Concurrency.swift",
       "kind": "BooleanLiteral",
-      "offset": 33091,
+      "offset": 32973,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Embedded\/Alamofire\/Source\/Features\/Concurrency.swift",
       "kind": "BooleanLiteral",
-      "offset": 34211,
+      "offset": 34093,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Embedded\/Alamofire\/Source\/Features\/Concurrency.swift",
       "kind": "BooleanLiteral",
-      "offset": 35482,
+      "offset": 35353,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Embedded\/Alamofire\/Source\/Features\/Concurrency.swift",
       "kind": "BooleanLiteral",
-      "offset": 36154,
+      "offset": 36025,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Embedded\/Alamofire\/Source\/Features\/Concurrency.swift",
       "kind": "BooleanLiteral",
-      "offset": 41166,
+      "offset": 41007,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Embedded\/Alamofire\/Source\/Features\/Concurrency.swift",
       "kind": "BooleanLiteral",
-      "offset": 41749,
+      "offset": 41590,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Embedded\/Alamofire\/Source\/Features\/Concurrency.swift",
       "kind": "BooleanLiteral",
-      "offset": 42393,
+      "offset": 42223,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Embedded\/Alamofire\/Source\/Features\/Concurrency.swift",
       "kind": "BooleanLiteral",
-      "offset": 43215,
+      "offset": 43022,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Embedded\/Alamofire\/Source\/Features\/Concurrency.swift",
       "kind": "StringLiteral",
-      "offset": 46145,
+      "offset": 45918,
       "length": 43,
       "value": "\"org.alamofire.concurrencySingleEventQueue\""
     },
     {
       "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Embedded\/Alamofire\/Source\/Core\/ParameterEncoding.swift",
       "kind": "Array",
-      "offset": 11482,
+      "offset": 11472,
       "length": 2,
       "value": "[]"
     },
@@ -6990,266 +6977,280 @@
     {
       "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Embedded\/Alamofire\/Source\/Features\/RequestCompression.swift",
       "kind": "BooleanLiteral",
-      "offset": 3624,
+      "offset": 3568,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Embedded\/Alamofire\/Source\/Features\/RequestCompression.swift",
       "kind": "BooleanLiteral",
-      "offset": 6558,
+      "offset": 6488,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Embedded\/Alamofire\/Source\/Features\/RetryPolicy.swift",
       "kind": "IntegerLiteral",
-      "offset": 1545,
+      "offset": 1524,
       "length": 1,
       "value": "2"
     },
     {
       "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Embedded\/Alamofire\/Source\/Features\/RetryPolicy.swift",
       "kind": "IntegerLiteral",
-      "offset": 1691,
+      "offset": 1670,
       "length": 1,
       "value": "2"
     },
     {
       "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Embedded\/Alamofire\/Source\/Features\/RetryPolicy.swift",
       "kind": "FloatLiteral",
-      "offset": 1816,
+      "offset": 1795,
       "length": 3,
       "value": "0.5"
     },
     {
       "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Embedded\/Alamofire\/Source\/Features\/RetryPolicy.swift",
       "kind": "Array",
-      "offset": 3258,
+      "offset": 3237,
       "length": 744,
       "value": "[408, 500, 502, 503, 504]"
     },
     {
       "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Embedded\/Alamofire\/Source\/Features\/ServerTrustEvaluation.swift",
       "kind": "BooleanLiteral",
-      "offset": 2514,
+      "offset": 2426,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Embedded\/Alamofire\/Source\/Features\/ServerTrustEvaluation.swift",
       "kind": "BooleanLiteral",
-      "offset": 5067,
+      "offset": 4959,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Embedded\/Alamofire\/Source\/Features\/ServerTrustEvaluation.swift",
       "kind": "BooleanLiteral",
-      "offset": 9033,
+      "offset": 8915,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Embedded\/Alamofire\/Source\/Features\/ServerTrustEvaluation.swift",
       "kind": "BooleanLiteral",
-      "offset": 9060,
+      "offset": 8942,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Embedded\/Alamofire\/Source\/Features\/ServerTrustEvaluation.swift",
       "kind": "BooleanLiteral",
-      "offset": 11346,
+      "offset": 11734,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Embedded\/Alamofire\/Source\/Features\/ServerTrustEvaluation.swift",
       "kind": "BooleanLiteral",
-      "offset": 11415,
+      "offset": 11803,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Embedded\/Alamofire\/Source\/Features\/ServerTrustEvaluation.swift",
       "kind": "BooleanLiteral",
-      "offset": 13738,
+      "offset": 14126,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Embedded\/Alamofire\/Source\/Features\/ServerTrustEvaluation.swift",
       "kind": "BooleanLiteral",
-      "offset": 13794,
+      "offset": 14182,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Embedded\/Alamofire\/Source\/Features\/ServerTrustEvaluation.swift",
       "kind": "BooleanLiteral",
-      "offset": 13837,
+      "offset": 14225,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Embedded\/Alamofire\/Source\/Features\/ServerTrustEvaluation.swift",
       "kind": "BooleanLiteral",
-      "offset": 16934,
+      "offset": 17322,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Embedded\/Alamofire\/Source\/Features\/ServerTrustEvaluation.swift",
       "kind": "BooleanLiteral",
-      "offset": 17016,
+      "offset": 17404,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Embedded\/Alamofire\/Source\/Features\/ServerTrustEvaluation.swift",
       "kind": "BooleanLiteral",
-      "offset": 17085,
+      "offset": 17473,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Embedded\/Alamofire\/Source\/Features\/ServerTrustEvaluation.swift",
       "kind": "BooleanLiteral",
-      "offset": 19216,
+      "offset": 19604,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Embedded\/Alamofire\/Source\/Features\/ServerTrustEvaluation.swift",
       "kind": "BooleanLiteral",
-      "offset": 19259,
+      "offset": 19647,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Embedded\/Alamofire\/Source\/Features\/ServerTrustEvaluation.swift",
       "kind": "BooleanLiteral",
-      "offset": 21912,
+      "offset": 22300,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Embedded\/Alamofire\/Source\/Features\/ServerTrustEvaluation.swift",
       "kind": "BooleanLiteral",
-      "offset": 21973,
+      "offset": 22361,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Embedded\/Alamofire\/Source\/Features\/ServerTrustEvaluation.swift",
       "kind": "BooleanLiteral",
-      "offset": 33895,
+      "offset": 35529,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Embedded\/Alamofire\/Source\/Core\/DataStreamRequest.swift",
       "kind": "Array",
-      "offset": 4348,
+      "offset": 4177,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Embedded\/Alamofire\/Source\/Core\/DataStreamRequest.swift",
       "kind": "IntegerLiteral",
-      "offset": 4527,
+      "offset": 4356,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Embedded\/Alamofire\/Source\/Core\/DataStreamRequest.swift",
       "kind": "Array",
-      "offset": 4665,
+      "offset": 4484,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Embedded\/Alamofire\/Source\/Core\/DataStreamRequest.swift",
       "kind": "IntegerLiteral",
-      "offset": 11079,
+      "offset": 10855,
       "length": 4,
       "value": "1024"
     },
     {
       "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Embedded\/Alamofire\/Source\/Features\/NetworkReachabilityManager.swift",
       "kind": "StringLiteral",
-      "offset": 4076,
+      "offset": 4025,
       "length": 33,
       "value": "\"org.alamofire.reachabilityQueue\""
     },
     {
       "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Embedded\/Alamofire\/Source\/Core\/Session.swift",
       "kind": "Array",
-      "offset": 4521,
+      "offset": 4415,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Embedded\/Alamofire\/Source\/Core\/Session.swift",
       "kind": "Dictionary",
-      "offset": 4643,
+      "offset": 4537,
       "length": 3,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Embedded\/Alamofire\/Source\/Core\/Session.swift",
       "kind": "BooleanLiteral",
-      "offset": 7572,
+      "offset": 7581,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Embedded\/Alamofire\/Source\/Core\/Session.swift",
+      "kind": "Array",
+      "offset": 7990,
+      "length": 2,
+      "value": "[]"
+    },
+    {
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Embedded\/Alamofire\/Source\/Core\/Session.swift",
       "kind": "StringLiteral",
-      "offset": 12483,
+      "offset": 12584,
       "length": 33,
       "value": "\"org.alamofire.session.rootQueue\""
     },
     {
       "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Embedded\/Alamofire\/Source\/Core\/Session.swift",
       "kind": "BooleanLiteral",
-      "offset": 12580,
+      "offset": 12681,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Embedded\/Alamofire\/Source\/Core\/Session.swift",
+      "kind": "Array",
+      "offset": 13174,
+      "length": 2,
+      "value": "[]"
+    },
+    {
+      "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Embedded\/Alamofire\/Source\/Core\/Session.swift",
       "kind": "BooleanLiteral",
-      "offset": 24948,
+      "offset": 24757,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Embedded\/Alamofire\/Source\/Core\/Session.swift",
       "kind": "BooleanLiteral",
-      "offset": 27212,
+      "offset": 26989,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Embedded\/Alamofire\/Source\/Core\/Session.swift",
       "kind": "BooleanLiteral",
-      "offset": 28935,
+      "offset": 28702,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Embedded\/Alamofire\/Source\/Core\/Session.swift",
       "kind": "BooleanLiteral",
-      "offset": 68980,
+      "offset": 68418,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Embedded\/Alamofire\/Source\/Features\/EventMonitor.swift",
       "kind": "StringLiteral",
-      "offset": 18369,
+      "offset": 18275,
       "length": 37,
       "value": "\"org.alamofire.compositeEventMonitor\""
     },
@@ -7263,245 +7264,245 @@
     {
       "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Embedded\/Alamofire\/Source\/Core\/HTTPHeaders.swift",
       "kind": "Array",
-      "offset": 12227,
+      "offset": 12245,
       "length": 25,
       "value": "[\"br\", \"gzip\", \"deflate\"]"
     },
     {
       "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Embedded\/Alamofire\/Source\/Core\/HTTPHeaders.swift",
       "kind": "Array",
-      "offset": 12282,
+      "offset": 12312,
       "length": 19,
       "value": "[\"gzip\", \"deflate\"]"
     },
     {
       "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Embedded\/Alamofire\/Source\/Core\/HTTPHeaders.swift",
       "kind": "IntegerLiteral",
-      "offset": 12739,
+      "offset": 12769,
       "length": 1,
       "value": "6"
     },
     {
       "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Embedded\/Alamofire\/Source\/Core\/HTTPHeaders.swift",
       "kind": "StringLiteral",
-      "offset": 13162,
+      "offset": 13192,
       "length": 20,
       "value": "\"CFBundleExecutable\""
     },
     {
       "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Embedded\/Alamofire\/Source\/Core\/HTTPHeaders.swift",
       "kind": "StringLiteral",
-      "offset": 13270,
+      "offset": 13300,
       "length": 3,
       "value": "\"\/\""
     },
     {
       "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Embedded\/Alamofire\/Source\/Core\/HTTPHeaders.swift",
       "kind": "StringLiteral",
-      "offset": 13313,
+      "offset": 13343,
       "length": 9,
       "value": "\"Unknown\""
     },
     {
       "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Embedded\/Alamofire\/Source\/Core\/HTTPHeaders.swift",
       "kind": "StringLiteral",
-      "offset": 13350,
+      "offset": 13380,
       "length": 20,
       "value": "\"CFBundleIdentifier\""
     },
     {
       "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Embedded\/Alamofire\/Source\/Core\/HTTPHeaders.swift",
       "kind": "StringLiteral",
-      "offset": 13386,
+      "offset": 13416,
       "length": 9,
       "value": "\"Unknown\""
     },
     {
       "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Embedded\/Alamofire\/Source\/Core\/HTTPHeaders.swift",
       "kind": "StringLiteral",
-      "offset": 13427,
+      "offset": 13457,
       "length": 28,
       "value": "\"CFBundleShortVersionString\""
     },
     {
       "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Embedded\/Alamofire\/Source\/Core\/HTTPHeaders.swift",
       "kind": "StringLiteral",
-      "offset": 13471,
+      "offset": 13501,
       "length": 9,
       "value": "\"Unknown\""
     },
     {
       "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Embedded\/Alamofire\/Source\/Core\/HTTPHeaders.swift",
       "kind": "StringLiteral",
-      "offset": 13510,
+      "offset": 13540,
       "length": 17,
       "value": "\"CFBundleVersion\""
     },
     {
       "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Embedded\/Alamofire\/Source\/Core\/HTTPHeaders.swift",
       "kind": "StringLiteral",
-      "offset": 13543,
+      "offset": 13573,
       "length": 9,
       "value": "\"Unknown\""
     },
     {
       "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Embedded\/Alamofire\/Source\/Core\/HTTPHeaders.swift",
       "kind": "StringLiteral",
-      "offset": 13697,
+      "offset": 13727,
       "length": 73,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Embedded\/Alamofire\/Source\/Core\/HTTPHeaders.swift",
       "kind": "StringLiteral",
-      "offset": 13721,
+      "offset": 13751,
       "length": 1,
       "value": "\".\""
     },
     {
       "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Embedded\/Alamofire\/Source\/Core\/HTTPHeaders.swift",
       "kind": "StringLiteral",
-      "offset": 13745,
+      "offset": 13775,
       "length": 1,
       "value": "\".\""
     },
     {
       "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Embedded\/Alamofire\/Source\/Core\/HTTPHeaders.swift",
       "kind": "StringLiteral",
-      "offset": 13769,
+      "offset": 13799,
       "length": 1,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Embedded\/Alamofire\/Source\/Core\/HTTPHeaders.swift",
       "kind": "StringLiteral",
-      "offset": 13971,
+      "offset": 14001,
       "length": 5,
       "value": "\"iOS\""
     },
     {
       "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Embedded\/Alamofire\/Source\/Core\/HTTPHeaders.swift",
       "kind": "StringLiteral",
-      "offset": 14740,
+      "offset": 14770,
       "length": 28,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Embedded\/Alamofire\/Source\/Core\/HTTPHeaders.swift",
       "kind": "StringLiteral",
-      "offset": 14750,
+      "offset": 14780,
       "length": 1,
       "value": "\" \""
     },
     {
       "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Embedded\/Alamofire\/Source\/Core\/HTTPHeaders.swift",
       "kind": "StringLiteral",
-      "offset": 14767,
+      "offset": 14797,
       "length": 1,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Embedded\/Alamofire\/Source\/Core\/HTTPHeaders.swift",
       "kind": "StringLiteral",
-      "offset": 14813,
+      "offset": 14843,
       "length": 29,
       "value": "\"Alamofire\/\""
     },
     {
       "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Embedded\/Alamofire\/Source\/Core\/HTTPHeaders.swift",
       "kind": "StringLiteral",
-      "offset": 14841,
+      "offset": 14871,
       "length": 1,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Embedded\/Alamofire\/Source\/Core\/HTTPHeaders.swift",
       "kind": "StringLiteral",
-      "offset": 14868,
+      "offset": 14898,
       "length": 98,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Embedded\/Alamofire\/Source\/Core\/HTTPHeaders.swift",
       "kind": "StringLiteral",
-      "offset": 14882,
+      "offset": 14912,
       "length": 1,
       "value": "\"\/\""
     },
     {
       "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Embedded\/Alamofire\/Source\/Core\/HTTPHeaders.swift",
       "kind": "StringLiteral",
-      "offset": 14896,
+      "offset": 14926,
       "length": 1,
       "value": "\" (\""
     },
     {
       "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Embedded\/Alamofire\/Source\/Core\/HTTPHeaders.swift",
       "kind": "StringLiteral",
-      "offset": 14907,
+      "offset": 14937,
       "length": 1,
       "value": "\"; build:\""
     },
     {
       "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Embedded\/Alamofire\/Source\/Core\/HTTPHeaders.swift",
       "kind": "StringLiteral",
-      "offset": 14926,
+      "offset": 14956,
       "length": 1,
       "value": "\"; \""
     },
     {
       "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Embedded\/Alamofire\/Source\/Core\/HTTPHeaders.swift",
       "kind": "StringLiteral",
-      "offset": 14944,
+      "offset": 14974,
       "length": 1,
       "value": "\") \""
     },
     {
       "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Embedded\/Alamofire\/Source\/Core\/HTTPHeaders.swift",
       "kind": "StringLiteral",
-      "offset": 14965,
+      "offset": 14995,
       "length": 1,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Embedded\/Alamofire\/Source\/Features\/RequestInterceptor.swift",
       "kind": "Array",
-      "offset": 10132,
+      "offset": 9346,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Embedded\/Alamofire\/Source\/Features\/RequestInterceptor.swift",
       "kind": "Array",
-      "offset": 10185,
+      "offset": 9379,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Embedded\/Alamofire\/Source\/Features\/RequestInterceptor.swift",
       "kind": "Array",
-      "offset": 10246,
+      "offset": 9420,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Embedded\/Alamofire\/Source\/Features\/RequestInterceptor.swift",
       "kind": "Array",
-      "offset": 15367,
+      "offset": 14259,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Embedded\/Alamofire\/Source\/Features\/RequestInterceptor.swift",
       "kind": "Array",
-      "offset": 15439,
+      "offset": 14327,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Embedded\/Alamofire\/Source\/Features\/RequestInterceptor.swift",
       "kind": "Array",
-      "offset": 15519,
+      "offset": 14403,
       "length": 2,
       "value": "[]"
     },
@@ -7531,7 +7532,7 @@
       "kind": "StringLiteral",
       "offset": 498,
       "length": 7,
-      "value": "\"0.5.7\""
+      "value": "\"0.5.8\""
     },
     {
       "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Embedded\/Alamofire\/Source\/Core\/Notifications.swift",
@@ -7606,380 +7607,380 @@
     {
       "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Embedded\/Alamofire\/Source\/Features\/MultipartFormData.swift",
       "kind": "BooleanLiteral",
-      "offset": 3470,
+      "offset": 3534,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Embedded\/Alamofire\/Source\/Features\/MultipartFormData.swift",
       "kind": "BooleanLiteral",
-      "offset": 3507,
+      "offset": 3571,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Embedded\/Alamofire\/Source\/Features\/MultipartFormData.swift",
       "kind": "IntegerLiteral",
-      "offset": 3910,
+      "offset": 3974,
       "length": 10,
       "value": "10000000"
     },
     {
       "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Embedded\/Alamofire\/Source\/Features\/MultipartFormData.swift",
       "kind": "StringLiteral",
-      "offset": 4065,
+      "offset": 4129,
       "length": 48,
       "value": "\"multipart\/form-data; boundary=\""
     },
     {
       "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Embedded\/Alamofire\/Source\/Features\/MultipartFormData.swift",
       "kind": "StringLiteral",
-      "offset": 4112,
+      "offset": 4176,
       "length": 1,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Embedded\/Alamofire\/Source\/Core\/Response.swift",
       "kind": "Array",
-      "offset": 20293,
+      "offset": 20067,
       "length": 23,
       "value": "[\"json\", \"xml\", \"text\"]"
     },
     {
       "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Embedded\/Alamofire\/Source\/Core\/Response.swift",
       "kind": "IntegerLiteral",
-      "offset": 20367,
+      "offset": 20141,
       "length": 7,
       "value": "100000"
     },
     {
       "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Embedded\/Alamofire\/Source\/Core\/Response.swift",
       "kind": "IntegerLiteral",
-      "offset": 20946,
+      "offset": 20720,
       "length": 1,
       "value": "4"
     },
     {
       "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Embedded\/Alamofire\/Source\/Core\/Request.swift",
       "kind": "Array",
-      "offset": 5331,
+      "offset": 5275,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Embedded\/Alamofire\/Source\/Core\/Request.swift",
       "kind": "Array",
-      "offset": 5510,
+      "offset": 5444,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Embedded\/Alamofire\/Source\/Core\/Request.swift",
       "kind": "BooleanLiteral",
-      "offset": 5628,
+      "offset": 5562,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Embedded\/Alamofire\/Source\/Core\/Request.swift",
       "kind": "Array",
-      "offset": 5853,
+      "offset": 5787,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Embedded\/Alamofire\/Source\/Core\/Request.swift",
       "kind": "Array",
-      "offset": 5977,
+      "offset": 5911,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Embedded\/Alamofire\/Source\/Core\/Request.swift",
       "kind": "Array",
-      "offset": 6187,
+      "offset": 6121,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Embedded\/Alamofire\/Source\/Core\/Request.swift",
       "kind": "IntegerLiteral",
-      "offset": 6288,
+      "offset": 6222,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Embedded\/Alamofire\/Source\/Core\/Request.swift",
       "kind": "BooleanLiteral",
-      "offset": 6645,
+      "offset": 6579,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Embedded\/Alamofire\/Source\/Core\/Request.swift",
       "kind": "Array",
-      "offset": 6778,
+      "offset": 6712,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Embedded\/Alamofire\/Source\/Core\/Request.swift",
       "kind": "IntegerLiteral",
-      "offset": 7854,
+      "offset": 7766,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Embedded\/Alamofire\/Source\/Core\/Request.swift",
       "kind": "IntegerLiteral",
-      "offset": 8008,
+      "offset": 7920,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Embedded\/Alamofire\/Source\/Core\/Request.swift",
       "kind": "Array",
-      "offset": 9563,
+      "offset": 9463,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Embedded\/Alamofire\/Source\/Core\/Request.swift",
       "kind": "StringLiteral",
-      "offset": 39993,
+      "offset": 39554,
       "length": 37,
       "value": "\"$ curl command could not be created\""
     },
     {
       "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Embedded\/Alamofire\/Source\/Core\/Request.swift",
       "kind": "Array",
-      "offset": 40059,
+      "offset": 39620,
       "length": 13,
       "value": "[\"$ curl -v\"]"
     },
     {
       "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Embedded\/Alamofire\/Source\/Core\/Request.swift",
       "kind": "StringLiteral",
-      "offset": 40100,
+      "offset": 39661,
       "length": 14,
       "value": "\"-X \""
     },
     {
       "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Embedded\/Alamofire\/Source\/Core\/Request.swift",
       "kind": "StringLiteral",
-      "offset": 40113,
+      "offset": 39674,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Embedded\/Alamofire\/Source\/Core\/Request.swift",
       "kind": "IntegerLiteral",
-      "offset": 40342,
+      "offset": 39903,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Embedded\/Alamofire\/Source\/Core\/Request.swift",
       "kind": "StringLiteral",
-      "offset": 40886,
+      "offset": 40447,
       "length": 24,
       "value": "\"-u \""
     },
     {
       "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Embedded\/Alamofire\/Source\/Core\/Request.swift",
       "kind": "StringLiteral",
-      "offset": 40897,
+      "offset": 40458,
       "length": 1,
       "value": "\":\""
     },
     {
       "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Embedded\/Alamofire\/Source\/Core\/Request.swift",
       "kind": "StringLiteral",
-      "offset": 40909,
+      "offset": 40470,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Embedded\/Alamofire\/Source\/Core\/Request.swift",
       "kind": "StringLiteral",
-      "offset": 41089,
+      "offset": 40650,
       "length": 24,
       "value": "\"-u \""
     },
     {
       "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Embedded\/Alamofire\/Source\/Core\/Request.swift",
       "kind": "StringLiteral",
-      "offset": 41100,
+      "offset": 40661,
       "length": 1,
       "value": "\":\""
     },
     {
       "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Embedded\/Alamofire\/Source\/Core\/Request.swift",
       "kind": "StringLiteral",
-      "offset": 41112,
+      "offset": 40673,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Embedded\/Alamofire\/Source\/Core\/Request.swift",
       "kind": "StringLiteral",
-      "offset": 41471,
+      "offset": 41032,
       "length": 24,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Embedded\/Alamofire\/Source\/Core\/Request.swift",
       "kind": "StringLiteral",
-      "offset": 41482,
+      "offset": 41043,
       "length": 1,
       "value": "\"=\""
     },
     {
       "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Embedded\/Alamofire\/Source\/Core\/Request.swift",
       "kind": "StringLiteral",
-      "offset": 41494,
+      "offset": 41055,
       "length": 23,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Embedded\/Alamofire\/Source\/Core\/Request.swift",
       "kind": "StringLiteral",
-      "offset": 41516,
+      "offset": 41077,
       "length": 3,
       "value": "\";\""
     },
     {
       "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Embedded\/Alamofire\/Source\/Core\/Request.swift",
       "kind": "StringLiteral",
-      "offset": 41556,
+      "offset": 41117,
       "length": 22,
       "value": "\"-b \"\""
     },
     {
       "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Embedded\/Alamofire\/Source\/Core\/Request.swift",
       "kind": "StringLiteral",
-      "offset": 41575,
+      "offset": 41136,
       "length": 1,
       "value": "\"\"\""
     },
     {
       "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Embedded\/Alamofire\/Source\/Core\/Request.swift",
       "kind": "StringLiteral",
-      "offset": 41777,
+      "offset": 41338,
       "length": 8,
       "value": "\"Cookie\""
     },
     {
       "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Embedded\/Alamofire\/Source\/Core\/Request.swift",
       "kind": "StringLiteral",
-      "offset": 41924,
+      "offset": 41485,
       "length": 8,
       "value": "\"Cookie\""
     },
     {
       "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Embedded\/Alamofire\/Source\/Core\/Request.swift",
       "kind": "StringLiteral",
-      "offset": 42095,
+      "offset": 41656,
       "length": 4,
       "value": "\"\"\""
     },
     {
       "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Embedded\/Alamofire\/Source\/Core\/Request.swift",
       "kind": "StringLiteral",
-      "offset": 42107,
+      "offset": 41668,
       "length": 6,
       "value": "\"\\\"\""
     },
     {
       "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Embedded\/Alamofire\/Source\/Core\/Request.swift",
       "kind": "StringLiteral",
-      "offset": 42145,
+      "offset": 41706,
       "length": 40,
       "value": "\"-H \"\""
     },
     {
       "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Embedded\/Alamofire\/Source\/Core\/Request.swift",
       "kind": "StringLiteral",
-      "offset": 42165,
+      "offset": 41726,
       "length": 1,
       "value": "\": \""
     },
     {
       "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Embedded\/Alamofire\/Source\/Core\/Request.swift",
       "kind": "StringLiteral",
-      "offset": 42182,
+      "offset": 41743,
       "length": 1,
       "value": "\"\"\""
     },
     {
       "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Embedded\/Alamofire\/Source\/Core\/Request.swift",
       "kind": "StringLiteral",
-      "offset": 42384,
+      "offset": 41945,
       "length": 6,
       "value": "\"\\\"\""
     },
     {
       "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Embedded\/Alamofire\/Source\/Core\/Request.swift",
       "kind": "StringLiteral",
-      "offset": 42398,
+      "offset": 41959,
       "length": 8,
       "value": "\"\\\\\"\""
     },
     {
       "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Embedded\/Alamofire\/Source\/Core\/Request.swift",
       "kind": "StringLiteral",
-      "offset": 42471,
+      "offset": 42032,
       "length": 4,
       "value": "\"\"\""
     },
     {
       "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Embedded\/Alamofire\/Source\/Core\/Request.swift",
       "kind": "StringLiteral",
-      "offset": 42483,
+      "offset": 42044,
       "length": 6,
       "value": "\"\\\"\""
     },
     {
       "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Embedded\/Alamofire\/Source\/Core\/Request.swift",
       "kind": "StringLiteral",
-      "offset": 42522,
+      "offset": 42083,
       "length": 23,
       "value": "\"-d \"\""
     },
     {
       "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Embedded\/Alamofire\/Source\/Core\/Request.swift",
       "kind": "StringLiteral",
-      "offset": 42542,
+      "offset": 42103,
       "length": 1,
       "value": "\"\"\""
     },
     {
       "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Embedded\/Alamofire\/Source\/Core\/Request.swift",
       "kind": "StringLiteral",
-      "offset": 42584,
+      "offset": 42145,
       "length": 27,
       "value": "\"\"\""
     },
     {
       "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Embedded\/Alamofire\/Source\/Core\/Request.swift",
       "kind": "StringLiteral",
-      "offset": 42608,
+      "offset": 42169,
       "length": 1,
       "value": "\"\"\""
     },
     {
       "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Embedded\/Alamofire\/Source\/Core\/Request.swift",
       "kind": "StringLiteral",
-      "offset": 42658,
+      "offset": 42219,
       "length": 9,
       "value": "\" \\\n\t\""
     },
     {
       "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Embedded\/Alamofire\/Source\/Alamofire.swift",
       "kind": "StringLiteral",
-      "offset": 1700,
-      "length": 8,
-      "value": "\"5.10.1\""
+      "offset": 1702,
+      "length": 7,
+      "value": "\"5.9.1\""
     },
     {
       "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Core\/LinkErrorrType.swift",
@@ -8558,161 +8559,161 @@
     {
       "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Embedded\/Alamofire\/Source\/Core\/DownloadRequest.swift",
       "kind": "IntegerLiteral",
-      "offset": 1722,
+      "offset": 1691,
       "length": 1,
       "value": "1"
     },
     {
       "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Embedded\/Alamofire\/Source\/Core\/DownloadRequest.swift",
       "kind": "IntegerLiteral",
-      "offset": 1727,
+      "offset": 1696,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Embedded\/Alamofire\/Source\/Core\/DownloadRequest.swift",
       "kind": "IntegerLiteral",
-      "offset": 1877,
+      "offset": 1846,
       "length": 1,
       "value": "1"
     },
     {
       "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Embedded\/Alamofire\/Source\/Core\/DownloadRequest.swift",
       "kind": "IntegerLiteral",
-      "offset": 1882,
+      "offset": 1851,
       "length": 1,
       "value": "1"
     },
     {
       "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Embedded\/Alamofire\/Source\/Core\/DownloadRequest.swift",
       "kind": "Array",
-      "offset": 3778,
+      "offset": 3727,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Embedded\/Alamofire\/Source\/Core\/DownloadRequest.swift",
       "kind": "Array",
-      "offset": 4538,
+      "offset": 4487,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Embedded\/Alamofire\/Source\/Core\/DownloadRequest.swift",
       "kind": "StringLiteral",
-      "offset": 4790,
+      "offset": 4729,
       "length": 36,
       "value": "\"Alamofire_\""
     },
     {
       "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Embedded\/Alamofire\/Source\/Core\/DownloadRequest.swift",
       "kind": "StringLiteral",
-      "offset": 4825,
+      "offset": 4764,
       "length": 1,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Embedded\/Alamofire\/Source\/Features\/URLEncodedFormEncoder.swift",
       "kind": "StringLiteral",
-      "offset": 14122,
+      "offset": 14243,
       "length": 9,
       "value": "\"[\""
     },
     {
       "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Embedded\/Alamofire\/Source\/Features\/URLEncodedFormEncoder.swift",
       "kind": "StringLiteral",
-      "offset": 14129,
+      "offset": 14250,
       "length": 1,
       "value": "\"]\""
     },
     {
       "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Embedded\/Alamofire\/Source\/Features\/URLEncodedFormEncoder.swift",
       "kind": "StringLiteral",
-      "offset": 14280,
+      "offset": 14401,
       "length": 8,
       "value": "\".\""
     },
     {
       "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Embedded\/Alamofire\/Source\/Features\/URLEncodedFormEncoder.swift",
       "kind": "StringLiteral",
-      "offset": 14287,
+      "offset": 14408,
       "length": 3,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Embedded\/Alamofire\/Source\/Features\/URLEncodedFormEncoder.swift",
       "kind": "StringLiteral",
-      "offset": 15103,
+      "offset": 15194,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Embedded\/Alamofire\/Source\/Features\/URLEncodedFormEncoder.swift",
       "kind": "StringLiteral",
-      "offset": 15185,
+      "offset": 15276,
       "length": 6,
       "value": "\"null\""
     },
     {
       "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Embedded\/Alamofire\/Source\/Features\/URLEncodedFormEncoder.swift",
       "kind": "BooleanLiteral",
-      "offset": 18884,
+      "offset": 18976,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Embedded\/Alamofire\/Source\/Features\/URLEncodedFormEncoder.swift",
       "kind": "Array",
-      "offset": 22627,
+      "offset": 22699,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Embedded\/Alamofire\/Source\/Features\/URLEncodedFormEncoder.swift",
       "kind": "BooleanLiteral",
-      "offset": 35423,
+      "offset": 35471,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Embedded\/Alamofire\/Source\/Features\/URLEncodedFormEncoder.swift",
       "kind": "IntegerLiteral",
-      "offset": 40159,
+      "offset": 40199,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Embedded\/Alamofire\/Source\/Features\/URLEncodedFormEncoder.swift",
       "kind": "StringLiteral",
-      "offset": 47875,
+      "offset": 47916,
       "length": 7,
       "value": "\":#[]@\""
     },
     {
       "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Embedded\/Alamofire\/Source\/Features\/URLEncodedFormEncoder.swift",
       "kind": "StringLiteral",
-      "offset": 47980,
+      "offset": 48021,
       "length": 13,
       "value": "\"!$&'()*+,;=\""
     },
     {
       "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Embedded\/Alamofire\/Source\/Features\/URLEncodedFormEncoder.swift",
       "kind": "StringLiteral",
-      "offset": 48055,
+      "offset": 48096,
       "length": 54,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Embedded\/Alamofire\/Source\/Features\/URLEncodedFormEncoder.swift",
       "kind": "StringLiteral",
-      "offset": 48084,
+      "offset": 48125,
       "length": 1,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Embedded\/Alamofire\/Source\/Features\/URLEncodedFormEncoder.swift",
       "kind": "StringLiteral",
-      "offset": 48108,
+      "offset": 48149,
       "length": 2,
       "value": "\"\""
     }
