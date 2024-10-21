@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
   s.name         = 'AppLinkSDK-iOS'
   s.module_name  = 'AppLink'
-  s.version      = '0.5.7'
+  s.version      = '0.5.8'
   s.summary      = 'Deep link service provided for iOS'
   s.description  = 'Helps create and recognize deep links in apps developed for iOS.'
   s.homepage     = 'https://github.com/vlending-dev/applink-ios-sdk'
