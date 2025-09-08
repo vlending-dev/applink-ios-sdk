@@ -1,6 +1,7 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 6.0 effective-5.10 (swiftlang-6.0.0.9.10 clang-1600.0.26.2)
-// swift-module-flags: -target arm64-apple-ios13.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-bare-slash-regex -module-name AppLink
+// swift-compiler-version: Apple Swift version 6.1.2 effective-5.10 (swiftlang-6.1.2.1.2 clang-1700.0.13.5)
+// swift-module-flags: -target arm64-apple-ios13.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-experimental-feature DebugDescriptionMacro -enable-bare-slash-regex -module-name AppLink
+// swift-module-flags-ignorable:  -interface-compiler-version 6.1.2
 @_exported import AppLink
 import Combine
 import Dispatch
@@ -63,6 +64,9 @@ public struct AppLinkDataInfo : Swift.Codable {
   public init(from decoder: any Swift.Decoder) throws
   public func encode(to encoder: any Swift.Encoder) throws
 }
+public typealias ParseResultHandler = (AppLink.AppLinkDataInfo?, Swift.String, [Foundation.URLQueryItem]?, AppLink.LinkError?)
+public typealias LinkRequestHandler = (Foundation.URL?, AppLink.LinkError?)
+public typealias LinkInformationHandler = (AppLink.AppLinkDataInfo?, AppLink.LinkError?)
 @objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class AppLinkSession : ObjectiveC.NSObject {
   public var domainURIPrefix: Swift.String? {
     get
@@ -72,7 +76,9 @@ public struct AppLinkDataInfo : Swift.Codable {
   public var userId: Swift.String?
   public var customScheme: Swift.String?
   public func isAppLink(_ url: Foundation.URL) -> Swift.Bool
-  public func parse(url: Foundation.URL, completion: @escaping ((AppLink.AppLinkDataInfo?, Swift.String, [Foundation.URLQueryItem]?, AppLink.LinkError?) -> Swift.Void))
-  public func request(link request: AppLink.AppLinkRequest, completion: @escaping ((Foundation.URL?, AppLink.LinkError?) -> Swift.Void))
+  public func parse(url: Foundation.URL, completion: @escaping (AppLink.ParseResultHandler) -> Swift.Void)
+  public func parse(url: Foundation.URL) async throws -> (AppLink.AppLinkDataInfo?, Swift.String, [Foundation.URLQueryItem]?)
+  public func request(link request: AppLink.AppLinkRequest, completion: @escaping (AppLink.LinkRequestHandler) -> Swift.Void)
+  public func request(link request: AppLink.AppLinkRequest) async throws -> Foundation.URL?
   @objc deinit
 }
