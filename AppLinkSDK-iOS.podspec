@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
   s.name         = 'AppLinkSDK-iOS'
   s.module_name  = 'AppLink'
-  s.version      = '0.5.8'
+  s.version      = '0.6.0'
   s.summary      = 'Deep link service provided for iOS'
   s.description  = 'Helps create and recognize deep links in apps developed for iOS.'
   s.homepage     = 'https://github.com/vlending-dev/applink-ios-sdk'
@@ -12,5 +12,5 @@ Pod::Spec.new do |s|
   s.ios.vendored_frameworks = "Framework/AppLink.xcframework"
   s.resource_bundles = { "AppLink_Privacy" => ["Resources/PrivacyInfo.xcprivacy", "LICENSE.txt"] }
   s.frameworks   = 'UIKit', 'Foundation'
-  s.swift_version = '5.9'
+  s.swift_version = '5.10.1'
 end
