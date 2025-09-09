@@ -77,8 +77,8 @@ public typealias LinkInformationHandler = (AppLink.AppLinkDataInfo?, AppLink.Lin
   public var customScheme: Swift.String?
   public func isAppLink(_ url: Foundation.URL) -> Swift.Bool
   public func parse(url: Foundation.URL, completion: @escaping (AppLink.ParseResultHandler) -> Swift.Void)
-  public func parse(url: Foundation.URL) async throws -> (AppLink.AppLinkDataInfo?, Swift.String, [Foundation.URLQueryItem]?)
+  @_Concurrency.MainActor public func parse(url: Foundation.URL) async throws -> (AppLink.AppLinkDataInfo, Swift.String, [Foundation.URLQueryItem]?)
   public func request(link request: AppLink.AppLinkRequest, completion: @escaping (AppLink.LinkRequestHandler) -> Swift.Void)
-  public func request(link request: AppLink.AppLinkRequest) async throws -> Foundation.URL?
+  @_Concurrency.MainActor public func request(link request: AppLink.AppLinkRequest) async throws -> Foundation.URL
   @objc deinit
 }
