@@ -3855,21 +3855,13 @@
               {
                 "kind": "TypeNominal",
                 "name": "Tuple",
-                "printedName": "(AppLink.AppLinkDataInfo?, Swift.String, [Foundation.URLQueryItem]?)",
+                "printedName": "(AppLink.AppLinkDataInfo, Swift.String, [Foundation.URLQueryItem]?)",
                 "children": [
                   {
                     "kind": "TypeNominal",
-                    "name": "Optional",
-                    "printedName": "AppLink.AppLinkDataInfo?",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "AppLinkDataInfo",
-                        "printedName": "AppLink.AppLinkDataInfo",
-                        "usr": "s:7AppLink0aB8DataInfoV"
-                      }
-                    ],
-                    "usr": "s:Sq"
+                    "name": "AppLinkDataInfo",
+                    "printedName": "AppLink.AppLinkDataInfo",
+                    "usr": "s:7AppLink0aB8DataInfoV"
                   },
                   {
                     "kind": "TypeNominal",
@@ -3909,11 +3901,12 @@
               }
             ],
             "declKind": "Func",
-            "usr": "s:7AppLink0aB7SessionC5parse3urlAA0aB8DataInfoVSg_SSSay10Foundation12URLQueryItemVGSgtAI3URLV_tYaKF",
-            "mangledName": "$s7AppLink0aB7SessionC5parse3urlAA0aB8DataInfoVSg_SSSay10Foundation12URLQueryItemVGSgtAI3URLV_tYaKF",
+            "usr": "s:7AppLink0aB7SessionC5parse3urlAA0aB8DataInfoV_SSSay10Foundation12URLQueryItemVGSgtAH3URLV_tYaKF",
+            "mangledName": "$s7AppLink0aB7SessionC5parse3urlAA0aB8DataInfoV_SSSay10Foundation12URLQueryItemVGSgtAH3URLV_tYaKF",
             "moduleName": "AppLink",
             "declAttributes": [
-              "AccessControl"
+              "AccessControl",
+              "Custom"
             ],
             "throwing": true,
             "funcSelfKind": "NonMutating"
@@ -3998,17 +3991,9 @@
             "children": [
               {
                 "kind": "TypeNominal",
-                "name": "Optional",
-                "printedName": "Foundation.URL?",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "URL",
-                    "printedName": "Foundation.URL",
-                    "usr": "s:10Foundation3URLV"
-                  }
-                ],
-                "usr": "s:Sq"
+                "name": "URL",
+                "printedName": "Foundation.URL",
+                "usr": "s:10Foundation3URLV"
               },
               {
                 "kind": "TypeNominal",
@@ -4018,11 +4003,12 @@
               }
             ],
             "declKind": "Func",
-            "usr": "s:7AppLink0aB7SessionC7request4link10Foundation3URLVSgAA0aB7RequestV_tYaKF",
-            "mangledName": "$s7AppLink0aB7SessionC7request4link10Foundation3URLVSgAA0aB7RequestV_tYaKF",
+            "usr": "s:7AppLink0aB7SessionC7request4link10Foundation3URLVAA0aB7RequestV_tYaKF",
+            "mangledName": "$s7AppLink0aB7SessionC7request4link10Foundation3URLVAA0aB7RequestV_tYaKF",
             "moduleName": "AppLink",
             "declAttributes": [
-              "AccessControl"
+              "AccessControl",
+              "Custom"
             ],
             "throwing": true,
             "funcSelfKind": "NonMutating"
@@ -7646,7 +7632,7 @@
       "kind": "StringLiteral",
       "offset": 498,
       "length": 7,
-      "value": "\"0.6.0\""
+      "value": "\"0.7.0\""
     },
     {
       "filePath": "\/Users\/hyunjoon\/Documents\/Project\/AppLink Project\/applink-ios\/Sources\/Embedded\/Alamofire\/Source\/Core\/Notifications.swift",
