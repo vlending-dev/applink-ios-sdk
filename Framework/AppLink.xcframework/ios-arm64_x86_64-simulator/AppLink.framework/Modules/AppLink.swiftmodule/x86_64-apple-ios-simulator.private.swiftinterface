@@ -1,13 +1,13 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 6.1.2 effective-5.10 (swiftlang-6.1.2.1.2 clang-1700.0.13.5)
-// swift-module-flags: -target x86_64-apple-ios13.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-experimental-feature DebugDescriptionMacro -enable-bare-slash-regex -module-name AppLink
-// swift-module-flags-ignorable:  -interface-compiler-version 6.1.2
+// swift-compiler-version: Apple Swift version 6.4 effective-5.10 (swiftlang-6.4.0.34.1 clang-2100.3.34.1)
+// swift-module-flags: -target x86_64-apple-ios15.0-simulator -enable-objc-interop -enable-library-evolution -language-mode 5 -O -enable-experimental-feature DebugDescriptionMacro -enable-bare-slash-regex -module-name AppLink
+// swift-module-flags-ignorable:  -formal-cxx-interoperability-mode=off -interface-compiler-version 6.4
 @_exported import AppLink
 import Combine
 import Dispatch
 import Foundation
 import MobileCoreServices
-import Security
+@preconcurrency import Security
 import Swift
 import SystemConfiguration
 import UIKit
@@ -16,69 +16,69 @@ import _Concurrency
 import _StringProcessing
 import _SwiftConcurrencyShims
 import zlib
-@objc @_hasMissingDesignatedInitializers public class LinkError : Foundation.NSError, @unchecked Swift.Sendable {
-  public var message: Swift.String?
-  @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
-  public var error: any Swift.Error {
+@objc @_hasMissingDesignatedInitializers public class LinkError : Foundation::NSError, @unchecked Swift::Sendable {
+  final public let message: Swift::String?
+  @objc required dynamic public init?(coder aDecoder: Foundation::NSCoder)
+  public var error: any Swift::Error {
     get
   }
   @objc deinit
 }
-public struct AppLinkDataError : Swift.Codable {
-  public var code: Swift.Int?
-  public var message: Swift.String?
-  public init(from decoder: any Swift.Decoder) throws
-  public func encode(to encoder: any Swift.Encoder) throws
+public struct AppLinkDataError : Swift::Codable, Swift::Sendable {
+  public var code: Swift::Int?
+  public var message: Swift::String?
+  public init(from decoder: any Swift::Decoder) throws
+  public func encode(to encoder: any Swift::Encoder) throws
 }
-public struct AppLinkRequest : Swift.Codable {
-  public var imageURL: Swift.String?
-  public var utm: AppLink.AppLinkUTM?
-  public var deeplinkAction: Swift.String?
-  public init(title: Swift.String, description: Swift.String? = nil, url: Swift.String?)
-  public init(from decoder: any Swift.Decoder) throws
-  public func encode(to encoder: any Swift.Encoder) throws
+public struct AppLinkRequest : Swift::Codable, Swift::Sendable {
+  public var imageURL: Swift::String?
+  public var utm: AppLink::AppLinkUTM?
+  public var deeplinkAction: Swift::String?
+  public init(title: Swift::String, description: Swift::String? = nil, url: Swift::String?)
+  public init(from decoder: any Swift::Decoder) throws
+  public func encode(to encoder: any Swift::Encoder) throws
 }
-public let AppLink: AppLink.AppLinkSession
+public let AppLink: AppLink::AppLinkSession
 public enum AppLinkInfo {
-  public static let version: Swift.String
+  public static let version: Swift::String
 }
-public enum AppLinkDataCodingError : Swift.Error {
-  case decoding(Swift.String)
+public enum AppLinkDataCodingError : Swift::Error {
+  case decoding(Swift::String)
 }
-public struct AppLinkUTM : Swift.Codable {
-  public var source: Swift.String?
-  public var medium: Swift.String?
-  public var campaignName: Swift.String?
-  public init?(source: Swift.String?, medium: Swift.String?, campaign: Swift.String?)
-  public init(from decoder: any Swift.Decoder) throws
-  public func encode(to encoder: any Swift.Encoder) throws
+public struct AppLinkUTM : Swift::Codable, Swift::Sendable {
+  public var source: Swift::String?
+  public var medium: Swift::String?
+  public var campaignName: Swift::String?
+  public init?(source: Swift::String?, medium: Swift::String?, campaign: Swift::String?)
+  public init(from decoder: any Swift::Decoder) throws
+  public func encode(to encoder: any Swift::Encoder) throws
 }
-public struct AppLinkDataInfo : Swift.Codable {
-  public var title: Swift.String?
-  public var contents: Swift.String?
-  public var imageURL: Swift.String?
-  public var utm: AppLink.AppLinkUTM?
-  public var scheme: Swift.String?
-  public var deeplinkAction: Swift.String?
-  public var webURL: Swift.String?
-  public init(from decoder: any Swift.Decoder) throws
-  public func encode(to encoder: any Swift.Encoder) throws
+public struct AppLinkDataInfo : Swift::Codable, Swift::Sendable {
+  public var title: Swift::String?
+  public var contents: Swift::String?
+  public var imageURL: Swift::String?
+  public var utm: AppLink::AppLinkUTM?
+  public var scheme: Swift::String?
+  public var deeplinkAction: Swift::String?
+  public var webURL: Swift::String?
+  public init(from decoder: any Swift::Decoder) throws
+  public func encode(to encoder: any Swift::Encoder) throws
 }
-public typealias ParseResultHandler = (AppLink.AppLinkDataInfo?, Swift.String, [Foundation.URLQueryItem]?, AppLink.LinkError?)
-public typealias LinkRequestHandler = (Foundation.URL?, AppLink.LinkError?)
-public typealias LinkInformationHandler = (AppLink.AppLinkDataInfo?, AppLink.LinkError?)
-@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class AppLinkSession : ObjectiveC.NSObject {
-  public var domainURIPrefix: Swift.String? {
+public typealias ParseResultHandler = (AppLink::AppLinkDataInfo?, Swift::String, [Foundation::URLQueryItem]?, AppLink::LinkError?)
+public typealias LinkRequestHandler = (Foundation::URL?, AppLink::LinkError?)
+public typealias LinkInformationHandler = (AppLink::AppLinkDataInfo?, AppLink::LinkError?)
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class AppLinkSession : ObjectiveC::NSObject {
+  public var domainURIPrefix: Swift::String? {
     get
     set
   }
-  public var apiKey: Swift.String?
-  public var userId: Swift.String?
-  public var customScheme: Swift.String?
-  public func isAppLink(_ url: Foundation.URL) -> Swift.Bool
-  public func parse(url: Foundation.URL, completion: @escaping (AppLink.ParseResultHandler) -> Swift.Void)
-  @_Concurrency.MainActor public func parse(url: Foundation.URL) async throws -> (AppLink.AppLinkDataInfo, Swift.String, [Foundation.URLQueryItem]?)
-  public func request(link request: AppLink.AppLinkRequest, completion: @escaping (AppLink.LinkRequestHandler) -> Swift.Void)
-  @_Concurrency.MainActor public func request(link request: AppLink.AppLinkRequest) async throws -> Foundation.URL
+  public var apiKey: Swift::String?
+  public var userId: Swift::String?
+  public var customScheme: Swift::String?
+  public func isAppLink(_ url: Foundation::URL) -> Swift::Bool
+  public func parse(url: Foundation::URL, completion: @escaping (AppLink::ParseResultHandler) -> Swift::Void)
+  @_Concurrency::MainActor public func parse(url: Foundation::URL) async throws -> (AppLink::AppLinkDataInfo, Swift::String, [Foundation::URLQueryItem]?)
+  public func request(link request: AppLink::AppLinkRequest, completion: @escaping (AppLink::LinkRequestHandler) -> Swift::Void)
+  @_Concurrency::MainActor public func request(link request: AppLink::AppLinkRequest) async throws -> Foundation::URL
   @objc deinit
 }
