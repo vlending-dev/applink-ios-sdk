@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AppLink
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
@@ -18,6 +19,42 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         guard let _ = (scene as? UIWindowScene) else { return }
+
+        // The app was launched from a link while it was not running.
+        if let url = connectionOptions.urlContexts.first?.url {
+            handleAppLink(url)
+        } else if let userActivity = connectionOptions.userActivities.first(where: { $0.activityType == NSUserActivityTypeBrowsingWeb }),
+                  let url = userActivity.webpageURL {
+            handleAppLink(url)
+        }
+    }
+
+    // Custom URL scheme
+    func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {
+        guard let url = URLContexts.first?.url else { return }
+        handleAppLink(url)
+    }
+
+    // Universal Links
+    func scene(_ scene: UIScene, continue userActivity: NSUserActivity) {
+        guard userActivity.activityType == NSUserActivityTypeBrowsingWeb, let url = userActivity.webpageURL else { return }
+        handleAppLink(url)
+    }
+
+    private func handleAppLink(_ url: URL) {
+        guard AppLink.isAppLink(url) else { return }
+        AppLink.parse(url: url) { linkInfo, key, queries, error in
+            guard let info = linkInfo else {
+                print("AppLink parse error :: \(String(describing: error))")
+                return
+            }
+            print("AppLink \(key) :: \(String(describing: info.title))")
+
+            // Actions are executed according to the received deep link information.
+            if let scheme = info.scheme, let action = info.deeplinkAction, let url = URL(string: scheme + "://" + action) {
+                UIApplication.shared.open(url, options: [:], completionHandler: nil)
+            }
+        }
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

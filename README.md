@@ -3,8 +3,8 @@ Distribute the SDK of the deep link service provided by Vlending.
 
 ## Requirements
 
- * iOS 13+
- * Xcode 15+
+ * iOS 15+
+ * Xcode 26+
  * Swift 5.10+
 
 ## Features
@@ -30,7 +30,7 @@ Learn more about the provided documentation, integrating the SDK into your app, 
 ### CocoaPods
 
 ```ruby
-platform :ios, '13.0'
+platform :ios, '15.0'
 use_frameworks!
 source 'https://github.com/CocoaPods/Specs.git'
 
@@ -42,7 +42,7 @@ pod 'AppLinkSDK-iOS'
 To add AppLink SDK to a [Swift Package Manager](https://www.swift.org/documentation/package-manager/) based project, add:
 ```swift
 dependencies: [
-    .package(url: "https://github.com/vlending-dev/applink-ios-sdk.git", .upToNextMajor(from: "0.7.0"))
+    .package(url: "https://github.com/vlending-dev/applink-ios-sdk.git", .upToNextMajor(from: "0.8.0"))
 ]
 ```
 

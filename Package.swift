@@ -6,7 +6,7 @@ import PackageDescription
 let package = Package(
     name: "AppLink",
     platforms: [
-        .iOS(.v13)
+        .iOS(.v15)
     ],
     products: [
         // Products define the executables and libraries a package produces, making them visible to other packages.
@@ -17,8 +17,7 @@ let package = Package(
     targets: [
         .binaryTarget(
             name: "applink-ios-sdk",
-            path: "Framework/AppLink.xcframework",
-            resources: [.copy("Resources/PrivacyInfo.xcprivacy")]),
-        
+            path: "Framework/AppLink.xcframework"),
+
     ]
 )
