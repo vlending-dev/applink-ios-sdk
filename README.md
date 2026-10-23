@@ -49,7 +49,7 @@ dependencies: [
 ## License
 
 See the [LICENSE](https://github.com/vlending-dev/applink-ios-sdk/blob/master/LICENSE.txt) file.
-Copyright © Vlending Co., Ltd.
+Copyright © OGQ Vlending.
 
 ## Contact
 

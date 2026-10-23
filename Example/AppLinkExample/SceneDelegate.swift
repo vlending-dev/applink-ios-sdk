@@ -3,7 +3,7 @@
 //  AppLinkExample
 //
 //  Created by Hyunjoon Ko on 8/1/24.
-//  Copyright © 2024 Vlending Co., Ltd. All rights reserved.
+//  Copyright © 2024 OGQ Vlending. All rights reserved.
 //
 
 import UIKit

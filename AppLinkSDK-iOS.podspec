@@ -6,7 +6,7 @@ Pod::Spec.new do |s|
   s.description  = 'Helps create and recognize deep links in apps developed for iOS.'
   s.homepage     = 'https://github.com/vlending-dev/applink-ios-sdk'
   s.license      = { :type => 'Apache-2.0', :file => 'LICENSE.txt' }
-  s.author       = { 'Vlending Co., Ltd.' => 'https://www.vlending.kr' }
+  s.author       = { 'OGQ Vlending' => 'https://www.vlending.kr' }
   s.source       = { :git => 'https://github.com/vlending-dev/applink-ios-sdk.git', :tag => "#{s.version}" }
   s.platform     = :ios, '15.0'
   s.ios.vendored_frameworks = "Framework/AppLink.xcframework"
